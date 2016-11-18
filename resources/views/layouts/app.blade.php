@@ -36,7 +36,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        Share2Camp
                     </a>
                 </div>
 
