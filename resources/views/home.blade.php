@@ -1,7 +1,9 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Didi
- * Date: 18/11/16
- * Time: 09:30
- */
+@extends('layouts.master')
+
+@section('content')
+
+    <div class="container">
+        <h1>Share2Camp</h1>
+    </div>
+
+@endsection
