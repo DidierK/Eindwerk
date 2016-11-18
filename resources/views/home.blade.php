@@ -1,11 +1,18 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="intro">
 
-    <h1>Welcome to ShareToCamp</h1>
+    <div class="container">
+
+        <div class="introtext">
+            <h1>Welkom bij ShareToCamp</h1>
+        </div>
+
+    </div>
+
 
 </div>
 
-<a href="login">Login</a>
+
 @endsection

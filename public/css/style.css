@@ -1,0 +1,12 @@
+.intro{
+    background-image: url("../images/background1.jpg");
+    background-size: cover;
+    height: 650px;
+    margin-top: -50px;
+}
+
+.introtext{
+    text-align: center;
+    margin: 200px;
+    color: #FFF;
+}
