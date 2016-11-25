@@ -6,7 +6,8 @@
     <div class="container">
 
         <div class="introtext">
-            <h1>Welkom bij ShareToCamp</h1>
+            <h1>Welkom bij TravelShare</h1>
+            <h2>Zoek reismateriaal in uw buurt</h2>
         </div>
 
     </div>
