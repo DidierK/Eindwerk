@@ -1,1 +1,1 @@
-{"virtualbox":{"/var/www":{"mount_options":["dmode=777","fmode=666"],"guestpath":"/var/www","hostpath":"C:/Users/Wout/Desktop/Eindwerk","disabled":false,"__vagrantfile":true}}}
+{"virtualbox":{"/var/www":{"mount_options":["dmode=777","fmode=666"],"guestpath":"/var/www","hostpath":"/Users/Didi/Documents/Eindwerk","disabled":false}}}
