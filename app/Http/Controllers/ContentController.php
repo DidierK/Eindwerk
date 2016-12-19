@@ -10,4 +10,8 @@ class ContentController extends Controller
     {
         return view('add');
     }
+
+    public function post(){
+        return view('/');
+    }
 }
