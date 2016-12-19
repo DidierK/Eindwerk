@@ -10,7 +10,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Naam</label>
-                        <input type="text" class="form-control" id="InputNaam" placeholder="Tent, strandstoel, skibotten, ...">
+                        <input type="text" class="form-control" name="InputNaam" id="InputNaam" placeholder="Tent, strandstoel, skibotten, ...">
                     </div>
                     <br>
 
@@ -19,28 +19,28 @@
 
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" value="">
+                                <input type="checkbox" id="checkbox1" value="Zon">
                                 Zon
                             </label>
                         </div>
 
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" value="">
+                                <input type="checkbox" id="checkbox2" value="Sneeuw">
                                 Sneeuw
                             </label>
                         </div>
 
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" value="">
+                                <input type="checkbox" id="checkbox3" value="Avontuur">
                                 Avontuur
                             </label>
                         </div>
 
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" value="">
+                                <input type="checkbox" id="checkbox4" value="">
                                 Citytrip
                             </label>
                         </div>
@@ -70,7 +70,7 @@
                     <label for="exampleInputAmount">Waarborg</label>
                     <div class="input-group">
                         <div class="input-group-addon">€</div>
-                        <input type="text" class="form-control" id="InputAmount1" placeholder="30">
+                        <input type="text" class="form-control" name="InputAmount1" id="InputAmount1" placeholder="30">
                     </div>
                 </div>
                 <br>
@@ -78,22 +78,43 @@
                     <label for="exampleInputAmount">Prijs per dag</label>
                     <div class="input-group">
                         <div class="input-group-addon">€</div>
-                        <input type="text" class="form-control" id="InputAmount2" placeholder="5">
+                        <input type="text" class="form-control" name="InputAmount2" id="InputAmount2" placeholder="5">
                     </div>
 
                 </div>
 
                 <br>
+
+                Voeg 3 foto's toe waarbij de staat van het materiaal goed zichtbaar is.
+
                 <div class="form-group">
-                    <label for="exampleInputFile">Voeg 3 foto's toe waarbij de staat van het materiaal goed zichtbaar is.</label>
-                    <input type="file" id="InputFile1">
-                    <p class="help-block"></p>
+                    <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+                    {!!Form::label('image', 'Afbeelding 1 (400x400)')!!}
+                    <div class="control-group">
+                        <div class="controls">
+                            {!! Form::file('image1') !!}
+                        </div>
+                    </div>
+                </div>
 
-                    <input type="file" id="InputFile2">
-                    <p class="help-block"></p>
+                <div class="form-group">
+                    <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+                    {!!Form::label('image', 'Afbeelding 2 (400x400)')!!}
+                    <div class="control-group">
+                        <div class="controls">
+                            {!! Form::file('image2') !!}
+                        </div>
+                    </div>
+                </div>
 
-                    <input type="file" id="InputFile3">
-                    <p class="help-block"></p>
+                <div class="form-group">
+                    <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+                    {!!Form::label('image', 'Afbeelding 3 (400x400)')!!}
+                    <div class="control-group">
+                        <div class="controls">
+                            {!! Form::file('image3') !!}
+                        </div>
+                    </div>
                 </div>
                 <br>
                 <button type="submit" class="btn btn-default">Materiaal toevoegen</button>

@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Intervention\Image\Facades\Image;
 use App\User;
 use App\Content;
 use DB;
 use Illuminate\Http\Request;
-use Intervention\Image\Facades\Image as Image;
+
 use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
@@ -21,17 +22,94 @@ class ContentController extends Controller
         return view('add');
     }
 
+
     public function store(Request $request){
 
-        $input = $request;
+        if (Input::file('image1')->isValid()) {
+            $image1 = Image::make(Input::file('image1'));
+            
+            //ratio = 4:3
+            $ratio = 4 / 3;
 
-        $article = new Content();
+            //extenstie zoeken van geupload bestand
+            $extension1 = Input::file('image1')->getClientOriginalExtension();
 
-        $title = $input['InputNaam'];
-        $article->naam = $title;
+            //filename randomizen (string van nummers + huidige tijd)
+            $fileName1 = rand(11111, 99999) . time() . '.' . $extension1;
 
-        $article->save();
+            //image pad in var steken
+            $imagePath1 = 'uploads/articles/' . $fileName1;
 
-        return Redirect::to('/');
+            //resize image so it fits the ratio, but doesnt stretch
+            $image1->fit($image1->width(), intval($image1->width() / $ratio))->save($imagePath1);
+
+        }
+
+        if (Input::file('image2')->isValid()) {
+            $image2 = Image::make(Input::file('image2'));
+
+            //ratio = 4:3
+            $ratio = 4 / 3;
+
+            //extenstie zoeken van geupload bestand
+            $extension2 = Input::file('image2')->getClientOriginalExtension();
+
+            //filename randomizen (string van nummers + huidige tijd)
+            $fileName2 = rand(11111, 99999) . time() . '.' . $extension2;
+
+            //image pad in var steken
+            $imagePath2 = 'uploads/articles/' . $fileName2;
+
+            //resize image so it fits the ratio, but doesnt stretch
+            $image2->fit($image2->width(), intval($image2->width() / $ratio))->save($imagePath2);
+
+        }
+
+        if (Input::file('image3')->isValid()) {
+            $image3 = Image::make(Input::file('image3'));
+
+            //ratio = 4:3
+            $ratio = 4 / 3;
+
+            //extenstie zoeken van geupload bestand
+            $extension3 = Input::file('image3')->getClientOriginalExtension();
+
+            //filename randomizen (string van nummers + huidige tijd)
+            $fileName3 = rand(11111, 99999) . time() . '.' . $extension3;
+
+            //image pad in var steken
+            $imagePath3 = 'uploads/articles/' . $fileName3;
+
+            //resize image so it fits the ratio, but doesnt stretch
+            $image3->fit($image3->width(), intval($image3->width() / $ratio))->save($imagePath3);
+
+        }
+
+            $input = $request;
+
+            $article = new Content();
+
+            $naam = $input['InputNaam'];
+            $categorie = $input['checkbox1'] && $input['checkbox3'] && $input['checkbox3'] && $input['checkbox4'];
+            $waarborg = $input['InputAmount1'];
+            $price = $input['InputAmount2'];
+
+
+            $article->naam = $naam;
+            $article->categorie = $categorie;
+            $article->waarborg = $waarborg;
+            $article->prijs = $price;
+            $article->file_name1 = $fileName1;
+            $article->file_name2 = $fileName2;
+            $article->file_name3 = $fileName3;
+
+            $uid = Auth::user()->id;
+            $article->user_id = $uid;
+            $article->user_name = Auth::user()->name;
+
+            $article->save();
+
+            return Redirect::to('/');
+
     }
 }
