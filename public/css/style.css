@@ -13,3 +13,10 @@
     color: #FFF;
 }
 
+.form-info{
+    font-style: italic;
+}
+
+form{
+    background-color: red;
+}
