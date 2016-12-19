@@ -16,5 +16,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index');
+
+//materiaal
+Route::get('add', 'ContentController@index');
