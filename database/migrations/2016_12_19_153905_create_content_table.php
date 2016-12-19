@@ -18,7 +18,7 @@ class CreateContentTable extends Migration
             $table->string('naam');
             $table->string('categorie');
             $table->timestamp('datum1');
-            $table->timestamp('datum2');
+
             $table->integer('waarborg');
             $table->integer('prijs');
             $table->string('file_name1');
@@ -26,8 +26,8 @@ class CreateContentTable extends Migration
             $table->string('file_name3');
             $table->integer('user_id');
             $table->string('user_name');
-            $table->timestamp('updated_at');
-            $table->timestamp('created_at');
+
+            
         });
     }
 

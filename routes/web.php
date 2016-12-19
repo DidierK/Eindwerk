@@ -20,4 +20,4 @@ Route::get('/home', 'HomeController@index');
 
 //materiaal
 Route::get('add', 'ContentController@index');
-Route::post('add','ContentController@post');
+Route::post('add','ContentController@store');

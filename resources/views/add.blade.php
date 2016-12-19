@@ -5,11 +5,12 @@
     <div class="container">
         <h3>Voeg materiaal toe</h3>
         <div class="row">
+            {{ Form::open(array('method'=>'POST', 'files'=>true)) }}
             <div class="col-md-6">
-                <form>
+
                     <div class="form-group">
                         <label for="exampleInputEmail1">Naam</label>
-                        <input type="email" class="form-control" id="InputNaam" placeholder="Tent, strandstoel, skibotten, ...">
+                        <input type="text" class="form-control" id="InputNaam" placeholder="Tent, strandstoel, skibotten, ...">
                     </div>
                     <br>
 
@@ -61,7 +62,7 @@
                     </div>
 
 
-                </form>
+
             </div>
             <div class="col-md-6">
 
@@ -97,6 +98,7 @@
                 <br>
                 <button type="submit" class="btn btn-default">Materiaal toevoegen</button>
             </div>
+            {!! Form::close() !!}
         </div>
 
 
