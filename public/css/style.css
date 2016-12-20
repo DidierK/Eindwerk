@@ -3,7 +3,7 @@
     /*background-image: url("../images/background1.jpg");*/
     background-color: #6dbb82;
     background-size: cover;
-    height: 650px;
+    height: 450px;
     margin-top: -50px;
 }
 
@@ -13,10 +13,12 @@
     color: #FFF;
 }
 
-.form-info{
-    font-style: italic;
+
+.project_upload{
+    width: 200px;
+    height: 150px;
 }
 
-form{
-    background-color: red;
+.details{
+    margin-top:10px;
 }

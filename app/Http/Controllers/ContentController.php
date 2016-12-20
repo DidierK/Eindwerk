@@ -93,12 +93,17 @@ class ContentController extends Controller
             $categorie = $input['checkbox1'] && $input['checkbox3'] && $input['checkbox3'] && $input['checkbox4'];
             $waarborg = $input['InputAmount1'];
             $price = $input['InputAmount2'];
+            $datum1 = $input['date-input-1'];
+            $datum2 = $input['date-input-2'];
 
 
             $article->naam = $naam;
             $article->categorie = $categorie;
             $article->waarborg = $waarborg;
             $article->prijs = $price;
+            $article->datum1 = $datum1;
+            $article->datum2 = $datum2;
+
             $article->file_name1 = $fileName1;
             $article->file_name2 = $fileName2;
             $article->file_name3 = $fileName3;
@@ -111,5 +116,11 @@ class ContentController extends Controller
 
             return Redirect::to('/');
 
+    }
+
+    public function show()
+    {
+        $articles = Content::orderBy('created_at', 'desc')->paginate(16);
+        return view('home', compact('articles'));
     }
 }

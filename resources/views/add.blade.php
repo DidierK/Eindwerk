@@ -53,12 +53,12 @@
 
                     <div class="form-group">
                         <label for="example-date-input">Van</label>
-                        <input class="form-control" type="date" value="2016-10-19" id="date-input-1">
+                        <input class="form-control" type="date" name="date-input-1" value="2016-10-19" id="date-input-1">
                     </div>
 
                     <div class="form-group">
                         <label for="example-date-input">Tot</label>
-                        <input class="form-control" type="date" value="2016-10-25" id="date-input-2">
+                        <input class="form-control" type="date" name="date-input-2" value="2016-10-25" id="date-input-2">
                     </div>
 
 
