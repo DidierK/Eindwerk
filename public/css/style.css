@@ -11,7 +11,7 @@
 
 .introtext{
     text-align: center;
-    padding-top: 100px;
+    padding-top: 200px;
     color: #FFF;
     margin: 0;
     font-family: Montserrat;
@@ -52,6 +52,11 @@
     margin: 20px;
 }
 
+.search_header{
+    font-size:20px;
+    margin-right: 10px;
+}
+
 .content{
     margin-top: 50px;
 }
@@ -70,6 +75,8 @@
     height: 280px;
     margin-left: auto;
     margin-right: auto;
+    border-top: solid lightblue 1px;
+    border-bottom: solid lightblue 1px;
 
 }
 
@@ -91,5 +98,17 @@
     color: darkblue;
     padding: 10px;
     text-align: left;
+
 }
+
+.banner{
+    background-image: url("../images/TravelShare_logo.png");
+    background-size: 500px 222.25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #FFF;
+    margin-top: 100px;
+    height: 300px;
+}
+
 

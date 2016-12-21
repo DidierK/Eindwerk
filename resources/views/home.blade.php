@@ -15,9 +15,11 @@
 
         <div class="searcharea">
 
-            <h3>Wat zoekt u ?</h3>
+
             <form class="form-inline" action="">
+                <label class="search_header">Wat zoekt u ?</label>
             <div class="form-group">
+
                 <input class="search_input" type="text">
                 <button type="submit" class="btn btn-default search_button" >Zoeken</button>
             </div>
@@ -52,11 +54,10 @@
             </div>
         </div>
 
-
-
     </div>
+<div class="banner">
 
-
+</div>
 
 
 
