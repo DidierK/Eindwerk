@@ -1,18 +1,60 @@
+
 .intro{
 
-    /*background-image: url("../images/background1.jpg");*/
-    background-color: #6dbb82;
+    background-image: url("../images/background2.png");
+
     background-size: cover;
-    height: 450px;
+
     margin-top: -50px;
+    height: 650px;
 }
 
 .introtext{
     text-align: center;
-    margin: 200px;
+    padding-top: 100px;
+    color: #FFF;
+    margin: 0;
+    font-family: Montserrat;
+}
+
+.introtext span{
+    font-weight: 800;
+}
+
+.introtext h5{
+    font-weight: 100;
+
+}
+
+.searcharea{
+    text-align: center;
+    margin-top: 100px;
     color: #FFF;
 }
 
+.search_input{
+    width: 320px;
+    height: 33px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    color: #FFF;
+    background: transparent;
+    border: 1px #FFF solid;
+    padding-left: 5px;
+}
+
+.search_input:focus{
+    outline: none;
+}
+
+.search_button{
+    margin: 20px;
+}
+
+.content{
+    margin-top: 50px;
+}
 
 .project_upload{
     width: 200px;
