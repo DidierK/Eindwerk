@@ -2,28 +2,23 @@
 
 @section('content')
 <div class="intro">
-
-
-
         <div class="introtext">
-
             <h1>Travel<span>Share</span></h1>
             <h5>The cheapest way to discover the world</h5>
-
-
         </div>
 
         <div class="searcharea">
 
 
-            <form class="form-inline" action="">
-                <label class="search_header">Wat zoekt u ?</label>
-            <div class="form-group">
 
-                <input class="search_input" type="text">
-                <button type="submit" class="btn btn-default search_button" >Zoeken</button>
-            </div>
-            </form>
+                {!! Form::open(array('url' => 'search', 'method' => 'POST', 'class' => 'form-inline')) !!}
+                    <label class="search_header">Wat zoekt u ?</label>
+                    <div class="form-group">
+                        <input name="keyword" class="search_input" type="text">
+                        <button type="submit" class="btn btn-default search_button" >Zoeken</button>
+                    </div>
+                {!! Form::close() !!}
+
         </div>
 
 </div>
@@ -55,9 +50,7 @@
         </div>
 
     </div>
-<div class="banner">
 
-</div>
 
 
 

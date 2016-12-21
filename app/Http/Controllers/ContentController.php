@@ -123,4 +123,40 @@ class ContentController extends Controller
         $articles = Content::orderBy('created_at', 'desc')->paginate(16);
         return view('home', compact('articles'));
     }
+
+    public function search() //get POST input from search bar
+    {
+        $keyword = Input::get('keyword');
+
+        if (empty($keyword)) { //no input? redirect to previous page with flash message
+            return Redirect::back()->with('noresult', 'Gelieve het zoekformulier niet leeg te laten.');
+        }
+
+        //got some input? redirect to search/{keyword}
+        return Redirect::to('search/'.$keyword);
+
+    }
+
+    public function results($keyword)
+    {
+        $results = DB::table('users')
+            ->select('content.user_name', 'content.naam', 'content.categorie', 'content.waarborg','content.prijs','content.file_name1','content.id')
+            ->where('content.naam', 'LIKE', '%' . $keyword . '%')
+            ->orWhere('content.prijs', 'LIKE', '%' . $keyword . '%')
+            ->orWhere('content.categorie', 'LIKE', '%' . $keyword . '%')
+            ->orWhere('content.file_name1', 'LIKE', '%' . $keyword . '%')
+            ->orWhere('content.id', 'LIKE', '%' . $keyword . '%')
+            ->join('content', 'users.id', '=', 'content.user_id')
+            ->orderBy('content.created_at', 'desc')
+            ->paginate(10);
+
+        //no results? redirect to previous page with flash message
+        if (count($results) === 0) {
+            return Redirect::back()->with('noresult', 'Er werden geen artikels gevonden voor deze zoekopdracht. Gelieve het opnieuw te proberen.');
+        }
+
+        //got results? return the results view with $results and $keyword variables
+        return view('search.results', compact('results', 'keyword'));
+
+    }
 }
