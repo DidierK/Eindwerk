@@ -59,8 +59,37 @@
 .project_upload{
     width: 200px;
     height: 150px;
+
+
 }
 
-.details{
-    margin-top:10px;
+.article_box{
+    background-color: #F7F7F7;
+    text-align: center;
+    width: 220px;
+    height: 280px;
+    margin-left: auto;
+    margin-right: auto;
+
 }
+
+.home_articles{
+
+    margin-top: 50px;
+
+}
+
+.article_name{
+     color: darkblue;
+    font-weight: 800;
+    padding-left:15px;
+    padding-top:10px;
+    text-align: left;
+ }
+
+.article_info{
+    color: darkblue;
+    padding: 10px;
+    text-align: left;
+}
+

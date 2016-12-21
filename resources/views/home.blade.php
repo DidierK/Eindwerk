@@ -34,17 +34,18 @@
             <div class="row">
                 @foreach ($articles as $article)
 
-                    <div class="col-md-4 ">
-                        <h4>{{ $article->naam }}</h4>
-                        <h5>Prijs per dag : {{ $article->prijs }} €</h5>
-                        <h5>{{ $article->user_name }}</h5>
+                    <div class="col-md-3 home_articles ">
+                    <div class="article_box">
 
-
+                        <p class="article_name">{{ $article->naam }}</p>
                         <div>
-                            <img class="project_upload" src="/uploads/articles/{{ $article->file_name1 }}">
-                        </div>
+                            <a href="/article/{{ $article->id }}"><img class="project_upload" src="/uploads/articles/{{ $article->file_name1 }}"></a>
 
-                        <a href="/article/{{ $article->id }}"><button class="btn btn-primary details">Details</button></a>
+                        </div>
+                        <div class="article_info">
+                            <p>{{ $article->prijs }} € / dag</p><p>{{ $article->user_name }}</p>
+                        </div>
+                    </div>
                     </div>
 
                 @endforeach
