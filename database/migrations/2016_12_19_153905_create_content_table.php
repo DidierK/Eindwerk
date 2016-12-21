@@ -22,8 +22,8 @@ class CreateContentTable extends Migration
             $table->integer('waarborg');
             $table->integer('prijs');
             $table->string('file_name1');
-            $table->string('file_name2');
-            $table->string('file_name3');
+            $table->string('file_name2')->nullable();
+            $table->string('file_name3')->nullable();
             $table->integer('user_id');
             $table->string('user_name');
             $table->timestamps();

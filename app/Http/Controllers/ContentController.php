@@ -45,7 +45,7 @@ class ContentController extends Controller
 
         }
 
-        if (Input::file('image2')->isValid()) {
+        /*if (Input::file('image2')->isValid()) {
             $image2 = Image::make(Input::file('image2'));
 
             //ratio = 4:3
@@ -63,9 +63,9 @@ class ContentController extends Controller
             //resize image so it fits the ratio, but doesnt stretch
             $image2->fit($image2->width(), intval($image2->width() / $ratio))->save($imagePath2);
 
-        }
+        }*/
 
-        if (Input::file('image3')->isValid()) {
+        /*if (Input::file('image3')->isValid()) {
             $image3 = Image::make(Input::file('image3'));
 
             //ratio = 4:3
@@ -83,7 +83,7 @@ class ContentController extends Controller
             //resize image so it fits the ratio, but doesnt stretch
             $image3->fit($image3->width(), intval($image3->width() / $ratio))->save($imagePath3);
 
-        }
+        }*/
 
             $input = $request;
 
@@ -105,8 +105,8 @@ class ContentController extends Controller
             $article->datum2 = $datum2;
 
             $article->file_name1 = $fileName1;
-            $article->file_name2 = $fileName2;
-            $article->file_name3 = $fileName3;
+            //$article->file_name2 = $fileName2;
+            //$article->file_name3 = $fileName3;
 
             $uid = Auth::user()->id;
             $article->user_id = $uid;
