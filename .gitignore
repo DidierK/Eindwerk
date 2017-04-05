@@ -1,2 +1,4 @@
 .env
 .vagrant/
+/vendor
+node_modules/
