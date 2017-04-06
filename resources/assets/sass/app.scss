@@ -9,6 +9,13 @@
 
 /** STYLES **/
 
+// Base
+@import "base/base";
+@import "base/typography";
+
+// Components
+@import "components/buttons";
+
 // Layout
 @import "layout/header";
 

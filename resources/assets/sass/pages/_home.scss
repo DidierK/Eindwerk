@@ -105,7 +105,7 @@ footer{
     width: 100%;
     height: 100px;
     background-color: #FFF;
-    margin-top: 100px;
+   
 }
 
 .contact{
@@ -121,6 +121,7 @@ footer{
     background-image: url("../images/TravelShare_logo.png");
     background-size: 200px 88.9px;
 }
-ul{
+ul{ 
+    margin: 0;
     list-style: none;
 }
