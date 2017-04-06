@@ -1,135 +1,21 @@
+/** CONFIG **/
+
 // Variables
-@import "variables";
+@import "config/variables";
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 
-.intro{
+/** STYLES **/
 
-    background-image: url("../images/background2.png");
+// Layout
+@import "layout/header";
 
-    background-size: cover;
-
-    margin-top: -50px;
-    height: 650px;
-}
-
-.introtext{
-    text-align: center;
-    padding-top: 200px;
-    color: #FFF;
-    margin: 0;
-    font-family: Montserrat;
-}
-
-.introtext span{
-    font-weight: 800;
-}
-
-.introtext h5{
-    font-weight: 100;
-
-}
-
-.searcharea{
-    text-align: center;
-    margin-top: 100px;
-    color: #FFF;
-}
-
-.search_input{
-    width: 320px;
-    height: 33px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 5px;
-    color: #FFF;
-    background: transparent;
-    border: 1px #FFF solid;
-    padding-left: 5px;
-}
-
-.search_input:focus{
-    outline: none;
-}
-
-.search_button{
-    margin: 20px;
-}
-
-.search_header{
-    font-size:20px;
-    margin-right: 10px;
-}
-
-.content{
-    margin-top: 50px;
-}
-
-.project_upload{
-    width: 200px;
-    height: 150px;
+// Pages
+@import "pages/home";
+@import "pages/login";
 
 
-}
-
-.article_box{
-    background-color: #F7F7F7;
-    text-align: center;
-    width: 220px;
-    height: 280px;
-    margin-left: auto;
-    margin-right: auto;
-    border-top: solid lightblue 1px;
-    border-bottom: solid lightblue 1px;
-
-}
-
-.home_articles{
-
-    margin-top: 50px;
-
-}
-
-.article_name{
-     color: darkblue;
-    font-weight: 800;
-    padding-left:15px;
-    padding-top:10px;
-    text-align: left;
- }
-
-.article_info{
-    color: darkblue;
-    padding: 10px;
-    text-align: left;
-
-}
-
-
-footer{
-    width: 100%;
-    height: 100px;
-    background-color: #FFF;
-    margin-top: 100px;
-}
-
-.contact{
-    float: right;
-    margin: 40px;
-}
-
-.footer_brand{
-    display: block;
-    width: 200px;
-    height: 90px;
-    float: left;
-    background-image: url("../images/TravelShare_logo.png");
-    background-size: 200px 88.9px;
-}
-ul{
-    list-style: none;
-}
 
 

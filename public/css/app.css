@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/** CONFIG **/
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -7685,6 +7686,11 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+
+/** STYLES **/
+.navbar {
+  margin-bottom: 0;
 }
 
 .intro {
