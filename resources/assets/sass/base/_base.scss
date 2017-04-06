@@ -2,11 +2,9 @@ html, body {
 	height: 100%;
 }
 
-.flexbox {
+.flexbox--sb {
 	display: flex;
-}
-
-.space-between {
+	align-items: baseline;
 	justify-content: space-between;
 }
 

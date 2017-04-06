@@ -1,11 +1,8 @@
-            <nav class="navbar navbar-default">
-                <div class="container">
-                    <div class="navbar-header">
-                        <!-- Branding Image -->
-                        <a class="navbar-brand" href="{{ url('/') }}">
-                            TravelShare
-                        </a>
-                    </div>
+            <nav class="primary-nav">
+                <div class="container flexbox--sb">     
+                    <a class="branding" href="{{ url('/') }}">
+                        TravelShare
+                    </a>   
                     <div class="search-container">
                       <div class="inner-search-container">
                         {!! Form::open(['url' => 'foo/bar']) !!}
@@ -16,7 +13,7 @@
                 </div>
 
                 <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav-d list-inline">
                     <!-- Authentication Links -->
                     <li><a href="{{ url('/register') }}">Categorie</a></li>
                     <li><a href="{{ url('/login') }}">Aanmelden</a></li>
