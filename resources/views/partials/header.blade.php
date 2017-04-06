@@ -1,5 +1,5 @@
-            <nav class="primary-nav">
-                <div class="container flexbox--sb">     
+            <header class="main-header">
+                <div class="container">     
                     <a class="branding" href="{{ url('/') }}">
                         TravelShare
                     </a>   
@@ -13,10 +13,10 @@
                 </div>
 
                 <!-- Right Side Of Navbar -->
-                <ul class="nav-d list-inline">
+                <ul class="primary-nav list-inline">
                     <!-- Authentication Links -->
                     <li><a href="{{ url('/register') }}">Categorie</a></li>
                     <li><a href="{{ url('/login') }}">Aanmelden</a></li>
                 </ul>
             </div>
-        </nav>
+        </header>
