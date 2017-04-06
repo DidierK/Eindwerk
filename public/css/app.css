@@ -7726,7 +7726,25 @@ html, body {
 }
 
 .navbar {
+  border-radius: 0;
   margin-bottom: 0;
+}
+
+.navbar-default {
+  background-color: #3F6780;
+  border: 0;
+}
+
+.navbar-default .navbar-brand {
+  color: #FFF;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #FFF;
+}
+
+footer {
+  background-color: #3f6780;
 }
 
 .intro {
@@ -7824,7 +7842,6 @@ html, body {
 footer {
   width: 100%;
   height: 100px;
-  background-color: #FFF;
 }
 
 .contact {

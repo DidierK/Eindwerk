@@ -1,3 +1,17 @@
 .navbar {
+	border-radius: 0;
 	margin-bottom: 0;
+}
+
+.navbar-default {
+	background-color: #3F6780;
+	border: 0;
+}
+
+.navbar-default .navbar-brand {
+    color: #FFF;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #FFF;
 }
