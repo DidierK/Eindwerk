@@ -2,6 +2,14 @@ html, body {
 	height: 100%;
 }
 
+.flexbox {
+	display: flex;
+}
+
+.space-between {
+	justify-content: space-between;
+}
+
 .pt-1 {
 	padding-top: 16px;
 }

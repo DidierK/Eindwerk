@@ -9,9 +9,42 @@
 }
 
 .navbar-default .navbar-brand {
-    color: #FFF;
+	color: #FFF;
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: #FFF;
+	color: #FFF;
 }
+
+.search-container {
+	float: left;
+	margin-top: 7px;
+	width: 320px;
+}
+
+.inner-search-container {
+	border: 1px solid #FFF;
+	border-radius: 7.5px;
+	color: #FFF;
+	padding: 5px 0px 5px 10px;
+
+	input {
+		width: 90%;
+	}
+
+	input, button {
+		background-color: transparent;
+		border: 0;
+	}
+
+	button {
+		border-left: 1px solid #FFF;
+		float: right;
+	}
+
+	input::placeholder {
+		color: #FFF;
+	}
+
+}
+
