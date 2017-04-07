@@ -7726,12 +7726,21 @@ html, body {
   border: 0;
   border-radius: 7.5px;
   font-weight: 600;
-  padding: 5px 10px;
+  padding: 9px 10px;
 }
 
 .button--white {
   background-color: #FFF;
   color: #33bfea;
+}
+
+.button--blue {
+  background-color: #3097D1;
+  color: #FFF;
+}
+
+.button--full-width {
+  width: 100%;
 }
 
 input:focus {
@@ -7793,15 +7802,15 @@ input:focus {
   margin-top: 20px;
 }
 
-.list-inline > li {
+.main-header .branding,
+.main-header li > a {
+  color: #FFF;
+}
+
+.main-header .list-inline > li {
   display: inline-block;
   padding-left: 32px;
   padding-right: 0;
-}
-
-.branding,
-li > a {
-  color: #FFF;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -7851,10 +7860,39 @@ footer {
   background-color: #3f6780;
 }
 
-.intro {
-  background-image: url("../images/background2.png");
-  background-size: cover;
-  height: 650px;
+.hero {
+  position: relative;
+}
+
+.hero-content {
+  position: absolute;
+  top: 75px;
+  text-align: center;
+  width: 100%;
+}
+
+.hero-title {
+  color: #4C4C4C;
+  margin: 0 auto;
+  margin-bottom: 36px;
+  max-width: 640px;
+}
+
+.search-form {
+  margin: 0 auto;
+  max-width: 640px;
+}
+
+.search-form input[type=text] {
+  padding: 12px 15px;
+  border: none;
+  border: 1px #dddddd solid;
+  outline: none;
+  width: 100%;
+  color: #a0a0a0;
+  font-weight: 300;
+  height: 46px;
+  border-radius: 0;
 }
 
 .introtext {
@@ -7966,21 +8004,56 @@ ul {
   list-style: none;
 }
 
-.hero {
-  background-image: url("../images/background2.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 588px;
+.logged-out {
+  background-color: #FFF;
 }
 
-.login-portal {
+.logged-out .header {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.logged-out .auth {
   margin: 0 auto;
+  max-width: 420px;
 }
 
-@media screen and (min-width: 768px) {
-  .login-portal {
-    width: 640px;
-  }
+.logged-out .auth p > a,
+.logged-out .back a {
+  border-bottom: 1px solid #3097D1;
+}
+
+.logged-out .auth p > a:hover,
+.logged-out .back a:hover {
+  text-decoration: none;
+  border-bottom: 0;
+}
+
+.logged-out .footer {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.logged-out .footer ul li a {
+  color: #636b6f;
+  font-size: 12px;
+}
+
+.logged-out .logo {
+  width: 100%;
+  max-width: 420px;
+}
+
+.logged-out .button--facebook {
+  display: block;
+  margin: 0 auto;
+  margin-top: 32px;
+}
+
+.logged-out .back {
+  display: block;
+  margin-top: 16px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -1,14 +1,51 @@
-.hero {
-	background-image: url("../images/background2.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 588px;
-}
+.logged-out {
+	background-color: #FFF;
 
-.login-portal {
-	margin: 0 auto;
-	
-	@media screen and (min-width: 768px) {
-		width: 640px;
+	.header {
+		margin-top: 48px;
+		text-align: center;
+	}
+
+	.auth {
+		margin: 0 auto;
+		max-width: 420px;
+	}
+
+	.auth p > a,
+	.back a {
+		border-bottom: 1px solid #3097D1;
+	}
+
+	.auth p > a:hover,
+	.back a:hover {
+		text-decoration: none;
+		border-bottom: 0;
+	}
+
+	.footer {
+		margin-top: 80px;
+		text-align: center;
+
+		ul li a {
+			color: #636b6f;
+			font-size: 12px;
+		}
+	}
+
+	.logo {
+		width: 100%;
+		max-width: 420px;
+	}
+
+	.button--facebook {
+		display: block;
+		margin: 0 auto;
+		margin-top: 32px;
+	}
+
+	.back {
+		display: block;
+		margin-top: 16px;
+		text-align: center;
 	}
 }
