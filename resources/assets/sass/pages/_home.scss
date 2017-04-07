@@ -1,40 +1,9 @@
-.hero {
-    position: relative;
-}
+.intro{
 
-.hero-content {
-    position: absolute;
-    top: 75px;
-    text-align: center;
-    width: 100%;
-}
+    background-image: url("../images/background2.png");
 
-.hero-title {
-    color: #4C4C4C;
-    margin: 0 auto;
-    margin-bottom: 36px;
-    max-width: 640px;
-}
-
-.search-form {
-    margin: 0 auto;
-    max-width: 640px;
-}
-
-.search-form input[type=text] {
-    padding: 12px 15px;
-    border: none;
-    border: 1px #dddddd solid;
-    outline: none;
-    width: 100%;
-    color: #a0a0a0;
-    font-weight: 300;
-    height: 46px;
-    border-radius: 0;
-}
-
-.search-form input[type=text]::placeholder {
-    
+    background-size: cover;
+    height: 650px;
 }
 
 .introtext{

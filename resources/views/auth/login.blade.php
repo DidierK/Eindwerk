@@ -23,7 +23,7 @@
 	<body class="logged-out container">
 		<div id="app">
 			<div class="header">
-			<a href="#">
+			<a href="/">
 				<img class="logo" src="{{ URL::asset('images/TravelShare_logo.png') }}">
 				</a>
 			</div>
@@ -32,7 +32,7 @@
 				<p>Voor meer info kan u terecht op <a href="#">onze gebruikersvoorwaarden</a>.</p>
 				<button class="button button--blue button--facebook">Aanmelden met Facebook</button>
 				<div class="back">
-				<a href="#">Ga terug naar de website</a>
+				<a href="/">Ga terug naar de website</a>
 				</div>
 			</div>
 			<div class="footer">
