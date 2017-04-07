@@ -16,7 +16,11 @@
                 <ul class="primary-nav list-inline">
                     <!-- Authentication Links -->
                     <li><a href="{{ url('/register') }}">Categorie</a></li>
+                    @if (Auth::check())
+                    <li><a href="{{ url('/logout') }}">Afmelden</a></li>
+                    @else
                     <li><a href="{{ url('/login') }}">Aanmelden</a></li>
+                    @endif
                 </ul>
             </div>
         </header>
