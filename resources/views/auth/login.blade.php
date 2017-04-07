@@ -28,7 +28,7 @@
 				</a>
 			</div>
 			<div class="auth">
-				<p>Omdat wij de betrouwbaarheid en veiligheid van onze website willen garanderen laten we enkel toe in te loggen via Facebook. Privacy instellingen kunnen later nog worden aangepast</p>
+				<p>Omdat wij de betrouwbaarheid en veiligheid van onze website willen garanderen laten we enkel toe in te loggen via Facebook. Privacy instellingen kunnen later nog worden aangepast.</p>
 				<p>Voor meer info kan u terecht op <a href="#">onze gebruikersvoorwaarden</a>.</p>
 				<button class="button button--blue button--facebook">Aanmelden met Facebook</button>
 				<div class="back">
