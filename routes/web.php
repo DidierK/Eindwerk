@@ -26,3 +26,7 @@ Route::get('/', 'ContentController@show');
 //search
 Route::get('search/{keyword}', 'ContentController@results');
 Route::post('search', 'ContentController@search');
+
+// Login
+Route::get('auth/{provider}', 'Auth\LoginController@redirect');
+Route::get('auth/{provider}/callback', 'Auth\LoginController@callback');

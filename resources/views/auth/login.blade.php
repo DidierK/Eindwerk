@@ -23,16 +23,18 @@
 	<body class="logged-out container">
 		<div id="app">
 			<div class="header">
-			<a href="/">
-				<img class="logo" src="{{ URL::asset('images/TravelShare_logo.png') }}">
+				<a href="/">
+					<img class="logo" src="{{ URL::asset('images/TravelShare_logo.png') }}">
 				</a>
 			</div>
 			<div class="auth">
-				<p>Omdat wij de betrouwbaarheid en veiligheid van onze website willen garanderen laten we enkel toe in te loggen via Facebook. Privacy instellingen kunnen later nog worden aangepast.</p>
+				<p>Omdat wij de betrouwbaarheid en veiligheid van onze website willen garanderen laten we enkel toe aan te melden via Facebook. Persoonlijke gegevens kunnen in de instellingen van je profiel worden aangepast.</p>
 				<p>Voor meer info kan u terecht op <a href="#">onze gebruikersvoorwaarden</a>.</p>
-				<button class="button button--blue button--facebook">Aanmelden met Facebook</button>
+				<form action="auth/facebook">
+					<button type="submit" class="button button--blue button--facebook">Doorgaan met Facebook</button>
+				</form>
 				<div class="back">
-				<a href="/">Ga terug naar de website</a>
+					<a href="/">Ga terug naar de startpagina.</a>
 				</div>
 			</div>
 			<div class="footer">
