@@ -13,7 +13,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        echo "AY!";
+        return view('items.index');
     }
 
     /**
