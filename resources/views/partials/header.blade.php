@@ -17,7 +17,7 @@
                     <!-- Authentication Links -->
                     <li><a href="{{ url('/register') }}">Categorie</a></li>
                     @if (Auth::check())
-                    <li><a href="{{ url('/logout') }}">Afmelden</a></li>
+                    <li class="avatar"><a href="{{ url('/logout') }}"><img class="pp" src="{{ Auth::user()->avatar }}"></a></li>
                     @else
                     <li><a href="{{ url('/login') }}">Aanmelden</a></li>
                     @endif

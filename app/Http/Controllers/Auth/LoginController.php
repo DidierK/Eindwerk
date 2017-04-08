@@ -61,8 +61,8 @@ class LoginController extends Controller
    }
 
    public function findOrCreateUser($user, $provider) {
-    // Check to see if a value in provider_id column matches user_id
-    // If so return all credentials for this user and return this (stops function)
+    // Check if the provider's id already exist in our DB
+    // If so it means this social media account is already in the DB
     if ($authUser = User::where('provider_id', $user->id)->first()) {
       return $authUser;
   }
@@ -73,7 +73,7 @@ class LoginController extends Controller
     'email'    => $user->email,
     'provider' => $provider,
     'provider_id' => $user->id,
-    'avatar' => $user->avatar
+    'avatar' => $user->avatar . '&width=32&height=32' // Our thumbnail is 32x32px
     ]);
 }
 }

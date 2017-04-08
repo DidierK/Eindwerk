@@ -7752,7 +7752,7 @@ input:focus {
   border: 0;
   border-radius: 0;
   margin-bottom: 0;
-  min-height: 64px;
+  min-height: 48px;
 }
 
 .main-header a:hover {
@@ -7781,8 +7781,12 @@ input:focus {
   }
 }
 
+.main-header .primary-nav .pp {
+  border-radius: 50%;
+}
+
 .main-header .search-container {
-  margin-top: 14px;
+  margin-top: 6px;
   width: 100%;
 }
 
@@ -7794,12 +7798,16 @@ input:focus {
 
 .main-header .branding {
   font-size: 18px;
-  margin-top: 18px;
+  margin-top: 11px;
   margin-right: 32px;
 }
 
 .main-header .primary-nav li {
-  margin-top: 20px;
+  margin-top: 13px;
+}
+
+.main-header .primary-nav .avatar {
+  margin-top: 0px;
 }
 
 .main-header .branding,
