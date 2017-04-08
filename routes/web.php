@@ -33,6 +33,8 @@ Route::get('/logout', function() { Auth::logout(); return Redirect::to('/'); });
 Route::get('auth/{provider}', 'Auth\LoginController@redirect');
 Route::get('auth/{provider}/callback', 'Auth\LoginController@callback');
 
-// Resource
+// User
 Route::resource('user', 'UserController');
 Route::resource('user.items', 'ItemController');
+Route::resource('user.requests', 'RequestController');
+Route::resource('user.transactions', 'TransactionController');
