@@ -32,3 +32,9 @@ Route::get('/login', 'Auth\LoginController@index');
 Route::get('/logout', function() { Auth::logout(); return Redirect::to('/'); });
 Route::get('auth/{provider}', 'Auth\LoginController@redirect');
 Route::get('auth/{provider}/callback', 'Auth\LoginController@callback');
+
+// Resource controllers
+// Note we setup a nest controller so that we can easily show items per user
+// You can also do it without nesting but this makes way more sense if you want to show items per user
+Route::resource('user', 'UserController');
+Route::resource('user.items', 'ItemController');
