@@ -8082,7 +8082,7 @@ ul {
   width: 100%;
 }
 
-.user-nav ul.half-width-items .active a {
+.user-nav ul.half-width-items .active {
   color: #18B4DC;
 }
 
