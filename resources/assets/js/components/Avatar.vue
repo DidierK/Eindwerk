@@ -14,6 +14,7 @@
             }
         },
         props: ['avatar']
+        
 
     }
 </script>

@@ -1,0 +1,25 @@
+.po {
+	.popover-inner {
+		background-color: #FFF;
+	}
+
+	ul {
+		padding: 0;
+		li {
+			a {
+				border-bottom: 1px solid #DDDDDD;
+				color: #636b6f;
+				display: block;
+				padding: 16px;
+			}
+
+			a:hover {
+				background-color: #F9F9F9;
+			}
+		}
+	}
+}
+
+.popover--userActions {
+	z-index: 1;
+}

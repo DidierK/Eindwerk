@@ -7747,6 +7747,29 @@ input:focus {
   outline: none;
 }
 
+.po .popover-inner {
+  background-color: #FFF;
+}
+
+.po ul {
+  padding: 0;
+}
+
+.po ul li a {
+  border-bottom: 1px solid #DDDDDD;
+  color: #636b6f;
+  display: block;
+  padding: 16px;
+}
+
+.po ul li a:hover {
+  background-color: #F9F9F9;
+}
+
+.popover--userActions {
+  z-index: 1;
+}
+
 .main-header {
   background-color: #3F6780;
   border: 0;
@@ -7756,7 +7779,6 @@ input:focus {
 }
 
 .main-header a:hover {
-  color: #DCF1FD;
   text-decoration: none;
 }
 
@@ -7817,8 +7839,9 @@ input:focus {
 
 .main-header .primary-nav .list-inline > li {
   display: inline-block;
-  padding-left: 32px;
+  margin-left: 32px;
   padding-right: 0;
+  padding-left: 0;
 }
 
 .main-header .popover--userActions {

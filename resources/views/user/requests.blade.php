@@ -3,7 +3,7 @@
 @section('content')
 <div class="profile-hero">
 	<div class="container">
-		<h1 class="title">Transacties</h1>
+		<h1 class="title">Verzoeken</h1>
 		<!-- Put a content tag here -->
 	</div>
 </div>
