@@ -15,7 +15,7 @@
                     <ul class="list-inline">
                         <li><a href="{{ url('/register') }}">Categorie</a></li>
                         @if (Auth::check())
-                        <li class="avatar"><a href="{{ url('/logout') }}"><img class="pp" src="{{ Auth::user()->avatar }}"></a></li>
+                        <avatar avatar="{{ Auth::user()->avatar }}"></avatar>
                         @else
                         <li><a href="{{ url('/login') }}">Aanmelden</a></li>
                         @endif

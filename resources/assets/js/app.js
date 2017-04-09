@@ -13,6 +13,7 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+Vue.component('avatar', require('./components/Avatar.vue'));
 Vue.component('profile-nav', require('./components/ProfileNav.vue'));
 
 const app = new Vue({
