@@ -7771,6 +7771,7 @@ input:focus {
 
 .main-header .primary-nav {
   float: right;
+  position: relative;
 }
 
 @media screen and (max-width: 768px) {
@@ -7810,15 +7811,20 @@ input:focus {
   margin-top: 0px;
 }
 
-.main-header .branding,
-.main-header li > a {
+.main-header .primary-nav li > a {
   color: #FFF;
 }
 
-.main-header .list-inline > li {
+.main-header .primary-nav .list-inline > li {
   display: inline-block;
   padding-left: 32px;
   padding-right: 0;
+}
+
+.main-header .popover--userActions {
+  background-color: #FFF;
+  position: absolute;
+  width: 100%;
 }
 
 .navbar-default .navbar-nav > li > a {

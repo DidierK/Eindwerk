@@ -21,6 +21,7 @@
 
 	.primary-nav {
 		float: right;
+		position: relative;
 
 		@media screen and (max-width: 768px) {
 			position: absolute;
@@ -56,19 +57,24 @@
 		.avatar {
 			margin-top: 0px;
 
+		}
+		
+		li > a {
+			color: #FFF;
+		}
+
+		.list-inline > li {
+			display: inline-block;
+			padding-left: 32px;
+			padding-right: 0;
+		}
 	}
-}
 
-.branding, 
-li > a {
-	color: #FFF;
-}
-
-.list-inline > li {
-	display: inline-block;
-	padding-left: 32px;
-	padding-right: 0;
-}
+	.popover--userActions {
+		background-color: #FFF;
+		position: absolute;
+		width: 100%;
+	}
 
 }
 

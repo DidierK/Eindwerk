@@ -10,6 +10,7 @@
         mounted() {
             // TODO MAKE OUR LINKS LINK TO A JS FUNCTION WHICH DYNAMICALLY LOADS IN A VIEW
             // TODO: Check which url the loaded component is on and give that url active class
+            // TODO MAKE THIS FUNCTIONALITY INTO A GENERAL TAB.VUE AND LET ALL OUR MENUS INHERIT FROM IT
         },
         methods: {
             activate: function(event){
