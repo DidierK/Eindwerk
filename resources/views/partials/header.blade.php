@@ -26,11 +26,11 @@
             <div class="popover--userActions">
                 <div class="popover-inner">
                     <ul>
-                        <li><a href="#">Profiel</a></li>
-                        <li><a href="#">Verzoeken</a></li>
-                        <li><a href="#">Transacties</a></li>
-                        <li><a href="#">Instellingen</a></li>
-                        <li><a href="#">Afmelden</a></li>
+                        <li><a href="{{ url('/user/' . Auth::id() . '/items') }}">Profiel</a></li>
+                        <li><a href="{{ url('/user/' . Auth::id() . '/requests') }}">Verzoeken</a></li>
+                        <li><a href="{{ url('/user/' . Auth::id() . '/transactions') }}">Transacties</a></li>
+                        <li><a href="{{ url('/user/' . Auth::id() . '/settings') }}">Instellingen</a></li>
+                        <li><a href="{{ url('/logout') }}">Afmelden</a></li>
                     </ul>       
                 </div>
             </div>
