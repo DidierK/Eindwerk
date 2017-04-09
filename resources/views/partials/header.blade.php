@@ -15,7 +15,7 @@
                     <ul class="list-inline">
                         <li><a href="{{ url('/register') }}">Categorie</a></li>
                         @if (Auth::check())
-                        <avatar avatar="{{ Auth::user()->avatar }}"></avatar>
+                        <avatar avatar="{{ Auth::user()->avatar }}" v-on:open="showUserActionPopover = true"></avatar>
                         @else
                         <li><a href="{{ url('/login') }}">Aanmelden</a></li>
                         @endif
@@ -23,7 +23,7 @@
                 </div>
             </div>
             @if (Auth::check())
-            <div class="popover--userActions">
+            <div v-show="showUserActionPopover" class="popover--userActions">
                 <div class="popover-inner">
                     <ul>
                         <li><a href="{{ url('/user/' . Auth::id() . '/items') }}">Profiel</a></li>

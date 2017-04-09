@@ -17,5 +17,8 @@ Vue.component('avatar', require('./components/Avatar.vue'));
 Vue.component('profile-nav', require('./components/ProfileNav.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+    	showUserActionPopover: false
+    }
 });
