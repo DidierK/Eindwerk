@@ -8,12 +8,9 @@
 	</div>
 </div>
 <div class="user-nav">
-<div class="container">
-		<ul class="nav-items-container transaction-nav list-inline half-width-items">
-			<li class="active"><a href="#">Inkomend</a></li>
-			<li><a class="" href="#">Uitgaand</a></li>
-		</ul>
-		</div>
+	<div class="container">
+		<requests-nav></requests-nav>
+	</div>
 </div>
 <div class="content">
 </div>

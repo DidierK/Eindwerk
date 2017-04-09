@@ -15,6 +15,8 @@
 
  Vue.component('avatar', require('./components/Avatar.vue'));
  Vue.component('profile-nav', require('./components/ProfileNav.vue'));
+  Vue.component('transactions-nav', require('./components/TransactionsNav.vue'));
+   Vue.component('requests-nav', require('./components/RequestsNav.vue'));
 
  const app = new Vue({
  	el: '#app',

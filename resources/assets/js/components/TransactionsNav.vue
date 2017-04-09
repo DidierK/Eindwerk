@@ -1,7 +1,7 @@
 <template>
     <ul class="nav-items-container transaction-nav list-inline half-width-items">
-        <li><a v-on:click="activate" class="active" href="#">Mijn spullen</a></li>
-        <li><a v-on:click="activate" href="#">Instellingen</a></li>
+        <li><a v-on:click="activate" class="active" href="#">Lopend</a></li>
+        <li><a v-on:click="activate" href="#">Geschiedenis</a></li>
     </ul>
 </template>
 
