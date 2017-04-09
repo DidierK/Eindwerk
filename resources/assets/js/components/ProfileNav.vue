@@ -1,7 +1,7 @@
 <template>
     <ul class="nav-items-container transaction-nav list-inline half-width-items">
-        <li v-on:click="activate"><a class="active" href="#">Mijn spullen</a></li>
-        <li v-on:click="activate"><a href="#">Instellingen</a></li>
+        <li><a v-on:click="activate" class="active" href="#">Mijn spullen</a></li>
+        <li><a v-on:click="activate" href="#">Instellingen</a></li>
     </ul>
 </template>
 
@@ -14,6 +14,10 @@
         },
         methods: {
             activate: function(event){
+
+                // Prevent the link to execute, rather activate some content
+                event.preventDefault();
+
                 $(".user-nav a").removeClass("active");
                 $(event.target).addClass("active");
             }
