@@ -23,6 +23,6 @@
                 </div>
             </div>
             @if (Auth::check())
-            <useractions-popover :show="showUserActionsPopover"></useractions-popover>
+            <useractions-popover :user-id="{{ Auth::id() }}" :show="showUserActionsPopover"></useractions-popover>
             @endif
         </header>

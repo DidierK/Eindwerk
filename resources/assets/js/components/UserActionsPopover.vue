@@ -2,10 +2,10 @@
     <div v-show="showPopover" class="po popover--userActions" v-cloak>
         <div class="popover-inner">
             <ul>
-                <li><a href="#">Profiel</a></li>
-                <li><a href="#">Verzoeken</a></li>
-                <li><a href="#">Transacties</a></li>
-                <li><a href="#">Afmelden</a></li>
+                <li><a :href="'/user/' + userId + '/items'">Profiel</a></li>
+                <li><a :href="'/user/' + userId + '/requests'">Verzoeken</a></li>
+                <li><a :href="'/user/' + userId + '/transactions'">Transacties</a></li>
+                <li><a href="/logout">Afmelden</a></li>
             </ul>       
         </div>
         <div class="popover-arrow"></div>
@@ -19,7 +19,7 @@
                 showPopover: false
             }
         },
-        props: ['show'],
+        props: ['show', 'userId'],
         mounted() {
             var that = this;
             $(window).resize(function() {
