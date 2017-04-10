@@ -12,7 +12,7 @@
             // TODO: Check which url the loaded component is on and give that url active class
             // TODO MAKE THIS FUNCTIONALITY INTO A GENERAL TAB.VUE AND LET ALL OUR MENUS INHERIT FROM IT
             // TODO CREATE A FUNCTION IN THE MOUNTED METHOD THAT ALWAYS GIVES THE FIRST LIST ITEM THE ACTIVE CLASS
-            // INSTEAD OF ADDING IT MANUALLY LIKE THIS, THIS WAY ITS EASIER TO MAKE THIS IN GENERALa
+            // INSTEAD OF ADDING IT MANUALLY LIKE THIS, THIS WAY ITS EASIER TO MAKE THIS IN GENERAL
         },
         methods: {
             activate: function(event){

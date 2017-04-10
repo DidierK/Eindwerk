@@ -4,7 +4,7 @@
 <div class="profile-hero">
 	<div class="container">
 		<h1 class="title">Profiel</h1>
-		<!-- Put a content tag here -->
+		<!-- TODO: Show content based on which link is clicked! -->
 	</div>
 </div>
 <div class="user-nav">

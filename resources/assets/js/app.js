@@ -13,25 +13,26 @@
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
- Vue.component('avatar', require('./components/Avatar.vue'));
+ Vue.component('tab-nav', require('./components/TabNav.vue'));
  Vue.component('profile-nav', require('./components/ProfileNav.vue'));
-  Vue.component('transactions-nav', require('./components/TransactionsNav.vue'));
-   Vue.component('requests-nav', require('./components/RequestsNav.vue'));
+ Vue.component('transactions-nav', require('./components/TransactionsNav.vue'));
+ Vue.component('requests-nav', require('./components/RequestsNav.vue'));
+ Vue.component('useractions-popover', require('./components/UserActionsPopover.vue'));
 
  const app = new Vue({
  	el: '#app',
  	data: {
- 		showUserActionPopover: false
+ 		showUserActionsPopover: false
  	},
  	mounted() {
 
  	},
  	methods: {
  		openPopoverUserActions: function(event) {
- 			if(!this.showUserActionPopover) {
- 				this.showUserActionPopover = true;
+ 			if(!this.showUserActionsPopover) {
+ 				this.showUserActionsPopover = true;
  			} else {
- 				this.showUserActionPopover = false;
+ 				this.showUserActionsPopover = false;
  			}
  		},
  	}

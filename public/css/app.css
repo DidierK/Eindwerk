@@ -7714,6 +7714,10 @@ html, body {
   padding-bottom: 32px;
 }
 
+[v-cloak] {
+  display: none;
+}
+
 .text--centered {
   text-align: center;
 }
@@ -7747,8 +7751,13 @@ input:focus {
   outline: none;
 }
 
+.po {
+  padding: 16px;
+}
+
 .po .popover-inner {
   background-color: #FFF;
+  border: 1px solid #DDD;
 }
 
 .po ul {
@@ -7766,8 +7775,28 @@ input:focus {
   background-color: #F9F9F9;
 }
 
-.popover--userActions {
-  z-index: 1;
+.po ul li:last-child a {
+  border: 0;
+}
+
+.po .popover-arrow {
+  clip: rect(0 18px 14px -4px);
+  position: absolute;
+  top: 2px;
+}
+
+.po .popover-arrow::after {
+  -webkit-transform: rotate(45deg) translate(6px, 6px);
+  transform: rotate(45deg) translate(6px, 6px);
+  box-shadow: -1px -1px 1px -1px rgba(0, 0, 0, 0.44);
+}
+
+.po .popover-arrow:after {
+  content: '';
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: #DDD;
 }
 
 .main-header {
@@ -7845,9 +7874,15 @@ input:focus {
 }
 
 .main-header .popover--userActions {
-  background-color: #FFF;
   position: absolute;
   width: 100%;
+  z-index: 1;
+}
+
+@media screen and (min-width: 640px) {
+  .main-header .popover--userActions {
+    max-width: 192px;
+  }
 }
 
 .navbar-default .navbar-nav > li > a {
