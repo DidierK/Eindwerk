@@ -1,7 +1,7 @@
 <template>
     <ul class="nav-items-container transaction-nav list-inline half-width-items">
-        <li><a v-on:click="activate" class="active" href="#">Lopend</a></li>
-        <li><a v-on:click="activate" href="#">Geschiedenis</a></li>
+        <li><a v-on:click="activate" class="ongoing-link active" href="#">Lopend</a></li>
+        <li><a v-on:click="activate" class="history-link" href="#">Geschiedenis</a></li>
     </ul>
 </template>
 
@@ -22,6 +22,8 @@
 
                 $(".user-nav a").removeClass("active");
                 $(event.target).addClass("active");
+
+                this.$emit('load', $(event.target));
             }
         }
     }

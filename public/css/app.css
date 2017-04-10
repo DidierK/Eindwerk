@@ -7718,6 +7718,10 @@ html, body {
   display: none;
 }
 
+.main {
+  min-height: calc(100vh - 175px);
+}
+
 .text--centered {
   text-align: center;
 }
@@ -7930,6 +7934,7 @@ input:focus {
 
 footer {
   background-color: #3f6780;
+  min-height: 150px;
 }
 
 .intro {
@@ -8159,10 +8164,6 @@ ul {
   position: absolute;
   bottom: -1px;
   left: 0;
-}
-
-.content {
-  height: 250px;
 }
 
 /*# sourceMappingURL=app.css.map */

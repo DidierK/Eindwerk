@@ -22,7 +22,13 @@
  const app = new Vue({
  	el: '#app',
  	data: {
- 		showUserActionsPopover: false
+ 		showUserActionsPopover: false,
+ 		showMyItemsTab: true, // Initial value true because it's the first tab we show on this page
+ 		showSettingsTab: false,
+ 		showIncomingRequestsTab: true,
+ 		showOutgoingRequestsTab: false,
+ 		showOnGoingTransactionsTab: true,
+ 		showTransactionsHistoryTab: false
  	},
  	mounted() {
 
@@ -35,5 +41,27 @@
  				this.showUserActionsPopover = false;
  			}
  		},
+ 		showUserTab: function(el) {
+ 			// TODO: Deze funtie efficienter maken door te werken via el en misschien ook de URL.
+ 			if(el.hasClass('my-items-link')) {
+ 				this.showMyItemsTab = true;
+ 				this.showSettingsTab = false;
+ 			} else if(el.hasClass('settings-link')) {
+ 				this.showSettingsTab = true;
+ 				this.showMyItemsTab = false;
+ 			} else if(el.hasClass('incoming-link')) {
+ 				this.showIncomingRequestsTab = true;
+ 				this.showOutgoingRequestsTab = false;
+ 			} else if(el.hasClass('outgoing-link')) {
+ 				this.showIncomingRequestsTab = false;
+ 				this.showOutgoingRequestsTab = true;
+ 			} else if(el.hasClass('ongoing-link')) {
+ 				this.showOnGoingTransactionsTab = true;
+ 				this.showTransactionsHistoryTab = false;
+ 			} else if(el.hasClass('history-link')) {
+ 				this.showOnGoingTransactionsTab = false;
+ 				this.showTransactionsHistoryTab = true;
+ 			}
+ 		}
  	}
  });

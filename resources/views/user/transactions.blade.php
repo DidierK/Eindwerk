@@ -9,10 +9,17 @@
 </div>
 <div class="user-nav">
 	<div class="container">
-		<transactions-nav></transactions-nav>	
+		<transactions-nav v-on:load="showUserTab"></transactions-nav>	
 	</div>
 </div>
-<div class="content">
-</div>
+<div class="container">
+	<!-- Aan de paragrafen gewoon ne v-show hangen. -->
+	<div v-show="showOnGoingTransactionsTab" class="ongoing-transactions">
+		<p>Dit zijn uw lopende transacties.</p>
+	</div>
+	<div v-show= "showTransactionsHistoryTab" class="history-transactions" v-cloak>
+		<p>Dit is een geschiedenis van uw transacties.</p>
+	</div>
+	<p></p>
 </div>
 @endsection
