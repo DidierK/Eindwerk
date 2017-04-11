@@ -4,22 +4,18 @@
 <div class="profile-hero">
 	<div class="container">
 		<h1 class="title">Verzoeken</h1>
-		<!-- Put a content tag here -->
 	</div>
 </div>
-<div class="user-nav">
-	<div class="container">
-		<requests-nav v-on:load="showUserTab"></requests-nav>
-	</div>
-</div>
-<div class="container">
-	<!-- Aan de paragrafen gewoon ne v-show hangen. -->
-	<div v-show="showIncomingRequestsTab" class="incoming-requests">
-		<p>Dit zijn al uw inkomende requests.</p>
-	</div>
-	<div v-show= "showOutgoingRequestsTab" class="outgoing-requests" v-cloak>
-		<p>Dit zijn al uw uitgaande requests.</p>
-	</div>
-	<p></p>
-</div>
+<user-nav-tabs v-cloak>
+	<user-nav-tab label="Inkomend" selected>
+		<div class="items-overview">
+			<p>Tab 1</p>
+		</div>
+	</user-nav-tab>
+	<user-nav-tab label="Uitgaand">
+		<div class="settings" v-cloak>
+			<p>Tab 2</p>
+		</div>	
+	</user-nav-tab>
+</user-nav-tabs>
 @endsection

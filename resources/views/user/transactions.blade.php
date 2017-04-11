@@ -4,22 +4,18 @@
 <div class="profile-hero">
 	<div class="container">
 		<h1 class="title">Transacties</h1>
-		<!-- Put a content tag here -->
 	</div>
 </div>
-<div class="user-nav">
-	<div class="container">
-		<transactions-nav v-on:load="showUserTab"></transactions-nav>	
-	</div>
-</div>
-<div class="container">
-	<!-- Aan de paragrafen gewoon ne v-show hangen. -->
-	<div v-show="showOnGoingTransactionsTab" class="ongoing-transactions">
-		<p>Dit zijn uw lopende transacties.</p>
-	</div>
-	<div v-show= "showTransactionsHistoryTab" class="history-transactions" v-cloak>
-		<p>Dit is een geschiedenis van uw transacties.</p>
-	</div>
-	<p></p>
-</div>
+<user-nav-tabs v-cloak>
+	<user-nav-tab label="Lopend" selected>
+		<div class="items-overview">
+			<p>Tab 1</p>
+		</div>
+	</user-nav-tab>
+	<user-nav-tab label="Geschiedenis">
+		<div class="settings" v-cloak>
+			<p>Tab 2</p>
+		</div>	
+	</user-nav-tab>
+</user-nav-tabs>
 @endsection
