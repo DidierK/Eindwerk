@@ -35,6 +35,14 @@ Route::get('auth/{provider}/callback', 'Auth\LoginController@callback');
 
 // User
 Route::resource('user', 'UserController');
-Route::resource('user.items', 'ItemController');
 Route::resource('user.requests', 'RequestController');
 Route::resource('user.transactions', 'TransactionController');
+
+Route::get('user/{id}/profile/items', function(){
+	return view('user.index');
+});
+
+Route::get('user/{id}/profile/settings', function(){
+	return view('user.settings');
+});
+

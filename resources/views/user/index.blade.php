@@ -1,21 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="profile-hero">
-	<div class="container">
-		<h1 class="title">Profiel</h1>
-	</div>
+<v-nav>
+	<v-tabs>
+		<v-tab link="{{ url('/user/' . Auth::id() . '/profile/items') }}">Mijn spullen</v-tab>
+		<v-tab link="{{ url('/user/' . Auth::id() . '/profile/settings') }}">Instellingen</v-tab>
+	</v-tabs>
+</v-nav>
+<div class="user-content">
+	<h1>AY!</h1>
 </div>
-<user-nav-tabs v-cloak>
-	<user-nav-tab label="Mijn spullen" selected>
-		<div class="container">
-			<h1>Mijn spullen</h1>	
-		</div>
-	</user-nav-tab>
-	<user-nav-tab label="Instellingen">
-		<div class="container">
-			<h1>Instellingen</h1>	
-		</div>
-	</user-nav-tab>
-</user-nav-tabs>
 @endsection

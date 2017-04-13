@@ -21,7 +21,7 @@
 
 </style>
 <template>
-    <div class="app-popover">
+    <div v-show="show" class="app-popover">
         <div class="app-popover-inner">
             <slot></slot>
         </div>
@@ -30,6 +30,6 @@
 
 <script>
     export default {
-
+        props: ['show']
     }
 </script>

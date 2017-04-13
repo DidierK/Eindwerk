@@ -4,15 +4,13 @@
 	}
 </style>
 <template>
-	<a class="link" href="#">
+	<a class="link" :href="link">
 		<slot></slot>
 	</a>
 </template>
 
 <script>
 	export default {
-		mounted() {
-			console.log('Component ready.')
-		}
+		props: ["link"]
 	}
 </script>

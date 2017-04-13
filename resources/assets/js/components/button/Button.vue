@@ -1,6 +1,6 @@
 <style>
 	.button {
-		padding: 9px 10px;
+		
 	}
 
 	.button:focus {
@@ -28,6 +28,6 @@
 
 <script>
 	export default {
-		props: ['action'],
+		props: ['action']
 	}
 </script>
