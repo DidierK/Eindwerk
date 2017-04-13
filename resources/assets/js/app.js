@@ -13,6 +13,26 @@
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+// Avatar
+Vue.component('avatar', require('./components/avatar/Avatar.vue'));
+
+// Header
+Vue.component('app-header', require('./components/header/AppHeader.vue'));
+
+// List
+Vue.component('app-ul', require('./components/list/AppUnorderedList.vue'));
+Vue.component('app-li', require('./components/list/AppListItem.vue'));
+
+// Logo
+Vue.component('app-logo', require('./components/logo/AppLogo.vue'));
+
+// Nav
+Vue.component('app-nav', require('./components/nav/AppNav.vue'));
+Vue.component('nav-item', require('./components/nav/NavItem.vue'));
+
+// Popover
+Vue.component('popover', require('./components/popover/Popover.vue'));
+
  Vue.component('profile-nav', require('./components/ProfileNav.vue'));
  Vue.component('transactions-nav', require('./components/TransactionsNav.vue'));
  Vue.component('requests-nav', require('./components/RequestsNav.vue'));
