@@ -14,3 +14,13 @@
 		</a>
 	</li>
 </template>
+<script>
+    export default {
+        props: ['src'],
+        methods: {
+        	open: function(){
+        		alert('I have been clicked!');
+        	}
+        }
+    }
+</script>

@@ -1,33 +1,38 @@
-<app-header>
-    <app-logo>   
-    </app-logo>
-    <app-nav class="nav--header">
-        <nav-item>
-            Categorie
-        </nav-item>
-        @if (Auth::check())
-        <nav-item>
-            <avatar src="{{ Auth::user()->avatar }}"></avatar>
-        </nav-item>
-        @else
-        <nav-item>
-            Aanmelden
-        </nav-item>
-        @endif
-    </app-nav>
+<v-header>
+    <v-logo>   
+    </v-logo>
+    <v-nav class="nav--header">
+        <v-ul>
+        <v-li class="list__item--nav">
+                <v-link class="link--white">Categorie</v-link>
+            </v-li>
+            @if (Auth::check())
+            <v-li class="list__item--nav">
+                <v-button class="button--borderless button--no-padding button--transparent" :action="toggleUserActions">
+                <v-avatar src="{{ Auth::user()->avatar }}">           
+                </v-avatar>
+                </v-button>
+            </v-li>
+            @else
+            <v-li class="list__item--nav">
+                <v-link>Aanmelden</v-link>
+            </v-li>
+            @endif
+        </v-ul>
+    </v-nav>
     @if (Auth::check())
-    <popover>
-        <app-ul>
-            <app-li>
-                <link>Profiel</link>
-            </app-li>
-            <app-li>
-                <link>Verzoeken</link>
-            </app-li>
-            <app-li>
-                <link>Afmelden</link>
-            </app-li>
-        </app-ul>
-    </popover>
+    <v-popover v-show="showUserActions">
+        <v-ul>
+            <v-li>
+                <v-link>Profiel</v-link>
+            </v-li>
+            <v-li>
+                <v-link>Verzoeken</v-link>
+            </v-li>
+            <v-li>
+                <v-link>Afmelden</v-link>
+            </v-li>
+        </v-ul>
+    </v-popover>
     @endif
-</app-header>
+</v-header>

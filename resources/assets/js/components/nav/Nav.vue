@@ -7,13 +7,11 @@
 </style>
 <template>
 	<nav class="nav">
-		<ul>
-			<slot></slot>
-		</ul>
+		<slot></slot>
 	</nav>
 </template>
 <script>
-    export default {
-        
-    }
+	export default {
+		
+	}
 </script>

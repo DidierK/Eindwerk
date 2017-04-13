@@ -7,9 +7,8 @@
 <template>
 <img class="avatar--header" :src="src" />
 </template>
-
 <script>
     export default {
-        props: ['src']
+        props: ['src'],
     }
 </script>

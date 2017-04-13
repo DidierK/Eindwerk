@@ -14,24 +14,30 @@
  */
 
 // Avatar
-Vue.component('avatar', require('./components/avatar/Avatar.vue'));
+Vue.component('v-avatar', require('./components/avatar/Avatar.vue'));
+
+// Button
+Vue.component('v-button', require('./components/button/Button.vue'));
 
 // Header
-Vue.component('app-header', require('./components/header/AppHeader.vue'));
+Vue.component('v-header', require('./components/header/Header.vue'));
+
+// Link
+Vue.component('v-link', require('./components/link/Link.vue'));
 
 // List
-Vue.component('app-ul', require('./components/list/AppUnorderedList.vue'));
-Vue.component('app-li', require('./components/list/AppListItem.vue'));
+Vue.component('v-ul', require('./components/list/UnorderedList.vue'));
+Vue.component('v-li', require('./components/list/ListItem.vue'));
 
 // Logo
-Vue.component('app-logo', require('./components/logo/AppLogo.vue'));
+Vue.component('v-logo', require('./components/logo/Logo.vue'));
 
 // Nav
-Vue.component('app-nav', require('./components/nav/AppNav.vue'));
-Vue.component('nav-item', require('./components/nav/NavItem.vue'));
+Vue.component('v-nav', require('./components/nav/Nav.vue'));
+Vue.component('v-item', require('./components/nav/NavItem.vue'));
 
 // Popover
-Vue.component('popover', require('./components/popover/Popover.vue'));
+Vue.component('v-popover', require('./components/popover/Popover.vue'));
 
  Vue.component('profile-nav', require('./components/ProfileNav.vue'));
  Vue.component('transactions-nav', require('./components/TransactionsNav.vue'));
@@ -43,18 +49,15 @@ Vue.component('popover', require('./components/popover/Popover.vue'));
  const app = new Vue({
  	el: '#app',
  	data: {
- 		showUserActionsPopover: false,
- 	},
- 	mounted() {
-
+ 		showUserActions: false,
  	},
  	methods: {
- 		openPopoverUserActions: function(event) {
- 			if(!this.showUserActionsPopover) {
- 				this.showUserActionsPopover = true;
+ 		toggleUserActions: function(){
+ 			if(this.showUserActions){
+ 				this.showUserActions = false;	
  			} else {
- 				this.showUserActionsPopover = false;
+ 				this.showUserActions = true;
  			}
- 		},
+ 		}
  	}
  });
