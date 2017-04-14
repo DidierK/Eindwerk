@@ -1,26 +1,36 @@
 <template>
-	<li class="tab__item">
-		<button class="button" v-on:click="loadTab(link)"><slot></slot></button>
-	</li>
+	<div class="tabs__content" v-show="showTab">
+		<slot></slot>
+	</div>
 </template>
 <script>
 	export default {
-		props: ["link"],
-		methods: {
-			loadTab: function(link){
-				var self = this;
-
-				axios.get(link).then(function (response) {
-
-					var result = $('<div />').append(response.data).find('.user-content').html();
-					$('.user-content').html(result);
-					// Change pagetitle to something dynamic
-					document.title = response.pageTitle;
-					window.history.pushState({"html":response.data,"pageTitle": response.pageTitle},"", link);
-
-				})
-
+		data: function() {
+			return {
+				showTab: false
 			}
+		},
+		props: ['label', 'selected'],
+		mounted(){
+			// So we can use the same this inside a function
+			var self = this;
+			// On mount check if this tab is selected (we add a selected property on that tag)
+			if (typeof this.selected !== 'undefined' && this.selected === '') {
+				// Give that tab the active class
+				this.$parent.$data.activeTab = this.label;
+				// Show the tab content
+				this.showTab = true;
+			}
+			// Push label to parent!
+			this.$parent.$data.tabs.push(this.label);
+			this.$parent.$on('activateTab', function(tab) {
+				// Now every tab component will check for its own if the changed is the same as the label give to this tab
+				if (self.label === tab) {
+					self.showTab = true;
+				} else {
+					self.showTab = false;
+				}
+			})
 		}
 	}
 </script>

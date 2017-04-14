@@ -1,13 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<v-nav>
-	<v-tabs>
-		<v-tab link="{{ url('/user/' . Auth::id() . '/profile/items') }}">Mijn spullen</v-tab>
-		<v-tab link="{{ url('/user/' . Auth::id() . '/profile/settings') }}">Instellingen</v-tab>
-	</v-tabs>
-</v-nav>
-<div class="user-content">
-	<h1>AY!</h1>
-</div>
+<v-tabs>
+	<v-tab label="Mijn spullen" selected>
+		<div class="container">
+			<h1>Mijn spullen</h1>
+		</div>
+	</v-tab>
+	<v-tab label="Instellingen">
+		<div class="container">
+			<h1>Mijn instellingen</h1>
+		</div>
+	</v-tab>
+</v-tabs>
 @endsection

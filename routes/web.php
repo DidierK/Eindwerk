@@ -38,7 +38,7 @@ Route::resource('user', 'UserController');
 Route::resource('user.requests', 'RequestController');
 Route::resource('user.transactions', 'TransactionController');
 
-Route::get('user/{id}/profile/items', function(){
+Route::get('user/{id}/profile', function(){
 	return view('user.index');
 });
 
