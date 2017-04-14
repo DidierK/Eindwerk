@@ -11,6 +11,11 @@
         margin-top: 11px;
         margin-right: 32px;
     }
+
+    .logo__img {
+        width: 100%;
+        max-width: 420px;
+    }
 </style>
 <template>
     <a class="logo link--white" href="/">

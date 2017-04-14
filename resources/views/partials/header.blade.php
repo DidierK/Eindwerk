@@ -8,7 +8,7 @@
             </v-li>
             @if (Auth::check())
             <v-li class="list__item--nav">
-                <v-button class="button--borderless button--no-padding button--transparent" :action="toggleUserActions">
+                <v-button class="button--borderless button--no-padding button--transparent" v-on:click="toggleUserActions">
                     <v-avatar class="avatar--header" src="{{ Auth::user()->avatar }}">           
                     </v-avatar>
                 </v-button>

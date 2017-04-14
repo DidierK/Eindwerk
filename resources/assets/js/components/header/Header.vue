@@ -6,7 +6,6 @@
 	}
 
 	.header--logged-out {
-		margin-top: 48px;
 		text-align: center;
 	}
 

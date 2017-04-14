@@ -1,8 +1,5 @@
 /** CONFIG **/
 
-// Variables
-@import "config/variables";
-
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
@@ -13,20 +10,6 @@
 @import "base/base";
 @import "base/typography";
 
-// Components
-@import "components/buttons";
-@import "components/inputs";
-@import "components/popovers";
-
-// Layout
-@import "layout/header";
-@import "layout/footer";
-
-// Pages
-@import "pages/home";
-@import "pages/login";
-
-@import "pages/user/index";
 
 
 

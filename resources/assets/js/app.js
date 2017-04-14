@@ -19,12 +19,21 @@ Vue.component('v-avatar', require('./components/avatar/Avatar.vue'));
 // Button
 Vue.component('v-button', require('./components/button/Button.vue'));
 
+// Container
+Vue.component('v-container', require('./components/container/Container.vue'));
+
+// Footer
+Vue.component('v-footer', require('./components/footer/Footer.vue'));
+
 // Form, Input
 Vue.component('v-form', require('./components/form/Form.vue'));
 Vue.component('v-input', require('./components/form/Input.vue'));
 
 // Header
 Vue.component('v-header', require('./components/header/Header.vue'));
+
+// Img
+Vue.component('v-img', require('./components/img/Image.vue'));
 
 // Link
 Vue.component('v-link', require('./components/link/Link.vue'));
@@ -49,11 +58,6 @@ Vue.component('v-search-box', require('./components/search-box/SearchBox.vue'));
 // Tabs
 Vue.component('v-tabs', require('./components/tabs/Tabs.vue'));
 Vue.component('v-tab', require('./components/tabs/Tab.vue'));
-
-Vue.component('profile-nav', require('./components/ProfileNav.vue'));
-Vue.component('transactions-nav', require('./components/TransactionsNav.vue'));
-Vue.component('requests-nav', require('./components/RequestsNav.vue'));
-Vue.component('useractions-popover', require('./components/UserActionsPopover.vue'));
 
 const app = new Vue({
 	el: '#app',

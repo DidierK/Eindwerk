@@ -3,12 +3,21 @@
 		text-decoration: none;
 	}
 
+	.link--default {
+		text-decoration: underline;
+	}
+
 	.link--white {
 		color: #FFF;
 	}
 
 	.link--white:hover {
 		color: #DDD;
+	}
+
+	.link--black {
+		color: #636b6f;
+		font-size: 12px;
 	}
 
 	.link--UserActions {

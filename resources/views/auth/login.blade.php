@@ -20,30 +20,30 @@
 			]); ?>
 		</script>
 	</head>
-	<body class="logged-out container">
+	<body class="logged-out">
 		<div id="app">
-			<div class="header header--logged-out">
-				<a href="/">
-					<img class="logo" src="{{ URL::asset('images/TravelShare_logo.png') }}">
+			<v-header class="header--logged-out" v-cloak>
+				<a class="logo" href="/">
+					<v-img class="logo__img" src="{{ URL::asset('images/TravelShare_logo.png') }}"></v-img>
 				</a>
-			</div>
-			<div class="auth">
+			</v-header>
+			<v-container class="container container--logged-out" v-cloak>
 				<p>Omdat wij de betrouwbaarheid en veiligheid van onze website willen garanderen laten we enkel toe aan te melden via Facebook. Persoonlijke gegevens kunnen in de instellingen van je profiel worden aangepast.</p>
-				<p>Voor meer info kan u terecht op <a href="#">onze gebruikersvoorwaarden</a>.</p>
-				<form action="auth/facebook">
-					<button type="submit" class="button button--borderless button--blue button--default button--facebook">Doorgaan met Facebook</button>
-				</form>
-				<div class="back">
-					<a href="/">Ga terug naar de startpagina.</a>
-				</div>
-			</div>
-			<div class="footer">
+				<p>Voor meer info kan u terecht op <v-link class="link--default" href="#">onze gebruikersvoorwaarden</v-link>.</p>
+				<v-container class="container--layout-centered" v-cloak>
+				<v-button href="{{ url('auth/facebook') }}" class="button button button--borderless button--blue button--default button--login-fb button--center">
+				Doorgaan met Facebook
+				</v-button>
+				<v-button href="/" class="button--block button--back button--link">Ga terug naar de startpagina.</v-button>
+				</v-container>
+			</v-container>
+			<v-footer class="footer footer--layout-centered footer--logged-out" v-cloak>
 				<ul class="list-inline">
-					<li><a href="#">Gebruikersvoorwaarden</a></li>
-					<li><a href="#">Over TravelShare</a></li>
-					<li><a href="#">Contacteer ons</a></li>
+					<li><v-link href="#" class="link--black">Gebruikersvoorwaarden</v-link></li>
+					<li><v-link href="#" class="link--black">Over TravelShare</v-link></li>
+					<li><v-link href="#" class="link--black">Contacteer ons</v-link></li>
 				</ul>
-			</div>
+			</v-footer>
 		</div>
 		<!-- Scripts -->
 		<script src="/js/app.js"></script>
