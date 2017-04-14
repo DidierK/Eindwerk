@@ -22,7 +22,7 @@
 	</head>
 	<body class="logged-out container">
 		<div id="app">
-			<div class="header">
+			<div class="header header--logged-out">
 				<a href="/">
 					<img class="logo" src="{{ URL::asset('images/TravelShare_logo.png') }}">
 				</a>
@@ -31,7 +31,7 @@
 				<p>Omdat wij de betrouwbaarheid en veiligheid van onze website willen garanderen laten we enkel toe aan te melden via Facebook. Persoonlijke gegevens kunnen in de instellingen van je profiel worden aangepast.</p>
 				<p>Voor meer info kan u terecht op <a href="#">onze gebruikersvoorwaarden</a>.</p>
 				<form action="auth/facebook">
-					<button type="submit" class="button button--blue button--facebook">Doorgaan met Facebook</button>
+					<button type="submit" class="button button--borderless button--blue button--default button--facebook">Doorgaan met Facebook</button>
 				</form>
 				<div class="back">
 					<a href="/">Ga terug naar de startpagina.</a>

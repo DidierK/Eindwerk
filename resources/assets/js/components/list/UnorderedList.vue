@@ -1,3 +1,8 @@
+<style>
+	.list {
+		padding-left: 0;
+	}
+</style>
 <template>
     <ul class="list">
         <slot></slot>

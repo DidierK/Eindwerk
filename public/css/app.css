@@ -7730,20 +7730,6 @@ html, body {
   color: #dcf1fd;
 }
 
-.button--white {
-  background-color: #FFF;
-  color: #33bfea;
-}
-
-.button--blue {
-  background-color: #3097D1;
-  color: #FFF;
-}
-
-.button--full-width {
-  width: 100%;
-}
-
 input:focus {
   outline: none;
 }

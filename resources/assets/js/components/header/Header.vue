@@ -1,9 +1,17 @@
 <style>
 	.header {
-		background-color: #3F6780;
 		border: 0;
 		border-radius: 0;
 		margin-bottom: 0;
+	}
+
+	.header--logged-out {
+		margin-top: 48px;
+		text-align: center;
+	}
+
+	.header--main {
+		background-color: #3F6780;
 		min-height: 48px;
 	}
 
