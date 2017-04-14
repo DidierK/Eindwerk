@@ -8,7 +8,7 @@
         /* TODO: To make more reusable split up all code in modifier classes */
         float: left;
         font-size: 18px;
-        margin-top: 11px;
+        margin-top: 15px;
         margin-right: 32px;
     }
 

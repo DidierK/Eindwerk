@@ -2,6 +2,11 @@
 	.list {
 		padding-left: 0;
 	}
+
+    .list--inline > li {
+        display: inline-block;
+        padding: 0 16px;
+    }
 </style>
 <template>
     <ul class="list">

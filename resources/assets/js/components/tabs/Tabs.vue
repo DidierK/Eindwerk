@@ -3,7 +3,6 @@
 	.tabs__navigation .container {
 		height: 55px;
 		min-height: 55px;
-		display: flex;
 	}
 
 	.tabs__navigation--theme-default {
@@ -13,6 +12,7 @@
 
 	.tab-header {
 		background-color: transparent;
+		height: 100%;
 		padding: 0 12px;
 		border: 0;
 	}

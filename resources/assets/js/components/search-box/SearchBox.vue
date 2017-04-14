@@ -17,7 +17,7 @@
     }
 
     .search-box--header {
-        margin-top: 6px;
+        margin-top: 9px;
     }
 
     .search-box--rounded {

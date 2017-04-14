@@ -1,8 +1,9 @@
 /** CONFIG **/
 
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// Normalize
+@import "config/normalize";
 
+@import "config/variables";
 
 /** STYLES **/
 

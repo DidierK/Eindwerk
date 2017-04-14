@@ -38,11 +38,11 @@
 				</v-container>
 			</v-container>
 			<v-footer class="footer footer--layout-centered footer--logged-out" v-cloak>
-				<ul class="list-inline">
+				<v-ul class="list--inline">
 					<li><v-link href="#" class="link--black">Gebruikersvoorwaarden</v-link></li>
 					<li><v-link href="#" class="link--black">Over TravelShare</v-link></li>
 					<li><v-link href="#" class="link--black">Contacteer ons</v-link></li>
-				</ul>
+				</v-ul>
 			</v-footer>
 		</div>
 		<!-- Scripts -->
