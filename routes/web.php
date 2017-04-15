@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+	return view('home');
 });
 
 Auth::routes();
@@ -33,24 +33,24 @@ Route::get('/logout', function() { Auth::logout(); return Redirect::to('/'); });
 Route::get('auth/{provider}', 'Auth\LoginController@redirect');
 Route::get('auth/{provider}/callback', 'Auth\LoginController@callback');
 
-// User
-Route::resource('user', 'UserController');
-Route::resource('user', 'UserController');
-Route::resource('user.requests', 'RequestController');
-Route::resource('user.transactions', 'TransactionController');
+// Item resource
+Route::resource('item', 'ItemController', ['except' => [
+    'index'
+]]);
 
 // TODO PUT AUTH ROUTES INTO ONLY AUTHORIZED ROUTES GROUP
 Route::group(['prefix' => 'me'], function() {
-    Route::get('profile', function(){
-	return view('user.index');
-});
+	Route::get('profile', function(){
+    	// We returnen voorlopig nog geen view via controller, pas wanneer we data passen later veranderen we dit natuurlijk wel
+		return view('user.profile');
+	});
 
-Route::get('requests', function(){
-	return view('user.requests');
-});
+	Route::get('requests', function(){
+		return view('user.requests');
+	});
 
-Route::get('transactions', function(){
-	return view('user.transactions');
-});
+	Route::get('transactions', function(){
+		return view('user.transactions');
+	});
 });
 
