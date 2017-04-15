@@ -10,6 +10,9 @@
 
 	<title>{{ config('app.name', 'Laravel') }}</title>
 
+	<!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" />
+
 	<!-- Styles -->
 	<link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" />
 
@@ -27,15 +30,15 @@
 					<v-img class="logo__img" src="{{ URL::asset('images/TravelShare_logo.png') }}"></v-img>
 				</a>
 			</v-header>
-			<v-container class="container container--logged-out" v-cloak>
+			<v-container class="container--logged-out" v-cloak>
 				<p>Omdat wij de betrouwbaarheid en veiligheid van onze website willen garanderen laten we enkel toe aan te melden via Facebook. Persoonlijke gegevens kunnen in de instellingen van je profiel worden aangepast.</p>
 				<p>Voor meer info kan u terecht op <v-link class="link--default" href="#">onze gebruikersvoorwaarden</v-link>.</p>
-				<v-container class="container--layout-centered" v-cloak>
+				<v-layout class="layout--centered" v-cloak>
 				<v-button href="{{ url('auth/facebook') }}" class="button button button--borderless button--blue button--default button--login-fb button--center">
 				Doorgaan met Facebook
 				</v-button>
 				<v-button href="/" class="button--block button--back button--link">Ga terug naar de startpagina.</v-button>
-				</v-container>
+				</v-layout>
 			</v-container>
 			<v-footer class="footer footer--layout-centered footer--logged-out" v-cloak>
 				<v-ul class="list--inline">

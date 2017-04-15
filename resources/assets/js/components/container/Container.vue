@@ -11,10 +11,6 @@
 		max-width: 420px;
 	}
 
-	.container--layout-centered {
-		text-align: center;
-	}
-
 	@media (min-width: 768px){
 		.container{
 			width:750px;

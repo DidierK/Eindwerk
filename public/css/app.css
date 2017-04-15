@@ -418,7 +418,6 @@ html, body {
 }
 
 body {
-  font-size: 14px;
   margin: 0;
 }
 
@@ -435,29 +434,12 @@ ul {
   margin: 0;
 }
 
+textarea {
+  resize: none;
+}
+
 button {
   cursor: pointer;
-}
-
-.flexbox--sb {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-align: baseline;
-  align-items: baseline;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-}
-
-.pt-1 {
-  padding-top: 16px;
-}
-
-.pt-10 {
-  padding-top: 192px;
-}
-
-.pb-2 {
-  padding-bottom: 32px;
 }
 
 [v-cloak] {
@@ -470,14 +452,12 @@ button {
 
 body {
   font-family: "Roboto", sans-serif;
+  font-size: 14px;
 }
 
-.text--centered {
-  text-align: center;
-}
-
-.text--light {
-  color: #dcf1fd;
+input,
+textarea {
+  font-family: "Roboto", sans-serif;
 }
 
 /*# sourceMappingURL=app.css.map */

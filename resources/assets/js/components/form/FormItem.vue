@@ -1,3 +1,8 @@
+<style>
+    .form-item__label {
+        display: block;
+    }
+</style>
 <template>
     <p class="form-item">
     <label class="form-item__label" :for="label" v-if="label">{{ label }}</label>

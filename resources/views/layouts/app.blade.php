@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" />
