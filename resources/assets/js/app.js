@@ -25,8 +25,9 @@ Vue.component('v-container', require('./components/container/Container.vue'));
 // Footer
 Vue.component('v-footer', require('./components/footer/Footer.vue'));
 
-// Form, Input
+// Form, Form Item, Input
 Vue.component('v-form', require('./components/form/Form.vue'));
+Vue.component('v-form-item', require('./components/form/FormItem.vue'));
 Vue.component('v-input', require('./components/form/Input.vue'));
 
 // Header

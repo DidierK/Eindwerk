@@ -18,15 +18,20 @@
         width: 90%;
     }
 
+    .input--full-width {
+        width: 100%;
+    }
+
 </style>
 <template>
-    <input :placeholder="placeholder" :type="type" class="input" />
+<!-- TODO: We should put form__item div in the form__item template together with the label because we can't put label next to input because of a syntax error, we should then emit the label from here to the form item, like we did with the labels of the tabs -->
+    <input :id="label" :placeholder="placeholder" :type="type" class="input" />
 </template>
 <script>
     export default {
-        props: ["placeholder", "type", "value"],
+        props: ["label", "placeholder", "type", "value"],
         mounted() {
-            console.log('Component ready.')
+            this.$parent.$data.label = this.label;
         }
     }
 </script>

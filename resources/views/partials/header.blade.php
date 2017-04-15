@@ -21,10 +21,7 @@
         </v-ul>
     </v-nav>
     <v-search-box class="search-box search-box--white search-box--float-left search-box--full-width search-box--header search-box--rounded">
-        <v-form>
-            <v-input class="input--search-box input--transparent input--borderless input--placeholder-white" placeholder="Zoeken op TravelShare" type="text"></v-input>
-            <v-button class="button--transparent button--borderless" :action="toggleUserActions">Q</v-button>
-        </v-form>     
+            
     </v-search-box>
     @if (Auth::check())
     <v-popover :show="showUserActions">
