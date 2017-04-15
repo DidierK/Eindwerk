@@ -414,6 +414,7 @@ template {
 /** STYLES **/
 html, body {
   height: 100%;
+  line-height: 1.5;
 }
 
 body {
@@ -423,7 +424,6 @@ body {
 
 p {
   color: #494c4e;
-  line-height: 1.5;
 }
 
 a {

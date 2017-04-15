@@ -14,6 +14,13 @@
 		min-height: 48px;
 	}
 
+	@media (max-width:768px){
+		.header--main {
+			min-height: 96px;
+		}
+	}
+
+
 </style>
 <template>
 	<header class="header">

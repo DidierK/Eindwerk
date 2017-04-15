@@ -8,7 +8,7 @@
         /* TODO: To make more reusable split up all code in modifier classes */
         float: left;
         font-size: 18px;
-        margin-top: 15px;
+        margin-top: 13px; /* This should be equal to height header - 13px */
         margin-right: 32px;
     }
 

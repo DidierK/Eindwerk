@@ -64,6 +64,10 @@
 		margin-top: 16px;
 	}
 
+	.button--no-lh {
+		line-height: 0;
+	}
+
 </style>
 <template>
 	<button v-on:click="handleClick" class="button" v-if="!href">

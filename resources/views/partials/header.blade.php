@@ -2,13 +2,13 @@
     <v-logo class="logo--header">   
     </v-logo>
     <v-nav class="nav--float-right nav--header">
-        <v-ul>
+        <v-ul class="list--flex list--vertically-centered list--nav">
             <v-li class="list__item--nav">
                 <v-link link="#" class="link--white">Categorie</v-link>
             </v-li>
             @if (Auth::check())
             <v-li class="list__item--nav">
-                <v-button class="button--borderless button--no-padding button--transparent" v-on:click="toggleUserActions">
+                <v-button class="button--borderless button--no-padding button--transparent button--no-lh" v-on:click="toggleUserActions">
                     <v-avatar class="avatar--header" src="{{ Auth::user()->avatar }}">           
                     </v-avatar>
                 </v-button>

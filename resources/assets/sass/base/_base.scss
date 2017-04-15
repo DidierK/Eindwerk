@@ -1,5 +1,6 @@
 html, body {
 	height: 100%;
+	line-height: 1.5;
 }
 
 body {
@@ -9,7 +10,6 @@ body {
 
 p {
 	color: #494c4e;
-	line-height: 1.5;
 }
 
 a {
@@ -45,9 +45,9 @@ button {
 
 [v-cloak] { 
 	display:none;
-	 }
+}
 
 .main {
-// minus height header and hight footer this is
+	// minus height header and hight footer this is
 	min-height: calc(100vh - 175px);
 }

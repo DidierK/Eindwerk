@@ -1,4 +1,7 @@
 <style>
+    .input:focus {
+        outline: 0;
+    }
     .input--borderless {
         border: 0;
     }
