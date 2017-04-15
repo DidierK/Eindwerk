@@ -13,7 +13,7 @@
         <v-input type="file" label="Foto" class="input--full-width"></v-input>
     </v-form-item>
     <v-form-item>
-        <v-input type="textarea" label="Informatie" class="input--textarea-default input--full-width" placeholder="Wat moet de huurder weten over jou materiaal?"></v-input>
+        <v-input type="textarea" label="Meer informatie" class="input--textarea-default input--full-width" placeholder="Wat moet de huurder weten over jou materiaal?"></v-input>
     </v-form-item>
     <v-form-item>
         <v-input type="submit" value="Toevoegen"></v-input>

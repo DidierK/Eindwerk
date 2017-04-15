@@ -53,11 +53,17 @@ Vue.component('v-logo', require('./components/logo/Logo.vue'));
 Vue.component('v-nav', require('./components/nav/Nav.vue'));
 Vue.component('v-item', require('./components/nav/NavItem.vue'));
 
+// Option
+Vue.component('v-option', require('./components/option/Option.vue'));
+
 // Popover
 Vue.component('v-popover', require('./components/popover/Popover.vue'));
 
 // Search Box
 Vue.component('v-search-box', require('./components/search-box/SearchBox.vue'));
+
+// Select
+Vue.component('v-select', require('./components/select/Select.vue'));
 
 // Tabs
 Vue.component('v-tabs', require('./components/tabs/Tabs.vue'));
