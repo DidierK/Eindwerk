@@ -42,15 +42,15 @@ Route::resource('item', 'ItemController', ['except' => [
 Route::group(['prefix' => 'me'], function() {
 	Route::get('profile', function(){
     	// We returnen voorlopig nog geen view via controller, pas wanneer we data passen later veranderen we dit natuurlijk wel
-		return view('user.profile');
+		return view('me.profile');
 	});
 
 	Route::get('requests', function(){
-		return view('user.requests');
+		return view('me.requests');
 	});
 
 	Route::get('transactions', function(){
-		return view('user.transactions');
+		return view('me.transactions');
 	});
 });
 

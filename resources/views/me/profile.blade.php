@@ -3,9 +3,9 @@
 @section('content')
 <v-tabs>
 	<v-tab label="Mijn spullen" selected>
-		<div class="container">
-			<h1>Mijn spullen</h1>
-		</div>
+		<v-container>
+			<v-button href="{{ url('item/create') }}">Materiaal toevoegen</v-button>
+		</v-container>
 	</v-tab>
 	<v-tab label="Instellingen">
 		<div class="container">

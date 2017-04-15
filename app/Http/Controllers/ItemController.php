@@ -13,7 +13,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        return view('user.index');
+        return view('me.profile');
     }
 
     /**
