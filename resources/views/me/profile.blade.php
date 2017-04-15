@@ -3,14 +3,14 @@
 @section('content')
 <v-tabs>
 	<v-tab label="Mijn spullen" selected>
-		<v-container>
+		<v-container v-cloak>
 			<v-button href="{{ url('item/create') }}">Materiaal toevoegen</v-button>
 		</v-container>
 	</v-tab>
 	<v-tab label="Instellingen">
-		<div class="container">
+		<v-container v-cloak>
 			<h1>Mijn instellingen</h1>
-		</div>
+		</v-container
 	</v-tab>
 </v-tabs>
 @endsection
