@@ -35,14 +35,22 @@ Route::get('auth/{provider}/callback', 'Auth\LoginController@callback');
 
 // User
 Route::resource('user', 'UserController');
+Route::resource('user', 'UserController');
 Route::resource('user.requests', 'RequestController');
 Route::resource('user.transactions', 'TransactionController');
 
-Route::get('user/{id}/profile', function(){
+// TODO PUT AUTH ROUTES INTO ONLY AUTHORIZED ROUTES GROUP
+Route::group(['prefix' => 'me'], function() {
+    Route::get('profile', function(){
 	return view('user.index');
 });
 
-Route::get('user/{id}/profile/settings', function(){
-	return view('user.settings');
+Route::get('requests', function(){
+	return view('user.requests');
+});
+
+Route::get('transactions', function(){
+	return view('user.transactions');
+});
 });
 

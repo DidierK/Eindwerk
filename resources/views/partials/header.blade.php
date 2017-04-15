@@ -30,13 +30,13 @@
     <v-popover :show="showUserActions">
         <v-ul>
             <v-li>
-                <v-link class="link--UserActions" link="{{ url('/user/' . Auth::id() . '/profile') }}">Profiel</v-link>
+                <v-link class="link--UserActions" link="{{ url('me/profile') }}">Profiel</v-link>
             </v-li>
             <v-li>
-                <v-link class="link--UserActions" link="{{ url('/user/' . Auth::id() . '/requests') }}">Verzoeken</v-link>
+                <v-link class="link--UserActions" link="{{ url('me/requests') }}">Verzoeken</v-link>
             </v-li>
             <v-li>
-                <v-link class="link--UserActions" link="{{ url('/user/' . Auth::id() . '/transactions') }}">Transacties</v-link>
+                <v-link class="link--UserActions" link="{{ url('me/transactions') }}">Transacties</v-link>
             </v-li>
             <v-li>
                 <v-link class="link--UserActions" link="{{ url('/logout') }}">Afmelden</v-link>
