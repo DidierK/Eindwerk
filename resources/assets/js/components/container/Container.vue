@@ -15,18 +15,19 @@
 		text-align: center;
 	}
 
-	@media (min-width:768px){
+	@media (min-width: 768px){
 		.container{
 			width:750px;
 		}
 	}
 
-	@media (min-width:992px){
+	@media (min-width: 992px){
 		.container{
 			width:970px;
 		}
 	}
-	@media (min-width:1200px){
+
+	@media (min-width: 1200px){
 		.container{
 			width:1170px;
 		}

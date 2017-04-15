@@ -12,7 +12,7 @@
         display: flex;
     }
 
-    .list--flex > li {
+    .list--flex * {
         line-height: 0;
     }
 
