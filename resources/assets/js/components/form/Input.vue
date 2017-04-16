@@ -39,7 +39,7 @@
     }
 
     .input--full-width {
-        box-sizing: border-box;
+        box-sizing: border-box; /* Because the width 100% and padding otherwise overflows parent div */
         width: 100%;
     }
 
