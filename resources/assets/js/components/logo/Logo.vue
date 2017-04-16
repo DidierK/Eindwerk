@@ -7,10 +7,6 @@
     .logo--header {
         /* TODO: To make more reusable split up all code in modifier classes */
         float: left;
-        font-size: 14px;
-        font-weight: 500;
-        margin-top: 11px; 
-        margin-right: 32px;
     }
 
     .logo__img {
@@ -23,7 +19,7 @@
     }
 </style>
 <template>
-    <a class="logo link--white" href="/">
+    <a href="/">
         <img class="logo" src="/images/mini_white_logo.png" />
     </a>
 </template>

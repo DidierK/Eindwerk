@@ -51,7 +51,6 @@ Vue.component('v-logo', require('./components/logo/Logo.vue'));
 
 // Nav
 Vue.component('v-nav', require('./components/nav/Nav.vue'));
-Vue.component('v-item', require('./components/nav/NavItem.vue'));
 
 // Option
 Vue.component('v-option', require('./components/option/Option.vue'));

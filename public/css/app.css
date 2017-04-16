@@ -437,6 +437,11 @@ button {
   cursor: pointer;
 }
 
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
 [v-cloak] {
   display: none;
 }
@@ -462,8 +467,9 @@ p {
   color: #484848;
 }
 
-text--small {
+.text--small {
   font-size: 14px;
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=app.css.map */
