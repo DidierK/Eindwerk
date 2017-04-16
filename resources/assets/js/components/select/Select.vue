@@ -4,7 +4,7 @@
 	border: 2px solid #DDD;
     border-radius: 1px;
     color: #737373;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 300;
     padding: 12px 8px;
 }

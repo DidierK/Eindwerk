@@ -10,6 +10,11 @@
 		border-bottom: 1px solid #DDD;
 	}
 
+	.tabs__navigation--theme-default button {
+		font-weight: 500;
+		color: #484848;
+	}
+
 	.tab-header {
 		background-color: transparent;
 		height: 100%;
@@ -69,11 +74,11 @@
 		props: ['activeLink'],
 		methods: {
 			activate: function(tab){
-				// Give tab the active color
-				this.activeTab = tab;
-				// Broadcast event to change tab content
-				this.$emit('activateTab', tab);
-			}
-		}
-	}
+// Give tab the active color
+this.activeTab = tab;
+// Broadcast event to change tab content
+this.$emit('activateTab', tab);
+}
+}
+}
 </script>

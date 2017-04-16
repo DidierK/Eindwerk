@@ -9,7 +9,7 @@
         float: left;
         font-size: 14px;
         font-weight: 500;
-        margin-top: 13px; 
+        margin-top: 11px; 
         margin-right: 32px;
     }
 

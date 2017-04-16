@@ -414,7 +414,6 @@ template {
 /** STYLES **/
 html, body {
   height: 100%;
-  line-height: 1.5;
 }
 
 body {
@@ -448,17 +447,23 @@ button {
 
 body {
   font-family: "Roboto", sans-serif;
-  font-size: 14px;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 input,
-textarea {
+textarea,
+button {
   font-family: "Roboto", sans-serif;
 }
 
 h1,
 p {
   color: #484848;
+}
+
+text--small {
+  font-size: 14px;
 }
 
 /*# sourceMappingURL=app.css.map */

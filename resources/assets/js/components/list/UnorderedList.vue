@@ -22,6 +22,7 @@
 
     .list--nav {
         font-weight: 500;
+        font-size: 14px;
         height: 60px; /* = height header. TODO: Dit zouden we beter via SASS moeten doen via $header-height ofzo. */
     }
 </style>

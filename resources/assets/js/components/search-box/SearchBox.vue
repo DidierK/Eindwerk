@@ -4,7 +4,6 @@
     }
 
     .search-box--white {
-        border: 1px solid #FFF;
         color: #FFF;
     }
 

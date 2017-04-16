@@ -5,7 +5,7 @@
         <v-nav class="nav--float-right nav--header">
             <v-ul class="list--flex list--vertically-centered list--nav">
                 <v-li class="list__item--nav">
-                    <v-link link="#" class="link--white">Categorie</v-link>
+                    <v-link link="#" class="link--white text--small">Categorie</v-link>
                 </v-li>
                 @if (Auth::check())
                 <v-li class="list__item--nav">
@@ -16,7 +16,7 @@
                 </v-li>
                 @else
                 <v-li class="list__item--nav">
-                    <v-link class="link--white" link="{{ url('/login') }}">Aanmelden</v-link>
+                    <v-link class="link--white text--small" link="{{ url('/login') }}">Aanmelden</v-link>
                 </v-li>
                 @endif
             </v-ul>

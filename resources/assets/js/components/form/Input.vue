@@ -8,7 +8,7 @@
     .input--textarea-default {
         border: 2px solid #DDD;
         border-radius: 1px;
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 400;
         padding: 12px 8px;
     }

@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<v-container>
-<v-header class="header--page">
+<v-container v-cloak>
+<v-header class="header--page" >
         <h1 class="header__title">Spullen toevoegen</h1>
     </v-header>
     <v-form class="form--item-creation">
