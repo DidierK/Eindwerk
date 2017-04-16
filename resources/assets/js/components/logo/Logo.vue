@@ -7,8 +7,9 @@
     .logo--header {
         /* TODO: To make more reusable split up all code in modifier classes */
         float: left;
-        font-size: 18px;
-        margin-top: 13px; /* This should be equal to height header - 13px */
+        font-size: 14px;
+        font-weight: 500;
+        margin-top: 13px; 
         margin-right: 32px;
     }
 
@@ -16,10 +17,14 @@
         width: 100%;
         max-width: 420px;
     }
+
+    .logo--small img {
+        height: 48px;
+    }
 </style>
 <template>
     <a class="logo link--white" href="/">
-        TravelShare
+        <img class="logo" src="/images/mini_white_logo.png" />
     </a>
 </template>
 

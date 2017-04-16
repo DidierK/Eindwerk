@@ -21,7 +21,8 @@
     }
 
     .list--nav {
-        height: 48px; /* = height header. TODO: Dit zouden we beter via SASS moeten doen via $header-height ofzo. */
+        font-weight: 500;
+        height: 60px; /* = height header. TODO: Dit zouden we beter via SASS moeten doen via $header-height ofzo. */
     }
 </style>
 <template>

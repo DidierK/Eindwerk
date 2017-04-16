@@ -22,8 +22,17 @@
 	}
 
 	.tab-header.active {
-		border-bottom: 2px solid #18B4DC;
-		color: #18B4DC;;
+		color: #18B4DC;
+		position: relative;
+	}
+
+	.tab-header.active::after {
+		border-bottom: 3px solid #18B4DC;
+		position: absolute;
+		content: "";
+		bottom: 0;
+		left: 1px;
+		right: 1px;
 	}
 
 	@media screen and (min-width: 768px) {
@@ -42,9 +51,9 @@
 <template>
 	<div class="tabs">
 		<nav class="tabs__navigation tabs__navigation--theme-default">
-		<div class="container">
+			<div class="container">
 				<button class="tab-header"  :class="{ active: (activeTab === tab)}" v-for="tab in tabs" v-on:click="activate(tab)">{{ tab }}</button>
-		</div>
+			</div>
 		</nav>
 		<slot></slot>
 	</div>

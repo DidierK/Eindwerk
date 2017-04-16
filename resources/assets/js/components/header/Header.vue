@@ -10,8 +10,8 @@
 	}
 
 	.header--main {
-		background-color: #3F6780;
-		min-height: 48px;
+		background-color: #18b4db;
+		min-height: 60px;
 	}
 
 	.header--page {
