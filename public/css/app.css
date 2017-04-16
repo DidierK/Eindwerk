@@ -421,10 +421,6 @@ body {
   margin: 0;
 }
 
-p {
-  color: #494c4e;
-}
-
 a {
   text-decoration: none;
 }
@@ -458,6 +454,11 @@ body {
 input,
 textarea {
   font-family: "Roboto", sans-serif;
+}
+
+h1,
+p {
+  color: #484848;
 }
 
 /*# sourceMappingURL=app.css.map */

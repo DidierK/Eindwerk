@@ -14,6 +14,15 @@
 		min-height: 48px;
 	}
 
+	.header--page {
+		margin: 4em 0 2em 0;
+	}
+
+	.header__title {
+		font-weight: 500;
+		margin: 0;
+	}
+
 	@media (max-width:768px){
 		.header--main {
 			min-height: 96px;
@@ -24,8 +33,6 @@
 </style>
 <template>
 	<header class="header">
-		<div class="container">
 			<slot></slot>
-		</div>
 	</header>
 </template>

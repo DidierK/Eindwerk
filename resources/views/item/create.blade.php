@@ -2,13 +2,15 @@
 
 @section('content')
 <v-container>
+<v-header class="header--page">
+        <h1 class="header__title">Spullen toevoegen</h1>
+    </v-header>
     <v-form class="form--item-creation">
-        <h1>Materiaal toevoegen</h1>
         <v-form-item>
             <v-input type="text" label="Naam" class="input--text-default input--full-width" placeholder="Naam van het materiaal"></v-input>
         </v-form-item>
         <v-form-item>
-            <v-input type="text" label="Prijs" class="input--text-default input--price" placeholder="50.00"></v-input><span>€</span>
+            <v-input type="text" label="Prijs/dag" class="input--text-default input--price" placeholder="50.00"></v-input><span>€</span>
         </v-form-item>
         <v-form-item>
             <v-input type="file" label="Foto" class="input--full-width"></v-input>

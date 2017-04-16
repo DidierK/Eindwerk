@@ -6,16 +6,20 @@
 
     .input--text-default,
     .input--textarea-default {
-        border: 1px solid #DDD;
+        border: 2px solid #DDD;
         border-radius: 1px;
-        font-size: 14px;
-        font-weight: 300;
+        font-size: 16px;
+        font-weight: 400;
         padding: 12px 8px;
     }
 
     .input--text-default::placeholder,
     .input--textarea-default::placeholder {
-        color: #ADADAD;
+        color: #737373;
+    }
+
+    .input--textarea-default {
+        min-height: 100px;
     }
 
     .input:focus {
