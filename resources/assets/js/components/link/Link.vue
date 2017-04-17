@@ -4,6 +4,7 @@
 	}
 
 	.link--default {
+		color: #18B4DB;
 		text-decoration: underline;
 	}
 

@@ -1,86 +1,96 @@
 <style>
 
-	a.button {
-		display: inline-block;
-	}
+a.button {
+	display: inline-block;
+}
 
-	a.button:hover {
-		text-decoration: none;
-	}
+a.button:hover {
+	text-decoration: none;
+}
 
-	a.button--block {
-		display: block;
-	}
+a.button--block {
+	display: block;
+}
 
-	.button--link {
-		text-decoration: underline;
-	}
+.button--link {
+	text-decoration: underline;
+}
 
-	.button--default {
-		border-radius: 7.5px;
-		font-weight: 600;
-		padding: 9px 10px;
-	}
+.button--default {
+	border-radius: 2px;
+	font-size: 14px;
+	font-weight: 500;
+	padding: 12px 16px;
+}
 
-	.button:focus {
-		outline: 0;
-	}
+.button--default:hover {
+	background-color: #22A8CA;
 
-	.button--white {
-		background-color: #FFF;
-		color: #33bfea;
-	}
+}
 
-	.button--blue {
-		background-color: #3097D1;
-		color: #FFF;
-	}
+.button--float-right {
+	float: right;
+}
 
-	.button--full-width {
-		width: 100%;
-	}
+.button:focus {
+	outline: 0;
+}
 
-	.button--borderless {
-		border: 0;
-	}	
+.button--white {
+	background-color: #FFF;
+	color: #33bfea;
+}
 
-	.button--no-padding {
-		padding: 0;
-	}
+.button--blue {
+	background-color: #18B4DB;
+	color: #FFF;
+}
 
-	.button--transparent {
-		background-color: transparent;
-	}
+.button--full-width {
+	width: 100%;
+}
 
-	.button--center {
-		margin: 0 auto;
-	}
+.button--borderless {
+	border: 0;
+}	
 
-	.button--login-fb {
-		margin-top: 32px;
-	}
+.button--no-padding {
+	padding: 0;
+}
 
-	.button--back {
-		margin-top: 16px;
-	}
+.button--transparent {
+	background-color: transparent;
+}
+
+.button--center {
+	margin: 0 auto;
+}
+
+.button--login-fb {
+	margin-top: 32px;
+}
+
+.button--back {
+	margin-top: 16px;
+}
 
 </style>
 <template>
-	<button v-on:click="handleClick" class="button" v-if="!href">
-		<slot></slot>
-	</button>
+<button v-on:click="handleClick" class="button" v-if="!href">
+<slot></slot>
+</button>
 
-	<a :href="href" class="button" v-else>
-		<slot></slot>
-	</a>
+<a :href="href" class="button" v-else>
+<slot></slot>
+</a>
 </template>
 <script>
-	export default {
-		props: ['href'],
-		methods : {
-			handleClick: function(event){
-				this.$emit('click', event);
-			}
+export default {
+	props: ['href'],
+	methods : {
+		handleClick: function(event){
+			this.$emit('click', event);
 		}
 	}
+}
 </script>
