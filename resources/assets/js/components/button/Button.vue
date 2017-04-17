@@ -28,7 +28,7 @@ a.button--block {
 
 }
 
-.button--float-right {
+.button--add-items {
 	float: right;
 }
 
@@ -72,6 +72,16 @@ a.button--block {
 
 .button--back {
 	margin-top: 16px;
+}
+
+@media (max-width: 450px){
+	.button--add-items {
+		box-sizing: border-box;
+		float: none;
+		margin: 1.5em 0;
+		text-align: center;
+		width: 100%;
+	}
 }
 
 </style>

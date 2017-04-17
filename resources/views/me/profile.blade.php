@@ -6,7 +6,7 @@
 		<v-container v-cloak>
 			<v-header class="header--page">
 				<h1 class="header__title inline-block">Mijn spullen</h1>
-				<v-button class="button--blue button--default button--float-right" href="{{ url('item/create') }}">Spullen toevoegen</v-button>
+				<v-button class="button--blue button--default button--add-items" href="{{ url('item/create') }}">Spullen toevoegen</v-button>
 			</v-header>
 			<!-- TODO: Just do a blade if statement to check if their are items to show, otherwise show this -->
 			<p>U hebt nog geen spullen toegevoegd. <v-link link="{{ url('item/create') }}" class="link--default">Voeg spullen toe.</v-link></p>

@@ -15,6 +15,7 @@
         <v-form-item>
             <v-input type="file" label="Foto" class="input--full-width"></v-input>
         </v-form-item>
+        <p class="text--small">Opmerking: Dit is de foto die leners als eerste te zien krijgen wanneer ze jou item vinden. Later kan je nog meer foto's toevoegen.</p>
         <v-form-item>
             <v-select label="Categorie">
                 <!-- TODO: Alle categorieën van onze database loopen, We zouden deze bv. bij onclick wanneer het opened dus, via ajax deze inladen (of natuurlijk van tevoren populaten gaat natuurlijk ook) -->
