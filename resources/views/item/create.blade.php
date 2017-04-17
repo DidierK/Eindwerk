@@ -2,7 +2,7 @@
 
 @section('content')
 <v-container v-cloak>
-<v-header class="header--page" >
+    <v-header class="header--page" >
         <h1 class="header__title">Spullen toevoegen</h1>
     </v-header>
     <v-form class="form--item-creation">
@@ -19,8 +19,9 @@
         <v-form-item>
             <v-select label="Categorie">
                 <!-- TODO: Alle categorieën van onze database loopen, We zouden deze bv. bij onclick wanneer het opened dus, via ajax deze inladen (of natuurlijk van tevoren populaten gaat natuurlijk ook) -->
-                <v-option>Kamperen</v-option>
-                <v-option>Strandvakantie</v-option>
+                @foreach ($categories as $category)
+                <v-option>{{ $category }}</v-option>
+                @endforeach
             </v-select>
         </v-form-item>
         <v-form-item>

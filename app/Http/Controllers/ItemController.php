@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Category;
 
 class ItemController extends Controller
 {
@@ -11,8 +12,8 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
+
         return view('me.profile');
     }
 
@@ -21,9 +22,10 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        return view('item.create');
+    public function create() {
+        // Method pluck neemt alle values van 1 column
+        $categories = Category::pluck('name');
+        return view('item.create', ['categories' => $categories]);
     }
 
     /**
