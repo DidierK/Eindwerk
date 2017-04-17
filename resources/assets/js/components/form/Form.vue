@@ -13,13 +13,14 @@
 	}
 </style>
 <template>
-	<form class="form">
+	<form class="form" :action="action" :method="method">
 		<slot></slot>
 	</form>
 </template>
 
 <script>
 	export default {
+		props: ["action", "method"],
 		mounted() {
 			console.log('Component ready.')
 		}

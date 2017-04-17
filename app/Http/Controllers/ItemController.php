@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\Item;
 
 class ItemController extends Controller
 {
@@ -36,7 +37,17 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Redirect to page where personal items are
+        Item::insert([
+            [
+            'name' => 'Dakkoffer', 
+            'description' => 'Dit is een leuk item',
+            'thumbnail' => 'thumbnail', 
+            'price' => 0,
+            'category_id' => 1, 
+            ]
+            ]);
+        return redirect(url('me/profile'));
     }
 
     /**

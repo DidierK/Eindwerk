@@ -5,7 +5,8 @@
     <v-header class="header--page" >
         <h1 class="header__title">Spullen toevoegen</h1>
     </v-header>
-    <v-form class="form--item-creation">
+    <v-form class="form--item-creation" action="{{ url('item') }}" method="post">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <v-form-item>
             <v-input type="text" label="Naam" class="input--text-default input--full-width" placeholder="Naam van het materiaal"></v-input>
         </v-form-item>
