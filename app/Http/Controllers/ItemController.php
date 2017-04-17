@@ -35,18 +35,19 @@ class ItemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        // Redirect to page where personal items are
-        Item::insert([
-            [
+    public function store(Request $request) {
+        // TODO: Make all optional fields in table nullable (for example description)
+        // Replace these values with a form value
+        Item::create([
             'name' => 'Dakkoffer', 
             'description' => 'Dit is een leuk item',
             'thumbnail' => 'thumbnail', 
             'price' => 0,
             'category_id' => 1, 
-            ]
+            'user_id' => 1
             ]);
+
+        // Redirect to page where personal items are
         return redirect(url('me/profile'));
     }
 
