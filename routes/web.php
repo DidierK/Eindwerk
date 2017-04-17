@@ -18,11 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', 'HomeController@index');
 
-//materiaal
-Route::get('add', 'ContentController@index');
-Route::post('add','ContentController@store');
-Route::get('/', 'ContentController@show');
-
 //search
 Route::get('search/{keyword}', 'ContentController@results');
 Route::post('search', 'ContentController@search');
