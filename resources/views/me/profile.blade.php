@@ -13,11 +13,11 @@
 				@foreach ($user_items as $item)
 				<v-li>
 					<v-img class="image--my-items" background="{{ $item->thumbnail }}"></v-img>
-					<h3><v-link link="#">{{ $item->name }}</v-link></h3>
+					<h3><v-link link="{{ url('item/' . $item->id) }}">{{ $item->name }}</v-link></h3>
 					<span>€{{ $item->price }} /dag</span>
 					<p>0 Transactieverzoeken</p>
-					<v-button class="button--small">Bewerk</v-button>
-					<v-button class="button--small button--wrn">Verwijder</v-button>
+					<v-button class="button--small" href="{{ url('item/' . $item->id . '/edit') }}">Bewerk</v-button>
+					<v-button class="button--small button--wrn" href="#">Verwijder</v-button>
 				</v-li>
 				@endforeach
 			</v-ul>

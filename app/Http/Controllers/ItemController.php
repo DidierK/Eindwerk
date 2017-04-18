@@ -16,7 +16,7 @@ class ItemController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $user_items = Item::where('user_id', Auth::user()->id)->get(['name', 'price', 'thumbnail']);
+        $user_items = Item::where('user_id', Auth::user()->id)->get(['id', 'name', 'price', 'thumbnail']);
 
         return view('me.profile', ['user_items' => $user_items]);
 
@@ -75,7 +75,7 @@ class ItemController extends Controller
      */
     public function show($id)
     {
-        //
+        echo "Here comes the show page!";
     }
 
     /**
@@ -86,7 +86,7 @@ class ItemController extends Controller
      */
     public function edit($id)
     {
-        //
+        echo "Here comes the edit page!";
     }
 
     /**
