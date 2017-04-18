@@ -35,12 +35,10 @@ Route::resource('item', 'ItemController', ['except' => [
 
 // TODO PUT AUTH ROUTES INTO ONLY AUTHORIZED ROUTES GROUP
 Route::group(['prefix' => 'me'], function() {
-	Route::get('profile', function(){
-    	// We returnen voorlopig nog geen view via controller, pas wanneer we data passen later veranderen we dit natuurlijk wel
-		return view('me.profile');
-	});
+	Route::get('profile', 'ItemController@index');
 
 	Route::get('requests', function(){
+		// We returnen voorlopig nog geen view via controller, pas wanneer we data passen later veranderen we dit natuurlijk wel
 		return view('me.requests');
 	});
 

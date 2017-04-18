@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 use App\Category;
 use App\Item;
+
 
 class ItemController extends Controller
 {
@@ -14,8 +16,11 @@ class ItemController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index() {
+        $user_items = Item::where('user_id', Auth::user()->id)->get(['name', 'price', 'thumbnail']);
 
-        return view('me.profile');
+        return view('me.profile', ['user_items' => $user_items]);
+
+        
     }
 
     /**
