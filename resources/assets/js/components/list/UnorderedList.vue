@@ -25,6 +25,14 @@
         font-size: 14px;
         height: 60px; /* = height header. TODO: Dit zouden we beter via SASS moeten doen via $header-height ofzo. */
     }
+
+    .list--my-items > li:first-child {
+        border-top: 1px solid #DDD;
+    }
+
+    .list--my-items > li {
+        border-bottom: 1px solid #DDD;
+    }
 </style>
 <template>
     <ul class="list">

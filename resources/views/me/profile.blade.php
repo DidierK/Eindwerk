@@ -9,14 +9,18 @@
 				<v-button class="button--blue button--default button--add-items" href="{{ url('item/create') }}">Spullen toevoegen</v-button>
 			</v-header>
 			@if ($user_items)
-			@foreach ($user_items as $item)
-			<img src="#" />
-			<p>{{ $item->name }}</p>
-			<p>€{{ $item->price }} /dag</p>
-			<p>0 Transactieverzoeken</p>
-			<v-button class="button--small">Bewerk</v-button>
-			<v-button class="button--small button--wrn">Verwijder</v-button>
-			@endforeach
+			<v-ul class="list--my-items">
+				@foreach ($user_items as $item)
+				<v-li>
+					<img src="#" />
+					<h3><v-link link="#">{{ $item->name }}</v-link></h3>
+					<span>€{{ $item->price }} /dag</span>
+					<p>0 Transactieverzoeken</p>
+					<v-button class="button--small">Bewerk</v-button>
+					<v-button class="button--small button--wrn">Verwijder</v-button>
+				</v-li>
+				@endforeach
+			</v-ul>
 			@else
 			<p>U hebt nog geen spullen toegevoegd. <v-link link="{{ url('item/create') }}" class="link--default">Voeg spullen toe.</v-link></p>
 			@endif
