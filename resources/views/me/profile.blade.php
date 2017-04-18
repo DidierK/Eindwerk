@@ -17,7 +17,7 @@
 					<span>€{{ $item->price }} /dag</span>
 					<p>0 Transactieverzoeken</p>
 					<v-button class="button--small" href="{{ url('item/' . $item->id . '/edit') }}">Bewerk</v-button>
-					<v-button class="button--small button--wrn" href="#">Verwijder</v-button>
+					<v-button class="button--small button--wrn" v-on:click="deleteItem( {{$item->id}} )">Verwijder</v-button>
 				</v-li>
 				@endforeach
 			</v-ul>

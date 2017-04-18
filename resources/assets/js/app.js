@@ -80,6 +80,17 @@ const app = new Vue({
 			} else {
 				this.showUserActions = true;
 			}
+		},
+		deleteItem: function(id) {
+				// Already reload the page meanwhile it is deleting
+				// Otherwise there will be a slight wait and it might appear as it is doing nothing
+				// when we don't use ajax
+				window.location.href= '/me/profile';
+				axios.delete('/item/' + id).then((response) => {
+				// Normally we could refresh the list by calling the method to get all the items again via axios
+				// Unfortunately we don't have that list yet so we do it like this:
+				
+			});
 		}
 	}
 });
