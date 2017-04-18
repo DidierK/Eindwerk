@@ -51,12 +51,15 @@ class ItemController extends Controller
         $input_price = $request->input('price');
         $input_category = $request->input('categories');
 
+        // Get category id by name
+        $category_id = Category::where('name', $input_category)->pluck('id')->first();
+
         Item::create([
             'name' => $input_name, 
             'description' => $input_description,
             'thumbnail' => asset('images/background1.jpg'), // TODO: Verander dit naar echte img
             'price' => $input_price,
-            'category_id' => '1', 
+            'category_id' => $category_id, 
             'user_id' => Auth::user()->id
             ]);
 
