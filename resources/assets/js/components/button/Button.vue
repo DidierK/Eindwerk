@@ -28,6 +28,14 @@ a.button--block {
 
 }
 
+.button--small {
+	border: 0;
+	border-radius: 2px;
+	font-size: 14px;
+	font-weight: 500;
+	padding: 6px 8px;
+}
+
 .button--add-items {
 	float: right;
 }
@@ -43,6 +51,11 @@ a.button--block {
 
 .button--blue {
 	background-color: #18B4DB;
+	color: #FFF;
+}
+
+.button--wrn {
+	background-color: #FD5C5C;
 	color: #FFF;
 }
 

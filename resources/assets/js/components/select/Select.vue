@@ -11,13 +11,13 @@
 
 </style>
 <template>
-    <select class="select select--default">
+    <select class="select select--default" :name="name">
         <slot></slot>
     </select>
 </template>
 <script>
     export default {
-        props: ["label"],
+        props: ["label", "name"],
         mounted() {
             this.$parent.$data.label = this.label;
         }

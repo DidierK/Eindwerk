@@ -43,13 +43,21 @@ class ItemController extends Controller
     public function store(Request $request) {
         // TODO: Make all optional fields in table nullable (for example description)
         // Replace these values with a form value
+        // TODO: Make a form validation method and input all our fields in it
+        // TODO: disect the uploaded file $input_name = $request->input('file');
+        // TODO get category id if category input is not empty, otherwise obviously leave null
+        $input_name = $request->input('name');
+        $input_description = $request->input('description');
+        $input_price = $request->input('price');
+        $input_category = $request->input('categories');
+
         Item::create([
-            'name' => 'Dakkoffer', 
-            'description' => 'Dit is een leuk item',
-            'thumbnail' => 'thumbnail', 
-            'price' => 0,
-            'category_id' => 1, 
-            'user_id' => 1
+            'name' => $input_name, 
+            'description' => $input_description,
+            'thumbnail' => asset('images/background1.jpg'), // TODO: Verander dit naar echte img
+            'price' => $input_price,
+            'category_id' => '1', 
+            'user_id' => Auth::user()->id
             ]);
 
         // Redirect to page where personal items are

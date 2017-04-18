@@ -32,6 +32,11 @@
 
     .list--my-items > li {
         border-bottom: 1px solid #DDD;
+        padding: 16px 0;
+    }
+
+    .list--my-items  .my-items-image {
+        
     }
 </style>
 <template>

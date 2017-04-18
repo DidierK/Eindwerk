@@ -8,11 +8,11 @@
 				<h1 class="header__title inline-block">Mijn spullen</h1>
 				<v-button class="button--blue button--default button--add-items" href="{{ url('item/create') }}">Spullen toevoegen</v-button>
 			</v-header>
-			@if ($user_items)
+			@if (count($user_items) > 0)
 			<v-ul class="list--my-items">
 				@foreach ($user_items as $item)
 				<v-li>
-					<img src="#" />
+					<v-img class="image--my-items" background="{{ $item->thumbnail }}"></v-img>
 					<h3><v-link link="#">{{ $item->name }}</v-link></h3>
 					<span>€{{ $item->price }} /dag</span>
 					<p>0 Transactieverzoeken</p>
