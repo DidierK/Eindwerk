@@ -35,8 +35,8 @@
         padding: 16px 0;
     }
 
-    .list--my-items  .my-items-image {
-        
+    .list--grid h3 {
+        margin: 0;
     }
 </style>
 <template>

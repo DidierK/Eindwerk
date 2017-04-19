@@ -7,6 +7,7 @@ body {
 }
 
 a {
+	color: #18B4DB;
 	text-decoration: none;
 }
 
@@ -35,4 +36,8 @@ img {
 .main {
 	// minus height header and hight footer this is
 	min-height: calc(100vh - 175px);
+}
+
+.clearfix {
+	clear: both;
 }

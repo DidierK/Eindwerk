@@ -6,6 +6,8 @@
 		background-position: center top;
 		background-repeat: no-repeat;
 		background-size: cover;
+		float: left;
+		margin-right: 16px;
 		height: 72px;
 		width: 72px;
 	}

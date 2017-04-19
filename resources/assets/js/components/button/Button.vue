@@ -1,9 +1,5 @@
 <style>
 
-a.button {
-	display: inline-block;
-}
-
 a.button:hover {
 	text-decoration: none;
 }
@@ -57,6 +53,11 @@ a.button--block {
 .button--wrn {
 	background-color: #FD5C5C;
 	color: #FFF;
+}
+
+.button--grey {
+	background-color: #DDD;
+	color: #484848;
 }
 
 .button--full-width {

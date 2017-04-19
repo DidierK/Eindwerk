@@ -6,18 +6,22 @@
 		<v-container v-cloak>
 			<v-header class="header--page">
 				<h1 class="header__title inline-block">Mijn spullen</h1>
-				<v-button class="button--blue button--default button--add-items" href="{{ url('item/create') }}">Spullen toevoegen</v-button>
+				<v-button class="button--blue button--default button--add-items inline-block" href="{{ url('item/create') }}">Spullen toevoegen</v-button>
 			</v-header>
 			@if (count($user_items) > 0)
-			<v-ul class="list--my-items">
+			<v-ul class="list--grid list--my-items">
 				@foreach ($user_items as $item)
-				<v-li>
+				<v-li class="list-item--grid">
+					<div class="list-item--info">
 					<v-img class="image--my-items" background="{{ $item->thumbnail }}"></v-img>
 					<h3><v-link link="{{ url('item/' . $item->id) }}">{{ $item->name }}</v-link></h3>
-					<span>€{{ $item->price }} /dag</span>
-					<p>0 Transactieverzoeken</p>
-					<v-button class="button--small" href="{{ url('item/' . $item->id . '/edit') }}">Bewerk</v-button>
+					<span>0 Transactieverzoeken</span>
+					</div>
+					<div class="clearfix"></div>
+					<div class="list-item--actions">
+					<v-button class="button--small button--grey" href="{{ url('item/' . $item->id . '/edit') }}">Bewerk</v-button>
 					<v-button class="button--small button--wrn" v-on:click="deleteItem( {{$item->id}} )">Verwijder</v-button>
+					</div>
 				</v-li>
 				@endforeach
 			</v-ul>

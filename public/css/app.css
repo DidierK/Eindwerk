@@ -421,6 +421,7 @@ body {
 }
 
 a {
+  color: #18B4DB;
   text-decoration: none;
 }
 
@@ -450,6 +451,10 @@ img {
   min-height: calc(100vh - 175px);
 }
 
+.clearfix {
+  clear: both;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 15px;
@@ -463,7 +468,8 @@ button {
 }
 
 h1,
-p {
+p,
+span {
   color: #484848;
 }
 
