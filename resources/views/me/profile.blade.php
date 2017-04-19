@@ -36,6 +36,7 @@
 				<h1 class="header__title">Instellingen</h1>
 				<p>Bekijk of bewerk hier uw persoonlijke gegevens. Deze zijn belangrijk om u te kunnen contacteren.</p>
 			</v-header>
+			<!-- change method to instead spoof the form to make a PUT request -->
 			<v-form class="form--settings" action="{{ url('user') }}" method="post">
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<!--  
