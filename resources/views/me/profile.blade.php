@@ -37,18 +37,20 @@
 				<p>Bekijk of bewerk hier jou persoonlijke gegevens. Deze zijn belangrijk om jou te kunnen contacteren.</p>
 			</v-header>
 			<v-form class="form--settings">
-				<!-- TODO: We should get the user data and fill all the user data we have in the "values". -->
+				<!--  
+					TODO: CHECK FOR EACH VALUE IF IT IS NOT EMPTY, IF IT IS EMPTY THE DATA THEN JUST LEAVE VALUE EMPTY AND IT WILL SHOW THE PLACEHOLDER
+				-->
 				<v-form-item>
-					<v-input type="text" value="Wout Borghgraef" class="input--text-default input--full-width" label="Naam" placeholder="Bv. Jan Janssens"></v-input>
+					<v-input type="text" value="@if(!empty($user_details->name)) {{ $user_details->name }} @endif" class="input--text-default input--full-width" label="Naam" placeholder="Bv. Jan Janssens"></v-input>
 				</v-form-item>
 				<v-form-item>
-					<v-input type="text" value="wout.borghgraef@gmail.com" class="input--text-default input--full-width" label="Email" placeholder="voorbeeld@email.com"></v-input>
+					<v-input type="text" value="@if(!empty($user_details->email)) {{ $user_details->email }} @endif" class="input--text-default input--full-width" label="Email" placeholder="voorbeeld@email.com"></v-input>
 				</v-form-item>
 				<v-form-item>
-					<v-input type="text" value="" class="input--text-default" label="Telefoonnummer (Optioneel)" placeholder="Bv. (+32) 123456789"></v-input>
+					<v-input type="text" value="@if(!empty($user_details->tel)) {{ $user_details->tel }} @endif" class="input--text-default" label="Telefoonnummer (Optioneel)" placeholder="Bv. (+32) 123456789"></v-input>
 				</v-form-item>
 				<v-form-item>
-					<v-input type="text" value="" class="input--text-default input--full-width" label="Adres" placeholder="Bv. Hendrik Speecvest 46 2800 Mechelen"></v-input>
+					<v-input type="text" value="@if(!empty($user_details->adres)) {{ $user_details->adres }} @endif" class="input--text-default input--full-width" label="Adres" placeholder="Bv. Hendrik Speecvest 46 2800 Mechelen"></v-input>
 				</v-form-item>
 				<v-form-item>
 					<v-input type="submit" value="Opslaan"></v-input>

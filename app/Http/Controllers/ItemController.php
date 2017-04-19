@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Category;
 use App\Item;
-
+use App\User;
 
 class ItemController extends Controller
 {
@@ -17,8 +17,9 @@ class ItemController extends Controller
      */
     public function index() {
         $user_items = Item::where('user_id', Auth::user()->id)->get(['id', 'name', 'price', 'thumbnail']);
+        $user_details = User::where('id', Auth::user()->id)->first();
 
-        return view('me.profile', ['user_items' => $user_items]);
+        return view('me.profile', ['user_items' => $user_items, 'user_details' => $user_details]);
 
         
     }
