@@ -1,21 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="profile-hero">
-	<div class="container">
-		<h1 class="title">Transacties</h1>
-	</div>
-</div>
-<user-nav-tabs v-cloak>
-	<user-nav-tab label="Lopend" selected>
-		<div class="container">
-			<h1>Lopende transacties</h1>	
-		</div>
-	</user-nav-tab>
-	<user-nav-tab label="Geschiedenis">
-		<div class="container">
-			<h1>Geschiedenis</h1>	
-		</div>
-	</user-nav-tab>
-</user-nav-tabs>
+<v-tabs>
+	<v-tab label="Lopend" selected>
+		<v-container v-cloak>
+			<v-header class="header--page">
+				<h1 class="header__title inline-block">Lopende transacties</h1>
+			</v-header>
+			<p>U hebt geen lopende transacties.</p>
+		</v-container>
+	</v-tab>
+	<v-tab label="Geschiedenis">
+		<v-container v-cloak>
+			<v-header class="header--page">
+				<h1 class="header__title">Geschiedenis transacties</h1>
+			</v-header>
+			<p>U hebt nog geen transacties afgesloten.</p>
+		</v-container>
+	</v-tab>
+</v-tabs>
 @endsection

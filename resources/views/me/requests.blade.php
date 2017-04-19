@@ -1,21 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="profile-hero">
-	<div class="container">
-		<h1 class="title">Verzoeken</h1>
-	</div>
-</div>
-<user-nav-tabs v-cloak>
-	<user-nav-tab label="Inkomend" selected>
-		<div class="container">
-			<h1>Inkomend</h1>	
-		</div>
-	</user-nav-tab>
-	<user-nav-tab label="Uitgaand">
-		<div class="container">
-			<h1>Uitgaand</h1>	
-		</div>
-	</user-nav-tab>
-</user-nav-tabs>
+<v-tabs>
+	<v-tab label="Inkomend" selected>
+		<v-container v-cloak>
+			<v-header class="header--page">
+				<h1 class="header__title inline-block">Inkomende verzoeken</h1>
+			</v-header>
+			<p>U hebt geen inkomende transacties.</p>
+		</v-container>
+	</v-tab>
+	<v-tab label="Uitgaand">
+		<v-container v-cloak>
+			<v-header class="header--page">
+				<h1 class="header__title">Uitgaande verzoeken</h1>
+			</v-header>
+			<p>U hebt geen uitgaande transacties.</p>
+		</v-container>
+	</v-tab>
+</v-tabs>
 @endsection
