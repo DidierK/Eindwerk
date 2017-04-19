@@ -33,6 +33,10 @@ Route::resource('item', 'ItemController', ['except' => [
     'index'
 ]]);
 
+Route::resource('user', 'UserController', ['except' => [
+	'index'
+	]]);
+
 // TODO PUT AUTH ROUTES INTO ONLY AUTHORIZED ROUTES GROUP
 Route::group(['prefix' => 'me'], function() {
 	Route::get('profile', 'ItemController@index');
