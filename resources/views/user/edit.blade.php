@@ -21,7 +21,7 @@
                     <v-input type="text" value="@if(!empty($user_details->tel)) {{ $user_details->tel }} @endif" class="input--text-default" label="Telefoonnummer (Optioneel)" placeholder="Bv. (+32) 123456789" name="tel"></v-input>
                 </v-form-item>
                 <v-form-item>
-                    <v-input type="text" value="@if(!empty($user_details->adres)) {{ $user_details->adres }} @endif" class="input--text-default input--full-width" label="Adres" placeholder="Bv. Hendrik Speecvest 46 2800 Mechelen" name="address"></v-input>
+                    <v-input type="text" value="@if(!empty($user_details->address)) {{ $user_details->address }} @endif" class="input--text-default input--full-width" label="Adres" placeholder="Bv. Hendrik Speecvest 46 2800 Mechelen" name="address"></v-input>
                 </v-form-item>
                 <v-form-item>
                     <v-input type="submit" value="Opslaan"></v-input>

@@ -89,8 +89,8 @@ class UserController extends Controller
 
         $user->name = $user_name;
         $user->email = $user_email;
-        // $user->tel = $user_tel;
-        // $user->address = $user_address;
+        $user->tel = $user_tel;
+        $user->address = $user_address;
         $user->save();
 
         // If errors redirect to edit screen, otherwise return to profile again
