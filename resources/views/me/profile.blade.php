@@ -33,7 +33,7 @@
 	<v-tab label="Instellingen">
 		<v-container v-cloak>
 			<v-header class="header--page">
-				<h1 class="header__title">Instellingen</h1>
+				<h1 class="header__title inline-block">Instellingen</h1>
 				<v-button class="button--blue button--default button--add-items inline-block" href="{{ url('user/' . Auth::id() . '/edit') }}">Profiel bewerken</v-button>
 				<p>Bekijk of bewerk hier uw persoonlijke gegevens. Deze zijn belangrijk om u te kunnen contacteren.</p>
 			</v-header>

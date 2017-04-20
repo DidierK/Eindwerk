@@ -93,7 +93,9 @@ class UserController extends Controller
         // $user->address = $user_address;
         $user->save();
 
-        return redirect(url('user/' . Auth::id() . '/edit'));
+        // If errors redirect to edit screen, otherwise return to profile again
+        // return redirect(url('user/' . Auth::id() . '/edit'));
+        return redirect(url('me/profile'));
     }
 
     /**
