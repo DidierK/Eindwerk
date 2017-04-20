@@ -35,8 +35,8 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        var_dump($request->all());
-   
+
+
 
         // TODO: Here we only have to validate the values but we should only check on the
         // name and email fields wether they are legit or not empty
@@ -53,7 +53,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -62,9 +62,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit($id) {
+        $user_details = User::find($id)->first();
+
+        return view('user.edit', ['user_details' => $user_details]);
+
     }
 
     /**
@@ -74,9 +76,24 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request, $id) {
+
+        $user_name = $request->input('name');
+        $user_email = $request->input('email');
+        $user_tel = $request->input('tel');
+        $user_address = $request->input('address');
+
+        // So what we could do is just check which fields are not empty and ony validate those
+
+        $user = User::find($id);
+
+        $user->name = $user_name;
+        $user->email = $user_email;
+        // $user->tel = $user_tel;
+        // $user->address = $user_address;
+        $user->save();
+
+        return redirect(url('user/' . Auth::id() . '/edit'));
     }
 
     /**
