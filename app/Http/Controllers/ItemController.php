@@ -42,14 +42,15 @@ class ItemController extends Controller
      */
     public function store(Request $request) {
         // TODO: Make all optional fields in table nullable (for example description)
-        // Replace these values with a form value
         // TODO: Make a form validation method and input all our fields in it
-        // TODO: disect the uploaded file $input_name = $request->input('file');
         // TODO get category id if category input is not empty, otherwise obviously leave null
         $input_name = $request->input('name');
         $input_description = $request->input('description');
         $input_price = $request->input('price');
         $input_category = $request->input('categories');
+        $input_image = $request->file('thumbnail');
+
+        $image_path = $this->storeImageAndGetPath($input_image);
 
         // Get category id by name
         $category_id = Category::where('name', $input_category)->pluck('id')->first();
@@ -57,7 +58,7 @@ class ItemController extends Controller
         Item::create([
             'name' => $input_name, 
             'description' => $input_description,
-            'thumbnail' => asset('images/background1.jpg'), // TODO: Verander dit naar echte img
+            'thumbnail' => asset('storage/' . $image_path), // TODO: Verander dit naar echte img
             'price' => $input_price,
             'category_id' => $category_id, 
             'user_id' => Auth::user()->id
@@ -73,8 +74,7 @@ class ItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         echo "Here comes the show page!";
     }
 
@@ -84,8 +84,7 @@ class ItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         echo "Here comes the edit page!";
     }
 
@@ -96,8 +95,7 @@ class ItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         //
     }
 
@@ -107,9 +105,16 @@ class ItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         Item::find($id)->delete();
         return ['redirect' => url('me/profile')];
+    }
+
+    public function storeImageAndGetPath($img) {
+        $path = $img->store('public');
+
+        // hashName is the same method used to generate image name
+        // Now it would be better to somehow just get the stored filename with a more abstract method
+        return $img->hashName();
     }
 }

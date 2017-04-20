@@ -5,7 +5,7 @@
     <v-header class="header--page" >
         <h1 class="header__title">Spullen toevoegen</h1>
     </v-header>
-    <v-form class="form--item-creation" action="{{ url('item') }}" method="post">
+    <v-form class="form--item-creation" action="{{ url('item') }}" method="post" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <v-form-item>
             <v-input type="text" label="Naam" class="input--text-default input--full-width" placeholder="Naam van het materiaal" name="name"></v-input>
@@ -14,7 +14,7 @@
             <v-input type="text" label="Prijs/dag" class="input--text-default input--price" placeholder="50.00" name="price"></v-input><span>€</span>
         </v-form-item>
         <v-form-item>
-            <v-input type="file" label="Foto" class="input--full-width"></v-input>
+            <v-input type="file" label="Foto" class="input--full-width" name="thumbnail"></v-input>
         </v-form-item>
         <p class="text--small">Opmerking: Dit is de foto die leners als eerste te zien krijgen wanneer ze jou item vinden. Later kan je nog meer foto's toevoegen.</p>
         <v-form-item>
