@@ -18,7 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', 'HomeController@index');
 
-//search
+// Search
 Route::get('search/{keyword}', 'ContentController@results');
 Route::post('search', 'ContentController@search');
 
@@ -33,6 +33,7 @@ Route::resource('item', 'ItemController', ['except' => [
     'index'
 ]]);
 
+// User resource
 Route::resource('user', 'UserController', ['except' => [
 	'index'
 	]]);
@@ -50,4 +51,8 @@ Route::group(['prefix' => 'me'], function() {
 		return view('me.transactions');
 	});
 });
+
+// Categories, Category
+Route::get('categories', 'CategoryController@index');
+Route::get('category/{category_name}', 'CategoryController@showItemsByCategoryId');
 

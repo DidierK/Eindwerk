@@ -5,7 +5,7 @@
     </v-nav>
     <v-nav class="nav--header-right nav--float-right">
         <v-ul class="list--flex">
-            <v-li><v-link link="#" class="nav__item--header link--white text--small">Categorie</v-link></v-li>
+            <v-li><v-link link="{{ url('categories')}}" class="nav__item--header link--white text--small">Categorieën</v-link></v-li>
             @if (Auth::check())
             <v-li>
                 <v-button class="nav__item--header button--borderless button--no-padding button--transparent" v-on:click="toggleUserActions">
