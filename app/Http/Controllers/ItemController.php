@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Category;
 use App\Item;
+use App\ItemName;
 use App\User;
+use DB;
 
 class ItemController extends Controller
 {
@@ -16,11 +18,11 @@ class ItemController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $user_items = Item::where('user_id', Auth::user()->id)->get(['id', 'name', 'price', 'thumbnail']);
+        $user_items = DB::table('items')
+        ->join('item_names', 'items.item_name_id', '=', 'item_names.id')
+        ->get(['items.id', 'item_names.name', 'price', 'thumbnail']);
 
-        return view('me.profile', ['user_items' => $user_items]);
-
-        
+        return view('me.profile', ['user_items' => $user_items]);  
     }
 
     /**
@@ -30,8 +32,10 @@ class ItemController extends Controller
      */
     public function create() {
         // Method pluck neemt alle values van 1 column
-        $categories = Category::pluck('name');
-        return view('item.create', ['categories' => $categories]);
+        // Zet deze list btw in ALFABETISCHE volgorde
+        // Ook maak van deze input een "search input" zoals bij legum.
+        $item_names = ItemName::orderBy('name', 'asc')->pluck('name');
+        return view('item.create', ['item_names' => $item_names]);
     }
 
     /**
@@ -44,23 +48,20 @@ class ItemController extends Controller
         // TODO: Make all optional fields in table nullable (for example description)
         // TODO: Make a form validation method and input all our fields in it
         // TODO get category id if category input is not empty, otherwise obviously leave null
-        $input_name = $request->input('name');
+        $input_name = $request->input('item_names');
         $input_description = $request->input('description');
         $input_price = $request->input('price');
-        $input_category = $request->input('categories');
         $input_image = $request->file('thumbnail');
-
         $image_path = $this->storeImageAndGetPath($input_image);
 
-        // Get category id by name
-        $category_id = Category::where('name', $input_category)->pluck('id')->first();
+        // Get item name id by name
+        $item_name_id = ItemName::where('name', $input_name)->pluck('id')->first();
 
         Item::create([
-            'name' => $input_name, 
             'description' => $input_description,
             'thumbnail' => asset('storage/' . $image_path), // TODO: Verander dit naar echte img
             'price' => $input_price,
-            'category_id' => $category_id, 
+            'item_name_id' => $item_name_id, 
             'user_id' => Auth::user()->id
             ]);
 
@@ -115,6 +116,8 @@ class ItemController extends Controller
 
         // hashName is the same method used to generate image name
         // Now it would be better to somehow just get the stored filename with a more abstract method
+        // TODO: Maybe later at some sort of cropping with the image that stores so they halve have same aspect ratio
+        // (Or we shouldn't crop a users pictures?)
         return $img->hashName();
     }
 }

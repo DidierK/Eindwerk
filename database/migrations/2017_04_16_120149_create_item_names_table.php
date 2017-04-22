@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddProviderProviderIdAvatarToUsers extends Migration
+class CreateItemNamesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class AddProviderProviderIdAvatarToUsers extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-           $table->string('provider');
-           $table->string('provider_id')->unique();
-           $table->string('avatar')->nullable();
-       });
+        Schema::create('item_names', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+        });
     }
 
     /**
@@ -27,6 +26,6 @@ class AddProviderProviderIdAvatarToUsers extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('item_names');
     }
 }

@@ -12,15 +12,19 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-            'name' => 'Kamperen',
+            'name' => 'Avontuur',
         ]);
 
         DB::table('categories')->insert([
-            'name' => 'Strandvakantie',
+            'name' => 'Strand',
         ]);
 
         DB::table('categories')->insert([
             'name' => 'Wintersport',
+        ]);
+
+        DB::table('categories')->insert([
+            'name' => 'Reisbenodigdheden',
         ]);
     }
 }
