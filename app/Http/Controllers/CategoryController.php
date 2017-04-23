@@ -12,8 +12,8 @@ use DB;
 
 class CategoryController extends Controller {
 	public function index() {
-		// Return view, together with all category names.
-		echo "Hier komen alle categorieeën opgelijst.";
+		$categories = Category::pluck('name');
+		return view('categories.categories', ['categories' => $categories]);
 	}
 
     public function showItemsByCategoryId($category_name) {
@@ -26,7 +26,8 @@ class CategoryController extends Controller {
         ->where('category_item_name.category_id', $category_id)
         ->get(['items.id', 'item_names.name', 'price', 'thumbnail']);
 
-        var_dump($items);
+        // var_dump($items);
+        return view('categories.category', ['category_name' => $category_name]);
   
     }
 }
