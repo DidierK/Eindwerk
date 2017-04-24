@@ -3,17 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use App\Category;
+use App\Item;
+use App\UserItem;
+use App\User;
+use DB;
 
-class UserItemController extends Controller
+class ItemController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index() {
+        $user_items = DB::table('user_items')
+        ->join('items', 'user_items.item_id', '=', 'items.id')
+        ->get(['user_items.id', 'items.name', 'user_items.price', 'user_items.thumbnail']);
+
+        return view('me.profile', ['user_items' => $user_items]);  
     }
 
     /**
@@ -21,9 +30,12 @@ class UserItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create() {
+        // Method pluck neemt alle values van 1 column
+        // Zet deze list btw in ALFABETISCHE volgorde
+        // Ook maak van deze input een "search input" zoals bij legum.
+        $item_names = Item::orderBy('name', 'asc')->pluck('name');
+        return view('item.create', ['item_names' => $item_names]);
     }
 
     /**
@@ -32,9 +44,29 @@ class UserItemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request) {
+        // TODO: Make all optional fields in table nullable (for example description)
+        // TODO: Make a form validation method and input all our fields in it
+        // TODO get category id if category input is not empty, otherwise obviously leave null
+        $input_name = $request->input('item_names');
+        $input_description = $request->input('description');
+        $input_price = $request->input('price');
+        $input_image = $request->file('thumbnail');
+        $image_path = $this->storeImageAndGetPath($input_image);
+
+        // Get item name id by name
+        $item_id = Item::where('name', $input_name)->pluck('id')->first();
+
+        UserItem::create([
+            'description' => $input_description,
+            'thumbnail' => asset('storage/' . $image_path), // TODO: Verander dit naar echte img
+            'price' => $input_price,
+            'item_name_id' => $item_name_id, 
+            'user_id' => Auth::user()->id
+            ]);
+
+        // Redirect to page where personal items are
+        return redirect(url('me/profile'));
     }
 
     /**
@@ -43,9 +75,8 @@ class UserItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show($id) {
+        echo "Here comes the show page!";
     }
 
     /**
@@ -54,9 +85,8 @@ class UserItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit($id) {
+        echo "Here comes the edit page!";
     }
 
     /**
@@ -66,8 +96,7 @@ class UserItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         //
     }
 
@@ -77,8 +106,18 @@ class UserItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy($id) {
+        UserItem::find($id)->delete();
+        return ['redirect' => url('me/profile')];
+    }
+
+    public function storeImageAndGetPath($img) {
+        $path = $img->store('public');
+
+        // hashName is the same method used to generate image name
+        // Now it would be better to somehow just get the stored filename with a more abstract method
+        // TODO: Maybe later at some sort of cropping with the image that stores so they halve have same aspect ratio
+        // (Or we shouldn't crop a users pictures?)
+        return $img->hashName();
     }
 }

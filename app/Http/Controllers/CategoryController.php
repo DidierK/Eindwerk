@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Category;
 use App\Item;
-use App\ItemName;
+use App\UserItem;
 use DB;
 
 

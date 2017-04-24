@@ -29,7 +29,7 @@ Route::get('auth/{provider}', 'Auth\LoginController@redirect');
 Route::get('auth/{provider}/callback', 'Auth\LoginController@callback');
 
 // User item resource
-Route::resource('user/item', 'ItemController', ['except' => [
+Route::resource('user/item', 'UserItemController', ['except' => [
     'index',
 ]]);
 
@@ -40,7 +40,7 @@ Route::resource('user', 'UserController', ['except' => [
 
 // TODO PUT AUTH ROUTES INTO ONLY AUTHORIZED ROUTES GROUP
 Route::group(['prefix' => 'me'], function() {
-	Route::get('profile', 'ItemController@index');
+	Route::get('profile', 'UserItemController@index');
 
 	Route::get('requests', function(){
 		// We returnen voorlopig nog geen view via controller, pas wanneer we data passen later veranderen we dit natuurlijk wel
@@ -57,4 +57,4 @@ Route::get('categories', 'CategoryController@index');
 Route::get('category/{category_name}', 'CategoryController@showItemsByCategoryId');
 
 // Show item
-Route::get('item/{item_name}', 'ItemController@showItem');
+Route::get('item/{item_name}', 'ItemController@index');
