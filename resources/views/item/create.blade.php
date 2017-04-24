@@ -5,7 +5,7 @@
     <v-header class="header--page" >
         <h1 class="header__title">Spullen toevoegen</h1>
     </v-header>
-    <v-form class="form--item-creation" action="{{ url('item') }}" method="post" enctype="multipart/form-data">
+    <v-form class="form--item-creation" action="{{ url('user/item') }}" method="post" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
          <v-form-item>
             <v-select label="Wat wil je verhuren?" name="item_names" class="input--full-width">

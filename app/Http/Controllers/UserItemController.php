@@ -10,7 +10,7 @@ use App\UserItem;
 use App\User;
 use DB;
 
-class ItemController extends Controller
+class UserItemController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -52,16 +52,20 @@ class ItemController extends Controller
         $input_description = $request->input('description');
         $input_price = $request->input('price');
         $input_image = $request->file('thumbnail');
-        $image_path = $this->storeImageAndGetPath($input_image);
+
+        // Get name of image and move ACTUAL image
+        $image_name = time()."-".$input_image->getClientOriginalName();
+        $input_image->move('uploads/user-items', $image_name);
+        $image_path = asset('uploads/user-items') . '/' . $image_name;
 
         // Get item name id by name
         $item_id = Item::where('name', $input_name)->pluck('id')->first();
 
         UserItem::create([
             'description' => $input_description,
-            'thumbnail' => asset('storage/' . $image_path), // TODO: Verander dit naar echte img
+            'thumbnail' => $image_path, // TODO: Verander dit naar echte img
             'price' => $input_price,
-            'item_name_id' => $item_name_id, 
+            'item_id' => $item_id, 
             'user_id' => Auth::user()->id
             ]);
 
@@ -107,17 +111,9 @@ class ItemController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
+        // TODO: DELETE ACTUAL IMAGE IN UPLOAD FOLDER (SO GET THE IMAGE NAME AND DELETE THAT ONE)
+        // ANDERS GAAT ONZE SERVER BINNEN DE KORSTE KEREN NATUURLIJK VOL STAAN
         UserItem::find($id)->delete();
         return ['redirect' => url('me/profile')];
-    }
-
-    public function storeImageAndGetPath($img) {
-        $path = $img->store('public');
-
-        // hashName is the same method used to generate image name
-        // Now it would be better to somehow just get the stored filename with a more abstract method
-        // TODO: Maybe later at some sort of cropping with the image that stores so they halve have same aspect ratio
-        // (Or we shouldn't crop a users pictures?)
-        return $img->hashName();
     }
 }

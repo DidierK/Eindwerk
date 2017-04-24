@@ -82,14 +82,11 @@ const app = new Vue({
 			}
 		},
 		deleteItem: function(id) {
-				// Already reload the page meanwhile it is deleting
-				// Otherwise there will be a slight wait and it might appear as it is doing nothing
-				// when we don't use ajax
+				axios.delete('/user/item/' + id).then((response) => {
+				// Oke the reload did not work and made sometimes the item not delete
+				// Instead maybe do a popup with please wait or loading icon before reload?
+				// Or load the items with ajax
 				window.location.href= '/me/profile';
-				axios.delete('user/item/' + id).then((response) => {
-				// Normally we could refresh the list by calling the method to get all the items again via axios
-				// Unfortunately we don't have that list yet so we do it like this:
-				
 			});
 		}
 	}

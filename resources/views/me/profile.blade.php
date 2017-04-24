@@ -6,7 +6,7 @@
 		<v-container v-cloak>
 			<v-header class="header--page">
 				<h1 class="header__title inline-block">Mijn spullen</h1>
-				<v-button class="button--blue button--default button--add-items inline-block" href="{{ url('item/create') }}">Spullen toevoegen</v-button>
+				<v-button class="button--blue button--default button--add-items inline-block" href="{{ url('user/item/create') }}">Spullen toevoegen</v-button>
 			</v-header>
 			@if (count($user_items) > 0)
 			<v-ul class="list--grid list--my-items">
@@ -26,7 +26,7 @@
 				@endforeach
 			</v-ul>
 			@else
-			<p>U hebt nog geen spullen toegevoegd. <v-link link="{{ url('item/create') }}" class="link--default">Voeg spullen toe.</v-link></p>
+			<p>U hebt nog geen spullen toegevoegd. <v-link link="{{ url('user/item/create') }}" class="link--default">Voeg spullen toe.</v-link></p>
 			@endif
 		</v-container>
 	</v-tab>

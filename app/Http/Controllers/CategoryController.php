@@ -20,10 +20,10 @@ class CategoryController extends Controller {
 
     	$category_id = Category::where('name', $category_name)->pluck('id');
 
-    	$items = DB::table('category_item_name')
-        ->join('item_names', 'category_item_name.item_name_id', '=', 'item_names.id')
-        ->where('category_item_name.category_id', $category_id)
-        ->get(['item_names.name']);
+    	$items = DB::table('category_item')
+        ->join('items', 'category_item.item_id', '=', 'items.id')
+        ->where('category_item.category_id', $category_id)
+        ->get(['items.name']);
 
         // var_dump($items);
         return view('categories.category', ['category_name' => $category_name, 'items' => $items]);
