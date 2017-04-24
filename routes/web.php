@@ -28,9 +28,9 @@ Route::get('/logout', function() { Auth::logout(); return Redirect::to('/'); });
 Route::get('auth/{provider}', 'Auth\LoginController@redirect');
 Route::get('auth/{provider}/callback', 'Auth\LoginController@callback');
 
-// Item resource
-Route::resource('item', 'ItemController', ['except' => [
-    'index'
+// User item resource
+Route::resource('user/item', 'ItemController', ['except' => [
+    'index',
 ]]);
 
 // User resource
@@ -56,3 +56,5 @@ Route::group(['prefix' => 'me'], function() {
 Route::get('categories', 'CategoryController@index');
 Route::get('category/{category_name}', 'CategoryController@showItemsByCategoryId');
 
+// Show item
+Route::get('item/{item_name}', 'ItemController@showItem');

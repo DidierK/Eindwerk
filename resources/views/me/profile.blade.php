@@ -14,12 +14,12 @@
 				<v-li class="list-item--grid">
 					<div class="list-item--info">
 						<v-img class="image--my-items" background="{{ $item->thumbnail }}"></v-img>
-						<h3><v-link link="{{ url('item/' . $item->id) }}">{{ $item->name }}</v-link></h3>
+						<h3><v-link link="{{ url('user/item/' . $item->id) }}">{{ $item->name }}</v-link></h3>
 						<span>0 Transactieverzoeken</span>
 					</div>
 					<div class="clearfix"></div>
 					<div class="list-item--actions">
-						<v-button class="button--small button--grey" href="{{ url('item/' . $item->id . '/edit') }}">Bewerk</v-button>
+						<v-button class="button--small button--grey" href="{{ url('user/item/' . $item->id . '/edit') }}">Bewerk</v-button>
 						<v-button class="button--small button--wrn" v-on:click="deleteItem( {{$item->id}} )">Verwijder</v-button>
 					</div>
 				</v-li>

@@ -120,4 +120,8 @@ class ItemController extends Controller
         // (Or we shouldn't crop a users pictures?)
         return $img->hashName();
     }
+
+    public function showItem() {
+        return view('item.show');
+    }
 }
