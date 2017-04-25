@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Category;
 use App\Item;
+use DB;
 
 class ItemController extends Controller {
     /**
@@ -13,7 +14,17 @@ class ItemController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
-        return view('item.show'); 
+    public function index($item_name) {
+    	// TODO CHECK ALL DATA WE NEED TO RETURN IN WIREFRAMES
+
+    	$item_id = Item::where('name', $item_name)->pluck('id');
+
+    	$items_per_user = DB::table('items')
+    	->join('user_items', 'items.id', '=', 'user_items.item_id')
+    	->join('users', 'user_items.user_id', '=', 'users.id')
+    	->where('items.id', $item_id)
+    	->get(['users.name', 'user_items.id']);
+
+        return view('item.show', ["items_per_user" => $items_per_user]); 
     }
 }

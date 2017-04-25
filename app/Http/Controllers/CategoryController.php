@@ -26,7 +26,10 @@ class CategoryController extends Controller {
         ->get(['items.name']);
 
         // var_dump($items);
-        return view('categories.category', ['category_name' => $category_name, 'items' => $items]);
+        return view('categories.category', [
+            'category_name' => $category_name, 
+            'items' => $items 
+            ]);
   
     }
 }
