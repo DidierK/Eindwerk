@@ -29,7 +29,7 @@ class Category_ItemTableSeeder extends Seeder
     		];
 
 
-    	/* BELOW WILL PUT EVERYTHING IN PLACE */
+    	/* BELOW WILL PUT EVERYTHING IN PLACE (Don't touch) */
 
     	// Step 1: Loop all categories in array
     		foreach ($cat_items as $key => $value) {
