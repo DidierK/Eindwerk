@@ -9,8 +9,10 @@ class CategoriesTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    {
+    public function run() {
+    	// Truncate (or delete) all rows first
+    	DB::table('categories')->delete();
+
         DB::table('categories')->insert([
             ['name' => 'Avontuur'],
             ['name' => 'Wintersport'],

@@ -9,8 +9,10 @@ class ItemsTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    {
+    public function run() {
+        // Truncate (or delete) all rows first
+        DB::table('items')->delete();
+
         DB::table('items')->insert([
             ['name' => 'Dakkoffer'],
         ]);
