@@ -18,6 +18,14 @@
 		margin: 4em 0 2em 0;
 	}
 
+	.header--hero {
+		padding-top: 6em;
+	}
+
+	.header--hero > * {
+		color: #FFF;
+	}
+
 	.header__title {
 		font-weight: 500;
 		margin: 0;

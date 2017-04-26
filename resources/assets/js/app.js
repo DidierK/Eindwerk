@@ -33,6 +33,9 @@ Vue.component('v-input', require('./components/form/Input.vue'));
 // Header
 Vue.component('v-header', require('./components/header/Header.vue'));
 
+// Hero
+Vue.component('v-hero', require('./components/hero/Hero.vue'));
+
 // Img
 Vue.component('v-img', require('./components/img/Image.vue'));
 
