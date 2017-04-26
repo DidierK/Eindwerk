@@ -25,6 +25,8 @@ class Category_ItemTableSeeder extends Seeder {
 
     	];
 
+        // TODO: Wrap this in a method?
+
     	// Step 1: Loop all categories in array
     	foreach ($cat_items as $key => $value) {
 

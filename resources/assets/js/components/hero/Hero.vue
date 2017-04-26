@@ -1,9 +1,9 @@
 <style>
 .hero--category {
-	/* TODO: INSTEAD INLINE CHANGE THIS ACCORDING TO CATEGORY BTW */
+	/* DIT IS EEN FALLBACK IMAGE */
 	background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(/images/background1.jpg);
 	background-size: cover;
-	min-height: 300px;
+	min-height: 400px;
 }
 
 </style>

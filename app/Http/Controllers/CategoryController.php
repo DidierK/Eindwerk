@@ -18,7 +18,9 @@ class CategoryController extends Controller {
 
     public function showItemsByCategoryId($category_name) {
 
-    	$category_id = Category::where('name', $category_name)->pluck('id');
+        $category = Category::where('name', $category_name)->first();
+
+    	$category_id = $category->id;
 
     	$items = DB::table('category_item')
         ->join('items', 'category_item.item_id', '=', 'items.id')
@@ -27,7 +29,7 @@ class CategoryController extends Controller {
 
         // var_dump($items);
         return view('categories.category', [
-            'category_name' => $category_name, 
+            'category' => $category, 
             'items' => $items 
             ]);
   

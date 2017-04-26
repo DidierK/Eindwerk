@@ -19,7 +19,7 @@
 	}
 
 	.header--hero {
-		padding-top: 6em;
+		padding-top: 12em;
 	}
 
 	.header--hero > * {
@@ -33,7 +33,7 @@
 
 	@media (max-width:768px){
 		.header--main {
-			min-height: 96px;
+			/* min-height: 96px; */
 		}
 	}
 

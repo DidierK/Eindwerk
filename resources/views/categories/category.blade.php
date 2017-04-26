@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<v-hero class="hero--category">
+<v-hero class="hero--category" style="background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(' {{ asset('images/category-heroes/' . $category->hero) }} ');background-position: 50% 50%; background-size: cover; background-repeat: no-repeat;">
 <v-container v-cloak>
 	<v-header class="header--hero">
-		<h1 class="header__title">{{ ucwords($category_name) }}</h1>
-		<p>Houdt u van skieën en gaat u binnenkort op reis naar de Alpen? Neem dan zeker eens een kijkje tussen alle winter artikelen die jou buren in de aanbieding hebben.</p>
+		<h1 class="header__title">{{ ucwords($category->name) }}</h1>
+		<p>{{ $category->description }}</p>
 	</v-header>
 </v-container>
 </v-hero>
