@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ChangeDescriptionThumbnailNullableItemTable extends Migration
+class AddColumnsToCategoriesTabme extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,9 @@ class ChangeDescriptionThumbnailNullableItemTable extends Migration
      * @return void
      */
     public function up() {
-        Schema::table('items', function($table) {
-            $table->string('description')->nullable()->change();
-            $table->string('thumbnail')->nullable()->change();
+        Schema::table('categories', function($table) {
+            $table->string('description')->nullable();
+            $table->string('hero')->nullable();
         });
     }
 
@@ -23,7 +23,8 @@ class ChangeDescriptionThumbnailNullableItemTable extends Migration
      *
      * @return void
      */
-    public function down() {
+    public function down()
+    {
         //
     }
 }
