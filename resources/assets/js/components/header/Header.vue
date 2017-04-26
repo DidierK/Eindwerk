@@ -19,10 +19,10 @@
 	}
 
 	.header--hero {
-		padding-top: 12em;
+		padding-top: 8em;
 	}
 
-	.header--hero > * {
+	.header--dark > * {
 		color: #FFF;
 	}
 

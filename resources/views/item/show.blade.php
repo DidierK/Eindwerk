@@ -1,11 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+<v-hero class="hero--item">
 <v-container v-cloak>
-	<v-header class="header--page" >
+	<v-header class="header--hero">
 		<h1 class="header__title">Dakkoffer</h1>
-		<p>Een dakkoffer is zeer handig om mee te nemen. Zeker wanneer u met de auto op reis gaat. Zoek een verhuurder die jou precies kan bieden wat u zoekt.</p>
+		<p>Als je met de auto op reis gaat is dit materiaal zeker handig. Kijk hieronder wie je kan helpen.</p>
 	</v-header>
+</v-container>
+</v-hero>
+	<v-container v-cloak>
 	@if (count($items_per_user) > 0)
 	<h2>Alle verleners</h2>
 	<v-ul class="list--grid list--my-items">
