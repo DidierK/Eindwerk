@@ -38,6 +38,40 @@ img {
 	min-height: calc(100vh - 175px);
 }
 
-.clearfix {
+.u--clearFix {
 	clear: both;
+}
+
+.u--block {
+	display: block;
+}
+
+.u--flex {
+	display: flex;
+}
+
+.u--floatLeft {
+	float: left;
+}
+
+.u--floatRight {
+	float: right;
+}
+
+.u--fullWidth {
+	box-sizing: border-box; /* Because the width 100% and padding otherwise overflows parent div */
+	width: 100%;
+}
+
+.u--inlineBlock {
+	display: inline-block;
+}
+
+.u--textCenter {
+	text-align: center;
+}
+
+.u--textSmall {
+	font-size: 14px;
+	font-weight: 500;
 }

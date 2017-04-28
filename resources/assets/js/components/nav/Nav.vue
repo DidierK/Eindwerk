@@ -1,18 +1,6 @@
 <style>
-	.nav--float-left {
-		float: left;
-	}
-
-	.nav--float-right {
-		float: right;
-	}
-
-	.nav--header {
-		position: relative;
-	}
-
-	.nav__item--header,
-	.nav__item--header li {
+	.Nav--header-main a,
+	.Nav--header-main ul li {
 		display: block;
 		height: 60px;
 		padding: 0 24px;
@@ -20,13 +8,14 @@
 		transition: all 0.15s ease-in-out 0s;
 	}
 
-	.nav__item--header:hover {
+	.Nav--header-main a:hover,
+	.Nav--header-main ul li:hover{
 		background-color: #226b7b;
 		color: #fff;
 	}
 
 	@media screen and (max-width: 768px) {
-		.nav--header-right {
+		.Nav--header-main:nth-child(2) {
 			position: absolute;
 			top: 0;
 			right: 15px;
@@ -34,7 +23,7 @@
 	}
 </style>
 <template>
-	<nav class="nav">
+	<nav>
 		<slot></slot>
 	</nav>
 </template>

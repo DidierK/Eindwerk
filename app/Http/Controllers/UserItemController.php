@@ -35,7 +35,7 @@ class UserItemController extends Controller
         // Zet deze list btw in ALFABETISCHE volgorde
         // Ook maak van deze input een "search input" zoals bij legum.
         $item_names = Item::orderBy('name', 'asc')->pluck('name');
-        return view('item.create', ['item_names' => $item_names]);
+        return view('user-items.create', ['item_names' => $item_names]);
     }
 
     /**

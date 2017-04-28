@@ -1,9 +1,9 @@
 <style>
-    .form-item {
+    .FormItem {
         margin-bottom: 1.5em;
     }
 
-    .form-item__label {
+    .FormItem__label {
         display: block;
         color: #484848;
         font-size: 16px;
@@ -12,8 +12,8 @@
     }
 </style>
 <template>
-    <p class="form-item">
-    <label class="form-item__label" :for="label" v-if="label">{{ label }}</label>
+    <p>
+    <label class="FormItem__label" :for="label" v-if="label">{{ label }}</label>
         <slot></slot>
     </p>
 </template>

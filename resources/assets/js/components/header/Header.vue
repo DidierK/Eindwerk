@@ -1,38 +1,38 @@
 <style>
-	.header {
+	.Header {
 		border: 0;
 		border-radius: 0;
 		margin-bottom: 0;
 	}
 
-	.header--logged-out {
+	.Header--logged-out {
 		text-align: center;
 	}
 
-	.header--main {
+	.Header--main {
 		background-color: #18b4db;
 		min-height: 60px;
 	}
 
-	.header--page {
+	.Header--page {
 		margin: 4em 0 2em 0;
 	}
 
-	.header--hero {
+	.Header--hero {
 		padding-top: 8em;
 	}
 
-	.header--dark > * {
+	.Header--dark > * {
 		color: #FFF;
 	}
 
-	.header__title {
+	.Header__title {
 		font-weight: 500;
 		margin: 0;
 	}
 
 	@media (max-width:768px){
-		.header--main {
+		.Header--main {
 			/* min-height: 96px; */
 		}
 	}
@@ -40,7 +40,7 @@
 
 </style>
 <template>
-	<header class="header">
-			<slot></slot>
+	<header>
+		<slot></slot>
 	</header>
 </template>

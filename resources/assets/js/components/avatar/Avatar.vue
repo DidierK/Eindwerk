@@ -1,11 +1,11 @@
 <style>
-  .avatar--header {
+  .Avatar--default {
     border-radius: 50%;
   }
 
 </style>
 <template>
-<img class="avatar" :src="src" />
+<img :src="src" />
 </template>
 <script>
     export default {

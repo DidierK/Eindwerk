@@ -1,11 +1,11 @@
 <style>
 
-    .input {
+    .Input {
 
     }
 
-    .input--text-default,
-    .input--textarea-default {
+    .Input--text-default,
+    .Input--textarea-default {
         border: 2px solid #DDD;
         border-radius: 1px;
         font-size: 15px;
@@ -13,49 +13,44 @@
         padding: 12px 8px;
     }
 
-    .input--text-default::placeholder,
-    .input--textarea-default::placeholder {
+    .Input--text-default::placeholder,
+    .Input--textarea-default::placeholder {
         color: #737373;
     }
 
-    .input--textarea-default {
+    .Input--textarea-default {
         min-height: 100px;
     }
 
-    .input:focus {
+    .Input:focus {
         outline: 0;
     }
 
-    .input--borderless {
+    .Input--borderless {
         border: 0;
     }
 
-    .input--transparent {
+    .Input--transparent {
         background-color: transparent;
     }
 
-    .input--placeholder-white::placeholder {
+    .Input--placeholder-white::placeholder {
         color: #FFF;
     }
 
-    .input--search-box {
+    .Input--search-box {
         width: 90%;
     }
 
-    .input--full-width {
-        box-sizing: border-box; /* Because the width 100% and padding otherwise overflows parent div */
-        width: 100%;
-    }
-
-    .input--price {
+    .Input--price {
         margin-right: 8px;
     }
 
 </style>
 <template>
     <!-- TODO: We should put form__item div in the form__item template together with the label because we can't put label next to input because of a syntax error, we should then emit the label from here to the form item, like we did with the labels of the tabs -->
-    <input :id="label" :placeholder="placeholder" :type="type" class="input" :value="value" :name="name" v-if="type !== 'textarea'" />
-    <textarea :id="label" :placeholder="placeholder" :type="type" class="input" :name="name" v-else></textarea>
+    <input :id="label" :placeholder="placeholder" :type="type" :value="value" :name="name" v-if="type !== 'textarea'" />
+    <textarea :id="label" :placeholder="placeholder" :type="type" :name="name" v-else></textarea>
 </template>
 <script>
     export default {

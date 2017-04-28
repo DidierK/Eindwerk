@@ -1,27 +1,27 @@
 <style>
-	.link:hover {
+	.Link:hover {
 		text-decoration: none;
 	}
 
-	.link--default {
+	.Link--default {
 		color: #18B4DB;
 		text-decoration: underline;
 	}
 
-	.link--white {
+	.Link--white {
 		color: #FFF;
 	}
 
-	.link--white:hover {
+	.Link--white:hover {
 		color: #DDD;
 	}
 
-	.link--black {
+	.Link--black {
 		color: #636b6f;
 		font-size: 12px;
 	}
 
-	.link--UserActions {
+	.Link--UserActions {
 		border-bottom: 1px solid #DDDDDD;
 		color: #636b6f;
 		display: block;
@@ -29,7 +29,7 @@
 	}
 </style>
 <template>
-	<a class="link" :href="link">
+	<a :href="link">
 		<slot></slot>
 	</a>
 </template>

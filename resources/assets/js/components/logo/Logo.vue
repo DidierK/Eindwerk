@@ -1,26 +1,22 @@
 <style>
-    .logo--logged-out {
+    .Logo--logged-out {
         width: 100%;
         max-width: 420px;
 
     }
-    .logo--header {
-        /* TODO: To make more reusable split up all code in modifier classes */
-        float: left;
-    }
-
-    .logo__img {
+    
+    .Logo__img {
         width: 100%;
         max-width: 420px;
     }
 
-    .logo--small img {
+    .Logo--small img {
         height: 48px;
     }
 </style>
 <template>
     <a href="/">
-        <img class="logo" src="/images/mini_white_logo.png" />
+        <img src="/images/mini_white_logo.png" />
     </a>
 </template>
 

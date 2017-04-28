@@ -1,30 +1,30 @@
 <style>
 	
-	.container {
+	.Container {
 		padding: 0 16px;
 		margin: 0 auto;
 		max-width: 1170px;
 	}
 
-	.container--logged-out {
+	.Container--logged-out {
 		margin: 0 auto;
 		max-width: 420px;
 	}
 
 	@media (min-width: 768px){
-		.container{
+		.Container {
 			width:750px;
 		}
 	}
 
 	@media (min-width: 992px){
-		.container{
+		.Container {
 			width:970px;
 		}
 	}
 
 	@media (min-width: 1200px){
-		.container{
+		.Container {
 			width:1170px;
 		}
 	}

@@ -1,5 +1,5 @@
 <template>
-	<div class="tabs__content" v-show="showTab">
+	<div v-show="showTab">
 		<slot></slot>
 	</div>
 </template>

@@ -1,6 +1,6 @@
 <style>
 
-    .app-popover {
+    .Popover {
         padding: 16px;
         position: absolute;
         width: 100%;
@@ -8,21 +8,21 @@
         z-index: 1;
     }
 
-    .app-popover-inner {
+    .Popover-inner {
         background-color: #FFF;
         border: 1px solid #DDD;
     }
 
     @media screen and (min-width: 640px) {
-        .app-popover {       
+        .Popover {       
             max-width: 192px;
         }
     }
 
 </style>
 <template>
-    <div v-show="show" class="app-popover">
-        <div class="app-popover-inner">
+    <div v-show="show">
+        <div class="Popover-inner">
             <slot></slot>
         </div>
     </div>

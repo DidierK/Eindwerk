@@ -39,9 +39,6 @@ Vue.component('v-hero', require('./components/hero/Hero.vue'));
 // Img
 Vue.component('v-img', require('./components/img/Image.vue'));
 
-// Layout
-Vue.component('v-layout', require('./components/layout/Layout.vue'));
-
 // Link
 Vue.component('v-link', require('./components/link/Link.vue'));
 

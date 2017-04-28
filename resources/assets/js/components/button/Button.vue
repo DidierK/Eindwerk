@@ -1,30 +1,26 @@
 <style>
 
-a.button:hover {
+a.Button:hover {
 	text-decoration: none;
 }
 
-a.button--block {
-	display: block;
-}
-
-.button--link {
+.Button--link {
 	text-decoration: underline;
 }
 
-.button--default {
+.Button--default {
 	border-radius: 2px;
 	font-size: 14px;
 	font-weight: 500;
 	padding: 12px 16px;
 }
 
-.button--default:hover {
+.Button--default:hover {
 	background-color: #22A8CA;
 
 }
 
-.button--small {
+.Button--small {
 	border: 0;
 	border-radius: 2px;
 	font-size: 14px;
@@ -32,64 +28,60 @@ a.button--block {
 	padding: 6px 8px;
 }
 
-.button--add-items {
+.Button--add-items {
 	float: right;
 }
 
-.button:focus {
+.Button:focus {
 	outline: 0;
 }
 
-.button--white {
+.Button--white {
 	background-color: #FFF;
 	color: #33bfea;
 }
 
-.button--blue {
+.Button--blue {
 	background-color: #18B4DB;
 	color: #FFF;
 }
 
-.button--wrn {
+.Button--wrn {
 	background-color: #FD5C5C;
 	color: #FFF;
 }
 
-.button--grey {
+.Button--grey {
 	background-color: #DDD;
 	color: #484848;
 }
 
-.button--full-width {
-	width: 100%;
-}
-
-.button--borderless {
+.Button--borderless {
 	border: 0;
 }	
 
-.button--no-padding {
+.Button--no-padding {
 	padding: 0;
 }
 
-.button--transparent {
+.Button--transparent {
 	background-color: transparent;
 }
 
-.button--center {
+.Button--center {
 	margin: 0 auto;
 }
 
-.button--login-fb {
+.Button--login-fb {
 	margin-top: 32px;
 }
 
-.button--back {
+.Button--back {
 	margin-top: 16px;
 }
 
 @media (max-width: 450px){
-	.button--add-items {
+	.Button--add-items {
 		box-sizing: border-box;
 		float: none;
 		margin: 1.5em 0;
@@ -100,11 +92,11 @@ a.button--block {
 
 </style>
 <template>
-<button v-on:click="handleClick" class="button" v-if="!href">
+<button v-on:click="handleClick" v-if="!href">
 <slot></slot>
 </button>
 
-<a :href="href" class="button" v-else>
+<a :href="href" v-else>
 <slot></slot>
 </a>
 </template>

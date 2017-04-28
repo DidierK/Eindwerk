@@ -1,19 +1,19 @@
 <style>
 	/* We zouden hier beter vie JS form--half-width en form--full-width moeten kunnen togglen bij breakpoint */
-	.form--item-creation,
-	.form--settings {
+	.Form--item-creation,
+	.Form--settings {
 		width: 100%;
 	}
 
 	@media (min-width: 768px){
-		.form--item-creation,
-		.form--settings {
+		.Form--item-creation,
+		.Form--settings {
 			width: 50%;
 		}
 	}
 </style>
 <template>
-	<form class="form" :action="action" :method="method">
+	<form :action="action" :method="method">
 		<slot></slot>
 	</form>
 </template>

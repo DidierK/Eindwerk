@@ -11,7 +11,7 @@
 	<title>{{ config('app.name', 'Laravel') }}</title>
 
 	<!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" />
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" />
@@ -25,26 +25,32 @@
 	</head>
 	<body class="logged-out">
 		<div id="app">
-			<v-header class="header--logged-out" v-cloak>
-				<a class="logo" href="/">
-					<v-img class="logo__img" src="{{ URL::asset('images/TravelShare_logo.png') }}"></v-img>
+
+			<!-- Header -->
+			<v-header class="Header Header--logged-out" v-cloak>
+				<a class="Logo" href="/">
+					<v-img class="Logo__img" src="{{ URL::asset('images/TravelShare_logo.png') }}"></v-img>
 				</a>
 			</v-header>
-			<v-container class="container--logged-out" v-cloak>
+
+			<!-- Content -->
+			<v-container class="Container Container--logged-out" v-cloak>
 				<p>Omdat wij de betrouwbaarheid en veiligheid van onze website willen garanderen laten we enkel toe aan te melden via Facebook. Persoonlijke gegevens kunnen in de instellingen van je profiel worden aangepast.</p>
-				<p>Voor meer info kan u terecht op <v-link class="link--default" href="#">onze gebruikersvoorwaarden</v-link>.</p>
-				<v-layout class="layout--centered" v-cloak>
-				<v-button href="{{ url('auth/facebook') }}" class="button button button--borderless button--blue button--default button--login-fb button--center">
-				Doorgaan met Facebook
-				</v-button>
-				<v-button href="/" class="button--block button--back button--link">Ga terug naar de startpagina.</v-button>
-				</v-layout>
+				<p>Voor meer info kan u terecht op <v-link class="Link Link--default" href="#">onze gebruikersvoorwaarden</v-link>.</p>
+				<div class="u--textCenter">
+					<v-button href="{{ url('auth/facebook') }}" class="Button Button Button--borderless Button--blue Button--default Button--login-fb Button--center">
+						Doorgaan met Facebook
+					</v-button>
+					<v-button href="/" class="Button Button--back Button--link u--block">Ga terug naar de startpagina.</v-button>
+				</div>
+
+				<!-- Footer -->
 			</v-container>
-			<v-footer class="footer footer--layout-centered footer--logged-out" v-cloak>
-				<v-ul class="list--inline">
-					<li><v-link href="#" class="link--black">Gebruikersvoorwaarden</v-link></li>
-					<li><v-link href="#" class="link--black">Over TravelShare</v-link></li>
-					<li><v-link href="#" class="link--black">Contacteer ons</v-link></li>
+			<v-footer class="Footer Footer--logged-out u--textCenter" v-cloak>
+				<v-ul class="List List--inline">
+					<li class="List__item"><v-link href="#" class="Link Link--black">Gebruikersvoorwaarden</v-link></li>
+					<li class="List__item"><v-link href="#" class="Link Link--black">Over TravelShare</v-link></li>
+					<li class="List__item"><v-link href="#" class="Link Link--black">Contacteer ons</v-link></li>
 				</v-ul>
 			</v-footer>
 		</div>

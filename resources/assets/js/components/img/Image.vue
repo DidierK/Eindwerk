@@ -1,6 +1,6 @@
 <style>
 
-	.image--my-items {
+	.Image--my-items {
 		border: 2px solid #DDD;
 		border-radius: 1px;
 		background-position: center top;
@@ -15,8 +15,8 @@
 
 </style>
 <template>
-	<img class="image" :src="src" v-if="src"/>
-	<div class="image" :style="{ 'background-image': 'url(' + background + ')' }" v-else></div>
+	<img :src="src" v-if="src"/>
+	<div :style="{ 'background-image': 'url(' + background + ')' }" v-else></div>
 </header>
 </template>
 <script>

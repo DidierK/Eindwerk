@@ -1,36 +1,36 @@
 <style>
-  .list__item--nav {
+  .List__item--nav {
     display: inline-block;
     margin-left: 32px;
     padding-right: 0;
     padding-left: 0;
   }
 
-  .list-item--grid {
+  .List__item--grid {
     position: relative;
   }
 
-  .list-item--actions {
+  .List__item--actions {
     position: absolute;
     top: 16px;
     right: 0;
   }
 
   @media screen and (min-width: 768px) {
-    .list-item--info {
+    .List__item--info {
       width: 50%;
     }
   }
 
   @media screen and (max-width: 768px) {
-    .list-item--info {
+    .List__item--info {
       margin-top: 48px;
       width: 100%;
     }
   }
 </style>
 <template>
-  <li class="list__item">
+  <li>
     <slot></slot>
   </li>
 </template>

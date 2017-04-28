@@ -1,37 +1,37 @@
 <style>
 
-	.tabs__navigation .container {
+	.Tabs__navigation .Container {
 		height: 55px;
 		min-height: 55px;
 	}
 
-	.tabs__navigation--theme-default {
+	.Tabs__navigation--theme-default {
 		background-color: #FFF;
 		border-bottom: 1px solid #DDD;
 	}
 
-	.tabs__navigation--theme-default button {
+	.Tabs__navigation--theme-default button {
 		font-weight: 500;
 		color: #484848;
 	}
 
-	.tab-header {
+	.Tab--header {
 		background-color: transparent;
 		height: 100%;
 		padding: 0 12px;
 		border: 0;
 	}
 
-	.tab-header:focus {
+	.Tab--header:focus {
 		outline: 0;
 	}
 
-	.tab-header.active {
+	.Tab--header.active {
 		color: #18B4DC;
 		position: relative;
 	}
 
-	.tab-header.active::after {
+	.Tab--header.active::after {
 		border-bottom: 3px solid #18B4DC;
 		position: absolute;
 		content: "";
@@ -41,23 +41,23 @@
 	}
 
 	@media screen and (min-width: 768px) {
-		.tab-header {
+		.Tab--header {
 			margin-right: 20px;
 		}
 	}
 
 	@media screen and (max-width: 768px) {
-		.tab-header {
+		.Tab--header {
 			text-align: center;
 			width: 49%;
 		}
 	}
 </style>
 <template>
-	<div class="tabs">
-		<nav class="tabs__navigation tabs__navigation--theme-default">
-			<div class="container">
-				<button class="tab-header"  :class="{ active: (activeTab === tab)}" v-for="tab in tabs" v-on:click="activate(tab)">{{ tab }}</button>
+	<div>
+		<nav class="Tabs__navigation Tabs__navigation--theme-default">
+			<div class="Container">
+				<button class="Tab--header"  :class="{ active: (activeTab === tab)}" v-for="tab in tabs" v-on:click="activate(tab)">{{ tab }}</button>
 			</div>
 		</nav>
 		<slot></slot>
