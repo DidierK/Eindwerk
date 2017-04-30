@@ -16,8 +16,14 @@
 // Avatar
 Vue.component('v-avatar', require('./components/avatar/Avatar.vue'));
 
+// Banner
+Vue.component('v-banner', require('./components/banner/Banner.vue'));
+
 // Button
 Vue.component('v-button', require('./components/button/Button.vue'));
+
+// Card
+Vue.component('v-card', require('./components/card/Card.vue'));
 
 // Container
 Vue.component('v-container', require('./components/container/Container.vue'));
@@ -25,10 +31,9 @@ Vue.component('v-container', require('./components/container/Container.vue'));
 // Footer
 Vue.component('v-footer', require('./components/footer/Footer.vue'));
 
-// Form, Form Item, Input
+// Form, Form Item
 Vue.component('v-form', require('./components/form/Form.vue'));
 Vue.component('v-form-item', require('./components/form/FormItem.vue'));
-Vue.component('v-input', require('./components/form/Input.vue'));
 
 // Header
 Vue.component('v-header', require('./components/header/Header.vue'));
@@ -38,6 +43,8 @@ Vue.component('v-hero', require('./components/hero/Hero.vue'));
 
 // Img
 Vue.component('v-img', require('./components/img/Image.vue'));
+
+Vue.component('v-input', require('./components/input/Input.vue'));
 
 // Link
 Vue.component('v-link', require('./components/link/Link.vue'));
@@ -63,6 +70,9 @@ Vue.component('v-search-box', require('./components/search-box/SearchBox.vue'));
 
 // Select
 Vue.component('v-select', require('./components/select/Select.vue'));
+
+// Sidebar
+Vue.component('v-search-box', require('./components/sidebar/Sidebar.vue'));
 
 // Tabs
 Vue.component('v-tabs', require('./components/tabs/Tabs.vue'));

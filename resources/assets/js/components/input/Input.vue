@@ -4,6 +4,46 @@
 
     }
 
+    .Input::placeholder {
+        color: #DDD;
+    }
+
+    .Input--radio {
+        display: none;
+    }
+
+    .Input--radio + span {
+        background-color: #FFF;
+        border: 1px solid #DDD;
+        border-radius: 50%;
+        position: absolute;
+        top: 4px;
+        left: 0;
+        width: 14px;
+        height: 14px;
+    }
+
+    .Input--radio:checked + span::after {
+        background-color: #18B4DB;
+        border-radius: 50%;
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .Control {
+        cursor: pointer;
+    }
+
+    .Control--radio {
+        margin-bottom: 8px;
+        padding-left: 32px;
+        position: relative;
+    }
+
     .Input--text-default,
     .Input--textarea-default {
         border: 2px solid #DDD;
@@ -15,7 +55,7 @@
 
     .Input--text-default::placeholder,
     .Input--textarea-default::placeholder {
-        color: #737373;
+        color: #B7B7B7;
     }
 
     .Input--textarea-default {

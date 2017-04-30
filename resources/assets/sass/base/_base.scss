@@ -3,6 +3,7 @@ html, body {
 }
 
 body {
+	background-color: #F5F5F5;
 	margin: 0;
 }
 
@@ -44,6 +45,10 @@ img {
 
 .u--block {
 	display: block;
+}
+
+.u--borderless {
+	border: 0;
 }
 
 .u--flex {

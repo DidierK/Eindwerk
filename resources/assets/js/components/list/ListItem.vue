@@ -16,10 +16,21 @@
     right: 0;
   }
 
+  .List--user-items {
+    margin-top: 16px;
+    width: 100%;
+  }
+
+
   @media screen and (min-width: 768px) {
     .List__item--info {
       width: 50%;
     }
+
+    .List--user-items {
+    margin-top: 0;
+    width: calc(100% - 266px); /* Actually could do SASS vars for the minus so they change dynamically */
+  }
   }
 
   @media screen and (max-width: 768px) {

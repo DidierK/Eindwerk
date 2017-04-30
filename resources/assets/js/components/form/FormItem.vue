@@ -3,6 +3,12 @@
         margin-bottom: 1.5em;
     }
 
+    .FormItem--search {
+        border: 1px solid #DDD;
+        margin: 0;
+        padding: 8px;
+    }
+
     .FormItem__label {
         display: block;
         color: #484848;

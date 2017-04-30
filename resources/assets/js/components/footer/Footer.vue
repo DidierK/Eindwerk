@@ -3,6 +3,10 @@
 	margin-top: 80px;
 }
 
+.Footer--user-item {
+	border-top: 1px solid #DDD;
+}
+
 </style>
 <template>
 	<footer>

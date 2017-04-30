@@ -32,7 +32,7 @@
 
 </style>
 <template>
-	<div class="container">
+	<div>
 		<slot></slot>
 	</div>
 </header>
