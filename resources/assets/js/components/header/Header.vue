@@ -12,6 +12,7 @@
 	.Header--main {
 		background-color: #1F758B;
 		min-height: 52px;
+		
 	}
 
 	.Header--page {
@@ -33,7 +34,7 @@
 
 	@media (max-width:768px){
 		.Header--main {
-			/* min-height: 96px; */
+			
 		}
 	}
 

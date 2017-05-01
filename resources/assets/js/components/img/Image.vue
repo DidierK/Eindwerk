@@ -28,6 +28,10 @@
 	.Icon--search {
 		fill: #18B4DB;
 	}
+
+	.Icon--white {
+		fill: #FFF;
+	}
 	
 
 </style>

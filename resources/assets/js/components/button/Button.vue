@@ -28,6 +28,11 @@
 		padding: 6px 8px;
 	}
 
+	.Button--icon-small {
+		width: 36px;
+		height: 36px;
+	}
+
 	.Button--add-items {
 		float: right;
 	}
@@ -81,12 +86,20 @@
 	}
 
 	.Button--search {
-		height: 36px;
 		line-height: 0;
 		position: absolute;
 		top: 0;
 		right: 0;
 		width: 36px;
+		height: 36px;
+	}
+
+	.Button--search-header {
+		background-color: #C5DFE6;
+		border-top-right-radius: 2px;
+		border-bottom-right-radius: 2px;
+		width: 32px;
+		height: 32px;
 	}
 
 	@media (max-width: 450px){

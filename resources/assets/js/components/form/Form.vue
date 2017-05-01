@@ -9,6 +9,11 @@
 		position: relative;
 	}
 
+	.Form--search-header {
+		width: 320px;
+		height: 32px;
+	}
+
 	@media (min-width: 768px){
 		.Form--item-creation,
 		.Form--settings {
