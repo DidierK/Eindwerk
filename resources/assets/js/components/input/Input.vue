@@ -1,26 +1,31 @@
 <style>
 
-    .Input {
-
-    }
-
-    .Input::placeholder {
-        color: #DDD;
-    }
-
     .Input--radio {
         display: none;
     }
 
+    .Input--search {
+        font-size: 14px;
+        border: 1px solid #C0C0C0;
+        border-radius: 2px;
+        box-sizing: border-box;
+        height: 36px;
+        padding: 0 36px 0 8px;
+    }
+
+    .Input--search::placeholder {
+        color: #C0C0C0;
+    }
+
     .Input--radio + span {
         background-color: #FFF;
-        border: 1px solid #DDD;
+        border: 1px solid #C0C0C0;
         border-radius: 50%;
         position: absolute;
-        top: 4px;
+        top: 2px;
         left: 0;
-        width: 14px;
-        height: 14px;
+        width: 12px;
+        height: 12px;
     }
 
     .Input--radio:checked + span::after {
@@ -30,8 +35,8 @@
         position: absolute;
         top: 2px;
         left: 2px;
-        width: 10px;
-        height: 10px;
+        width: 8px;
+        height: 8px;
     }
 
     .Control {

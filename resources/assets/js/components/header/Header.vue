@@ -11,7 +11,7 @@
 
 	.Header--main {
 		background-color: #1F758B;
-		min-height: 60px;
+		min-height: 52px;
 	}
 
 	.Header--page {

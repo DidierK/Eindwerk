@@ -2,9 +2,9 @@
 	.Nav--header-main a,
 	.Nav--header-main ul li {
 		display: block;
-		height: 60px;
+		height: 52px;
 		padding: 0 24px;
-		line-height: 60px;
+		line-height: 52px;
 		transition: all 0.15s ease-in-out 0s;
 	}
 

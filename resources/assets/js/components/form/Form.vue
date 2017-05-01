@@ -5,6 +5,10 @@
 		width: 100%;
 	}
 
+	.Form--search {
+		position: relative;
+	}
+
 	@media (min-width: 768px){
 		.Form--item-creation,
 		.Form--settings {

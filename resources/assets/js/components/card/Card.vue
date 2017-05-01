@@ -8,10 +8,9 @@
 }
 
 .Card--user-item {
+	box-sizing: border-box;
 	padding: 8px;
-	width: 30%;
 }
-
 
 </style>
 <template>

@@ -38,6 +38,30 @@
     .List--grid h3 {
         margin: 0;
     }
+
+
+  .List--user-items {
+    margin-top: 16px;
+    width: 100%;
+  }
+
+  .List--user-items > * {
+    float: left;
+    margin: 0 4px;
+    width: 100%;
+  }
+
+  @media (min-width: 420px){
+    .List--user-items > *  {
+      width: calc(50% - 8px);
+    }
+  }
+
+  @media (min-width: 1200px){
+    .List--user-items > * {
+      width: calc(33.33% - 8px);
+    }
+  }
 </style>
 <template>
     <ul>
