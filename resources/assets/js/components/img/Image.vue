@@ -26,7 +26,7 @@
 	}
 
 	.Icon--search {
-		fill: #C0C0C0;
+		fill: #18B4DB;
 	}
 	
 

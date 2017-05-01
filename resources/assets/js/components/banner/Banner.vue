@@ -3,11 +3,11 @@
 .Banner {
 	background-color: #FFF;
 	border-bottom: 1px solid #DDD;
-	padding: 4px 0;
 }
 
 .Banner--user-items {
 	margin-bottom: 16px;
+	padding: 15px 0;
 }
 
 

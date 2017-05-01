@@ -46,7 +46,6 @@
   }
 
   .List--user-items > * {
-    float: left;
     margin: 0 4px;
     width: 100%;
   }

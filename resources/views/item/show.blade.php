@@ -3,7 +3,7 @@
 @section('content')
 <v-banner class="Banner Banner--user-items">
 	<v-container class="Container" v-cloak>
-		<h3>Aanbod voor {{ strtolower('Dakkoffer') }}</h3>
+		<h3 class="u--noMargin">Aanbod voor {{ strtolower('Dakkoffer') }}</h3>
 	</v-container>
 </v-banner>
 
@@ -51,13 +51,16 @@
 	</div>
 
 	<!-- Content -->
-	<div class="List List--user-items u--floatLeft">
+	<div class="List List--user-items u--flex u--flexWrap">
 		<a class="List List__item u--block" href="#">
 			<v-card class="Card Card--user-item" v-cloak>
 				<v-img class="Image Image--background Image--user-item" background="{{ asset('images/background1.jpg') }}"></v-img>
-				<v-footer class="Footer Footer--user-item">
-					<h3>Wout Borghgraef</h3>
-					<span>Tienen</span>	
+				<v-footer class="Footer Footer--user-item u--flex">
+					<div class="Footer__item Footer__item--user-info">
+						<h3 class="u--noMargin">Wout Borghgraef</h3>
+						<span class="u--colorLight u--textSmall">3300 Tienen</span>	
+					</div>
+					<span class="u--marginLeft8px u--alignSelfCenter u--textMedium">€50.00</span>
 				</v-footer>
 			</v-card>
 		</a>
@@ -65,9 +68,12 @@
 		<a class="List List__item u--block" href="#">
 			<v-card class="Card Card--user-item" v-cloak>
 				<v-img class="Image Image--background Image--user-item" background="{{ asset('images/background1.jpg') }}"></v-img>
-				<v-footer class="Footer Footer--user-item">
-					<h3>Wout Borghgraef</h3>
-					<span>Tienen</span>	
+				<v-footer class="Footer Footer--user-item u--flex">
+					<div class="Footer__item Footer__item--user-info">
+						<h3 class="u--noMargin">Bram De Nyn</h3>
+						<span class="u--colorLight u--textSmall">2800 Mechelen</span>	
+					</div>
+					<span class="u--marginLeft8px u--alignSelfCenter u--textMedium">€75.20</span>	
 				</v-footer>
 			</v-card>
 		</a>
@@ -75,9 +81,12 @@
 		<a class="List List__item u--block" href="#">
 			<v-card class="Card Card--user-item" v-cloak>
 				<v-img class="Image Image--background Image--user-item" background="{{ asset('images/background1.jpg') }}"></v-img>
-				<v-footer class="Footer Footer--user-item">
-					<h3>Wout Borghgraef</h3>
-					<span>Tienen</span>	
+				<v-footer class="Footer Footer--user-item u--flex">
+					<div class="Footer__item Footer__item--user-info">
+						<h3 class="u--noMargin">An De Schepper</h3>
+						<span class="u--colorLight u--textSmall">3320 Hoegaarden</span>	
+					</div>
+					<span class="u--marginLeft8px u--alignSelfCenter u--textMedium">€79.99</span>
 				</v-footer>
 			</v-card>
 		</a>
