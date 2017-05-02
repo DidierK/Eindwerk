@@ -13,6 +13,11 @@
     .Logo--small img {
         height: 48px;
     }
+
+    .Logo--header-main {
+        padding: 0 16px;
+    }
+    
 </style>
 <template>
     <a href="/">

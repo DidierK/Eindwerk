@@ -1,14 +1,11 @@
 <!-- Main header -->
 <v-header class="Header Header--main u--flex u--flexAlignItemsCenter u--flexJustifyContentSpaceBetween" v-cloak>
 
-    <!-- Nav left -->
-    <v-nav class="Nav">
-        <v-logo class="Logo u--paddingRight16px u--paddingLeft16px u--block"></v-logo>
-    </v-nav>
+    <!-- Logo -->
+    <v-logo class="Logo Logo--header-main u--block"></v-logo>
+    
 
-        <!-- Search -->
-        <div class="u--notMobile u--marginRightAuto">
-        <v-form class="Form Form--search Form--search-header" v-cloak>
+        <v-form class="Form Form--search Form--search-header u--notMobile u--marginRightAuto" v-cloak>
             <v-input class="Input Input--search-header u--fullWidth u--borderless" type="text" placeholder="Zoeken op Travelshare"></v-input>
             <v-button class="Button Button--search Button--search-header u--borderless">
                 <svg height="18px" version="1.1" viewBox="0 0 18 18" width="18px" x="0px" y="0px" class="Icon Icon--search">
@@ -17,7 +14,6 @@
                 </svg>
             </v-button>
         </v-form>
-        </div>
 
     <!-- Nav right -->
     <v-nav class="Nav">

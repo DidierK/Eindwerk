@@ -32,13 +32,6 @@
 		margin: 0;
 	}
 
-	@media (max-width:768px){
-		.Header--main {
-			
-		}
-	}
-
-
 </style>
 <template>
 	<header>
