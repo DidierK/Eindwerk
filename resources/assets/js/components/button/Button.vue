@@ -85,23 +85,6 @@
 		margin-top: 16px;
 	}
 
-	.Button--search {
-		line-height: 0;
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 36px;
-		height: 36px;
-	}
-
-	.Button--search-header {
-		background-color: #C5DFE6;
-		border-top-right-radius: 2px;
-		border-bottom-right-radius: 2px;
-		width: 32px;
-		height: 32px;
-	}
-
 	@media (max-width: 450px){
 		.Button--add-items {
 			box-sizing: border-box;

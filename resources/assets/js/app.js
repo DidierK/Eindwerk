@@ -65,14 +65,14 @@ Vue.component('v-option', require('./components/option/Option.vue'));
 // Popover
 Vue.component('v-popover', require('./components/popover/Popover.vue'));
 
-// Search Box
-Vue.component('v-search-box', require('./components/search-box/SearchBox.vue'));
+// Search
+Vue.component('v-search', require('./components/search/Search.vue'));
 
 // Select
 Vue.component('v-select', require('./components/select/Select.vue'));
 
 // Sidebar
-Vue.component('v-search-box', require('./components/sidebar/Sidebar.vue'));
+Vue.component('v-sidebar', require('./components/sidebar/Sidebar.vue'));
 
 // Tabs
 Vue.component('v-tabs', require('./components/tabs/Tabs.vue'));

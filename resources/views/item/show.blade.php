@@ -12,16 +12,18 @@
 
 	<!-- Sidebar -->
 	<div class="Sidebar Sidebar--left">
-		<v-form class="Form Form--search">
-			<v-form-item class="FormItem--search">
-				<v-input class="Input Input--search u--fullWidth" placeholder="Zoek in jou gemeente"></v-input>
-				<v-button class="Button Button--search u--borderless u--bgTransparent">
+
+		<!-- Search -->
+		<v-search class="Search Search--sub-nav u--posRelative">
+			<v-form>
+			<v-input class="Search__field Search__field--sub-nav u--sizeFull" placeholder="Zoek in jou gemeente"></v-input>
+				<v-button class="Search__button Search__button--sub-nav">
 					<svg class="Icon Icon--search" height="18px" version="1.1" viewBox="0 0 18 18" width="18px" x="0px" y="0px">
 						<path clip-rule="evenodd" d="M16.707,15.293l-1.414,1.414l-4.825-4.825C9.487,12.58,8.295,13,7,13c-3.313,0-6-2.687-6-6s2.687-6,6-6s6,2.687,6,6c0,1.295-0.42,2.487-1.118,3.468L16.707,15.293z M7,3C4.791,3,3,4.791,3,7s1.791,4,4,4s4-1.791,4-4S9.209,3,7,3z" fill-rule="evenodd"></path>
 					</svg>
 				</v-button>
-			</v-form-item>
-		</v-form>
+			</v-form>
+		</v-search>
 
 		<!-- Filters -->
 		<h3>Filter op</h3>

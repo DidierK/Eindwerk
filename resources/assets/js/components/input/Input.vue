@@ -4,23 +4,6 @@
         display: none;
     }
 
-    .Input--search {
-        font-size: 14px;
-        border: 1px solid #C0C0C0;
-        border-radius: 2px;
-        box-sizing: border-box;
-        height: 36px;
-        padding: 0 36px 0 8px;
-    }
-
-    .Input--search-header {
-        font-size: 14px;
-        border-radius: 2px;
-        box-sizing: border-box;
-        height: 32px;
-        padding: 0 36px 0 8px;
-    }
-
     .Input--search::placeholder,
     .Input--search-header::placeholder {
         color: #C0C0C0;
