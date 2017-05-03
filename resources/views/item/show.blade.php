@@ -3,7 +3,7 @@
 @section('content')
 <v-banner class="Banner Banner--user-items">
 	<v-container class="Container" v-cloak>
-		<h3 class="u--noMargin">Aanbod voor {{ strtolower('Dakkoffer') }}</h3>
+		<h3 class="Banner__title u--noMargin">Aanbod voor {{ strtolower('Dakkoffer') }}</h3>
 	</v-container>
 </v-banner>
 
@@ -11,12 +11,12 @@
 <v-container class="Container" v-cloak>
 
 	<!-- Sidebar -->
-	<div class="Sidebar Sidebar--left">
+	<v-sidebar class="Sidebar Sidebar--left u--floatLeft u--sizeFull">
 
 		<!-- Search -->
 		<v-search class="Search Search--sub-nav u--posRelative">
 			<v-form>
-			<v-input class="Search__field Search__field--sub-nav u--sizeFull" placeholder="Zoek in jou gemeente"></v-input>
+				<v-input class="Search__field Search__field--sub-nav u--sizeFull" placeholder="Zoek in jou gemeente"></v-input>
 				<v-button class="Search__button Search__button--sub-nav">
 					<svg class="Icon Icon--search" height="18px" version="1.1" viewBox="0 0 18 18" width="18px" x="0px" y="0px">
 						<path clip-rule="evenodd" d="M16.707,15.293l-1.414,1.414l-4.825-4.825C9.487,12.58,8.295,13,7,13c-3.313,0-6-2.687-6-6s2.687-6,6-6s6,2.687,6,6c0,1.295-0.42,2.487-1.118,3.468L16.707,15.293z M7,3C4.791,3,3,4.791,3,7s1.791,4,4,4s4-1.791,4-4S9.209,3,7,3z" fill-rule="evenodd"></path>
@@ -26,7 +26,7 @@
 		</v-search>
 
 		<!-- Filters -->
-		<h3>Filter op</h3>
+		<h3 class="Sidebar__title">Filter op</h3>
 		<v-ul class="List">
 			<v-li class="List__item">
 				<label class="Control Control--radio u--block u--textSmall" for="newest">
@@ -50,45 +50,45 @@
 				</label>
 			</v-li>
 		</v-ul>
-	</div>
+	</v-sidebar>
 
 	<!-- Content -->
 	<div class="List List--user-items u--flex u--flexWrap">
-		<a class="List List__item u--block" href="#">
+		<a class="List List__item u--block u--linkClean" href="#">
 			<v-card class="Card Card--user-item" v-cloak>
-				<v-img class="Image Image--background Image--user-item" background="{{ asset('images/background1.jpg') }}"></v-img>
-				<v-footer class="Footer Footer--user-item u--flex">
-					<div class="Footer__item Footer__item--user-info">
-						<h3 class="u--noMargin">Wout Borghgraef</h3>
-						<span class="u--colorLight u--textSmall">3300 Tienen</span>	
+				<v-img class="Card__thumbnail Card__thumbnail--user-item" background="{{ asset('images/background1.jpg') }}"></v-img>
+				<v-footer class="Card__footer Card__footer--user-item u--flex">
+					<div class="Card__user-info">
+						<h3 class="Card__user-name u--noMargin">Bram De Nyn</h3>
+						<span class="Card__user-address u--colorLight u--textSmall">2800 Mechelen</span>	
 					</div>
-					<span class="u--marginLeft8px u--alignSelfCenter u--textMedium">€50.00</span>
+					<span class="Card__user-item-price u--marginLeft8px u--alignSelfCenter u--textMedium">€75.20</span>	
 				</v-footer>
 			</v-card>
 		</a>
 
-		<a class="List List__item u--block" href="#">
+		<a class="List List__item u--block u--linkClean" href="#">
 			<v-card class="Card Card--user-item" v-cloak>
-				<v-img class="Image Image--background Image--user-item" background="{{ asset('images/background1.jpg') }}"></v-img>
-				<v-footer class="Footer Footer--user-item u--flex">
-					<div class="Footer__item Footer__item--user-info">
-						<h3 class="u--noMargin">Bram De Nyn</h3>
-						<span class="u--colorLight u--textSmall">2800 Mechelen</span>	
+				<v-img class="Card__thumbnail Card__thumbnail--user-item" background="{{ asset('images/background1.jpg') }}"></v-img>
+				<v-footer class="Card__footer Card__footer--user-item u--flex">
+					<div class="Card__user-info">
+						<h3 class="Card__user-name u--noMargin">Bram De Nyn</h3>
+						<span class="Card__user-address u--colorLight u--textSmall">2800 Mechelen</span>	
 					</div>
-					<span class="u--marginLeft8px u--alignSelfCenter u--textMedium">€75.20</span>	
+					<span class="Card__user-item-price u--marginLeft8px u--alignSelfCenter u--textMedium">€75.20</span>	
 				</v-footer>
 			</v-card>
 		</a>
 
-		<a class="List List__item u--block" href="#">
+		<a class="List List__item u--block u--linkClean" href="#">
 			<v-card class="Card Card--user-item" v-cloak>
-				<v-img class="Image Image--background Image--user-item" background="{{ asset('images/background1.jpg') }}"></v-img>
-				<v-footer class="Footer Footer--user-item u--flex">
-					<div class="Footer__item Footer__item--user-info">
-						<h3 class="u--noMargin">An De Schepper</h3>
-						<span class="u--colorLight u--textSmall">3320 Hoegaarden</span>	
+				<v-img class="Card__thumbnail Card__thumbnail--user-item" background="{{ asset('images/background1.jpg') }}"></v-img>
+				<v-footer class="Card__footer Card__footer--user-item u--flex">
+					<div class="Card__user-info">
+						<h3 class="Card__user-name u--noMargin">Bram De Nyn</h3>
+						<span class="Card__user-address u--colorLight u--textSmall">2800 Mechelen</span>	
 					</div>
-					<span class="u--marginLeft8px u--alignSelfCenter u--textMedium">€79.99</span>
+					<span class="Card__user-item-price u--marginLeft8px u--alignSelfCenter u--textMedium">€75.20</span>	
 				</v-footer>
 			</v-card>
 		</a>

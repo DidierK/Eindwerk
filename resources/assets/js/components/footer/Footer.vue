@@ -8,11 +8,6 @@
 	padding: 8px;
 }
 
-.Footer__item--user-info {
-    border-right: 1px solid #DDD;
-	flex-basis: 75%;
-}
-
 </style>
 <template>
 	<footer>

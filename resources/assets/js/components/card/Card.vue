@@ -1,17 +1,42 @@
 <style>
+	.Card {
+		background-color: #FFF;
+		border-radius: 2px;
+		box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
+		padding: 16px;
+	}
 
-.Card {
-	background-color: #FFF;
-	border-radius: 2px;
-	box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
-	padding: 16px;
+	.Card--user-item {
+		box-sizing: border-box;
+		padding: 8px;
+	}
+
+	.Card__user-name,
+	.Card__user-item-price {
+		color: #000;
+	}
+
+	.Card__thumbnail {
+		background-position: center top;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.Card__thumbnail--user-item {
+		margin-bottom: 8px;
+		width: 100%;
+		height: 250px;
+	}
+
+	.Card__footer--user-item {
+		border-top: 1px solid #DDD;
+		padding: 8px;
+	}
+
+	.Card__user-info {
+    border-right: 1px solid #DDD;
+	flex-basis: 75%;
 }
-
-.Card--user-item {
-	box-sizing: border-box;
-	padding: 8px;
-}
-
 </style>
 <template>
 	<div>

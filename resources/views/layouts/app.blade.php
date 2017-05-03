@@ -23,10 +23,10 @@
             ]); ?>
         </script>
         <script type="text/javascript">
-    if (window.location.hash && window.location.hash == '#_=_') {
-        if (window.history && history.pushState) {
-            window.history.pushState("", document.title, window.location.pathname);
-        } else {
+            if (window.location.hash && window.location.hash == '#_=_') {
+                if (window.history && history.pushState) {
+                    window.history.pushState("", document.title, window.location.pathname);
+                } else {
             // Prevent scrolling by storing the page's current scroll offset
             var scroll = {
                 top: document.body.scrollTop,
@@ -39,19 +39,17 @@
         }
     }
 </script>
-    </head>
-    <body>
-        <div id="app">
-            @include('partials.header')
-
-            <div class="main">
-                @yield('content')
-            </div>
-
-            @include('partials.footer')
-        </div>
-
-        <!-- Scripts -->
-        <script src="/js/app.js"></script>
-    </body>
-    </html>
+</head>
+<body>
+    <div id="app">
+    <!-- Ook nog 1 voor login scherm maken -->
+        @if (Route::getCurrentRoute()->uri() == '/')
+        @include('layouts.page--front')
+        @else
+        @include('layouts.page')
+        @endif
+    </div>
+    <!-- Scripts -->
+    <script src="/js/app.js"></script>
+</body>
+</html>

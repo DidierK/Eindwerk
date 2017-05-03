@@ -19,12 +19,6 @@
 		width: 72px;
 	}
 
-	.Image--user-item {
-		margin-bottom: 8px;
-		width: 100%;
-		height: 250px;
-	}
-
 	.Icon--search {
 		fill: #18B4DB;
 	}

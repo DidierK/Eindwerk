@@ -1,9 +1,11 @@
 <!-- Main header -->
-<v-header class="Header Header--main u--flex u--flexAlignItemsCenter u--flexJustifyContentSpaceBetween" v-cloak>
+<v-header class="Header Header--main @if(Route::getCurrentRoute()->uri() == '/'){{'Header--bg-transparent'}}@endif u--flex u--flexAlignItemsCenter u--flexJustifyContentSpaceBetween" v-cloak>
 
     <!-- Logo -->
     <v-logo class="Logo Logo--header-main u--block"></v-logo>
-    
+
+    <!-- Header search -->
+    @if (Route::getCurrentRoute()->uri() != '/')
     <v-search class="Search Search--header u--notMobile u--marginRightAuto u--posRelative">
         <v-form v-cloak>
             <v-input class="Search__field Search__field--header u--sizeFull" type="text" placeholder="Zoeken op Travelshare"></v-input>
@@ -15,6 +17,7 @@
             </v-button>
         </v-form>
     </v-search>
+    @endif
 
     <!-- Mobile nav --> 
     <div class="u--mobileOnly">
@@ -37,7 +40,7 @@
         <v-nav class="Nav">
             <v-ul class="List u--flex">
                 <v-li class="List__item u--flex u--flexAlignItemsCenter u--paddingRight16px u--paddingLeft16px">
-                    <v-link link="{{ url('categories')}}" class="Link Link--white u--textSmall">Categorieën</v-link>
+                    <v-link link="{{ url('categories')}}" class="Link u--linkClean">Categorieën</v-link>
                 </v-li>
                 @if (Auth::check())
                 <v-li class="List__item u--flex u--flexAlignItemsCenter u--paddingRight16px u--paddingLeft16px">
@@ -46,7 +49,7 @@
                     </v-button>
                 </v-li>
                 @else
-                <v-li class="List__item u--flex u--flexAlignItemsCenter u--paddingRight16px u--paddingLeft16px"><v-link class="Link Link--white u--textSmall" link="{{ url('/login') }}">Aanmelden</v-link></v-li>
+                <v-li class="List__item u--flex u--flexAlignItemsCenter u--paddingRight16px u--paddingLeft16px"><v-link class="Link u--linkClean" link="{{ url('/login') }}">Aanmelden</v-link></v-li>
                 @endif
             </v-ul>
         </div>

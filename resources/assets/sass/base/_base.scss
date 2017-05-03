@@ -8,8 +8,7 @@ body {
 }
 
 a {
-	color: #000;
-	text-decoration: none;
+
 }
 
 ul {
@@ -31,7 +30,7 @@ img {
 }
 
 [v-cloak] { 
-	display:none;
+	display: none;
 }
 
 .main {
@@ -41,6 +40,10 @@ img {
 
 .u--alignSelfCenter {
 	align-self: center;
+}
+
+.u--cf {
+	clear: both;
 }
 
 .u--clearFix {
@@ -90,6 +93,10 @@ img {
 
 .u--inlineBlock {
 	display: inline-block;
+}
+
+.u--linkClean {
+	text-decoration: none;
 }
 
 .u--marginLeft8px {

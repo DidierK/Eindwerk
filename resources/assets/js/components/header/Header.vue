@@ -11,8 +11,15 @@
 
 	.Header--main {
 		background-color: #1F758B;
-		min-height: 52px;
-		
+		min-height: 52px;	
+	}
+
+	.Header--main a {
+		color: #FFF;
+	}
+
+	.Header--bg-transparent {
+		background-color: transparent;
 	}
 
 	.Header--page {

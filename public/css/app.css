@@ -421,11 +421,6 @@ body {
   margin: 0;
 }
 
-a {
-  color: #000;
-  text-decoration: none;
-}
-
 ul {
   list-style: none;
   margin: 0;
@@ -455,6 +450,10 @@ img {
 .u--alignSelfCenter {
   -ms-grid-row-align: center;
   align-self: center;
+}
+
+.u--cf {
+  clear: both;
 }
 
 .u--clearFix {
@@ -508,6 +507,10 @@ img {
 
 .u--inlineBlock {
   display: inline-block;
+}
+
+.u--linkClean {
+  text-decoration: none;
 }
 
 .u--marginLeft8px {
@@ -591,6 +594,7 @@ h1,
 h2,
 p {
   color: #B7B7B7;
+  margin: 0;
 }
 
 h2 {

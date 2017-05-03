@@ -1,12 +1,8 @@
 <style>
 
-.Sidebar {
-	float: left;
-	width: 100%;
-}
 
 @media (min-width: 768px){
-		.Sidebar {
+		.Sidebar--left {
 			margin-right: 16px;
 			max-width: 250px;
 		}
