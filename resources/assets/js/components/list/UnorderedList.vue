@@ -8,16 +8,13 @@
         padding: 0 16px;
     }
 
-    .List--flex {
-        display: flex;
-    }
-
-    .List--flex * {
-        line-height: 0;
-    }
-
-    .List--vertically-centered {  
-        align-items: center;
+    .List--user-actions {
+        box-sizing: border-box;
+        padding: 16px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
     }
 
     .List--nav {

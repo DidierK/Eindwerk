@@ -25,7 +25,6 @@
 		border-bottom: 1px solid #DDDDDD;
 		color: #636b6f;
 		display: block;
-		padding: 16px;	
 	}
 </style>
 <template>

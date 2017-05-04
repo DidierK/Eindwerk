@@ -1,5 +1,9 @@
 <style>
 
+	.Button {
+		line-height: 0;
+	}
+
 	a.Button:hover {
 		text-decoration: none;
 	}

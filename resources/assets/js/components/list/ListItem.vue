@@ -16,7 +16,6 @@
     right: 0;
   }
 
-
   @media screen and (min-width: 768px) {
     .List__item--info {
       width: 50%;

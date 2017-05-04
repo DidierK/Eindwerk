@@ -1,4 +1,7 @@
 <style>
+.Nav--main > ul {
+	height: 52px;
+}
 
 </style>
 <template>
