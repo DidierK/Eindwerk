@@ -92,7 +92,7 @@ const app = new Vue({
 			}
 		},
 		deleteItem: function(id) {
-				axios.delete('/user/item/' + id).then((response) => {
+				axios.delete('/user-item/' + id).then((response) => {
 				// Oke the reload did not work and made sometimes the item not delete
 				// Instead maybe do a popup with please wait or loading icon before reload?
 				// Or load the items with ajax
