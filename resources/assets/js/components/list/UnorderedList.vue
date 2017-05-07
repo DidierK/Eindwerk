@@ -42,19 +42,19 @@
     width: 100%;
   }
 
-  .List--user-items > * {
+  .List--user-items > .List__item {
     margin: 0 4px;
     width: 100%;
   }
 
   @media (min-width: 420px){
-    .List--user-items > *  {
+    .List--user-items > .List__item  {
       width: calc(50% - 8px);
     }
   }
 
   @media (min-width: 1200px){
-    .List--user-items > * {
+    .List--user-items > .List__item {
       width: calc(33.33% - 8px);
     }
   }

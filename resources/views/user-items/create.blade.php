@@ -9,7 +9,7 @@
     </v-header>
 
     <!-- Form: Item creation -->
-    <v-form class="Form Form--item-creation" action="{{ url('user/item') }}" method="post" enctype="multipart/form-data">
+    <v-form class="Form Form--item-creation" action="{{ url('user-item') }}" method="post" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
          
          <v-form-item class="FormItem">

@@ -35,7 +35,7 @@
 				@endforeach
 			</v-ul>
 			@else
-			<p>U hebt nog geen spullen toegevoegd. <v-link link="{{ url('user/item/create') }}" class="Link Link--default">Voeg spullen toe.</v-link></p>
+			<p>U hebt nog geen spullen toegevoegd. <v-link link="{{ url('user-item/create') }}" class="Link Link--default">Voeg spullen toe.</v-link></p>
 			@endif
 
 		</v-container>

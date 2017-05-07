@@ -54,6 +54,7 @@
 
 	<!-- Content -->
 	<div class="List List--user-items u--flex u--flexWrap">
+		@if (count($items_per_user) > 0)
 		@foreach ($items_per_user as $item)
 		<a class="List List__item u--block u--linkClean" href="{{ url('user-item/' . $item->id )}}">
 			<v-card class="Card Card--user-item" v-cloak>
@@ -68,21 +69,9 @@
 			</v-card>
 		</a>
 		@endforeach
+		@else
+		<p>Er zijn voorlopig geen verhuurders voor dit materiaal. <v-link class="Link" link="#">Voeg een item toe om de eerste te zijn die dit item verhuurt!</v-link></p>
+		@endif
 	</div>
-	<!-- Table view
-	@if (count($items_per_user) > 0)
-	<v-ul class="List List--grid List--my-items">
-		@foreach ($items_per_user as $item)
-		<v-li class="List__item List__item--grid">
-			<div class="List__item--info">
-				<h3>Naam: <v-link class="Link" link="{{ url('user/item/' . $item->id ) }}">{{ $item->name }}</v-link></h3>
-			</div>
-		</v-li>
-		@endforeach
-	</v-ul>
-	@else
-	<p>Er zijn voorlopig geen verhuurders voor dit materiaal. <v-link class="Link" link="#">Voeg een item toe om de eerste te zijn die dit item verhuurt!</v-link></p>
-	@endif
--->
 </v-container>
 @endsection
