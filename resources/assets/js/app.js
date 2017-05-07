@@ -78,6 +78,9 @@ Vue.component('v-sidebar', require('./components/sidebar/Sidebar.vue'));
 Vue.component('v-tabs', require('./components/tabs/Tabs.vue'));
 Vue.component('v-tab', require('./components/tabs/Tab.vue'));
 
+// User item
+Vue.component('v-user-item', require('./components/user-item/UserItem.vue'));
+
 const app = new Vue({
 	el: '#app',
 	data: {

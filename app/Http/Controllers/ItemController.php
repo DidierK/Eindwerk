@@ -23,7 +23,7 @@ class ItemController extends Controller {
     	->join('user_items', 'items.id', '=', 'user_items.item_id')
     	->join('users', 'user_items.user_id', '=', 'users.id')
     	->where('items.id', $item_id)
-    	->get(['users.name', 'user_items.id', 'user_items.price']);
+    	->get(['users.name', 'user_items.thumbnail', 'user_items.id', 'user_items.price']);
 
         return view('item.show', ["items_per_user" => $items_per_user]); 
     }

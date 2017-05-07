@@ -2,6 +2,7 @@
 
 	.Button {
 		line-height: 0;
+		height: 42px;
 	}
 
 	a.Button:hover {
@@ -52,6 +53,7 @@
 
 	.Button--blue {
 		background-color: #18B4DB;
+		border: 0;
 		color: #FFF;
 	}
 

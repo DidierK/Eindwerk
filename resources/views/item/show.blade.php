@@ -58,7 +58,7 @@
 		@foreach ($items_per_user as $item)
 		<a class="List List__item u--block u--linkClean" href="{{ url('user-item/' . $item->id )}}">
 			<v-card class="Card Card--user-item" v-cloak>
-				<v-img class="Card__thumbnail Card__thumbnail--user-item" background="{{ asset('images/background1.jpg') }}"></v-img>
+				<v-img class="Card__thumbnail Card__thumbnail--user-item" background="{{ $item->thumbnail }}"></v-img>
 				<v-footer class="Card__footer Card__footer--user-item u--flex">
 					<div class="Card__user-info">
 						<h3 class="Card__user-name u--noMargin">{{ $item->name }}</h3>

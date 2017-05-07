@@ -39,6 +39,10 @@
 		margin: 0;
 	}
 
+	.Header--user-item-details .Header__avatar-container {
+		margin-right: 8px;
+	}
+
 </style>
 <template>
 	<header>

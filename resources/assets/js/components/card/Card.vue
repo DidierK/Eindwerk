@@ -6,10 +6,12 @@
 		padding: 16px;
 	}
 
-	.Card--user-item {
+	.Card--user-item,
+	.Card--user-item-details {
 		box-sizing: border-box;
 		padding: 8px;
 	}
+
 
 	.Card__user-name,
 	.Card__user-item-price {
@@ -34,9 +36,16 @@
 	}
 
 	.Card__user-info {
-    border-right: 1px solid #DDD;
-	flex-basis: 75%;
-}
+		border-right: 1px solid #DDD;
+		flex-basis: 75%;
+	}
+
+	@media (min-width: 640px){
+		.Card--user-item-details {
+			margin-right: 32px;
+		}
+	}
+
 </style>
 <template>
 	<div>
