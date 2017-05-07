@@ -80,7 +80,7 @@ class UserItemController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        echo "Here comes the show page!";
+        return view('user-items.show');
     }
 
     /**
