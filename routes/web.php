@@ -29,7 +29,7 @@ Route::get('auth/{provider}', 'Auth\LoginController@redirect');
 Route::get('auth/{provider}/callback', 'Auth\LoginController@callback');
 
 // User item resource
-Route::resource('user/item', 'UserItemController', ['except' => [
+Route::resource('user-item', 'UserItemController', ['except' => [
     'index',
 ]]);
 

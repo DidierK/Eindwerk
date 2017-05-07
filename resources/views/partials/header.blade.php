@@ -54,7 +54,7 @@
                     <v-button class="Button Button--borderless Button--no-padding Button--transparent" v-on:click="toggleUserActions">
                         <v-avatar class="Avatar Avatar--default" src="{{ Auth::user()->avatar }}"></v-avatar>
                     </v-button>
-                    <!-- SUB NAV 
+                    <!-- Sub nav -->
                     <v-ul class="List List--user-actions">
                         <v-li class="List__item">
                             <v-link class="Link u--linkClean" link="{{ url('me/profile') }}">Profiel</v-link>
@@ -69,7 +69,7 @@
                             <v-link class="Link u--linkClean" link="{{ url('/logout') }}">Afmelden</v-link>
                         </v-li>
                     </v-ul>
-                    -->
+                    
                 </v-li>
                 @else
                 <v-li class="List__item u--flex u--flexAlignItemsCenter u--paddingRight16px u--paddingLeft16px"><v-link class="Link u--linkClean" link="{{ url('/login') }}">Aanmelden</v-link></v-li>

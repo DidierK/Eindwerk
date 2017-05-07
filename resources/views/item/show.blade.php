@@ -54,44 +54,20 @@
 
 	<!-- Content -->
 	<div class="List List--user-items u--flex u--flexWrap">
-		<a class="List List__item u--block u--linkClean" href="#">
+		@foreach ($items_per_user as $item)
+		<a class="List List__item u--block u--linkClean" href="{{ url('user-item/' . $item->id )}}">
 			<v-card class="Card Card--user-item" v-cloak>
 				<v-img class="Card__thumbnail Card__thumbnail--user-item" background="{{ asset('images/background1.jpg') }}"></v-img>
 				<v-footer class="Card__footer Card__footer--user-item u--flex">
 					<div class="Card__user-info">
-						<h3 class="Card__user-name u--noMargin">Bram De Nyn</h3>
+						<h3 class="Card__user-name u--noMargin">{{ $item->name }}</h3>
 						<span class="Card__user-address u--colorLight u--textSmall">2800 Mechelen</span>	
 					</div>
-					<span class="Card__user-item-price u--marginLeft8px u--alignSelfCenter u--textMedium">€75.20</span>	
+					<span class="Card__user-item-price u--marginLeft8px u--alignSelfCenter u--textMedium">€ {{ number_format($item->price, 2) }}</span>	
 				</v-footer>
 			</v-card>
 		</a>
-
-		<a class="List List__item u--block u--linkClean" href="#">
-			<v-card class="Card Card--user-item" v-cloak>
-				<v-img class="Card__thumbnail Card__thumbnail--user-item" background="{{ asset('images/background1.jpg') }}"></v-img>
-				<v-footer class="Card__footer Card__footer--user-item u--flex">
-					<div class="Card__user-info">
-						<h3 class="Card__user-name u--noMargin">Bram De Nyn</h3>
-						<span class="Card__user-address u--colorLight u--textSmall">2800 Mechelen</span>	
-					</div>
-					<span class="Card__user-item-price u--marginLeft8px u--alignSelfCenter u--textMedium">€75.20</span>	
-				</v-footer>
-			</v-card>
-		</a>
-
-		<a class="List List__item u--block u--linkClean" href="#">
-			<v-card class="Card Card--user-item" v-cloak>
-				<v-img class="Card__thumbnail Card__thumbnail--user-item" background="{{ asset('images/background1.jpg') }}"></v-img>
-				<v-footer class="Card__footer Card__footer--user-item u--flex">
-					<div class="Card__user-info">
-						<h3 class="Card__user-name u--noMargin">Bram De Nyn</h3>
-						<span class="Card__user-address u--colorLight u--textSmall">2800 Mechelen</span>	
-					</div>
-					<span class="Card__user-item-price u--marginLeft8px u--alignSelfCenter u--textMedium">€75.20</span>	
-				</v-footer>
-			</v-card>
-		</a>
+		@endforeach
 	</div>
 	<!-- Table view
 	@if (count($items_per_user) > 0)
