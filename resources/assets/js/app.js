@@ -18,7 +18,9 @@ Vue.component('v-avatar', require('./components/avatar/Avatar.vue'));
 
 // Autocomplete, Autocomplete suggestions
 Vue.component('v-autocomplete', require('./components/autocomplete/Autocomplete.vue'));
+Vue.component('v-autocomplete-main', require('./components/autocomplete/AutocompleteMain.vue'));
 Vue.component('v-autocomplete-suggestions', require('./components/autocomplete/AutocompleteSuggestions.vue'));
+Vue.component('v-autocomplete-suggestions-main', require('./components/autocomplete/AutocompleteSuggestionsMain.vue'));
 
 // Banner
 Vue.component('v-banner', require('./components/banner/Banner.vue'));

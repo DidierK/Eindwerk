@@ -1,9 +1,10 @@
 <template>
 	<div class="Search__suggestions">
-		<v-ul>
-			<v-li><a href="#">Item</a></v-li>
-			<v-li><a href="#">Item</a></v-li>
-			<v-li><a href="#">Item</a></v-li>
-		</v-ul>
+		<slot></slot>
 	</div>
 </template>
+<script>
+	export default {
+		props: ["results"]
+	}
+</script>

@@ -31,7 +31,7 @@ class ItemController extends Controller {
     public function getItems(Request $request) {
 
         $query = DB::table('items');
-
+        // Note: $request->all is an array
         foreach ($request->all() as $key => $value) {
             $query->where($key, $value);
         }
@@ -42,6 +42,9 @@ class ItemController extends Controller {
 
     public function searchItems(Request $request) {
 
-        $query = DB::table('items');
+        $query = $request->query("q");
+
+        $results = DB::table('items')->where('name', 'like', "%$query%")->get();
+        return response()->json([ 'results' => $results]); 
     }   
 }

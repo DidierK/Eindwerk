@@ -1,22 +1,20 @@
 <template>
 	<v-form-item class="u--posRelative">
-		<input class="Search__field" name="item" placeholder="Wat zoek je?" v-on:keyup="queryItemNames" v-model="query"></input>    
-		<v-autocomplete-suggestions></v-autocomplete-suggestions>
+		<input class="Search__field" name="item" placeholder="Wat zoek je?" v-on:keyup="handleKeyUp" v-model="query"></input>    
+		<slot></slot>
 	</v-form-item>
 </template>
 <script>
 	export default {
 		data: function() {
 			return {
-				query: ''
+				query: '',
 			}
-		},
-		methods: {
-			queryItemNames: function () {
-				axios.get('api/items?name=' + query).then((response) => {
-				window.location.href= '/me/profile';
-			});
-			}
-		},
-	}
-</script>
+			},
+			methods: {
+				handleKeyUp: function () {
+					this.$emit('keyup', this.query);	
+				}
+			},
+		}
+	</script>

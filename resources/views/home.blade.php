@@ -10,8 +10,7 @@
 		</div>
 		<v-search class="Search Search--main">
 			<v-form>
-				<v-autocomplete>	
-				</v-autocomplete>
+				<v-autocomplete-main></v-autocomplete-main>
 				<v-form-item>
 					<v-button class="Search__button Search__button--blue">Zoeken
 					</v-button>
