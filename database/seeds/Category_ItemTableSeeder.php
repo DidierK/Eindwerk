@@ -16,7 +16,9 @@ class Category_ItemTableSeeder extends Seeder {
     	// Define which item belongs to which here (category/item names MUST exist)
     	$cat_items = [
     	"Transport" => [
-    	"Dakkoffer" 
+    	"Dakkoffer",
+        "Tent (strand)",
+        "Tent (kamperen)"
     	],
 
     	"Wintersport" => [

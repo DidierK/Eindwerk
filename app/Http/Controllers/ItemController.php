@@ -14,10 +14,10 @@ class ItemController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($item_name) {
+    public function index($item_url) {
     	// TODO CHECK ALL DATA WE NEED TO RETURN IN WIREFRAMES
 
-    	$item_id = Item::where('name', $item_name)->pluck('id');
+    	$item_id = Item::where('url', $item_url)->pluck('id');
 
     	$items_per_user = DB::table('items')
     	->join('user_items', 'items.id', '=', 'user_items.item_id')
