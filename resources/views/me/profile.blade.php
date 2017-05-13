@@ -11,7 +11,7 @@
 			<!-- Header -->
 			<v-header class="Header Header--page">
 				<h1 class="Header__title u--inlineBlock">Mijn spullen</h1>
-				<v-button class="Button Button--blue Button--default Button--add-items u--inlineBlock" href="{{ url('user-item/create') }}">Spullen toevoegen</v-button>
+				<v-button class="Button Button--blue Button--default Button--add-items u--inlineBlock u--linkClean" href="{{ url('user-item/create') }}">Spullen toevoegen</v-button>
 			</v-header>
 
 			<!-- List: Spullen -->
@@ -28,8 +28,8 @@
 					</div>
 					<div class="u--clearFix"></div>
 					<div class="List__item List__item--actions">
-						<v-button class="Button Button--small Button--grey" href="{{ url('user-item/' . $item->id . '/edit') }}">Bewerk</v-button>
-						<v-button class="Button Button--small Button--wrn" v-on:click="deleteItem( {{$item->id}} )">Verwijder</v-button>
+						<v-button class="Button Button--small Button--grey u--linkClean" href="{{ url('user-item/' . $item->id . '/edit') }}">Bewerk</v-button>
+						<v-button class="Button Button--small Button--wrn u--linkClean" v-on:click="deleteItem( {{$item->id}} )">Verwijder</v-button>
 					</div>
 				</v-li>
 				@endforeach

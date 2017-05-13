@@ -27,4 +27,21 @@ class ItemController extends Controller {
 
         return view('item.show', ["items_per_user" => $items_per_user]); 
     }
+
+    public function getItems(Request $request) {
+
+        $query = DB::table('items');
+
+        foreach ($request->all() as $key => $value) {
+            $query->where($key, $value);
+        }
+
+        $results = $query->get();
+        return response()->json([ 'results' => $results]);        
+    }
+
+    public function searchItems(Request $request) {
+
+        $query = DB::table('items');
+    }   
 }

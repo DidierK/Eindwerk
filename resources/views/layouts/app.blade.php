@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
 
     <!-- Scripts -->
     <script>
@@ -27,29 +27,45 @@
                 if (window.history && history.pushState) {
                     window.history.pushState("", document.title, window.location.pathname);
                 } else {
-            // Prevent scrolling by storing the page's current scroll offset
-            var scroll = {
-                top: document.body.scrollTop,
-                left: document.body.scrollLeft
-            };
-            window.location.hash = '';
-            // Restore the scroll offset, should be flicker free
-            document.body.scrollTop = scroll.top;
-            document.body.scrollLeft = scroll.left;
-        }
-    }
-</script>
-</head>
-<body>
-    <div id="app">
-    <!-- Ook nog 1 voor login scherm maken -->
-        @if (Route::getCurrentRoute()->uri() == '/')
-        @include('layouts.page--front')
-        @else
-        @include('layouts.page')
-        @endif
-    </div>
-    <!-- Scripts -->
-    <script src="/js/app.js"></script>
-</body>
-</html>
+                    var scroll = {
+                        top: document.body.scrollTop,
+                        left: document.body.scrollLeft
+                    };
+                    window.location.hash = '';
+                    document.body.scrollTop = scroll.top;
+                    document.body.scrollLeft = scroll.left;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="app">
+            <!-- Ook nog 1 voor login scherm maken -->
+            @if (Route::getCurrentRoute()->uri() == '/')
+            @include('layouts.page--front')
+            @else
+            @include('layouts.page')
+            @endif
+
+            <!-- Popovers -->
+            <v-popover class="Popover Popover--user-actions" placement="bottom">
+            <v-ul class="List List--user-actions">
+                <v-li class="List__item">
+                    <v-link class="Link u--linkClean" link="{{ url('me/profile') }}">Profiel</v-link>
+                </v-li>
+                <v-li class="List__item">
+                    <v-link class="Link u--linkClean" link="{{ url('me/requests') }}">Verzoeken</v-link>
+                </v-li>
+                <v-li class="List__item">
+                    <v-link class="Link u--linkClean" link="{{ url('me/transactions') }}">Transacties</v-link>
+                </v-li>
+                <v-li class="List__item">
+                    <v-link class="Link u--linkClean" link="{{ url('/logout') }}">Afmelden</v-link>
+                </v-li>
+            </v-ul>
+            </v-popover>
+        </div>
+        <!-- Scripts -->
+        <script src="/js/app.js"></script>
+    </body>
+    </html>

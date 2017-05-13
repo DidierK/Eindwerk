@@ -1,8 +1,12 @@
 <style>
 
 	.Button {
-		line-height: 0;
+		
+	}
+
+	.Button--notification {
 		height: 42px;
+		line-height: 0;
 	}
 
 	a.Button:hover {

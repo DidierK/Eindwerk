@@ -38,7 +38,7 @@
 				<p>Omdat wij de betrouwbaarheid en veiligheid van onze website willen garanderen laten we enkel toe aan te melden via Facebook. Persoonlijke gegevens kunnen in de instellingen van je profiel worden aangepast.</p>
 				<p>Voor meer info kan u terecht op <v-link class="Link Link--default" href="#">onze gebruikersvoorwaarden</v-link>.</p>
 				<div class="u--textCenter">
-					<v-button href="{{ url('auth/facebook') }}" class="Button Button Button--borderless Button--blue Button--default Button--login-fb Button--center">
+					<v-button href="{{ url('auth/facebook') }}" class="Button Button Button--borderless Button--blue Button--default Button--login-fb Button--center u--linkClean u--inlineBlock">
 						Doorgaan met Facebook
 					</v-button>
 					<v-button href="/" class="Button Button--back Button--link u--block">Ga terug naar de startpagina.</v-button>

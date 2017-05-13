@@ -1,5 +1,5 @@
 <style>
-	.Hero--front a,
+	.Hero--front > a,
 	.Hero__heading,
 	.Hero__subheading {
 		color: #FFF;

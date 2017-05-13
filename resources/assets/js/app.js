@@ -16,6 +16,10 @@
 // Avatar
 Vue.component('v-avatar', require('./components/avatar/Avatar.vue'));
 
+// Autocomplete, Autocomplete suggestions
+Vue.component('v-autocomplete', require('./components/autocomplete/Autocomplete.vue'));
+Vue.component('v-autocomplete-suggestions', require('./components/autocomplete/AutocompleteSuggestions.vue'));
+
 // Banner
 Vue.component('v-banner', require('./components/banner/Banner.vue'));
 
@@ -85,6 +89,7 @@ const app = new Vue({
 	el: '#app',
 	data: {
 		showUserActions: false,
+
 	},
 	methods: {
 		toggleUserActions: function(){
@@ -94,6 +99,9 @@ const app = new Vue({
 				this.showUserActions = true;
 			}
 		},
+		showPopover(event) {
+			console.log(event.target);
+		},
 		deleteItem: function(id) {
 				axios.delete('/user-item/' + id).then((response) => {
 				// Oke the reload did not work and made sometimes the item not delete
@@ -101,6 +109,9 @@ const app = new Vue({
 				// Or load the items with ajax
 				window.location.href= '/me/profile';
 			});
+		},
+		getItemNames: function() {
+			console.log('LOL');
 		}
 	}
 });

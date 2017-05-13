@@ -10,6 +10,13 @@
         line-height: 0;
     }
 
+    .Search__suggestions {
+        background-color: #FFF;
+        position: absolute;
+        top: 42px;
+        width: 80%;
+    }
+
     .Search__button--blue {
         background-color: #22A8CA;
         color: #FFF;
@@ -23,7 +30,7 @@
     .Search--main {
         margin: 0 auto;
         padding-bottom: 4em;
-        max-width: 660px;
+        max-width: 480px;
     }
 
     .Search--main form {
@@ -37,7 +44,15 @@
         border: 0;
         border-radius: 0;
         float: left;
-        width: 100%;
+    }
+
+    .Search--main .Search__field {
+        border-right: 1px solid #DDD;
+        width: 80%;
+    }
+
+    .Search--main .Search__button {
+        width: 20%;
     }
 
     .Search--main .Search__field {
@@ -96,14 +111,6 @@
             padding-bottom: 8em;
         }
 
-        .Search--main .Search__field {
-            border-right: 1px solid #DDD;
-            width: 40%;
-        }
-
-        .Search--main .Search__button {
-            width: 20%;
-        }
     }
 
 </style>

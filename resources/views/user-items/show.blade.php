@@ -16,7 +16,7 @@
             <h3>Extra informatie</h3>
             <p>Dit is een koffer gemaakt om veel spullen in te vervoeren. Vier personen is ideaal maar het kunnen er zeker ook meer zijn.</p>
             <span class="UserItem__price u--block">€ 50,00 /dag</span>
-            <v-button class="Button Button--blue u--block u--sizeFull">Verzoek versturen</v-button>
+            <v-button class="Button Button--default Button--blue u--block u--sizeFull">Verzoek versturen</v-button>
         </div>
     </div>
 </v-user-item>

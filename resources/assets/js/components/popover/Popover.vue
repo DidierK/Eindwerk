@@ -1,16 +1,20 @@
 <style>
 
     .Popover {
-        padding: 16px;
         position: absolute;
-        width: 100%;
-        left: 0;
+        /*top: 0;
+        left: 1000px;*/
+        right: 0;
+        bottom: 0;
         z-index: 1;
     }
 
+    .Popover--default {
+        padding: 16px;
+    }
+
     .Popover-inner {
-        background-color: #FFF;
-        border: 1px solid #DDD;
+       background-color: #fff;
     }
 
     @media screen and (min-width: 640px) {
@@ -21,7 +25,7 @@
 
 </style>
 <template>
-    <div v-show="show">
+    <div>
         <div class="Popover-inner">
             <slot></slot>
         </div>
@@ -30,6 +34,14 @@
 
 <script>
     export default {
-        props: ['show']
+        props: ['show', 'reference'],
+        mounted () {
+            
+        },
+        methods: {
+            doToggle() {
+                this.showPopover = !this.showPopover;
+            }
+        }
     }
 </script>
