@@ -44,7 +44,7 @@ class ItemController extends Controller {
 
         $query = $request->query("q");
 
-        $results = DB::table('items')->where('name', 'like', "%$query%")->get();
+        $results = DB::table('items')->where('name', 'like', "%$query%")->orderBy('name', 'asc')->get();
         return response()->json([ 'results' => $results]); 
     }   
 }
