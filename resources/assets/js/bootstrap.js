@@ -7,6 +7,7 @@ window._ = require('lodash');
  */
 
 window.$ = window.jQuery = require('jquery');
+var autocomplete = require( "jquery-ui/ui/widgets/autocomplete" );
 
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces

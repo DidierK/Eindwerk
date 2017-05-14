@@ -1,7 +1,8 @@
 <style>
 	.Hero--front > a,
 	.Hero__heading,
-	.Hero__subheading {
+	.Hero__subheading,
+	.Hero__subheading > a {
 		color: #FFF;
 	}
 

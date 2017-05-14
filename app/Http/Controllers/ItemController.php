@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Auth;
 use App\Category;
 use App\Item;
@@ -31,20 +32,40 @@ class ItemController extends Controller {
     public function getItems(Request $request) {
 
         $query = DB::table('items');
+
+        $results = array();
+
         // Note: $request->all is an array
         foreach ($request->all() as $key => $value) {
             $query->where($key, $value);
         }
 
-        $results = $query->get();
-        return response()->json([ 'results' => $results]);        
+        $items = $query->get();
+
+        // For each record
+        foreach ($items as $item) {
+        $results[] = ['url' => $item->url, 'label' => $item->name]; //you can take custom values as you want
+    }
+
+        return $results;      
     }
 
     public function searchItems(Request $request) {
 
-        $query = $request->query("q");
+        $term = $request->query('term');
 
-        $results = DB::table('items')->where('name', 'like', "%$query%")->orderBy('name', 'asc')->get();
-        return response()->json([ 'results' => $results]); 
-    }   
+        $results = array();
+        
+        $items = DB::table('items') //Your table name
+        ->where('name', 'like', '%'.$term.'%') //Your selected row
+        ->take(5)->get(["id", "name"]);
+
+        // For each record
+        foreach ($items as $item) {
+        // We push an array into the results array
+        $results[] = ['id' => $item->id, 'name' => $item->name]; //you can take custom values as you want
+    }
+
+    return $results;
+}   
 }

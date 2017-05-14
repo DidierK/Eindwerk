@@ -1,8 +1,8 @@
 <template>
-	<v-form-item class="u--posRelative">
-		<input class="Search__field" name="item" placeholder="Wat zoek je?" v-on:keyup="handleKeyUp" v-model="query"></input>    
-		<slot></slot>
-	</v-form-item>
+	
+		<input id="q" class="Search__field" name="item" placeholder="Wat zoek je?" v-on:keyup="handleKeyUp" v-on:keydown="handleKeyDown" v-model="query"></input>    
+		
+	
 </template>
 <script>
 	export default {
@@ -14,6 +14,9 @@
 			methods: {
 				handleKeyUp: function () {
 					this.$emit('keyup', this.query);	
+				},
+				handleKeyDown: function () {
+					this.$emit('keydown', this.query);	
 				}
 			},
 		}

@@ -1,21 +1,43 @@
+<style>
+
+</style>
 <template>
-	<v-autocomplete v-on:keyup="queryItemNames">
-	<v-autocomplete-suggestions-main :suggestions="suggestions"></v-autocomplete-suggestions-main>
-	</v-autocomplete>
+	<v-autocomplete v-on:keyup="queryItemNames"></v-autocomplete>
 </template>
 <script>
 	export default {
 		data: function() {
 			return {
-				suggestions: []
+				query: '',
+				suggestions: [],
+				showSuggestions: false
 			}
 		},
+		mounted: function(){
+			// Dees gaat ALLE items all preloaden en deze doorzoeken we dan (misschienn ook niet super goed wel)
+			var suggestions = [];
+			console.log(suggestions);
+			axios.get("api/items/").then((response) => {
+				this.suggestions = response.data;
+				console.log(response.data);
+			});
+			
+			
+		},
 		methods: {
-			queryItemNames: function (query) {				
-				axios.get('api/items/search?q=' + query).then((response) => {
-					this.suggestions = response.data.results;
-				});
-			}
+			queryItemNames: function(query) {	
+				$( "#q" ).autocomplete({
+					source: this.suggestions,
+					autoFocus: true,
+					delay: 0 
+				}).data("ui-autocomplete")._renderItem = function (ul, item) {
+					return $("<li></li>")
+					.data("item.autocomplete", item)
+					.append("<a href='/item/" + item.url + "' class='u--block u--linkClean'>" + item.label + "</a>")
+					.appendTo(ul);
+				};
+
+			},
 		},
 	}
 </script>

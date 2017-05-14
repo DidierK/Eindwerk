@@ -1,8 +1,18 @@
+<style>
+.AutocompleteSuggestions--main ul {
+	padding: 0;
+}
+
+.AutocompleteSuggestions--main li {
+	border-bottom: 1px solid #DDD;
+	padding: 8px;
+}
+</style>
 <template>
-	<v-autocomplete-suggestions>
+	<v-autocomplete-suggestions class="AutocompleteSuggestions--main" v-if="suggestions">
 		<ul>
 			<li v-for="suggestion in suggestions">
-				<a :href="'/item/' + suggestion.url">{{ suggestion.name }}</a>
+				<a class="u--block" :href="'/item/' + suggestion.url">{{ suggestion.name }}</a>
 			</li>
 		</ul>
 	</v-autocomplete-suggestions>
