@@ -15,7 +15,7 @@
         background-color: #FFF;
         position: absolute;
         top: 42px;
-        width: 80%;
+        width: 90%;
     }
 
     .Search__button--blue {
@@ -48,16 +48,12 @@
     }
 
     .Search--main .Search__field {
-        border-right: 1px solid #DDD;
-        width: 80%;
+        width: 90%;
     }
 
     .Search--main .Search__button {
-        width: 20%;
-    }
-
-    .Search--main .Search__field {
-        border-bottom: 1px solid #DDD;
+        background-color: #FFF;
+        width: 10%;
     }
 
     .Search--header {

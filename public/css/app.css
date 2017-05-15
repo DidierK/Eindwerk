@@ -2435,6 +2435,10 @@ img {
   vertical-align: middle;
 }
 
+input:focus {
+  outline: 0;
+}
+
 [v-cloak] {
   display: none;
 }

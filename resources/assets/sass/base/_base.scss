@@ -17,7 +17,7 @@ ul {
 }
 
 textarea {
-    resize: none;
+	resize: none;
 }
 
 button {
@@ -27,6 +27,11 @@ button {
 img {
 	max-width: 100%;
 	vertical-align: middle;
+}
+
+input:focus {
+	outline: 0
+	
 }
 
 [v-cloak] { 
@@ -157,13 +162,13 @@ img {
 
 /* MEDIA QUERIES */
 @media (min-width:768px){
-		.u--mobileOnly {
-			display: none;
-		}
+	.u--mobileOnly {
+		display: none;
 	}
+}
 
 @media (max-width:768px){
-		.u--notMobile {
-			display: none;
-		}
+	.u--notMobile {
+		display: none;
 	}
+}
