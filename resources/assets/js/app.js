@@ -13,6 +13,15 @@
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+// Popover
+Vue.directive('popover', {
+	inserted: function(el, binding, vnode) {
+  	// This will bind the element with v-popover directive to the popover u mention after the ":"
+  	// This popover will then listen for this element to be clicked
+  	  vnode.context.$refs[binding.arg].reference = el;
+  }
+});
+
 // Avatar
 Vue.component('v-avatar', require('./components/avatar/Avatar.vue'));
 

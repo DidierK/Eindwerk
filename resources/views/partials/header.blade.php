@@ -51,7 +51,7 @@
                     </v-button>
                 </v-li>
                 <v-li class="List__item List__item--user u--flex u--flexAlignItemsCenter u--paddingRight16px u--paddingLeft16px u--posRelative">
-                    <v-button class="Button Button--borderless Button--no-padding Button--transparent">
+                    <v-button class="Button Button--borderless Button--no-padding Button--transparent" v-popover:popover>
                         <v-avatar class="Avatar Avatar--default" src="{{ Auth::user()->avatar }}"></v-avatar>
                     </v-button>
                 </v-li>

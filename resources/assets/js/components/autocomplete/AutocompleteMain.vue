@@ -16,10 +16,10 @@
 		mounted: function(){
 			// Dees gaat ALLE items all preloaden en deze doorzoeken we dan (misschienn ook niet super goed wel)
 			var suggestions = [];
-			console.log(suggestions);
+			
 			axios.get("api/items/").then((response) => {
 				this.suggestions = response.data;
-				console.log(response.data);
+				
 			});
 			
 			
