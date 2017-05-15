@@ -23,7 +23,7 @@
 	}
 
 	.Header--page {
-		margin: 4em 0 2em 0;
+		margin: 2em 0 2em 0;
 	}
 
 	.Header--hero {

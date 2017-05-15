@@ -30,6 +30,7 @@ Vue.component('v-button', require('./components/button/Button.vue'));
 
 // Card
 Vue.component('v-card', require('./components/card/Card.vue'));
+Vue.component('v-card-header', require('./components/card/CardHeader.vue'));
 
 // Container
 Vue.component('v-container', require('./components/container/Container.vue'));

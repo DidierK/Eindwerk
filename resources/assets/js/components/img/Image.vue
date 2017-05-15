@@ -6,10 +6,13 @@
 		background-size: cover;
 	}
 
+	.Image--round {
+		border-radius: 50%;
+	}
+
 
 	.Image--my-items {
 		border: 2px solid #DDD;
-		border-radius: 1px;
 		background-position: center top;
 		background-repeat: no-repeat;
 		background-size: cover;

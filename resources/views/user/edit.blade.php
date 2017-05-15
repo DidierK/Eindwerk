@@ -4,7 +4,7 @@
 <v-container class="Container" v-cloak>
     <!-- Header -->
     <v-header class="Header Header--page" >
-    <h1 class="Header__title">Profiel bewerken</h1>
+    <h1 class="Header__title u--textCenter">Profiel bewerken</h1>
     </v-header>
 
     <!-- Form: Profiel informatie bewerken -->
@@ -31,7 +31,7 @@
                 </v-form-item>
 
                 <v-form-item class="FormItem">
-                    <v-input type="submit" value="Opslaan"></v-input>
+                    <v-input type="submit" class="Button Button--default Button--blue u--sizeFull" value="Opslaan"></v-input>
                 </v-form-item>
             </v-form>
         </v-container>

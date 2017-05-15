@@ -43,10 +43,9 @@
 
     .Input--text-default,
     .Input--textarea-default {
-        border: 2px solid #DDD;
+        border: 1px solid #DDD;
         border-radius: 1px;
-        font-size: 15px;
-        font-weight: 400;
+        font-size: 14px;
         padding: 12px 8px;
     }
 

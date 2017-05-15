@@ -6,6 +6,11 @@
 		padding: 16px;
 	}
 
+	.Card--item-creation {
+		/* margin: 0 auto; */
+		width: 100%;
+	}
+
 	.Card--user-item,
 	.Card--user-item-details {
 		box-sizing: border-box;
@@ -43,6 +48,12 @@
 	@media (min-width: 640px){
 		.Card--user-item-details {
 			margin-right: 32px;
+		}
+	}
+
+	@media (min-width: 768px){
+		.Card--item-creation {
+			width: 40%;
 		}
 	}
 

@@ -8,11 +8,12 @@
 	.Tabs__navigation--theme-default {
 		background-color: #FFF;
 		border-bottom: 1px solid #DDD;
+		margin-bottom: 16px;
 	}
 
 	.Tabs__navigation--theme-default button {
 		font-weight: 500;
-		color: #484848;
+		color: #000;
 	}
 
 	.Tab--header {

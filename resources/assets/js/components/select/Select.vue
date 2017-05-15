@@ -1,12 +1,13 @@
 <style>
 
 .select--default {
-	border: 2px solid #DDD;
+	border: 1px solid #DDD;
     border-radius: 1px;
-    color: #737373;
+    color: #B7B7B7;
     font-size: 15px;
-    font-weight: 300;
-    padding: 12px 8px;
+    font-weight: 500;
+    height: 42px;
+    padding: 0 8px;
 }
 
 </style>

@@ -11,8 +11,8 @@
 
     .FormItem__label {
         display: block;
-        color: #484848;
-        font-size: 16px;
+        color: #000;
+        font-size: 14px;
         font-weight: 500;
         padding-bottom: .4em;
     }
