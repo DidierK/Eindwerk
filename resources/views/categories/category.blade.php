@@ -19,7 +19,7 @@
 	@foreach ($items as $item)
 	<div>
 		<!-- nog de image toevoegen voor dit object -->
-		<v-link class="Link" link="{{ url('item/' . strtolower($item->name) )}}">{{ $item->name }} </v-link>
+		<v-link class="Link" link="{{ url('item/' . $item->url )}}">{{ $item->name }} </v-link>
 	</div>
 	@endforeach
 </v-container>
