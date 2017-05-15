@@ -15,7 +15,7 @@
     }
 
     .List--my-items > li:first-child {
-        border-top: 1px solid #DDD;
+        
     }
 
     .List--my-items > li {

@@ -2,38 +2,42 @@
 
 @section('content')
 <!-- Tabs -->
-<v-column class="Column Column--user-actions">
-<!-- On mobile make menu button toggle user actions -->
-	<h3>MENU</h3>
-	<ul class="TreeView TreeView--user-actions">
-		<li><div>Profiel</div>
-			<ul>
-				<li><a class="u--linkClean" href="#">Mijn spullen</a></li>
-				<li><a class="u--linkClean" href="#">Gegevens</a></li>
-			</ul>
-		</li>
-		<li><div>Transacties</div>
-			<ul>
-				<li><a class="u--linkClean" href="#">Lopend</a></li>
-				<li><a class="u--linkClean" href="#">Geschiedenis</a></li>
-			</ul>
-		</li>
-		<li><div>Verzoeken</div>
-			<ul>
-				<li><a class="u--linkClean" href="#">Inkomend</a></li>
-				<li><a class="u--linkClean" href="#">Uitgaand</a></li>
-			</ul>
-		</li>
-	</ul>
+<v-column class="Column Column--user-actions" v-cloak>
+	<!-- On mobile make menu button toggle user actions -->
+	
+	<div class="TreeView TreeView--user-actions">
+		<h3>MENU</h3>
+		<ul>
+		<li><div class="u--posRelative">Profiel</div>
+				<ul>
+					<li><a class="u--linkClean" href="#">Mijn spullen</a></li>
+					<li><a class="u--linkClean" href="#">Gegevens</a></li>
+				</ul>
+			</li>
+			<li><div class="u--posRelative">Transacties</div>
+				<ul>
+					<li><a class="u--linkClean" href="#">Lopend</a></li>
+					<li><a class="u--linkClean" href="#">Geschiedenis</a></li>
+				</ul>
+			</li>
+			<li><div class="u--posRelative">Verzoeken</div>
+				<ul>
+					<li><a class="u--linkClean" href="#">Inkomend</a></li>
+					<li><a class="u--linkClean" href="#">Uitgaand</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
 </v-column>
-<v-column class="Column Column--main">
-	<v-banner class="Banner Banner--user-items">
+<v-column class="Column Column--main" v-cloak>
+	<v-header class="Header Header--page">
 		<v-container class="Container u--flex u--flexJustifyContentSpaceBetween u--flexWrap u--flexAlignItemsCenter" v-cloak>
-			<h3 class="Banner__title u--noMargin">Mijn spullen</h3>
+			<h3 class="Header__title u--noMargin">Mijn spullen</h3>
 			<v-button class="Button Button--default Button--blue Button--add-items u--inlineBlock u--linkClean" href="{{ url('user-item/create') }}">Spullen toevoegen
-				</v-button>
+			</v-button>
 		</v-container>
-	</v-banner>
+	</v-header>
+	
 	
 
 	<!-- Tab: Mijn spullen -->

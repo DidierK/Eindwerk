@@ -23,7 +23,7 @@
 	}
 
 	.Header--page {
-		margin: 2em 0 2em 0;
+		padding: 2em 0 2em 0;
 	}
 
 	.Header--hero {
@@ -35,6 +35,7 @@
 	}
 
 	.Header__title {
+	font-size: 18px;
 		font-weight: 500;
 		margin: 0;
 	}
