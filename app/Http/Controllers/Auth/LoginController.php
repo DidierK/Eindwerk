@@ -59,7 +59,7 @@ class LoginController extends Controller
 
        $id = Auth::id();
 
-       return redirect('me/profile');
+       return redirect('profile/my-items');
    }
 
    public function findOrCreateUser($user, $provider) {

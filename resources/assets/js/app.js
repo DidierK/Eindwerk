@@ -116,7 +116,7 @@ const app = new Vue({
 				// Oke the reload did not work and made sometimes the item not delete
 				// Instead maybe do a popup with please wait or loading icon before reload?
 				// Or load the items with ajax
-				window.location.href= '/me/profile';
+				window.location.href= '/profile/my-items';
 			});
 		},
 		getItemNames: function() {
