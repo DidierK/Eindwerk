@@ -9,7 +9,7 @@
 			<h2 class="Hero__subheading">The cheapest way to discover the world</h2>
 		</div>
 		<v-search class="Search Search--main">
-			<v-form>
+			<v-form action="{{ url('items/search') }}">
 				<v-autocomplete-main></v-autocomplete-main>
 				<v-form-item>
 					<v-button class="Search__button Search__button--blue">Zoeken

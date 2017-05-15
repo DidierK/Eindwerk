@@ -52,20 +52,18 @@ class ItemController extends Controller {
 
     public function searchItems(Request $request) {
 
-        $term = $request->query('term');
+        $item_name = $request->query("item");
 
-        $results = array();
+        $items = DB::table('items')
+        ->where('name', $item_name)
+        ->first(['url']);  
+
+        if(count($items) > 0){
+            return redirect(url('/item/' . $items->url));
+        } else {
+            var_dump("Redirect to 404 page here!");
+        }
+
         
-        $items = DB::table('items') //Your table name
-        ->where('name', 'like', '%'.$term.'%') //Your selected row
-        ->take(5)->get(["id", "name"]);
-
-        // For each record
-        foreach ($items as $item) {
-        // We push an array into the results array
-        $results[] = ['id' => $item->id, 'name' => $item->name]; //you can take custom values as you want
-    }
-
-    return $results;
 }   
 }
