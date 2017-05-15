@@ -8,7 +8,7 @@
 
 	.Container--logged-out {
 		margin: 0 auto;
-		max-width: 420px;
+		max-width: 420px !important;
 	}
 
 	@media (min-width: 768px){
