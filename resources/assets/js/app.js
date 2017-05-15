@@ -32,6 +32,9 @@ Vue.component('v-button', require('./components/button/Button.vue'));
 Vue.component('v-card', require('./components/card/Card.vue'));
 Vue.component('v-card-header', require('./components/card/CardHeader.vue'));
 
+// Column
+Vue.component('v-column', require('./components/column/Column.vue'));
+
 // Container
 Vue.component('v-container', require('./components/container/Container.vue'));
 
@@ -84,6 +87,9 @@ Vue.component('v-sidebar', require('./components/sidebar/Sidebar.vue'));
 // Tabs
 Vue.component('v-tabs', require('./components/tabs/Tabs.vue'));
 Vue.component('v-tab', require('./components/tabs/Tab.vue'));
+
+// Tree view
+Vue.component('v-tree-view', require('./components/treeview/TreeView.vue'));
 
 // User item
 Vue.component('v-user-item', require('./components/user-item/UserItem.vue'));

@@ -43,7 +43,7 @@
 	}
 
 	.Button--add-items {
-		float: right;
+		
 	}
 
 	.Button:focus {

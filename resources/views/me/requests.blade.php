@@ -1,22 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-<v-tabs class="Tabs">
-	<v-tab class="Tab__content" label="Inkomend" selected>
-		<v-container class="Container" v-cloak>
-			<v-header class="Header Header--page">
-				<h1 class="Header__title">Inkomende verzoeken</h1>
-			</v-header>
-			<p>U hebt geen inkomende transacties.</p>
-		</v-container>
-	</v-tab>
-	<v-tab class="Tab__content" label="Uitgaand">
-		<v-container class="Container" v-cloak>
-			<v-header class="Header Header--page">
-				<h1 class="Header__title">Uitgaande verzoeken</h1>
-			</v-header>
-			<p>U hebt geen uitgaande transacties.</p>
-		</v-container>
-	</v-tab>
+	
+
+	<!-- Tab: Instellingen -->
+
+	<v-container class="Container" v-cloak>
+		<v-card class="Card">
+			<v-card-header class="Card__header Card__header--my-items u--flexJustifyContentSpaceBetween u--flexAlignItemsCenter">
+				<h1 class="Card__title u--inlineBlock">Persoonlijke gegevens</h1>
+				<v-button class="Button Button--default Button--blue Button--add-items u--inlineBlock u--linkClean" href="{{ url('user/' . Auth::id() . '/edit') }}">Gegevens bewerken</v-button>
+			</v-card-header>
+			<p>Naam: Wout Borghgraef</p>
+			<p>Email: wout.borghgraef@gmail.com</p>
+			<p>Telefoon: +32 486 25 79 16</p>
+			<p>Adres: Maagdenblokstraat 3, 3320 Hoegaarden</p>
+		</v-card>
+	</v-container>
 </v-tabs>
 @endsection

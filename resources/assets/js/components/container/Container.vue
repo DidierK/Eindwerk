@@ -13,19 +13,19 @@
 
 	@media (min-width: 768px){
 		.Container {
-			width:750px;
+			max-width:750px;
 		}
 	}
 
 	@media (min-width: 992px){
 		.Container {
-			width:970px;
+			max-width:970px;
 		}
 	}
 
 	@media (min-width: 1200px){
 		.Container {
-			width:1170px;
+			max-width:1170px;
 		}
 	}
 
