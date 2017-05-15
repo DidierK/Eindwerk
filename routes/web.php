@@ -68,4 +68,5 @@ Route::get('/items/search', 'ItemController@searchItems');
 // API
 Route::group(['prefix' => 'api/'], function() {
     Route::get('/items', 'ItemController@getItems');
+    Route::get('/categories', 'CategoryController@getCategories');
   });

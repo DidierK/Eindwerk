@@ -18,7 +18,7 @@ Vue.directive('popover', {
 	inserted: function(el, binding, vnode) {
   	// This will bind the element with v-popover directive to the popover u mention after the ":"
   	// This popover will then listen for this element to be clicked
-  	  vnode.context.$refs[binding.arg].reference = el;
+  	vnode.context.$refs[binding.arg].reference = el;
   }
 });
 
@@ -83,6 +83,7 @@ Vue.component('v-option', require('./components/option/Option.vue'));
 
 // Popover
 Vue.component('v-popover', require('./components/popover/Popover.vue'));
+Vue.component('v-popover-categories', require('./components/popover/PopoverCategories.vue'));
 
 // Search
 Vue.component('v-search', require('./components/search/Search.vue'));
@@ -107,29 +108,40 @@ const app = new Vue({
 	el: '#app',
 	data: {
 		showUserActions: false,
+		showLoading: false,
+		categories: [],
+		i: 0
+
+	},
+	mounted: function() {
+		// Count how many times it is clicked, only one time get it from db, the rest you simply
+			// get from the categories variable, so if clicked once => do ajax request else just don't execute
+			// this method
+			var that = this;
+			if (this.i < 1) { 
+				this.showLoading = true;
+				axios.get('/api/categories').then((response) => {
+				// Just response.data because we didn't put the results in an array 'results' but simply returned the array
+				that.categories = response.data;
+				console.log(that.categories);		
+				that.i++;
+				that.showLoading = false;
+			});
+			}
 
 	},
 	methods: {
-		toggleUserActions: function(){
-			if(this.showUserActions){
-				this.showUserActions = false;	
-			} else {
-				this.showUserActions = true;
-			}
-		},
-		showPopover(event) {
-			console.log(event.target);
-		},
 		deleteItem: function(id) {
-				axios.delete('/user-item/' + id).then((response) => {
+			axios.delete('/user-item/' + id).then((response) => {
 				// Oke the reload did not work and made sometimes the item not delete
 				// Instead maybe do a popup with please wait or loading icon before reload?
 				// Or load the items with ajax
 				window.location.href= '/profile/my-items';
 			});
 		},
-		getItemNames: function() {
-			console.log('LOL');
+		getCategories: function() {
+			
+
 		}
 	}
 });

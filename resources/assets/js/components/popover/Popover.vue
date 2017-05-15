@@ -39,10 +39,9 @@
 
 </style>
 <template>
-    <div>
-        <div class="Popover-inner" v-show="showPopover">
+    <div v-if="showPopover">
+        <div class="Popover-inner">
             <slot></slot>
-            <slot name="reference"></slot>
         </div>
     </div>
 </template>
@@ -55,7 +54,6 @@
                 showPopover: false
             }
         },
-        props: ['show'],
         mounted() {
             // Will only toggle if its reference gets clicked, that's why only one popover will toggle always
             this.reference.addEventListener("click", this.doToggle); 

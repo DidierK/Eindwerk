@@ -37,10 +37,10 @@
 
     <!-- Desktop nav --> 
     <div class="u--notMobile">
-        <v-nav class="Nav Nav--main">
+        <v-nav class="Nav Nav--main" v-cloak>
             <v-ul class="List u--flex">
                 <v-li class="List__item u--flex u--flexAlignItemsCenter u--paddingRight16px u--paddingLeft16px">
-                    <v-button class="Button Button--borderless Button--transparent" link="{{ url('categories')}}" v-popover:popover--categories>Categorieën</v-button>
+                    <v-button class="Button Button--borderless Button--transparent" link="{{ url('categories')}}" v-popover:popover--categories v-on:click="getCategories">Categorieën</v-button>
                 </v-li>
                 @if (Auth::check())
                 <v-li class="List__item u--flex u--flexAlignItemsCenter u--paddingLeft16px">
@@ -59,7 +59,7 @@
                 <v-li class="List__item u--flex u--flexAlignItemsCenter u--paddingRight16px u--paddingLeft16px"><v-link class="Link u--linkClean" link="{{ url('/login') }}">Aanmelden</v-link></v-li>
                 @endif
             </v-ul>
-            <v-popover class="Popover Popover--user-actions" placement="bottom" ref="popover--user-actions">
+            <v-popover class="Popover Popover--user-actions" placement="bottom" ref="popover--user-actions" v-cloak>
             <v-ul class="List List--user-actions">
                 <v-li class="List__item">
                     <v-link class="Link u--linkClean" link="{{ url('profile/my-items') }}">Profiel</v-link>
@@ -70,13 +70,11 @@
             </v-ul>
             </v-popover>
             <!-- Either in Vue instance or in own component we should load in the mounted method all categories and populate this dropdown -->
-            <v-popover class="Popover Popover--categories" placement="bottom" ref="popover--categories">
+            <v-popover class="Popover Popover--categories" placement="bottom" ref="popover--categories" v-cloak>
             <v-ul class="List List--user-actions">
-                <v-li class="List__item">
-                    <v-link class="Link u--linkClean" link="{{ url('#') }}">Avontuur</v-link>
-                </v-li>
-                <v-li class="List__item">
-                    <v-link class="Link u--linkClean" link="{{ url('#') }}">Wintersport</v-link>
+                <v-li v-if="showLoading">Loading...</v-li>
+                <v-li v-for="category in categories">
+                    <a :href="'/category/' + category.url + ''" >@{{ category.name }}</a>
                 </v-li>
             </v-ul>
             </v-popover>

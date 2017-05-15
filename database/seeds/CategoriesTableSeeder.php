@@ -13,26 +13,32 @@ class CategoriesTableSeeder extends Seeder
     	// Truncate (or delete) all rows first
     	DB::table('categories')->delete();
 
-        DB::table('categories')->insert([
-            // Can't we insert a JSON that we make ourselves in here?
-            [
-            'name' => 'Avontuur',
-            'description' => 'Maak jezelf klaar om de bossen in te trekken of om de bergen te trotseren met deze spullen.',
-            'hero' => 'adventure.jpg'
-            ],
+        $categories = [
+        [
+        "name" => "Transport",
+        ],
+        [
+        "name" => "Wintersport",
+        ],
+        [
+        "name" => "Avontuur",
+        ]
+        ];
 
-            [
-            'name' => 'Wintersport',
-            'description' => 'Ga je binnenkort naar de Alpen maar mis je nog iets? Vindt het hier.',
-            'hero' => 'wintersport.jpg'
-            ],
+        foreach ($categories as $key => $value) {
+            $value["url"] = $this->convertNameToUrl($value["name"]);    
 
-            [
-            'name' => 'Transport',
-            'description' => 'Spullen die je onderweg nodig hebt vindt je hier.',
-            'hero' => 'transport.jpg'
-            ]
-        ]);
+            DB::table('categories')->insert([
+                    [
+                    'name' => $value['name'],
+                    'url' => $value['url']
+                    ]
+                    ]);           
+        }
 
+    }
+
+    public function convertNameToUrl($name) {
+        return strtolower(str_replace(' ', '-', $name));
     }
 }
