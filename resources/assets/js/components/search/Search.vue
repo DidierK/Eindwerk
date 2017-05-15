@@ -4,8 +4,7 @@
         box-sizing: border-box;
         font-size: 14px;
         padding: 0 8px;
-        border-top-left-radius: 30px;
-        border-bottom-right-radius: 30px;
+     
     }
 
     .Search__button {

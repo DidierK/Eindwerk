@@ -56,7 +56,7 @@
 	}
 
 	.Button--blue {
-		background-color: #18B4DB;
+		background-color: #31B2FF;
 		border: 0;
 		color: #FFF;
 	}

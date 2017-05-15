@@ -1,6 +1,6 @@
 <style>
 	.Column--user-actions {
-		background-color: #215765;
+		background-color: #3F677F;
 		box-sizing: border-box;
 		color: #FFF;
 		width: 100%;
