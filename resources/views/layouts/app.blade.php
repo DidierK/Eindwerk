@@ -54,12 +54,6 @@
                     <v-link class="Link u--linkClean" link="{{ url('me/profile') }}">Profiel</v-link>
                 </v-li>
                 <v-li class="List__item">
-                    <v-link class="Link u--linkClean" link="{{ url('me/requests') }}">Verzoeken</v-link>
-                </v-li>
-                <v-li class="List__item">
-                    <v-link class="Link u--linkClean" link="{{ url('me/transactions') }}">Transacties</v-link>
-                </v-li>
-                <v-li class="List__item">
                     <v-link class="Link u--linkClean" link="{{ url('/logout') }}">Afmelden</v-link>
                 </v-li>
             </v-ul>
