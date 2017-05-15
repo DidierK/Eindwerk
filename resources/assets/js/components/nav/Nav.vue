@@ -3,7 +3,7 @@
 		height: 52px;
 	}
 
-	.Nav--main > ul > li:first-child::after {
+	.Nav--main > ul > li:first-child button::after {
 		content: '';
 		display: inline-block;
 		width: 0;
@@ -15,6 +15,7 @@
 		transition: all .25s;
 		margin-left: 10px;
 	}
+
 </style>
 <template>
 	<nav>

@@ -40,7 +40,7 @@
         <v-nav class="Nav Nav--main">
             <v-ul class="List u--flex">
                 <v-li class="List__item u--flex u--flexAlignItemsCenter u--paddingRight16px u--paddingLeft16px">
-                    <v-link link="{{ url('categories')}}" class="Link u--linkClean">Categorieën</v-link>
+                    <v-button class="Button Button--borderless Button--transparent" link="{{ url('categories')}}" v-popover:popover--categories>Categorieën</v-button>
                 </v-li>
                 @if (Auth::check())
                 <v-li class="List__item u--flex u--flexAlignItemsCenter u--paddingLeft16px">
@@ -51,7 +51,7 @@
                     </v-button>
                 </v-li>
                 <v-li class="List__item List__item--user u--flex u--flexAlignItemsCenter u--paddingRight16px u--paddingLeft16px u--posRelative">
-                    <v-button class="Button Button--borderless Button--no-padding Button--transparent" v-popover:popover>
+                    <v-button class="Button Button--borderless Button--no-padding Button--transparent" v-popover:popover--user-actions>
                         <v-avatar class="Avatar Avatar--default" src="{{ Auth::user()->avatar }}"></v-avatar>
                     </v-button>
                 </v-li>
@@ -59,6 +59,27 @@
                 <v-li class="List__item u--flex u--flexAlignItemsCenter u--paddingRight16px u--paddingLeft16px"><v-link class="Link u--linkClean" link="{{ url('/login') }}">Aanmelden</v-link></v-li>
                 @endif
             </v-ul>
+            <v-popover class="Popover Popover--user-actions" placement="bottom" ref="popover--user-actions">
+            <v-ul class="List List--user-actions">
+                <v-li class="List__item">
+                    <v-link class="Link u--linkClean" link="{{ url('profile/my-items') }}">Profiel</v-link>
+                </v-li>
+                <v-li class="List__item">
+                    <v-link class="Link u--linkClean" link="{{ url('/logout') }}">Afmelden</v-link>
+                </v-li>
+            </v-ul>
+            </v-popover>
+            <!-- Either in Vue instance or in own component we should load in the mounted method all categories and populate this dropdown -->
+            <v-popover class="Popover Popover--categories" placement="bottom" ref="popover--categories">
+            <v-ul class="List List--user-actions">
+                <v-li class="List__item">
+                    <v-link class="Link u--linkClean" link="{{ url('#') }}">Avontuur</v-link>
+                </v-li>
+                <v-li class="List__item">
+                    <v-link class="Link u--linkClean" link="{{ url('#') }}">Wintersport</v-link>
+                </v-li>
+            </v-ul>
+            </v-popover>
         </div>
     </v-nav>
 </v-header>

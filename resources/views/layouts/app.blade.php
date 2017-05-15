@@ -48,16 +48,7 @@
             @endif
 
             <!-- Popovers -->
-            <v-popover class="Popover Popover--user-actions" placement="bottom" ref="popover">
-            <v-ul class="List List--user-actions">
-                <v-li class="List__item">
-                    <v-link class="Link u--linkClean" link="{{ url('profile/my-items') }}">Profiel</v-link>
-                </v-li>
-                <v-li class="List__item">
-                    <v-link class="Link u--linkClean" link="{{ url('/logout') }}">Afmelden</v-link>
-                </v-li>
-            </v-ul>
-            </v-popover>
+            
         </div>
         <!-- Scripts -->
         <script src="/js/app.js"></script>

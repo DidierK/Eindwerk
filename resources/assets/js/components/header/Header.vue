@@ -14,8 +14,11 @@
 		min-height: 52px;	
 	}
 
+	.Header--main button,
 	.Header--main a {
 		color: #FFF;
+		font-size: 14px;
+    	font-weight: 500;
 	}
 
 	.Header--bg-transparent {
