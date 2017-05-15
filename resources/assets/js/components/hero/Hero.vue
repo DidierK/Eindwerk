@@ -7,11 +7,11 @@
 	}
 
 	.Hero--front {
-		background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(/images/category-heroes/transport.jpg);
+		background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(/images/material_blue.png);
 		background-position: 50% 50%; 
 		background-size: cover; 
 		background-repeat: no-repeat;
-		height: 80vh;
+		height: 100vh;
 	}
 
 	.Hero--front a {
@@ -19,24 +19,35 @@
 	}
 
 	.Hero--front .Hero__heading {
-		font-size: 32px;
-		font-weight: 500;
 		padding-top: 2em;
+		font-family: "Montserrat", sans-serif;
+            font-weight: 400;
+            font-size: 40px;
+            text-align: center;
+            color: #F8F8F8;
+            line-height:30px;
+	}
+
+	.Hero--front .Hero__heading span{
+	    font-weight: bold;
 	}
 
 	.Hero--front .Hero__subheading {
-		font-size: 16px;
-		font-weight: 300;
 		padding-bottom: 2em;
+		    font-size: 15px;
+            color: #F8F8F8;
+            text-align: center;
+            font-weight: 100;
+            font-family: "Montserrat", sans-serif;
 	}
 
 	@media (min-width: 768px){
 		.Hero--front .Hero__heading {
-			font-size: 48px;
+
 		}
 
 		.Hero--front .Hero__subheading {
-			font-size: 18px;
+
 		}
 	}
 

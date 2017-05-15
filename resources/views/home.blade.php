@@ -5,8 +5,8 @@
 	@include('partials.header')
 	<v-container class="Container">
 		<div class="u--textCenter">
-			<h1 class="Hero__heading">Huren op maat van jouw bestemming</h1>
-			<h2 class="Hero__subheading">Zoek naar alle dingen die jij nog mist voor een perfecte vakantie. <a href="#">Hier</a> leggen we uit hoe het werkt.</h2>
+			<h1 class="Hero__heading">Travel<span>Share</span></h1>
+			<h2 class="Hero__subheading">The cheapest way to discover the world</h2>
 		</div>
 		<v-search class="Search Search--main">
 			<v-form>
