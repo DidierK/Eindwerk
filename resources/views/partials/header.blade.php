@@ -62,10 +62,10 @@
             <v-popover class="Popover Popover--user-actions" placement="bottom" ref="popover--user-actions" v-cloak>
             <v-ul class="List List--user-actions">
                 <v-li class="List__item">
-                    <v-link class="Link u--linkClean" link="{{ url('profile/my-items') }}">Profiel</v-link>
+                    <v-link class="Link u--linkClean u--block" link="{{ url('profile/my-items') }}">Profiel</v-link>
                 </v-li>
                 <v-li class="List__item">
-                    <v-link class="Link u--linkClean" link="{{ url('/logout') }}">Afmelden</v-link>
+                    <v-link class="Link u--linkClean u--block" link="{{ url('/logout') }}">Afmelden</v-link>
                 </v-li>
             </v-ul>
             </v-popover>
@@ -74,7 +74,7 @@
             <v-ul class="List List--user-actions">
                 <v-li v-if="showLoading">Loading...</v-li>
                 <v-li v-for="category in categories">
-                    <a :href="'/category/' + category.url + ''" >@{{ category.name }}</a>
+                    <a class="u--linkClean u--block" :href="'/category/' + category.url + ''" >@{{ category.name }}</a>
                 </v-li>
             </v-ul>
             </v-popover>

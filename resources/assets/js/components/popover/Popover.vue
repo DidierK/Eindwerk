@@ -17,6 +17,18 @@
         right: 133px;
     }
 
+    .Popover--categories ul > li,
+    .Popover--user-actions ul > li {
+        border-bottom: 1px solid #DDD;
+        padding: 8px 16px;
+        min-width: 160px;
+    }
+
+      .Popover--categories ul > li:hover,
+    .Popover--user-actions ul > li:hover {
+        background-color: #F5F5F5;
+    }
+
 
     .Popover--user-actions a,
     .Popover--categories a {
@@ -28,12 +40,12 @@
     }
 
     .Popover-inner {
-     background-color: #fff;
- }
+       background-color: #fff;
+   }
 
- @media screen and (min-width: 640px) {
+   @media screen and (min-width: 640px) {
     .Popover {       
-        max-width: 192px;
+    
     }
 }
 
