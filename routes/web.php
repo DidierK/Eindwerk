@@ -40,20 +40,7 @@ Route::resource('user', 'UserController', ['except' => [
 
 // TODO PUT AUTH ROUTES INTO ONLY AUTHORIZED ROUTES GROUP
 Route::get('profile/my-items', 'UserItemController@index');
-Route::get('profile/details', 'UserItemController@index');
 
-Route::group(['prefix' => 'me'], function() {
-
-
-	Route::get('requests', function(){
-		// We returnen voorlopig nog geen view via controller, pas wanneer we data passen later veranderen we dit natuurlijk wel
-		return view('me.requests');
-	});
-
-	Route::get('transactions', function(){
-		return view('me.transactions');
-	});
-});
 
 // Categories, Category
 Route::get('categories', 'CategoryController@index');

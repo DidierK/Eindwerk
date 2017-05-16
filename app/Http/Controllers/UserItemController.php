@@ -22,7 +22,7 @@ class UserItemController extends Controller
         ->join('items', 'user_items.item_id', '=', 'items.id')
         ->get(['user_items.id', 'items.name', 'user_items.price', 'user_items.thumbnail']);
 
-        return view('me.profile', ['user_items' => $user_items]);  
+        return view('profile.my-items', ['user_items' => $user_items]);  
     }
 
     /**
