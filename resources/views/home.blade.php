@@ -5,8 +5,8 @@
 	@include('partials.header')
 	<v-container class="Container">
 		<div class="u--textCenter">
-			<h1 class="Hero__heading">Travel<span>Share</span></h1>
-			<h2 class="Hero__subheading">The cheapest way to discover the world</h2>
+			<h1 class="Hero__heading">Huren op maat van jou bestemming</h1>
+			<h2 class="Hero__subheading">Ga zorgeloos op reis met onze grote aanbieding aan reisspullen.</h2>
 		</div>
 		<v-search class="Search Search--main">
 			<v-form action="{{ url('items/search') }}" autocomplete="off">
