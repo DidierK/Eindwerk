@@ -4,6 +4,10 @@
 <!-- Tabs -->
 <v-column class="Column Column--user-actions" v-cloak>
 	<!-- On mobile make menu button toggle user actions -->
+	<v-treeview>
+		<v-treeview-item></v-treeview-item>
+		
+	</v-treeview>
 	
 	<div class="TreeView TreeView--user-actions">
 		<h3>MENU</h3>

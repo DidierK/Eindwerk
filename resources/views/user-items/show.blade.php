@@ -16,7 +16,18 @@
             <h3>Extra informatie</h3>
             <p>Dit is een koffer gemaakt om veel spullen in te vervoeren. Vier personen is ideaal maar het kunnen er zeker ook meer zijn.</p>
             <span class="UserItem__price u--block">€ 50,00 /dag</span>
-            <v-button class="Button Button--default Button--blue u--block u--sizeFull">Verzoek versturen</v-button>
+            <h2>Huur dit item:</h2>
+            <v-form action="{{ url('request')}}" method="post">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <v-form-item>Van:
+                <input type="date" name="from">
+                </v-form-item>
+                <v-form-item>Tot:
+                <input type="date" name="to">
+                </v-form-item>
+                <v-button class="Button Button--default Button--blue u--block u--sizeFull">Verzoek versturen</v-button>
+            </v-form>
+            
         </div>
     </div>
 </v-user-item>

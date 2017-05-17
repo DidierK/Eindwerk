@@ -38,6 +38,9 @@ Route::resource('user', 'UserController', ['except' => [
 	'index'
 	]]);
 
+// Requests
+Route::resource('request', 'RequestController');
+
 // TODO PUT AUTH ROUTES INTO ONLY AUTHORIZED ROUTES GROUP
 Route::get('profile/my-items', 'UserItemController@index');
 
