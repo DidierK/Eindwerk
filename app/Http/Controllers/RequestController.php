@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Request as RequestItem;
 
 class RequestController extends Controller
 {
@@ -38,15 +39,22 @@ class RequestController extends Controller
         // Disable dates before today or check if they didn't take that
         // Check if start date is lower than end date => else throw error msg
         // Check here if overlap of dates
+        // Check if the user has already send a request, so if Auth::id() as sender_id already send a request to this user_item_id 
         // Dateformat should be AFTER we get it from the DB
-        var_dump($request->all());
-        $sender_id = Auth::id();
         // We could easily query the receiver_id through eloquent with user_item_id, however that would be unnecessary
         // because we can pass the receiver_id with th form
-        $receiver_id = $request->user_id;
-        $user_item_id = $request->user_item_id;
-        $start = $request->start;
-        $end = $request->end;
+
+        RequestItem::create([
+            'sender_id' => Auth::id(),
+            'receiver_id' => $request->user_id, // TODO: Verander dit naar echte img
+            'user_item_id' => $request->user_item_id,
+            'start_date' => $request->start, 
+            'end_date' => $request->end
+            ]);
+        // If succesful show that message, if not show another flash message
+
+        $request->session()->flash('alert-success', 'Jouw verzoek is succesvol verstuurd');
+        return redirect(url('/user-item/' . $request->user_id));
     }
 
     /**
