@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class RequestController extends Controller
 {
@@ -40,6 +41,10 @@ class RequestController extends Controller
         // Dateformat should be AFTER we get it from the DB
         var_dump($request->all());
         $sender_id = Auth::id();
+        // We could easily query the receiver_id through eloquent with user_item_id, however that would be unnecessary
+        // because we can pass the receiver_id with th form
+        $receiver_id = $request->user_id;
+        $user_item_id = $request->user_item_id;
         $start = $request->start;
         $end = $request->end;
     }
