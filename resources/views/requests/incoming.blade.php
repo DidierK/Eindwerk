@@ -1,5 +1,5 @@
 @extends('layouts.auth_area')
 
 @section('auth_content')
-<h1>Hey!</h1>
+<p>Wout Borghgraef wilt graag jou dakkoffer lenen van 5 februari 2018 tot 8 februari 2018.</p>
 @endsection

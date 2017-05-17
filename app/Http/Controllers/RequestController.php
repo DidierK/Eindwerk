@@ -18,6 +18,7 @@ class RequestController extends Controller
     }
 
     public function showIncomingRequests() {
+        // Query all the requests which have my (so Auth::id()) ID attached to it
         return view('requests.incoming');
     }
 
