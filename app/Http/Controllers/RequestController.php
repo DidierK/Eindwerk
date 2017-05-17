@@ -37,7 +37,11 @@ class RequestController extends Controller
         // Disable dates before today or check if they didn't take that
         // Check if start date is lower than end date => else throw error msg
         // Check here if overlap of dates
-        var_dump("AY!");
+        // Dateformat should be AFTER we get it from the DB
+        var_dump($request->all());
+        $sender_id = Auth::id();
+        $start = $request->start;
+        $end = $request->end;
     }
 
     /**

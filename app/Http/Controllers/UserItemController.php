@@ -80,7 +80,13 @@ class UserItemController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        return view('user-items.show');
+        $user_item_user = DB::table('user_items')
+        ->join('users', 'user_items.user_id', '=', 'users.id')
+        ->where('user_items.id', $id)
+        // We do first so we wont have to loop it because it will always be one record anyway
+        ->first();
+
+        return view('user-items.show', ['user_item_user' => $user_item_user]);
     }
 
     /**
