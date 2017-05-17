@@ -32,8 +32,11 @@ class RequestController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
+        // Check if dates are valid (not empty and valid day/month/year) => else throw error msg (and re)
+        // Disable dates before today or check if they didn't take that
+        // Check if start date is lower than end date => else throw error msg
+        // Check here if overlap of dates
         var_dump("AY!");
     }
 

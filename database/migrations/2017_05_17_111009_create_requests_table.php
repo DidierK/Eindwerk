@@ -18,7 +18,10 @@ class CreateRequestsTable extends Migration
             $table->foreign('sender_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('receiver_id')->unsigned();
             $table->foreign('receiver_id')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('receiver_id')->unsigned();
+            $table->integer('user_item_id')->unsigned();
+            $table->foreign('user_item_id')->references('id')->on('user_items')->onDelete('cascade');
+            $table->date('start_date'); 
+            $table->date('end_date');
             $table->string('status')->default('Afwachten');    
         });
         //
