@@ -42,7 +42,13 @@ Route::resource('user', 'UserController', ['except' => [
 Route::resource('request', 'RequestController');
 
 // TODO PUT AUTH ROUTES INTO ONLY AUTHORIZED ROUTES GROUP
+
+// Profile
 Route::get('profile/my-items', 'UserItemController@index');
+
+// Requests
+Route::get('requests/incoming', 'RequestController@showIncomingRequests');
+Route::get('requests/outgoing', 'RequestController@showOutgoingRequests');
 
 
 // Categories, Category

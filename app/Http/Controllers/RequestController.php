@@ -13,9 +13,12 @@ class RequestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         return view('user.requests');
+    }
+
+    public function showIncomingRequests() {
+        return view('requests.incoming');
     }
 
     /**

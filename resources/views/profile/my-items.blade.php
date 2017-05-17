@@ -1,39 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.auth_area')
 
-@section('content')
-<!-- Tabs -->
-<v-column class="Column Column--user-actions" v-cloak>
-	<!-- On mobile make menu button toggle user actions -->
-	<v-treeview>
-		<v-treeview-item></v-treeview-item>
-		
-	</v-treeview>
-	
-	<div class="TreeView TreeView--user-actions">
-		<h3>MENU</h3>
-		<ul>
-		<li><div class="u--posRelative">Profiel</div>
-				<ul>
-					<li><a class="u--linkClean" href="#">Mijn spullen</a></li>
-					<li><a class="u--linkClean" href="#">Gegevens</a></li>
-				</ul>
-			</li>
-			<li><div class="u--posRelative">Transacties</div>
-				<ul>
-					<li><a class="u--linkClean" href="#">Lopend</a></li>
-					<li><a class="u--linkClean" href="#">Geschiedenis</a></li>
-				</ul>
-			</li>
-			<li><div class="u--posRelative">Verzoeken</div>
-				<ul>
-					<li><a class="u--linkClean" href="#">Inkomend</a></li>
-					<li><a class="u--linkClean" href="#">Uitgaand</a></li>
-				</ul>
-			</li>
-		</ul>
-	</div>
-</v-column>
-<v-column class="Column Column--main" v-cloak>
+@section('auth_content')
 	<v-header class="Header Header--page">
 		<v-container class="Container u--flex u--flexJustifyContentSpaceBetween u--flexWrap u--flexAlignItemsCenter" v-cloak>
 			<h3 class="Header__title u--noMargin">Mijn spullen</h3>
@@ -80,5 +47,4 @@
 			@endif
 		</v-card>
 	</v-container>
-</v-column>
 @endsection
