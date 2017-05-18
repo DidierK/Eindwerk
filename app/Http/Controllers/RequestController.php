@@ -24,6 +24,7 @@ class RequestController extends Controller
         ->join('user_items', 'requests.user_item_id', 'user_items.id')
         ->join('items', 'user_items.item_id', 'items.id')
         ->where('requests.receiver_id', '=', Auth::id())
+        ->orderBy('requests.created_at', 'DESC')
         ->get(["users.name AS user_name", "users.id AS user_id", "users.avatar", "items.name AS item_name", "requests.user_item_id", "requests.start_date", "requests.end_date"]);
 
         return view('requests.incoming', ["requests" => $requests]);
@@ -34,6 +35,7 @@ class RequestController extends Controller
         ->join('user_items', 'requests.user_item_id', 'user_items.id')
         ->join('items', 'user_items.item_id', 'items.id')
         ->where('requests.sender_id', '=', Auth::id())
+        ->orderBy('requests.created_at', 'DESC')
         ->get(["users.name AS user_name", "users.id AS user_id", "user_items.thumbnail", "items.name AS item_name", "requests.user_item_id", "requests.start_date", "requests.end_date", "requests.status"]);
 
         return view('requests.outgoing',["requests" => $requests]);
@@ -61,6 +63,7 @@ class RequestController extends Controller
         // Check if start date is lower than end date => else throw error msg
         // Check here if overlap of dates
         // Check if the user has already send a request, so if Auth::id() as sender_id already send a request to this user_item_id 
+        // CHECK IF USER IS LOGGED IN, ELSE REDIRECT TO LOGIN SCREEN!!!
         // Dateformat should be AFTER we get it from the DB
         // We could easily query the receiver_id through eloquent with user_item_id, however that would be unnecessary
         // because we can pass the receiver_id with th form
