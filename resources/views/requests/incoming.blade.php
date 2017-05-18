@@ -9,9 +9,41 @@
 <v-container class="Container" v-cloak>
 	<v-card class="Card">
 		@if (count($requests) > 0)
-		@foreach($requests as $request)
-		<p><a href="#">{{ $request->user_name }}</a> wilt jou <a href="{{ url('user-item/' . $request->user_item_id) }}">{{ strtolower($request->item_name) }}</a> lenen.</p>
-		@endforeach
+		<v-ul class="List List--grid List--my-items">
+			@foreach($requests as $request)
+			<v-li class="List__item List__item--grid">
+				<div class="List__item List__item--info">
+					<v-img class="Image Image--round Image--my-items" background="{{ url($request->avatar) }}"></v-img>
+					<p>
+						<a href="#">{{ $request->user_name }}</a> wilt <a href="{{ url('user-item/' . $request->user_item_id) }}">jou {{ strtolower($request->item_name) }}</a> lenen van 
+						<b>
+							@php
+							$lang = array();
+							$lang['en'] = ['january','februari','march','april','may','june','july','august','september','october','november','december'];
+							$lang['nl'] = ['januari','februari','maart','april','mei','juni','juli','augustus','september','oktober','november','december'];
+
+							$converted_start_date = date('d M Y',strtotime($request->start_date));
+
+							echo ucfirst(str_replace($lang['en'], $lang['nl'], strtolower($converted_start_date)));
+							@endphp
+						</b> 
+						tot 
+						<b>@php 
+							$converted_end_date = date('d M Y',strtotime($request->end_date));
+
+							echo ucfirst(str_replace($lang['en'], $lang['nl'], strtolower($converted_end_date)));
+							@endphp
+						</b>.
+					</p>
+				</div>
+				<div class="u--clearFix"></div>
+				<div class="List__item List__item--actions">
+					<v-button class="Button Button--small Button--grey u--linkClean" href="#">Accepteren</v-button>
+					<v-button class="Button Button--small Button--wrn u--linkClean">Negeren</v-button>
+				</div>
+			</v-li>
+			@endforeach
+		</v-ul>
 		@else
 		<p>Je hebt geen verzoeken voorlopig.</p>
 		@endif

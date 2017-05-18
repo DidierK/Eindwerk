@@ -18,7 +18,7 @@
 
   @media screen and (min-width: 768px) {
     .List__item--info {
-      width: 50%;
+      width: 100%;
     }
 
     .List--user-items {

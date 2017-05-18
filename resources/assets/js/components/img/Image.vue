@@ -18,8 +18,8 @@
 		background-size: cover;
 		float: left;
 		margin-right: 16px;
-		height: 72px;
-		width: 72px;
+		height: 36px;
+		width: 36px;
 	}
 
 	.Icon--search {
