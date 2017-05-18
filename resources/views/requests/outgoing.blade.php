@@ -39,7 +39,7 @@
 					</span>
 				</div>
 				<div class="u--clearFix"></div>
-				<div class="List__item List__item--actions">
+				<div class="List__item List__item--actions u--flex u--flexAlignItemsCenter">
 					<p>Status: {{ $request->status }}</p>
 					<v-form action="{{ url('request/' . $request->request_id) }}" method="post">
 						<input type="hidden" name="_method" value="DELETE">
