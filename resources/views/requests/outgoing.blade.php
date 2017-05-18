@@ -41,12 +41,24 @@
 				<div class="u--clearFix"></div>
 				<div class="List__item List__item--actions u--flex u--flexAlignItemsCenter">
 					<p>Status: {{ $request->status }}</p>
+					@if($request->status == 'Afwachten')
 					<v-form action="{{ url('request/' . $request->request_id) }}" method="post">
 						<input type="hidden" name="_method" value="DELETE">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<v-button class="Button Button--small Button--wrn u--linkClean">Verwijderen</v-button>
 					</v-form>
-					
+					@else
+					<v-form action="#" method="post">
+						<input type="hidden" name="_method" value="post">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<v-button class="Button Button--small Button--grey u--linkClean">Betalen</v-button>
+					</v-form>
+					<v-form action="{{ url('request/' . $request->request_id) }}" method="post">
+						<input type="hidden" name="_method" value="DELETE">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<v-button class="Button Button--small Button--wrn u--linkClean">Afbreken</v-button>
+					</v-form>
+					@endif	
 				</div>
 			</v-li>
 			@endforeach

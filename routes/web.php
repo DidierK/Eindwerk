@@ -50,6 +50,7 @@ Route::get('profile/details', 'UserController@details');
 // Requests
 Route::get('requests/incoming', 'RequestController@showIncomingRequests');
 Route::get('requests/outgoing', 'RequestController@showOutgoingRequests');
+Route::put('request/{id}/accept', 'RequestController@acceptRequest');
 
 // Transactions
 Route::get('transactions/ongoing', 'TransactionController@showOnGoingTransactions');

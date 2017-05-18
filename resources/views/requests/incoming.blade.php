@@ -18,35 +18,43 @@
 						<a href="{{ url('/user/' . $request->user_id)}}">{{ $request->user_name }}</a> wilt <a href="{{ url('user-item/' . $request->user_item_id) }}">jou {{ strtolower($request->item_name) }}</a> lenen.		
 					</p>
 					<span>
-					
-							@php
-							$lang = array();
-							$lang['en'] = ['january','februari','march','april','may','june','july','august','september','october','november','december'];
-							$lang['nl'] = ['januari','februari','maart','april','mei','juni','juli','augustus','september','oktober','november','december'];
 
-							$converted_start_date = date('d M Y',strtotime($request->start_date));
+						@php
+						$lang = array();
+						$lang['en'] = ['january','februari','march','april','may','june','july','august','september','october','november','december'];
+						$lang['nl'] = ['januari','februari','maart','april','mei','juni','juli','augustus','september','oktober','november','december'];
 
-							echo ucfirst(str_replace($lang['en'], $lang['nl'], strtolower($converted_start_date)));
-							@endphp
+						$converted_start_date = date('d M Y',strtotime($request->start_date));
+
+						echo ucfirst(str_replace($lang['en'], $lang['nl'], strtolower($converted_start_date)));
+						@endphp
 						
 						tot 
 						@php 
-							$converted_end_date = date('d M Y',strtotime($request->end_date));
+						$converted_end_date = date('d M Y',strtotime($request->end_date));
 
-							echo ucfirst(str_replace($lang['en'], $lang['nl'], strtolower($converted_end_date)));
-							@endphp
+						echo ucfirst(str_replace($lang['en'], $lang['nl'], strtolower($converted_end_date)));
+						@endphp
 						.
-						</span>
+					</span>
 				</div>
 				<div class="u--clearFix"></div>
+				<!-- Here: if status = afwachtend, show this, else don't show buttons but show status: te betalen -->
 				<div class="List__item List__item--actions u--flex u--flexAlignItemsCenter">
-					<v-button class="Button Button--small Button--grey u--linkClean" href="#">Accepteren</v-button>
+					@if($request->status == 'Afwachten')
+					<v-form action="{{ url('request/' . $request->request_id . '/accept') }}" method="post">
+					<input type="hidden" name="_method" value="PUT">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<v-button class="Button Button--small Button--grey u--linkClean">Accepteren</v-button>
+					</v-form>
 					<v-form action="{{ url('request/' . $request->request_id) }}" method="post">
 						<input type="hidden" name="_method" value="DELETE">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<v-button class="Button Button--small Button--wrn u--linkClean">Negeren</v-button>
 					</v-form>
-					
+					@else
+					<p>Status: Wachten op betaling.</p>
+					@endif
 				</div>
 			</v-li>
 			@endforeach

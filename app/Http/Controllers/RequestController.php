@@ -25,10 +25,11 @@ class RequestController extends Controller
         ->join('items', 'user_items.item_id', 'items.id')
         ->where('requests.receiver_id', '=', Auth::id())
         ->orderBy('requests.created_at', 'DESC')
-        ->get(["users.name AS user_name", "users.id AS user_id", "users.avatar", "items.name AS item_name", "requests.id AS request_id", "requests.user_item_id", "requests.start_date", "requests.end_date"]);
+        ->get(["users.name AS user_name", "users.id AS user_id", "users.avatar", "items.name AS item_name", "requests.id AS request_id", "requests.user_item_id", "requests.start_date", "requests.end_date", "requests.status"]);
 
         return view('requests.incoming', ["requests" => $requests]);
     }
+
     public function showOutgoingRequests() {
 
         $requests = RequestItem::join('users', 'requests.receiver_id', '=', 'users.id')
@@ -39,6 +40,15 @@ class RequestController extends Controller
         ->get(["users.name AS user_name", "users.id AS user_id", "user_items.thumbnail", "items.name AS item_name", "requests.id AS request_id", "requests.user_item_id", "requests.start_date", "requests.end_date", "requests.status"]);
 
         return view('requests.outgoing',["requests" => $requests]);
+    }
+
+    public function acceptRequest($id) {
+
+        $request = RequestItem::find($id);
+        $request->status = "Geaccepteerd";
+        $request->save();
+
+        return back();
     }
 
     /**
@@ -87,8 +97,7 @@ class RequestController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
@@ -98,8 +107,7 @@ class RequestController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         //
     }
 
@@ -110,8 +118,7 @@ class RequestController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         //
     }
 
@@ -121,8 +128,7 @@ class RequestController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         // First make a "Are you sure screen pop up with Javascript."
         $requests = RequestItem::find($id)->delete();
         // And add a flash message at the top?
