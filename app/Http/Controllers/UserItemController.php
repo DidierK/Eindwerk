@@ -83,12 +83,14 @@ class UserItemController extends Controller
     public function show($id) {
         $user_item_user = DB::table('user_items')
         ->join('users', 'user_items.user_id', '=', 'users.id')
-        ->join('items', 'user_items.id', '=', 'items.id')
+        ->join('items', 'user_items.item_id', '=', 'items.id')
         ->where('user_items.id', $id)
         // We do first so we wont have to loop it because it will always be one record anyway
         ->first(['users.*', 'items.*', 'user_items.*', 'users.name AS user_name']);
 
-        return view('user-items.show', ['user_item_user' => $user_item_user]);
+        $owned = $this->owned($id);
+
+        return view('user-items.show', ['user_item_user' => $user_item_user, 'owned' => $owned]);
     }
 
     /**
@@ -123,5 +125,20 @@ class UserItemController extends Controller
         // ANDERS GAAT ONZE SERVER BINNEN DE KORSTE KEREN NATUURLIJK VOL STAAN
         UserItem::find($id)->delete();
         return ['redirect' => url('profile/my-items')];
+    }
+
+    public function owned($id){
+        $own_item_user = DB::table('user_items')
+        // Get the item record
+        ->where('user_items.id', $id)
+        // Check if this item record's FK matches current user
+        ->where('user_items.user_id', Auth::id())
+        ->first();
+
+        if(count($own_item_user) > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

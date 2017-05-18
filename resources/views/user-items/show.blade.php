@@ -20,7 +20,10 @@
             <p>Geen beschrijving beschikbaar.
                 @endif
                 <span class="UserItem__price u--block">€ {{  number_format($user_item_user->price,2) }}</span>
-                <h2>Huur dit item:</h2>
+                @if($owned)
+               <v-button class="Button Button--default Button--blue u--block u--sizeFull" href="{{ url('user-item/' . $user_item_user->id . '/edit')}}">Item bewerken</v-button>
+               @else
+               <h2>Huur dit item:</h2>
                 <div class="flash-message">
                     @foreach (['danger', 'warning', 'success', 'info'] as $msg)
                     @if(Session::has('alert-' . $msg))
@@ -43,7 +46,7 @@
                     </v-form-item>
                     <v-button class="Button Button--default Button--blue u--block u--sizeFull">Verzoek versturen</v-button>
                 </v-form>
-
+                @endif
             </div>
         </div>
     </v-user-item>
