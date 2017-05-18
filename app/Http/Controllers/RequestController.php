@@ -77,7 +77,7 @@ class RequestController extends Controller
             ]);
         // If succesful show that message, if not show another flash message
 
-        $request->session()->flash('alert-success', 'Jouw verzoek is succesvol verstuurd');
+        $request->session()->flash('alert-success', 'Jouw verzoek is succesvol verstuurd!');
         return redirect(url('/user-item/' . $request->user_id));
     }
 
