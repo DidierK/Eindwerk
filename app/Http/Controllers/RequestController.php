@@ -78,7 +78,7 @@ class RequestController extends Controller
         // Dateformat should be AFTER we get it from the DB
         // We could easily query the receiver_id through eloquent with user_item_id, however that would be unnecessary
         // because we can pass the receiver_id with the form
-        $user_item_id = RequestItem::where('sender_id', Auth::id())->value('user_item_id');
+        
 
         // Check if the user_item_id send, matches a user_item_id in combination with the current user's id
         // If so, then current user already send a request for this user_item(_id)
@@ -93,7 +93,7 @@ class RequestController extends Controller
         $validator = Validator::make($request->all(), [
             'start' => 'required|date',
             'end' => 'required|date|after:start',
-            ], $messages);
+            ],$messages);
 
         // Normal validation
         if ($validator->fails()) {
@@ -103,8 +103,11 @@ class RequestController extends Controller
          ->withInput();
      } else {
 
-        // If normal validation passes, validate this
-         if($user_item_id == $request->user_item_id){
+        // Checks if this user already send a request for this user id
+        $hasRequest = RequestItem::where('sender_id', Auth::id())->where('user_item_id', $request->user_item_id)->get()->count();
+
+         if($hasRequest){
+
              $validator->getMessageBag()->add('duplicate', 'Je hebt hiervoor al een verzoek verstuurd.');
              return back()->withErrors($validator)->withInput();
              // If that passes, create new request and redirect with success message
