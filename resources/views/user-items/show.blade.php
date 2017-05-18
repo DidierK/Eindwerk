@@ -11,7 +11,7 @@
                 <div class="Header__avatar-container">
                     <v-avatar class="Avatar Avatar--default" src="{{ $user_item_user->avatar }}"></v-avatar>
                 </div>
-                <h2 class="u--alignSelfCenter">Dakkoffer van {{ $user_item_user->name }} </h2>
+                <h2 class="u--alignSelfCenter">{{ $user_item_user->name }} van {{ $user_item_user->user_name }} </h2>
             </v-header>
             <h3>Extra informatie</h3>
             @if($user_item_user->description)

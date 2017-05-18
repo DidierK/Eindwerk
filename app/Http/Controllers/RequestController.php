@@ -19,7 +19,13 @@ class RequestController extends Controller
 
     public function showIncomingRequests() {
         // Query all the requests which have my (so Auth::id()) ID attached to it
-        return view('requests.incoming');
+        $requests = RequestItem::join('users', 'requests.sender_id', '=', 'users.id')
+        ->join('user_items', 'requests.user_item_id', 'user_items.id')
+        ->join('items', 'user_items.item_id', 'items.id')
+        ->where('requests.receiver_id', '=', Auth::id())
+        ->get(["users.name AS user_name", "items.name AS item_name", "requests.user_item_id"]);
+
+        return view('requests.incoming', ["requests" => $requests]);
     }
 
     /**

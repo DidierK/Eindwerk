@@ -3,7 +3,7 @@
 	<ul>
 		<li><div class="u--posRelative">Profiel</div>
 			<ul>
-				<li><a class="u--linkClean u--block" href="#">Mijn spullen</a></li>
+				<li><a class="u--linkClean u--block" href="{{ url('profile/my-items') }}">Mijn spullen</a></li>
 				<li><a class="u--linkClean u--block" href="#">Gegevens</a></li>
 			</ul>
 		</li>

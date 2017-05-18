@@ -82,9 +82,10 @@ class UserItemController extends Controller
     public function show($id) {
         $user_item_user = DB::table('user_items')
         ->join('users', 'user_items.user_id', '=', 'users.id')
+        ->join('items', 'user_items.id', '=', 'items.id')
         ->where('user_items.id', $id)
         // We do first so we wont have to loop it because it will always be one record anyway
-        ->first();
+        ->first(['users.*', 'items.*', 'user_items.*', 'users.name AS user_name']);
 
         return view('user-items.show', ['user_item_user' => $user_item_user]);
     }
