@@ -59,6 +59,8 @@
                 <v-li class="List__item u--flex u--flexAlignItemsCenter u--paddingRight16px u--paddingLeft16px"><v-link class="Link u--linkClean" link="{{ url('/login') }}">Aanmelden</v-link></v-li>
                 @endif
             </v-ul>
+
+            @if (Auth::check())
             <v-popover class="Popover Popover--user-actions" placement="bottom" ref="popover--user-actions" v-cloak>
             <v-ul class="List List--user-actions">
                 <v-li class="List__item">
@@ -69,6 +71,7 @@
                 </v-li>
             </v-ul>
             </v-popover>
+            @endif
             <!-- Either in Vue instance or in own component we should load in the mounted method all categories and populate this dropdown -->
             <v-popover class="Popover Popover--categories" placement="bottom" ref="popover--categories" v-cloak>
             <v-ul class="List List--user-actions">

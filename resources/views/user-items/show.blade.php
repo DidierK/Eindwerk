@@ -39,10 +39,10 @@
                     <input type="hidden" name="user_id" value="{{ $user_item_user->user_id }}">
                     <input type="hidden" name="user_item_id" value="{{ $user_item_user->id }}">
                     <v-form-item>Van:
-                        <input type="date" name="start">
+                        <input type="text" name="start" id="start_date">
                     </v-form-item>
                     <v-form-item>Tot:
-                        <input type="date" name="end">
+                        <input type="text" name="end" id="end_date">
                     </v-form-item>
                     <v-button class="Button Button--default Button--blue u--block u--sizeFull">Verzoek versturen</v-button>
                 </v-form>

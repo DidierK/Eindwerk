@@ -78,17 +78,23 @@ class RequestController extends Controller
         // We could easily query the receiver_id through eloquent with user_item_id, however that would be unnecessary
         // because we can pass the receiver_id with th form
 
+        /*
+        if($request->start > $request->end) {
+            var_dump("Start datum moet voor eind datum komen");
+        }
+        */
+        
         RequestItem::create([
             'sender_id' => Auth::id(),
             'receiver_id' => $request->user_id, // TODO: Verander dit naar echte img
             'user_item_id' => $request->user_item_id,
-            'start_date' => $request->start, 
-            'end_date' => $request->end
+            'start_date' => date('Y-m-d',strtotime($request->start)), 
+            'end_date' => date('Y-m-d',strtotime($request->end))
             ]);
-        // If succesful show that message, if not show another flash message
 
         $request->session()->flash('alert-success', 'Jouw verzoek is succesvol verstuurd!');
         return redirect(url('/user-item/' . $request->user_item_id));
+
     }
 
     /**

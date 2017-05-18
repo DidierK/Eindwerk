@@ -127,21 +127,30 @@ const app = new Vue({
 				that.i++;
 				that.showLoading = false;
 			});
-			}
 
-	},
-	methods: {
-		deleteItem: function(id) {
-			axios.delete('/user-item/' + id).then((response) => {
+			}
+			 //if browser doesn't support input type="date", initialize date picker widget:
+    //on document.ready
+
+    	// CONVERT TO DATEPICKER
+    	$('#start_date').datepicker({ dateFormat: 'dd-mm-yy' });
+    	$('#end_date').datepicker({ dateFormat: 'dd-mm-yy' });
+   
+
+
+},
+methods: {
+	deleteItem: function(id) {
+		axios.delete('/user-item/' + id).then((response) => {
 				// Oke the reload did not work and made sometimes the item not delete
 				// Instead maybe do a popup with please wait or loading icon before reload?
 				// Or load the items with ajax
 				window.location.href= '/profile/my-items';
 			});
-		},
-		getCategories: function() {
-			
+	},
+	getCategories: function() {
 
-		}
+
 	}
+}
 });
