@@ -41,7 +41,12 @@
 				<div class="u--clearFix"></div>
 				<div class="List__item List__item--actions">
 					<v-button class="Button Button--small Button--grey u--linkClean" href="#">Accepteren</v-button>
-					<v-button class="Button Button--small Button--wrn u--linkClean">Negeren</v-button>
+					<v-form action="{{ url('request/' . $request->request_id) }}" method="post">
+						<input type="hidden" name="_method" value="DELETE">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<v-button class="Button Button--small Button--wrn u--linkClean">Negeren</v-button>
+					</v-form>
+					
 				</div>
 			</v-li>
 			@endforeach
