@@ -15,11 +15,11 @@
 		background-color: #18B4DB;
 	}
 
-	.TreeView--user-actions > ul > li:first-child > ul > li:first-child {
+	.TreeView--user-actions > ul > li:first-child > ul > li:first-child > a {
 		background-color: rgba(24,180,219,0.25) 
 	}
 
-	.TreeView--user-actions > ul > li > ul > li:hover {
+	.TreeView--user-actions > ul > li > ul > li:hover > a {
 		background-color: rgba(24,180,219,0.25) 
 	}
 
@@ -28,16 +28,14 @@
 		padding: 0;
 	}
 
-	.TreeView--user-actions ul > li > ul > li {
-		
-	}
+
 
 	.TreeView--user-actions h3,
 	.TreeView--user-actions li > div {
 		padding: 4px 16px;
 	}
 
-	.TreeView--user-actions li > ul > li {
+	.TreeView--user-actions li > ul > li > a {
 		padding: 4px 32px;
 	}
 
