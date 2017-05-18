@@ -11,9 +11,16 @@ class TransactionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('user.transactions');
+    public function index() {
+        //
+    }
+
+    public function showOnGoingTransactions() {
+        return view('transactions.ongoing');
+    }
+
+    public function showTransactionsHistory() {
+        return view('transactions.history');
     }
 
     /**

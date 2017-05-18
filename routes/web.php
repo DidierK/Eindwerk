@@ -51,6 +51,10 @@ Route::get('profile/details', 'UserController@details');
 Route::get('requests/incoming', 'RequestController@showIncomingRequests');
 Route::get('requests/outgoing', 'RequestController@showOutgoingRequests');
 
+// Transactions
+Route::get('transactions/ongoing', 'TransactionController@showOnGoingTransactions');
+Route::get('transactions/history', 'TransactionController@showTransactionsHistory');
+
 
 // Categories, Category
 Route::get('categories', 'CategoryController@index');
