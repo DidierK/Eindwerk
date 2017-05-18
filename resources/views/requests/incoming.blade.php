@@ -47,7 +47,7 @@
 			@endforeach
 		</v-ul>
 		@else
-		<p>Je hebt geen verzoeken voorlopig.</p>
+		<p>Je hebt geen inkomende transactieverzoeken voorlopig.</p>
 		@endif
 	</v-card>
 </v-container>

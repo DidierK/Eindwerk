@@ -41,13 +41,18 @@
 				<div class="u--clearFix"></div>
 				<div class="List__item List__item--actions">
 					<p>Status: {{ $request->status }}</p>
-					<v-button class="Button Button--small Button--wrn u--linkClean">Verwijderen</v-button>
+					<v-form>
+						<input name="_method" type="hidden" value="DELETE">
+						<input name="_token" type="hidden" value="OAVDTSl7mZhBs8RiNtZknyxX2OTfFGjgRmQFTNJB">
+						<v-button class="Button Button--small Button--wrn u--linkClean">Verwijderen</v-button>
+					</v-form>
+					
 				</div>
 			</v-li>
 			@endforeach
 		</v-ul>
 		@else
-		<p>Je hebt geen verzoeken voorlopig.</p>
+		<p>Je hebt geen uitgaande transactieverzoeken voorlopig.</p>
 		@endif
 		</v-card>
 	</v-container>
