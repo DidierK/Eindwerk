@@ -13,9 +13,12 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         //
+    }
+
+    public function details() {
+        return view('profile.details');
     }
 
     /**

@@ -19,13 +19,24 @@ class RequestController extends Controller
 
     public function showIncomingRequests() {
         // Query all the requests which have my (so Auth::id()) ID attached to it
+        // TODO: In DB automatically delete the requests which have expired (so over start day)
         $requests = RequestItem::join('users', 'requests.sender_id', '=', 'users.id')
         ->join('user_items', 'requests.user_item_id', 'user_items.id')
         ->join('items', 'user_items.item_id', 'items.id')
         ->where('requests.receiver_id', '=', Auth::id())
-        ->get(["users.name AS user_name", "users.avatar", "items.name AS item_name", "requests.user_item_id", "requests.start_date", "requests.end_date"]);
+        ->get(["users.name AS user_name", "users.id AS user_id", "users.avatar", "items.name AS item_name", "requests.user_item_id", "requests.start_date", "requests.end_date"]);
 
         return view('requests.incoming', ["requests" => $requests]);
+    }
+    public function showOutgoingRequests() {
+
+        $requests = RequestItem::join('users', 'requests.receiver_id', '=', 'users.id')
+        ->join('user_items', 'requests.user_item_id', 'user_items.id')
+        ->join('items', 'user_items.item_id', 'items.id')
+        ->where('requests.sender_id', '=', Auth::id())
+        ->get(["users.name AS user_name", "users.id AS user_id", "user_items.thumbnail", "items.name AS item_name", "requests.user_item_id", "requests.start_date", "requests.end_date", "requests.status"]);
+
+        return view('requests.outgoing',["requests" => $requests]);
     }
 
     /**

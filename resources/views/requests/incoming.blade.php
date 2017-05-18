@@ -15,8 +15,10 @@
 				<div class="List__item List__item--info">
 					<v-img class="Image Image--round Image--my-items" background="{{ url($request->avatar) }}"></v-img>
 					<p>
-						<a href="#">{{ $request->user_name }}</a> wilt <a href="{{ url('user-item/' . $request->user_item_id) }}">jou {{ strtolower($request->item_name) }}</a> lenen van 
-						<b>
+						<a href="{{ url('/users/' . $request->user_id)}}">{{ $request->user_name }}</a> wilt <a href="{{ url('user-item/' . $request->user_item_id) }}">jou {{ strtolower($request->item_name) }}</a> lenen.		
+					</p>
+					<span>
+					
 							@php
 							$lang = array();
 							$lang['en'] = ['january','februari','march','april','may','june','july','august','september','october','november','december'];
@@ -26,15 +28,15 @@
 
 							echo ucfirst(str_replace($lang['en'], $lang['nl'], strtolower($converted_start_date)));
 							@endphp
-						</b> 
+						
 						tot 
-						<b>@php 
+						@php 
 							$converted_end_date = date('d M Y',strtotime($request->end_date));
 
 							echo ucfirst(str_replace($lang['en'], $lang['nl'], strtolower($converted_end_date)));
 							@endphp
-						</b>.
-					</p>
+						.
+						</span>
 				</div>
 				<div class="u--clearFix"></div>
 				<div class="List__item List__item--actions">

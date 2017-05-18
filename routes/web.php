@@ -45,6 +45,7 @@ Route::resource('request', 'RequestController');
 
 // Profile
 Route::get('profile/my-items', 'UserItemController@index');
+Route::get('profile/details', 'UserController@details');
 
 // Requests
 Route::get('requests/incoming', 'RequestController@showIncomingRequests');
