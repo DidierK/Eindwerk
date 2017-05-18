@@ -15,7 +15,7 @@
 				<div class="List__item List__item--info">
 					<v-img class="Image Image--round Image--my-items" background="{{ url($request->thumbnail) }}"></v-img>
 					<p>
-						Jij wilt een <a href="{{ url('user-item/' . $request->user_item_id) }}">{{ strtolower($request->item_name) }}</a> van <a href="{{ url('/users/' . $request->user_id)}}">{{ $request->user_name }}</a> lenen. 
+						Jij wilt een <a href="{{ url('user-item/' . $request->user_item_id) }}">{{ strtolower($request->item_name) }}</a> van <a href="{{ url('/user/' . $request->user_id)}}">{{ $request->user_name }}</a> lenen. 
 					</p>
 					<span>
 					

@@ -15,7 +15,7 @@
 				<div class="List__item List__item--info">
 					<v-img class="Image Image--round Image--my-items" background="{{ url($request->avatar) }}"></v-img>
 					<p>
-						<a href="{{ url('/users/' . $request->user_id)}}">{{ $request->user_name }}</a> wilt <a href="{{ url('user-item/' . $request->user_item_id) }}">jou {{ strtolower($request->item_name) }}</a> lenen.		
+						<a href="{{ url('/user/' . $request->user_id)}}">{{ $request->user_name }}</a> wilt <a href="{{ url('user-item/' . $request->user_item_id) }}">jou {{ strtolower($request->item_name) }}</a> lenen.		
 					</p>
 					<span>
 					
