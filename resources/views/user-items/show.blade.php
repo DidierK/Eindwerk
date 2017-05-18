@@ -20,19 +20,20 @@
             <p>Geen beschrijving beschikbaar.
                 @endif
                 <span class="UserItem__price u--block">€ {{  number_format($user_item_user->price,2) }}</span>
+
                 @if($owned)
-               <v-button class="Button Button--default Button--blue u--block u--sizeFull" href="{{ url('user-item/' . $user_item_user->id . '/edit')}}">Item bewerken</v-button>
-               @else
-               <h2>Huur dit item:</h2>
-                <div class="flash-message">
-                    @foreach (['danger', 'warning', 'success', 'info'] as $msg)
-                    @if(Session::has('alert-' . $msg))
-                    <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} Bekijk al jou
-                    <a href="{{ url('requests/outgoing')}}"> uitgaande verhuurverzoeken</a>.
-                    </p>
-                    @endif
-                    @endforeach
-                </div> <!-- end .flash-message -->
+                <v-button class="Button Button--default Button--blue u--block u--sizeFull" href="{{ url('user-item/' . $user_item_user->id . '/edit')}}">Item bewerken</v-button>
+                @else
+                <h2>Huur dit item:</h2>
+                @if ($errors->any())
+                @foreach ($errors->all() as $message)
+                {{ $message }} 
+                @endforeach
+                @elseif(Session::has('alert-success'))
+                <p class="Alert-success">Je verzoek is succesvol verstuurd. Bekijk al jou <a href="{{ url('requests/outgoing')}}"> uitgaande verhuurverzoeken</a>.
+                </p>
+                @endif
+
                 <v-form action="{{ url('request')}}" method="post">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <!-- Put in value field here the item_id -->

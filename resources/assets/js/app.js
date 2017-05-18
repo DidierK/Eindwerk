@@ -133,8 +133,8 @@ const app = new Vue({
     //on document.ready
 
     	// CONVERT TO DATEPICKER
-    	$('#start_date').datepicker({ dateFormat: 'dd-mm-yy' });
-    	$('#end_date').datepicker({ dateFormat: 'dd-mm-yy' });
+    	$('#start_date, #end_date').datepicker({ dateFormat: 'dd-mm-yy', minDate: new Date() });
+
    
 
 

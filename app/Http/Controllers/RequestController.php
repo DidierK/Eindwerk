@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use Validator;
 use App\Request as RequestItem;
 
 class RequestController extends Controller
@@ -68,7 +69,7 @@ class RequestController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        // Check if dates are valid (not empty and valid day/month/year) => else throw error msg (and re)
+        // Check if dates are valid (not empty and valid day/month/year) => else throw error msg (and redirect)
         // Disable dates before today or check if they didn't take that
         // Check if start date is lower than end date => else throw error msg
         // Check here if overlap of dates
@@ -76,15 +77,39 @@ class RequestController extends Controller
         // CHECK IF USER IS LOGGED IN, ELSE REDIRECT TO LOGIN SCREEN!!!
         // Dateformat should be AFTER we get it from the DB
         // We could easily query the receiver_id through eloquent with user_item_id, however that would be unnecessary
-        // because we can pass the receiver_id with th form
+        // because we can pass the receiver_id with the form
+        $user_item_id = RequestItem::where('sender_id', Auth::id())->value('user_item_id');
 
-        /*
-        if($request->start > $request->end) {
-            var_dump("Start datum moet voor eind datum komen");
-        }
-        */
+        // Check if the user_item_id send, matches a user_item_id in combination with the current user's id
+        // If so, then current user already send a request for this user_item(_id)
+
+
+        $messages = [
+        'start.required' => 'Een vakantie begint niet zonder start datum.',
+        'end.required' => 'Een vakantie eindigt niet zonder eind datum.',
+        'after:' => 'Je vakantie kan niet beginnen als hij al gedaan is, toch?'
+        ];
         
-        RequestItem::create([
+        $validator = Validator::make($request->all(), [
+            'start' => 'required|date',
+            'end' => 'required|date|after:start',
+            ], $messages);
+
+        // Normal validation
+        if ($validator->fails()) {
+    
+         return redirect('user-item/' . $request->user_item_id)
+         ->withErrors($validator)
+         ->withInput();
+     } else {
+
+        // If normal validation passes, validate this
+         if($user_item_id == $request->user_item_id){
+             $validator->getMessageBag()->add('duplicate', 'Je hebt hiervoor al een verzoek verstuurd.');
+             return back()->withErrors($validator)->withInput();
+             // If that passes, create new request and redirect with success message
+         } else {
+            RequestItem::create([
             'sender_id' => Auth::id(),
             'receiver_id' => $request->user_id, // TODO: Verander dit naar echte img
             'user_item_id' => $request->user_item_id,
@@ -93,9 +118,24 @@ class RequestController extends Controller
             ]);
 
         $request->session()->flash('alert-success', 'Jouw verzoek is succesvol verstuurd!');
+
+
         return redirect(url('/user-item/' . $request->user_item_id));
 
+         }
+
+        
+
     }
+
+
+
+
+
+
+
+
+}
 
     /**
      * Display the specified resource.
@@ -141,4 +181,41 @@ class RequestController extends Controller
         return back();
         
     }
+
+    private function validateRequest($request){
+
+        $user_item_id = RequestItem::where('sender_id', Auth::id())->value('user_item_id');
+
+        // Check if the user_item_id send, matches a user_item_id in combination with the current user's id
+        // If so, then current user already send a request for this user_item(_id)
+        if($user_item_id == $request->user_item_id){
+            $request->session()->flash('alert-warning', 'Je hebt al een verzoek verstuurd.');
+
+        } else {
+            if(!empty($request->start) && !empty($request->end)) {
+
+
+                if($request->start < $request->end) {
+                    return true;
+
+                } else {
+                    $request->session()->flash('alert-warning', 'Start datum moet vroeger zijn dan einddatum.');
+                }
+
+
+            } else {
+                if(empty($request->start)) {
+                    $request->session()->flash('alert-warning', 'Start kan niet leeg zijn.');
+                }
+
+                if(empty($request->end)) {
+                    $request->session()->flash('alert-warning', 'Eind datum kan niet leeg zijn.');
+                }
+
+            }
+
+        }
+
+    }
+
 }
