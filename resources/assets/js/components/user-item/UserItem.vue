@@ -1,13 +1,17 @@
 <style>
-.UserItem--details > * {
-	flex-grow: 1;
+.UserItem--details {
 	margin-top: 32px;
 }
 
 .UserItem--details header,
-.UserItem--details p,
-.UserItem--details .UserItem__price {
-	margin-bottom: 2em;
+.UserItem--details .Column--right > p,
+.UserItem--details .UserItem__price,
+.UserItem--details .Form--request {
+	margin-bottom: 1em;
+}
+
+.UserItem--details h3 {
+	margin-bottom: .5em;
 }
 
 .UserItem--details .UserItem__price {
@@ -15,11 +19,6 @@
 	font-weight: 600;
 }
 
-@media (min-width: 640px){
-		.UserItem--details > * {
-			flex-basis: 0;
-	}
-}
 </style>
 <template>
 	<div>

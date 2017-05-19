@@ -17,6 +17,13 @@
 		padding: 8px;
 	}
 
+	.Card--user-item-details .Column--right {
+		margin-top: 16px;
+	}
+
+	.Card--user-item-details > * {
+	flex-grow: 1;
+	}
 
 	.Card__user-name,
 	.Card__user-item-price {
@@ -46,6 +53,20 @@
 	}
 
 	@media (min-width: 640px){
+
+	.Card--user-item-details .Column--left {
+		margin-right: 24px;
+	}
+
+	.Card--user-item-details .Column--right {
+	    margin-right: 16px;
+
+	}
+		
+		.Card--user-item-details > * {
+			flex-basis: 0;
+	}
+
 		.Card--user-item-details {
 			margin-right: 32px;
 		}

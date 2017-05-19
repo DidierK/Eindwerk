@@ -2533,6 +2533,10 @@ input:focus {
   margin-top: 8px;
 }
 
+.u--mr-32 {
+  margin-right: 32px;
+}
+
 .u--padding16px {
   padding: 16px;
 }
