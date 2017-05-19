@@ -19,6 +19,7 @@ class ItemController extends Controller {
     	// TODO CHECK ALL DATA WE NEED TO RETURN IN WIREFRAMES
 
     	$item_id = Item::where('url', $item_url)->pluck('id');
+        $item_name = Item::where('url', $item_url)->value('name');
 
     	$items_per_user = DB::table('items')
     	->join('user_items', 'items.id', '=', 'user_items.item_id')
@@ -26,7 +27,7 @@ class ItemController extends Controller {
     	->where('items.id', $item_id)
     	->get(['users.name', 'user_items.thumbnail', 'user_items.id', 'user_items.price']);
 
-        return view('item.show', ["items_per_user" => $items_per_user]); 
+        return view('item.show', ["items_per_user" => $items_per_user, "item_name" => $item_name]); 
     }
 
     public function getItems(Request $request) {

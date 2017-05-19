@@ -1,7 +1,7 @@
 <style>
 
 	.Button {
-		
+
 	}
 
 	.Button--notification {
@@ -43,7 +43,7 @@
 	}
 
 	.Button--add-items {
-		
+
 	}
 
 	.Button:focus {
@@ -59,6 +59,8 @@
 		background-color: #31B2FF;
 		border: 0;
 		color: #FFF;
+		text-align: center;
+		box-sizing: border-box;
 	}
 
 	.Button--wrn {

@@ -3,7 +3,7 @@
 @section('content')
 <v-banner class="Banner Banner--user-items">
 	<v-container class="Container" v-cloak>
-		<h3 class="Banner__title u--noMargin">Aanbod voor {{ strtolower('Dakkoffer') }}</h3>
+		<h3 class="Banner__title u--noMargin">Aanbod voor {{ $item_name }}</h3>
 	</v-container>
 </v-banner>
 

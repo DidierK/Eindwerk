@@ -17,27 +17,19 @@
 	.Form--request input,
 	.Form--request button {
 		border: 0;
-		border-right: 1px solid #31b2ff;
+		border-bottom: 1px solid #31b2ff;
 		border-radius: 0;
 	}
 
 	
-
-	@media (min-width: 640px){ 
-		.Form--request {
-			display: flex;
-		}
-
+	
+	.Form--request > p,
+	.Form--request input[type=text] {
+		width: 100%;
+		box-sizing: border-box;
 	}
 
-	@media (max-width: 640px){ 
-		.Form--request > p,
-		.Form--request input[type=text] {
-			width: 100%;
-			box-sizing: border-box;
-		}
-
-	}
+	
 
 	
 	@media (min-width: 768px){
