@@ -5,8 +5,8 @@
 	@include('partials.header')
 	<v-container class="Container">
 		<div class="u--textCenter">
-			<h1 class="Hero__heading">Huren op maat van jou bestemming</h1>
-			<h2 class="Hero__subheading">Ga zorgeloos op reis met onze grote aanbieding aan reisspullen.</h2>
+			<h1 class="Hero__heading">Huren op maat van jouw bestemming</h1>
+			<h2 class="Hero__subheading">Ga zorgeloos op reis met onze grote aanbieding aan reismateriaal.</h2>
 		</div>
 		<v-search class="Search Search--main">
 			<v-form action="{{ url('items/search') }}" autocomplete="off">
@@ -24,4 +24,14 @@
 		</v-search>
 	</v-container>
 </v-hero>
+<v-box1 class="box1">
+	<div class="box1-container">
+		<p>Vele mensen vinden reizen te duur en zeker als je al je materiaal zelf moet kopen. TravelShare wordt een online platform dat zich zal richten op het huren en verhuren of lenen en ontlenen van reismateriaal. Zo kan je zonder veel moeite veel goedkoper op reis. Je hoeft niet meer zelf die dure tent of die dakkoffer voor je auto te kopen. Je kan hem gewoon lenen bij iemand in de buurt.
+			<br><br><span style="font-style: italic">En dat allemaal op een veilige manier.</span></p>
+
+		<a href="#" class="box1-logo"></a>
+	</div>
+
+
+</v-box1>
 @endsection

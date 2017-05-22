@@ -34,6 +34,9 @@ Vue.component('v-autocomplete-suggestions-main', require('./components/autocompl
 // Banner
 Vue.component('v-banner', require('./components/banner/Banner.vue'));
 
+//Boxes
+Vue.component('v-box1', require('./components/box1/Box1.vue'));
+
 // Button
 Vue.component('v-button', require('./components/button/Button.vue'));
 
