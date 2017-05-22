@@ -3,29 +3,29 @@
 		padding-left: 0;
 	}
 
-    .List--inline > li {
-        display: inline-block;
-        padding: 0 16px;
-    }
+  .List--inline > li {
+    display: inline-block;
+    padding: 0 16px;
+  }
 
-    .List--nav {
-        font-weight: 500;
-        font-size: 14px;
-        height: 60px; /* = height header. TODO: Dit zouden we beter via SASS moeten doen via $header-height ofzo. */
-    }
+  .List--nav {
+    font-weight: 500;
+    font-size: 14px;
+    height: 60px; /* = height header. TODO: Dit zouden we beter via SASS moeten doen via $header-height ofzo. */
+  }
 
-    .List--my-items > li:first-child {
-        
-    }
+  .List--footer-nav > li {
+    padding: 0 8px;
+  }
 
-    .List--my-items > li {
-        border-bottom: 1px solid #DDD;
-        padding: 16px 0;
-    }
+  .List--my-items > li {
+    border-bottom: 1px solid #DDD;
+    padding: 16px 0;
+  }
 
-    .List--grid h3 {
-        margin: 0;
-    }
+  .List--grid h3 {
+    margin: 0;
+  }
 
 
   .List--user-items {
@@ -51,14 +51,14 @@
   }
 </style>
 <template>
-    <ul>
-        <slot></slot>
-    </ul>
+  <ul>
+    <slot></slot>
+  </ul>
 </template>
 <script>
-    export default {
-        mounted() {
-            console.log('Component ready.')
-        }
+  export default {
+    mounted() {
+      console.log('Component ready.')
     }
+  }
 </script>

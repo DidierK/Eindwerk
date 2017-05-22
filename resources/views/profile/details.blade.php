@@ -10,10 +10,7 @@
 
 	<v-container v-cloak>
 	<v-card class="Card">
-			<p>Naam: Wout Borghgraef</p>
-			<p>Email: wout.borghgraef@gmail.com</p>
-			<p>Telefoon: +32 486 25 79 16</p>
-			<p>Adres: Maagdenblokstraat 3, 3320 Hoegaarden</p>
+			<p>Uw gegevens zijn nog niet beschikbaar.</p>
 		</v-card>
 		</v-container>
 @endsection

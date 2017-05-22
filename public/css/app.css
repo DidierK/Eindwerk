@@ -2444,7 +2444,7 @@ input:focus {
 }
 
 .main {
-  min-height: calc(100vh - 175px);
+  min-height: calc(100vh - 52px);
 }
 
 .u--alignSelfCenter {
