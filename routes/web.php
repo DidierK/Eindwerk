@@ -30,31 +30,13 @@ Route::get('auth/{provider}/callback', 'Auth\LoginController@callback');
 
 // User item resource
 Route::resource('user-item', 'UserItemController', ['except' => [
-    'index',
-]]);
+	'index',
+	]]);
 
 // User resource
 Route::resource('user', 'UserController', ['except' => [
 	'index'
 	]]);
-
-// Requests
-Route::resource('request', 'RequestController');
-
-// TODO PUT AUTH ROUTES INTO ONLY AUTHORIZED ROUTES GROUP
-
-// Profile
-Route::get('profile/my-items', 'UserItemController@index');
-Route::get('profile/details', 'UserController@details');
-
-// Requests
-Route::get('requests/incoming', 'RequestController@showIncomingRequests');
-Route::get('requests/outgoing', 'RequestController@showOutgoingRequests');
-Route::put('request/{id}/accept', 'RequestController@acceptRequest');
-
-// Transactions
-Route::get('transactions/ongoing', 'TransactionController@showOnGoingTransactions');
-Route::get('transactions/history', 'TransactionController@showTransactionsHistory');
 
 
 // Categories, Category
@@ -69,6 +51,30 @@ Route::get('/items/search', 'ItemController@searchItems');
 
 // API
 Route::group(['prefix' => 'api/'], function() {
-    Route::get('/items', 'ItemController@getItems');
-    Route::get('/categories', 'CategoryController@getCategories');
-  });
+	Route::get('/items', 'ItemController@getItems');
+	Route::get('/categories', 'CategoryController@getCategories');
+});
+
+Route::group(['middleware' => 'auth'], function () {
+	// STILL HAVE TO FIND HOW TO IMPLEMENT INTENDED REDIRECT
+
+	// Requests
+	Route::resource('request', 'RequestController');
+
+// TODO PUT AUTH ROUTES INTO ONLY AUTHORIZED ROUTES GROUP
+
+// Profile
+	Route::get('profile/my-items', 'UserItemController@index');
+	Route::get('profile/details', 'UserController@details');
+
+// Requests
+	Route::get('requests/incoming', 'RequestController@showIncomingRequests');
+	Route::get('requests/outgoing', 'RequestController@showOutgoingRequests');
+	Route::put('request/{id}/accept', 'RequestController@acceptRequest');
+
+// Transactions
+	Route::get('transactions/ongoing', 'TransactionController@showOnGoingTransactions');
+	Route::get('transactions/history', 'TransactionController@showTransactionsHistory');
+
+
+});

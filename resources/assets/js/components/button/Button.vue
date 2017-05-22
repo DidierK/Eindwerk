@@ -30,11 +30,13 @@
 	}
 
 	.Button--small {
+		line-height: 30px;
+		height: 30px;
 		border: 0;
 		border-radius: 2px;
 		font-size: 14px;
 		font-weight: 500;
-		padding: 6px 8px;
+		padding: 0 8px;
 	}
 
 	.Button--icon-small {

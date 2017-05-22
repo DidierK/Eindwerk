@@ -8,7 +8,6 @@
     .Logo__img {
         width: 100%;
         max-width: 420px;
-        width:30px;
     }
 
     .Logo--small img {

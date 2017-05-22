@@ -8,6 +8,11 @@
     padding: 0 16px;
   }
 
+  .List--how-it-works {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .List--nav {
     font-weight: 500;
     font-size: 14px;
@@ -44,11 +49,18 @@
     }
   }
 
+  @media (min-width: 768px){
+    .List--how-it-works > li {
+      flex: 0 0 33%;
+    }
+  }
+
   @media (min-width: 1200px){
     .List--user-items > .List__item {
       width: calc(33.33% - 8px);
     }
   }
+
 </style>
 <template>
   <ul>

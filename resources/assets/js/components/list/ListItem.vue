@@ -16,6 +16,10 @@
     right: 0;
   }
 
+  .List__item--actions > * {
+    margin-left: 8px;
+  }
+
   @media screen and (min-width: 768px) {
     .List__item--info {
       width: 100%;
