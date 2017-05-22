@@ -7,27 +7,27 @@
 		cursor: pointer;
 	}
 
-	.TreeView--user-actions > ul > li:first-child > div {
+	.TreeView--user-actions .Treeview__title.isActive {
 		background-color: #18B4DB;
 	}
 
-	.TreeView--user-actions > ul > li > div:hover {
+	.TreeView--user-actions .Treeview__title:hover {
 		background-color: #18B4DB;
 	}
 
-	.TreeView--user-actions > ul > li:first-child > ul > li:first-child > a {
-		background-color: rgba(24,180,219,0.25) 
+
+	.TreeView--user-actions .Treeview__action:hover {
+		background-color: rgba(24,180,219,0.25); 
 	}
 
-	.TreeView--user-actions > ul > li > ul > li:hover > a {
-		background-color: rgba(24,180,219,0.25) 
+	.TreeView--user-actions .Treeview__action.isActive {
+		background-color: rgba(24,180,219,0.25); 
 	}
 
 	.TreeView--user-actions,
 	.TreeView--user-actions ul {
 		padding: 0;
 	}
-
 
 
 	.TreeView--user-actions h3,
@@ -65,8 +65,48 @@
 	}
 </style>
 <template>
-	<div>
-		<slot></slot>
+	<div class="TreeView TreeView--user-actions">
+		<h3>MENU</h3>
+		<ul>
+			<li class="Treeview__item">
+				<div class="Treeview__title u--posRelative">Profiel</div>
+				<ul>
+					<li class="Treeview__action"><a class="u--linkClean u--block" href="/profile/my-items">Mijn spullen</a></li>
+					<li class="Treeview__action"><a class="u--linkClean u--block" href="/profile/details">Gegevens</a></li>
+				</ul>
+			</li>
+			<li class="Treeview__item">
+				<div class="Treeview__title u--posRelative">Transacties</div>
+				<ul>
+					<li class="Treeview__action"><a class="u--linkClean u--block" href="/transactions/ongoing">Lopend</a></li>
+					<li class="Treeview__action"><a class="u--linkClean u--block" href="/transactions/history">Geschiedenis</a></li>
+				</ul>
+			</li>
+			<li class="Treeview__item">
+				<div class="Treeview__title u--posRelative">Verzoeken</div>
+				<ul>
+					<li class="Treeview__action"><a class="u--linkClean u--block" href="/requests/incoming">Inkomend</a></li>
+					<li class="Treeview__action"><a class="u--linkClean u--block" href="/requests/outgoing">Uitgaand</a></li>
+				</ul>
+			</li>
+		</ul>
 	</div>
 </header>
 </template>
+<script>
+	export default {
+		mounted() {
+			var current = location.pathname;
+			$('a').each(function(){
+				var $this = $(this);
+        // if the current path is like this link, make it active
+        if($this.attr('href').indexOf(current) !== -1){
+        	jQuery($this).parents('.Treeview__action').addClass('isActive');
+        	jQuery($this).parents('.Treeview__action').parents('ul').siblings('.Treeview__title').addClass('isActive');
+        }
+    })
+			
+		}
+	}
+
+</script>

@@ -102,7 +102,7 @@ Vue.component('v-tabs', require('./components/tabs/Tabs.vue'));
 Vue.component('v-tab', require('./components/tabs/Tab.vue'));
 
 // Tree view
-Vue.component('v-tree-view', require('./components/treeview/TreeView.vue'));
+Vue.component('v-treeview', require('./components/treeview/TreeView.vue'));
 
 // User item
 Vue.component('v-user-item', require('./components/user-item/UserItem.vue'));
@@ -138,7 +138,7 @@ const app = new Vue({
     	// CONVERT TO DATEPICKER
     	$('#start_date, #end_date').datepicker({ dateFormat: 'dd-mm-yy', minDate: new Date() });
 
-   
+    	
 
 
 },
