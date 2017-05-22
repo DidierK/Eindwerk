@@ -8,7 +8,7 @@
 </v-header>
 <v-container class="Container" v-cloak>
 	<v-card class="Card">
-	<p>U hebt nog geen openstaande transacties</p>
+	<p>Je hebt nog geen openstaande transacties</p>
 	</v-card>
 </v-container>
 @endsection

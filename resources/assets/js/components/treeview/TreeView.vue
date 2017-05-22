@@ -31,11 +31,11 @@
 
 
 	.TreeView--user-actions h3,
-	.TreeView--user-actions li > div {
+	.TreeView--user-actions .Treeview__title {
 		padding: 4px 16px;
 	}
 
-	.TreeView--user-actions li > ul > li > a {
+	.TreeView--user-actions .Treeview__action > a {
 		padding: 4px 32px;
 	}
 
