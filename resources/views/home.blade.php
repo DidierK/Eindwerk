@@ -24,23 +24,60 @@
 		</v-search>
 	</v-container>
 </v-hero>
-<section>
-	<v-container class="Container">
-		<h1 class="u--textCenter">Hoe het werkt</h1>
-		<v-ul class="List List--how-it-works">
-			<v-li>
-				<h4>Selecteer</h4>
-				<p>Selecteer een product dat je graag zou willen huren. Stuur een verzoeker naar de verhuurder ervan en geef hierbij aan wanneer je het nodig hebt.</p>
-			</v-li>
-			<v-li>
-				<h4>Wordt op de hoogte gesteld</h4>
-				<p>Wanneer de huurder van het product jou verzoek accepteerd, wordt je hiervan op de hoogte gebracht.</p>
-			</v-li>
-			<v-li>
-				<h4>Betaal &amp; Bezorg</h4>
-				<p>Betaal de huur van het product veilig en snel via onze website. Het product zal worden geleverd op de eerste dag van het huurcontract.</p>
-			</v-li>
-		</v-ul>
-	</v-container>
-</section>
-@endsection
+<section class="Section Section--how-it-works">
+	<v-container class="Container" v-cloak>
+		<h2 class="Section__title Section__title--front u--textCenter">Hoe het werkt</h1>
+			<v-ul class="List List--how-it-works">
+				<v-li>
+					<div class="ImageContainer">
+						<img src="{{ url('images/select.svg')}}" />
+					</div>
+					<h4>Zoek &amp; Kies </h4>
+					<p>Selecteer een product dat je graag zou willen huren. Stuur een verzoeker naar de verhuurder ervan en geef hierbij aan wanneer je het nodig hebt.</p>
+				</v-li>
+				<v-li>
+					<div class="ImageContainer">
+						<img src="{{ url('images/notified.svg')}}" />
+					</div>
+					<h4>Wordt op de hoogte gebracht</h4>
+					<p>Wanneer de huurder van het product jou verzoek accepteerd, wordt je hiervan op de hoogte gebracht.</p>
+				</v-li>
+				<v-li>
+					<div class="ImageContainer">
+						<img src="{{ url('images/transport.svg')}}" />
+					</div>
+					<h4>Betaal &amp; Ontvang</h4>
+					<p>Betaal de huur van het product veilig en snel via onze website. Het product zal worden geleverd op de eerste dag van het huurcontract.</p>
+				</v-li>
+			</v-ul>
+		</v-container>
+	</section>
+	<section class="Section Section--team">
+		<v-container class="Container" v-cloak>
+			<h2 class="Section__title Section__title--front u--textCenter">Ontmoet het team</h1>
+				<v-ul class="List List--team">
+					<v-li>
+						<div class="ImageContainer">
+							<img class="Image Image--round" src="{{ url('images/wout.jpg')}}" />
+						</div>
+						<h4>Wout Borghgraef</h4>
+						<p>Back-end developer</p>
+					</v-li>
+					<v-li >
+						<div class="ImageContainer">
+							<img class="Image Image--round" src="{{ url('images/didier.png')}}" />
+						</div>
+						<h4>Didier Kerinckx</h4>
+						<p>Allround developer</p>
+					</v-li>
+					<v-li>
+						<div class="ImageContainer">
+							<img class="Image Image--round" src="{{ url('images/bram.png')}}" />
+						</div>
+						<h4>Bram De Nyn</h4>
+						<p>Design and front-end development</p>
+					</v-li>
+				</v-ul>
+			</v-container>
+		</section>
+		@endsection

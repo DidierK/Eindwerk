@@ -11,6 +11,15 @@
 		max-width: 420px !important;
 	}
 
+	.Section--how-it-works {
+		background-color: #FFF;
+	}
+
+	.Section__title--front {
+		font-size: 24px;
+		margin-bottom: 2em;
+	}
+
 	@media (min-width: 768px){
 		.Container {
 			max-width:750px;
@@ -27,6 +36,11 @@
 		.Container {
 			max-width:1170px;
 		}
+	}
+
+	.Section--how-it-works,
+	.Section--team {
+		padding: 2.5em 0;
 	}
 
 

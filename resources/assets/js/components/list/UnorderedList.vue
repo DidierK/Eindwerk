@@ -8,9 +8,17 @@
     padding: 0 16px;
   }
 
-  .List--how-it-works {
+  .List--how-it-works,
+  .List--team {
     display: flex;
     flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .List--team .ImageContainer,
+  .List--how-it-works .ImageContainer {
+    margin: 0 auto;
+    width: 180px;
   }
 
   .List--nav {
@@ -50,8 +58,11 @@
   }
 
   @media (min-width: 768px){
-    .List--how-it-works > li {
-      flex: 0 0 33%;
+    .List--how-it-works > li,
+    .List--team > li {
+      padding: 0 32px;
+      flex: 0 0 33.33%;
+      box-sizing: border-box;
     }
   }
 
