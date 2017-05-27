@@ -1,4 +1,12 @@
 <style>
+	.UserItem .Column--left {
+		max-width: 640px;
+	}
+
+	.UserItem .Card {
+		margin-top: 16px;
+	}
+
 	.UserItem--details {
 		margin-top: 32px;
 	}

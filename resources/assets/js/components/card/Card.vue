@@ -22,7 +22,7 @@
 	}
 
 	.Card--user-item-details > * {
-	flex-grow: 1;
+		flex-grow: 1;
 	}
 
 	.Card__user-name,
@@ -53,19 +53,10 @@
 	}
 
 	@media (min-width: 640px){
-
-	.Card--user-item-details .Column--left {
-		margin-right: 24px;
-	}
-
-	.Card--user-item-details .Column--right {
-	    margin-right: 16px;
-
-	}
 		
 		.Card--user-item-details > * {
 			flex-basis: 0;
-	}
+		}
 
 		.Card--user-item-details {
 			margin-right: 32px;
