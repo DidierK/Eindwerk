@@ -1,14 +1,14 @@
 <style>
-  .Avatar--default {
-    border-radius: 50%;
-  }
+	.Avatar--default {
+		border-radius: 50%;
+	}
 
 </style>
 <template>
-<img :src="src" />
+	<img :src="src" />
 </template>
 <script>
-    export default {
-        props: ['src'],
-    }
+	export default {
+		props: ['src'],
+	}
 </script>

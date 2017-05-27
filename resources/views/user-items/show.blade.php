@@ -10,14 +10,19 @@
             <v-card class="Card">
                 <v-header class="Header Header--user-item-details">
                     <h2 class="u--alignSelfCenter">{{ $user_item_user->name }} voor €{{  number_format($user_item_user->price,2) }}</h2>
-                    <a href="#">{{ $user_item_user->user_name }}</a>
-                    <div class="Header__avatar-container">
-                        <v-avatar class="Avatar Avatar--default" src="{{ $user_item_user->avatar }}"></v-avatar>
+                    
+                    <div class="UserDetails">
+                        <a href="#">{{ $user_item_user->user_name }}</a>
+                        <div class="Header__avatar-container u--floatLeft">
+                            <v-avatar class="Avatar Avatar--default" src="{{ $user_item_user->avatar }}"></v-avatar>
+                        </div>
+                        <div class="Rating"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>(0 reviews)</span></div>
+                        <div class="u--cf"></div>
                     </div>
                 </v-header>
                 @if($owned)
                 <div>
-                    <v-button class="Button Button--default Button--blue u--block u--sizeFull u--linkClean" href="{{ url('user-item/' . $user_item_user->id . '/edit')}}">Item bewerken</v-button>
+                    <v-button class="Button Button--default Button--blue u--block u--linkClean" href="{{ url('user-item/' . $user_item_user->id . '/edit')}}">Item bewerken</v-button>
                 </div>
                 @else
                 @if ($errors->any())
@@ -35,7 +40,7 @@
                     <p>Je verzoek is succesvol verstuurd. Bekijk al jou <a href="{{ url('requests/outgoing')}}"> uitgaande verhuurverzoeken</a>.</p>
                 </div>
                 @endif
-                <v-form class="Form Form--request u--flexWrap" action="{{ url('request')}}" method="post">
+                <v-form class="Form Form--request u--flex u--flexWrap" action="{{ url('request')}}" method="post">
 
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <!-- Put in value field here the item_id -->
@@ -47,18 +52,18 @@
                     <v-form-item>
                         <input class="Input Input--text-default" type="text" name="end" id="end_date" placeholder="Tot">
                     </v-form-item>
-                    <v-button class="Button Button--default Button--blue u--block u--sizeFull">Verzoek versturen</v-button>
+                    <v-button class="Button Button--default Button--blue u--block">Verzoek versturen</v-button>
                 </v-form>
                 @endif
             </v-card>
 
             <v-card class="Card">
-                <h2>Uitgeleend op</h2>
+                <h3>Uitgeleend op</h3>
                 <p>Nog niet uitgeleend.</p>
             </v-card>
 
             <v-card class="Card">
-                <h2>Informatie</h2>
+                <h3>Informatie</h3>
                 @if($user_item_user->description)
                 <p>{{ $user_item_user->description }}</p>
                 @else
@@ -66,6 +71,12 @@
                 @endif
             </v-card>
 
+        </div>
+        <div class="Column Column--right">
+        <v-card class="Card">
+                <h3>Meer dakkoffers</h3>
+                <p>Geen data beschikbaar</p>
+            </v-card>
         </div>
     </v-user-item>
     @endsection

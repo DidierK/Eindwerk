@@ -18,7 +18,7 @@
 	.Header--main a {
 		color: #FFF;
 		font-size: 14px;
-    	font-weight: 500;
+		font-weight: 500;
 	}
 
 	.Header--bg-transparent {
@@ -38,9 +38,18 @@
 	}
 
 	.Header__title {
-	font-size: 18px;
+		font-size: 18px;
 		font-weight: 500;
 		margin: 0;
+	}
+
+	.Header--user-item-details {
+		border-bottom: 1px solid #DDD;
+		padding-bottom: 8px;
+	}
+
+	.Header--user-item-details .UserDetails {
+		padding: 8px 0;
 	}
 
 	.Header--user-item-details .Header__avatar-container {

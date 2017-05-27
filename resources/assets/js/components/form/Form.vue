@@ -8,24 +8,17 @@
 
 	.Form--request {
 		color: #FFF;
-		background-color: #31b2ff;
-		padding: 1px;
 	}
-
-	
 
 	.Form--request input,
 	.Form--request button {
-		border: 0;
-		border-bottom: 1px solid #31b2ff;
-		border-radius: 0;
+		margin-right: 8px;
 	}
 
 	
 	
 	.Form--request > p,
 	.Form--request input[type=text] {
-		width: 100%;
 		box-sizing: border-box;
 	}
 
