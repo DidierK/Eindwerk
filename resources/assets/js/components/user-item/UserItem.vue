@@ -1,10 +1,11 @@
 <style>
-	.UserItem .Column--left {
-		max-width: 640px;
+
+	.UserItem > .Column {
+		width: 100%;
 	}
 
 	.UserItem .Card {
-		margin-top: 16px;
+		margin-bottom: 16px;
 	}
 
 	.UserItem--details {
@@ -55,6 +56,15 @@
 		font-weight: 600;
 	}
 
+	@media (min-width: 768px){
+		.UserItem > .Column {
+			width: 47.5%;
+		}
+
+		.UserItem > .Column--left {
+			margin-right: 2.5%;
+		}
+	}
 </style>
 <template>
 	<div>

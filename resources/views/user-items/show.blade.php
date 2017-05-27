@@ -2,14 +2,15 @@
 
 @section('content')
 <v-container class="Container" v-cloak>
-    <v-user-item class="UserItem UserItem--details">
+    <v-user-item class="UserItem UserItem--details u--flex u--flexWrap">
         <div class="Column Column--left">
-
             <v-img src="{{ asset($user_item_user->thumbnail) }}"></v-img>
+        </div>
 
+        <div class="Column Column--right">
             <v-card class="Card">
                 <v-header class="Header Header--user-item-details">
-                    <h2 class="u--alignSelfCenter">{{ $user_item_user->name }} voor €{{  number_format($user_item_user->price,2) }}</h2>
+                    <h2 class="u--alignSelfCenter">{{ $user_item_user->name }} voor €{{  number_format($user_item_user->price,2) }} per dag</h2>
                     
                     <div class="UserDetails">
                         <a href="#">{{ $user_item_user->user_name }}</a>
@@ -69,13 +70,6 @@
                 @else
                 <p>Geen beschrijving beschikbaar.</p>
                 @endif
-            </v-card>
-
-        </div>
-        <div class="Column Column--right">
-        <v-card class="Card">
-                <h3>Meer dakkoffers</h3>
-                <p>Geen data beschikbaar</p>
             </v-card>
         </div>
     </v-user-item>
