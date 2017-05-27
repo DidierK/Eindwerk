@@ -1,6 +1,6 @@
 <style>
     .FormItem {
-        margin-bottom: 1.5em;
+        margin: 16px 0;
     }
 
     .FormItem--search {
@@ -19,7 +19,7 @@
 </style>
 <template>
     <p>
-    <label class="FormItem__label" :for="label" v-if="label">{{ label }}</label>
+        <label class="FormItem__label" :for="label" v-if="label">{{ label }}</label>
         <slot></slot>
     </p>
 </template>

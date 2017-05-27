@@ -1,18 +1,13 @@
 @extends('layouts.auth_area')
 
 @section('auth_content')
-<v-header class="Header Header--page">
-	<v-container class="Container u--flex u--flexJustifyContentSpaceBetween u--flexWrap u--flexAlignItemsCenter" v-cloak>
-		<h3 class="Header__title u--noMargin">Gegevens</h3>
-	</v-container>
-</v-header>	
-
-<v-container v-cloak>
-	<v-card class="Card">
-		<h2>Algemene informatie</h2>
-		<v-form class="Form Form--settings" action="{{ url('user/' . Auth::id()) }}" method="post">
-			<input type="hidden" name="_method" value="PUT">
-			<input type="hidden" name="_token" value="{{ csrf_token() }}">
+<div>
+    <div class="Subhead">
+        <h2 clas="Subhead__heading">Algemene informatie</h2>
+    </div>
+    <v-form class="Form Form--settings" action="{{ url('user/' . Auth::id()) }}" method="post">
+       <input type="hidden" name="_method" value="PUT">
+       <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <!--  
                     TODO: CHECK FOR EACH VALUE IF IT IS NOT EMPTY, IF IT IS EMPTY THE DATA THEN JUST LEAVE VALUE EMPTY AND IT WILL SHOW THE PLACEHOLDER
                 -->
@@ -36,12 +31,12 @@
                 	<v-input type="submit" class="Button Button--default Button--blue" value="Opslaan"></v-input>
                 </v-form-item>
             </v-form>
-        </v-card>
-        <v-card class="Card">
-		<h2>Account instellingen</h2>
-		<v-form class="Form Form--settings" action="{{ url('user/' . Auth::id()) }}" method="post">
-			<input type="hidden" name="_method" value="PUT">
-			<input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <div class="Subhead Subhead--spacious">
+                <h2 clas="Subhead__heading">Account instellingen</h2>
+            </div>
+            <v-form class="Form Form--settings" action="{{ url('user/' . Auth::id()) }}" method="post">
+               <input type="hidden" name="_method" value="PUT">
+               <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <!--  
                     TODO: CHECK FOR EACH VALUE IF IT IS NOT EMPTY, IF IT IS EMPTY THE DATA THEN JUST LEAVE VALUE EMPTY AND IT WILL SHOW THE PLACEHOLDER
                 -->
@@ -65,6 +60,12 @@
                 	<v-input type="submit" class="Button Button--default Button--blue" value="Opslaan"></v-input>
                 </v-form-item>
             </v-form>
-        </v-card>
-    </v-container>
-    @endsection
+
+        </div>  
+        <div>
+            <v-avatar class="Avatar Avatar--default" src="{{ Auth::user()->avatar }}&width=400&height=400"></v-avatar>
+        </div>
+
+
+
+        @endsection

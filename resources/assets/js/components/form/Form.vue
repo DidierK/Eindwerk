@@ -26,7 +26,7 @@
 	
 	@media (min-width: 768px){
 		.Form--settings {
-			width: 40%;
+			width: 480px;
 		}
 	}
 </style>

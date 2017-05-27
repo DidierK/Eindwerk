@@ -1,22 +1,21 @@
 <style>
 	.Column--main {
-		padding: 0 16px;
+		margin-top: 32px;
 	}
 
 	.Column--user-actions {
-		background-color: #175173;
 		box-sizing: border-box;
-		color: #FFF;
+		color: #000;
 		width: 100%;
 	}
 
 	@media (min-width: 768px){
 		.Column--main {
-			margin-left: 240px;
+			margin-left: 272px;
 		}
 
 		.Column--user-actions {
-			position: fixed;
+			position: absolute;
 			width: 240px;
 			height: 100%;		
 		}

@@ -43,6 +43,7 @@
 
     .Input--text-default,
     .Input--textarea-default {
+        background-color: #fafbfc;
         border: 1px solid #DDD;
         border-radius: 1px;
         font-size: 14px;

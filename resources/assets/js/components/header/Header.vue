@@ -16,6 +16,14 @@
 		z-index: 1;
 	}
 
+	.Subhead {
+		border-bottom: 1px solid #DDD;
+	}
+
+	.Subhead--spacious {
+		margin-top: 32px;
+	}
+
 	.Header--main.u--posFixed ~ .main {
 		top: 52px;
 	}
@@ -32,7 +40,7 @@
 	}
 
 	.Header--page {
-		padding: 2em 0 2em 0;
+		padding: 0 0 2em 0;
 	}
 
 	.Header--hero {

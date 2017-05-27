@@ -8,7 +8,7 @@
 	}
 
 	.TreeView--user-actions .Treeview__title.isActive {
-		background-color: #18B4DB;
+		// background-color: #18B4DB;
 	}
 
 	.TreeView--user-actions .Treeview__title:hover {
@@ -21,7 +21,7 @@
 	}
 
 	.TreeView--user-actions .Treeview__action.isActive {
-		background-color: rgba(24,180,219,0.25); 
+		// background-color: rgba(24,180,219,0.25); 
 	}
 
 	.TreeView--user-actions,
@@ -29,14 +29,19 @@
 		padding: 0;
 	}
 
+	.TreeView--user-actions .Treeview__title,
+	.TreeView--user-actions .Treeview__action > a {
+		border-top: 1px solid #DDD;
+	}
+
 
 	.TreeView--user-actions h3,
 	.TreeView--user-actions .Treeview__title {
-		padding: 4px 16px;
+		padding: 8px 16px;
 	}
 
 	.TreeView--user-actions .Treeview__action > a {
-		padding: 4px 32px;
+		padding: 8px 32px;
 	}
 
 	.TreeView--user-actions div::after {
@@ -56,7 +61,7 @@
 
 	.TreeView--user-actions,
 	.TreeView--user-actions a {
-		color: #FFF;
+		color: #000;
 	}
 	@media (max-width: 768px){
 		.TreeView--user-actions li {
@@ -65,6 +70,7 @@
 	}
 </style>
 <template>
+<v-card class="Card Card--treeview">
 	<div class="TreeView TreeView--user-actions">
 		<h3>MENU</h3>
 		<ul>
@@ -91,7 +97,7 @@
 			</li>
 		</ul>
 	</div>
-</header>
+</v-card>
 </template>
 <script>
 	export default {

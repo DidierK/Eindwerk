@@ -35,6 +35,7 @@
 	@media (min-width: 1200px){
 		.Container {
 			max-width:1170px;
+			// max-width: 980px;
 		}
 	}
 
