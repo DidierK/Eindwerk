@@ -11,7 +11,8 @@
 
 	.Header--main {
 		background-color: #2682BA;
-		min-height: 52px;	
+		min-height: 52px;
+		top: 0;	
 		z-index: 1;
 	}
 

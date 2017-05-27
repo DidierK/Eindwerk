@@ -75,7 +75,7 @@ class LoginController extends Controller
     'email'    => $user->email,
     'provider' => $provider,
     'provider_id' => $user->id,
-    'avatar' => $user->avatar . '&width=32&height=32' // Our thumbnail is 32x32px
+    'avatar' => $user->avatar
     ]);
 }
 }

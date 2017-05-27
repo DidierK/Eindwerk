@@ -2408,10 +2408,6 @@ template {
 }
 
 /** STYLES **/
-* {
-  box-sizing: border-box;
-}
-
 html, body {
   height: 100%;
 }
@@ -2615,7 +2611,7 @@ p {
 
 h2 {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 h3 {
