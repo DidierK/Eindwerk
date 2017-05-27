@@ -1,4 +1,8 @@
 <style>
+	.Column--main {
+		padding: 0 16px;
+	}
+
 	.Column--user-actions {
 		background-color: #175173;
 		box-sizing: border-box;
@@ -9,11 +13,10 @@
 	@media (min-width: 768px){
 		.Column--main {
 			margin-left: 240px;
-			padding: 0 16px;
 		}
 
 		.Column--user-actions {
-			position: absolute;
+			position: fixed;
 			width: 240px;
 			height: 100%;		
 		}

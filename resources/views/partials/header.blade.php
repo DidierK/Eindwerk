@@ -1,5 +1,5 @@
 <!-- Main header -->
-<v-header class="Header Header--main @if(Route::getCurrentRoute()->uri() == '/'){{'Header--bg-transparent'}}@endif u--flex u--flexAlignItemsCenter u--flexJustifyContentSpaceBetween" v-cloak>
+<v-header class="Header Header--main @if(Route::getCurrentRoute()->uri() == '/'){{'Header--bg-transparent'}}@else {{ 'u--posFixed' }} @endif u--flex u--flexAlignItemsCenter u--flexJustifyContentSpaceBetween u--sizeFull" v-cloak>
 
     <!-- Logo -->
     <v-logo class="Logo Logo--header-main u--block"></v-logo>

@@ -12,6 +12,11 @@
 	.Header--main {
 		background-color: #2682BA;
 		min-height: 52px;	
+		z-index: 1;
+	}
+
+	.Header--main.u--posFixed ~ .main {
+		top: 52px;
 	}
 
 	.Header--main button,

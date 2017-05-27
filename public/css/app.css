@@ -2408,6 +2408,10 @@ template {
 }
 
 /** STYLES **/
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   height: 100%;
 }
@@ -2547,6 +2551,10 @@ input:focus {
 
 .u--paddingLeft16px {
   padding-left: 16px;
+}
+
+.u--posFixed {
+  position: fixed;
 }
 
 .u--posRelative {
