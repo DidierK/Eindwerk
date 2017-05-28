@@ -18,7 +18,9 @@ class UserController extends Controller
     }
 
     public function details() {
-        return view('profile.details');
+        $user_details = User::find(Auth::id())->first();
+
+        return view('profile.details', ['user_details' => $user_details]);
     }
 
     /**

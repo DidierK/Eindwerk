@@ -24,9 +24,9 @@
 	
 
 	
-	@media (min-width: 768px){
-		.Form--settings {
-			width: 480px;
+	@media (min-width: 480px){
+		.Form--settings .Column--left {
+			width: 50%;
 		}
 	}
 </style>
