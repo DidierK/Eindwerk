@@ -91,6 +91,7 @@
 
 	.Button--transparent {
 		background-color: transparent;
+		border: 0;
 	}
 
 	.Button--center {
