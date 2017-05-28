@@ -12,14 +12,12 @@
 
 
 	.Image--my-items {
-		border: 2px solid #DDD;
 		background-position: center top;
 		background-repeat: no-repeat;
 		background-size: cover;
-		float: left;
-		margin-right: 16px;
-		height: 36px;
-		width: 36px;
+		border-radius: 2px;
+		width: 100%;
+		height: 190px;
 	}
 
 	.Icon--search {

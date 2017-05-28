@@ -1,5 +1,9 @@
 <style>
 
+    .Input {
+        box-sizing: border-box;
+    }
+
     .Input--radio {
         display: none;
     }
@@ -46,6 +50,7 @@
         background-color: #fafbfc;
         border: 1px solid #DDD;
         border-radius: 1px;
+        box-shadow: inset 0 1px 2px rgba(27,31,35,0.075);
         font-size: 14px;
         padding: 12px 8px;
     }

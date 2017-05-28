@@ -25,6 +25,10 @@
 		margin-top: 32px;
 	}
 
+	.Subhead .SearchForm {
+		flex-basis: 480px;
+	}
+
 	.Header--main.u--posFixed ~ .main {
 		top: 52px;
 		margin-bottom: 52px;

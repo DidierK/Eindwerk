@@ -9,7 +9,7 @@ body {
 }
 
 a {
-
+	color: #6B9AB7
 }
 
 ul {
@@ -129,12 +129,20 @@ input:focus {
 	margin-top: 8px;
 }
 
+.u--mt-16 {
+	margin-top: 16px;
+}
+
 .u--mr-16 {
 	margin-right: 16px;
 }
 
 .u--mr-32 {
 	margin-right: 32px;
+}
+
+.u--pb-16 {
+	padding-bottom: 16px;
 }
 
 .u--padding16px {
@@ -183,13 +191,26 @@ input:focus {
 	display: flex;
 }
 
-.Row .col-3-4 {
+.col-3-4 {
 	flex: 0 0 75%;
 }
 
-.Row .col-2-3 {
+.col-2-3 {
 	flex: 0 0 66.66%;
 }
+
+.col-1-3 {
+	box-sizing: border-box;
+	padding:0 8px !important;
+	flex: 0 0 100%;
+}
+
+@media (min-width:768px){
+	.col-1-3 {
+		flex: 0 0 33.33%;
+	}
+}
+
 
 /* MEDIA QUERIES */
 @media (min-width:768px){

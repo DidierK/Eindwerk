@@ -32,14 +32,8 @@
   }
 
   .List--my-items > li {
-    border-bottom: 1px solid #DDD;
     padding: 16px 0;
   }
-
-  .List--grid h3 {
-    margin: 0;
-  }
-
 
   .List--user-items {
     margin-top: 16px;
