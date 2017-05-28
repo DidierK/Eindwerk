@@ -10,7 +10,7 @@
 	}
 
 	.Header--main {
-		background-color: #2682BA;
+		background-color: #6B9AB7;
 		min-height: 52px;
 		top: 0;	
 		z-index: 1;
@@ -18,6 +18,7 @@
 
 	.Subhead {
 		border-bottom: 1px solid #DDD;
+		margin-bottom: 16px;
 	}
 
 	.Subhead--spacious {

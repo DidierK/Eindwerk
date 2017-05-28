@@ -1,12 +1,9 @@
 @extends('layouts.auth_area')
 
 @section('auth_content')
-<v-header class="Header Header--page">
-	<v-container class="Container u--flex u--flexJustifyContentSpaceBetween u--flexWrap u--flexAlignItemsCenter" v-cloak>
-		<h3 class="Header__title u--noMargin">Uitgaande Verzoeken</h3>
-	</v-container>
-</v-header>
-<v-container class="Container" v-cloak>
+<div class="Subhead u--flex u--flexJustifyContentSpaceBetween u--flexWrap u--flexAlignItemsCenter">
+	<h2 clas="Subhead__heading">Uitgaande verzoeken</h2>
+</div>
 	<v-card class="Card">
 		@if (count($requests) > 0)
 		<v-ul class="List List--grid List--my-items">
@@ -67,5 +64,4 @@
 		<p>Je hebt geen uitgaande transactieverzoeken voorlopig.</p>
 		@endif
 	</v-card>
-</v-container>
 @endsection

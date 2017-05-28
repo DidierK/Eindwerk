@@ -1,6 +1,8 @@
 <style>
-	.TreeView--user-actions h3 {
-		font-size: 12px;
+	.TreeView .Treeview__heading {
+		background-color: #F3F5F8;
+		color: #484848;
+		font-size: 14px;
 	}
 
 	.TreeView--user-actions ul > li {
@@ -8,20 +10,24 @@
 	}
 
 	.TreeView--user-actions .Treeview__title.isActive {
-		// background-color: #18B4DB;
+		// background-color: #F3F5F8;
 	}
 
 	.TreeView--user-actions .Treeview__title:hover {
-		background-color: #18B4DB;
+		background-color: #F3F5F8;
 	}
 
 
 	.TreeView--user-actions .Treeview__action:hover {
-		background-color: rgba(24,180,219,0.25); 
+		background-color: #F3F5F8;
 	}
 
 	.TreeView--user-actions .Treeview__action.isActive {
-		// background-color: rgba(24,180,219,0.25); 
+		border-left: 2px solid #6B9AB7;
+	}
+
+	.TreeView--user-actions .Treeview__action.isActive > a {
+		color: #6B9AB7;
 	}
 
 	.TreeView--user-actions,
@@ -44,21 +50,6 @@
 		padding: 8px 32px;
 	}
 
-	.TreeView--user-actions div::after {
-		content: '';
-		display: inline-block;
-		width: 0;
-		height: 0;
-		border: transparent solid 6px;
-		border-top-width: 6px;
-		border-bottom-width: 0;
-		border-top-color: white;
-		position: absolute;
-		top: 12px;
-		right: 16px;
-		transition: all .25s;
-	}
-
 	.TreeView--user-actions,
 	.TreeView--user-actions a {
 		color: #000;
@@ -72,7 +63,7 @@
 <template>
 <v-card class="Card Card--treeview">
 	<div class="TreeView TreeView--user-actions">
-		<h3>MENU</h3>
+		<h3 class="Treeview__heading">Menu</h3>
 		<ul>
 			<li class="Treeview__item">
 				<div class="Treeview__title u--posRelative">Profiel</div>
