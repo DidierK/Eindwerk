@@ -27,6 +27,7 @@
 
 	.Header--main.u--posFixed ~ .main {
 		top: 52px;
+		margin-bottom: 52px;
 	}
 
 	.Header--main button,
