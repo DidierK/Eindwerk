@@ -15,7 +15,7 @@
                 <v-form-item class="FormItem EditProfileAvatar u--mt-0">
                     <v-input type="hidden" label="Profielfoto"></v-input>
                     <v-avatar class="Avatar Avatar--default" src="{{ Auth::user()->avatar }}&width=400&height=400"></v-avatar>
-                    <v-button class="Button u--sizeFull u--mt-8 u--textCenter">Profielfoto veranderen</v-button>
+                    <v-button class="Button Button--default Button--white u--sizeFull u--mt-16 u--textCenter">Profielfoto veranderen</v-button>
                 </v-form-item>
                 <div class="Column--left">
                     <v-form-item class="FormItem">
@@ -47,12 +47,8 @@
                     </div>
                 </v-form-item> 
 
-
-
-
-
                 <v-form-item class="FormItem">
-                   <v-input type="submit" class="Button Button--default Button--blue" value="Opslaan"></v-input>
+                   <v-input type="submit" class="Button Button--default Button--white" value="Opslaan"></v-input>
                </v-form-item>
            </div>
        </v-form>
@@ -60,7 +56,7 @@
         <h2 clas="Subhead__heading">Account instellingen</h2>
     </div>
     <v-form class="Form Form--settings" action="{{ url('user/' . Auth::id()) }}" method="post">
-     <p>Verwijder uw account</p><v-button>Account verwijderen</v-button>
+     <p>Verwijder uw account</p><v-button class="Button Button--default Button--white">Account verwijderen</v-button>
  </v-form>
 
 </div>  
