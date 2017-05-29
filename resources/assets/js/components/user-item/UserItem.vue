@@ -11,6 +11,15 @@
 		margin-top: 32px;
 	}
 
+	.RequestsTable__row {
+		position: relative;
+	}
+
+	.RequestsTable__row form {
+		position: absolute;
+		right: 0;
+	}
+
 	@media (max-width: 768px){
 		.RequestsTable__row {
 			border-top: 1px solid #DDD;
