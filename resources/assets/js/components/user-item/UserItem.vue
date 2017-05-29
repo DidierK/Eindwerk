@@ -11,13 +11,31 @@
 	margin-top: 32px;
 }
 
-.RequestsList .UserItemImage {
-	width: 48px;
-	height: 48px;
+.RequestsTable__header {
+	
+}
+
+.RequestsTable__header, 
+.RequestsTable__row {
+	border-bottom: 1px solid #DDD;
+}
+
+.RequestsTable__header .TableHeader__title {
+	font-weight: 500;
+}
+
+.RequestsTable .UserItemImage {
+	width: 36px;
+	height: 36px;
+}
+
+.RequestsTable__row {
+	display: flex;
+	align-items: center;
+	padding: 16px 0;
 }
 
 .RequestDetails__row {
-	border-top: 1px solid #DDD;
 	display: flex;
 	justify-content: space-between;
 	padding: 4px 0;
