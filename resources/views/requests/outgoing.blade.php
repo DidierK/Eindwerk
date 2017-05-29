@@ -34,8 +34,8 @@
 				$lang['en'] = ['january','februari','march','april','may','june','july','august','september','october','november','december'];
 				$lang['nl'] = ['januari','februari','maart','april','mei','juni','juli','augustus','september','oktober','november','december'];
 
-				$converted_start_date = date('d M Y',strtotime($request->start_date));
-				$converted_end_date = date('d M Y',strtotime($request->end_date));
+				$converted_start_date = date('d F Y',strtotime($request->start_date));
+				$converted_end_date = date('d F Y',strtotime($request->end_date));
 				@endphp
 				<div class="u--gr-2 RequestDetails__row">
 					<span class="TableHeader__title u--mobileOnly">Start Datum</span>
