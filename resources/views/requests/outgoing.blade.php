@@ -3,7 +3,7 @@
 @section('auth_content')
 @if (count($requests) > 0)
 <div class="RequestsTable">
-	<div class="RequestsTable__header u--flex">
+	<div class="RequestsTable__header u--flex u--notMobile">
 	<div class="u--gr-2">
 			<span class="TableHeader__title">Naam</span>
 		</div>
@@ -22,11 +22,11 @@
 				<div class="u--gr-2 u--flex u--flexAlignItemsCenter">
 					<v-img class="UserItemImage Image Image--round Image--my-items" background="{{ url($request->thumbnail) }}"></v-img>
 					<a class="Link u--linkClean u--ml-16" href="{{ url('user-item/' . $request->user_item_id) }}">
-						<h3>{{ $request->item_name }}</h3>
+						<span>{{ $request->item_name }}</span>
 					</a>
 				</div>
 				<div class="u--gr-2 RequestDetails__row">
-					<span class="u--mobileOnly">Status</span>
+					<span class="TableHeader__title u--mobileOnly">Status</span>
 					<span>{{ $request->status }}</span>
 				</div>
 				@php
@@ -38,13 +38,13 @@
 				$converted_end_date = date('d M Y',strtotime($request->end_date));
 				@endphp
 				<div class="u--gr-2 RequestDetails__row">
-					<span class="u--mobileOnly">Start Datum</span>
+					<span class="TableHeader__title u--mobileOnly">Start Datum</span>
 					<span class="RequestDetails__text">
 						@php echo ucfirst(str_replace($lang['en'], $lang['nl'], strtolower($converted_start_date))); @endphp
 					</span>
 				</div>
 				<div class="u--gr-2 RequestDetails__row">
-					<span class="u--mobileOnly">Eind Datum</span>
+					<span class="TableHeader__title u--mobileOnly">Eind Datum</span>
 					<span class="RequestDetails__text">
 						@php echo ucfirst(str_replace($lang['en'], $lang['nl'], strtolower($converted_end_date))); @endphp
 					</span>

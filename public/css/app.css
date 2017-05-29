@@ -2515,8 +2515,10 @@ input:focus {
   width: 100%;
 }
 
-.u--gr-2 {
-  width: 25%;
+@media (min-width: 768px) {
+  .u--gr-2 {
+    width: 25%;
+  }
 }
 
 .u--inlineBlock {
