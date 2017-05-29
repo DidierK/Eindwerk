@@ -16,13 +16,11 @@
 	height: 48px;
 }
 
-.RequestsList > .List__item:first-child {
-	padding-top: 0;
-}
-
-.RequestsList > .List__item {
-	border-bottom: 1px solid #DDD;
-	padding: 16px 0;
+.RequestDetails__row {
+	border-top: 1px solid #DDD;
+	display: flex;
+	justify-content: space-between;
+	padding: 4px 0;
 }
 
 .MyItem__info {
