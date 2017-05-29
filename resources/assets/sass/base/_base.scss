@@ -9,7 +9,7 @@ body {
 }
 
 a {
-	color: #6B9AB7
+	color: #10a4ff;
 }
 
 ul {
@@ -76,6 +76,10 @@ input:focus {
 	align-items: center;
 }
 
+.u--flexDirectionColumn {
+	flex-direction: column;
+}
+
 .u--flexJustifyContentSpaceBetween {
 	justify-content: space-between;
 }
@@ -121,8 +125,16 @@ input:focus {
 	margin: 0;
 }
 
+.u--mb-16 {
+	margin-bottom: 16px;
+}
+
 .u--ml-8 {
 	margin-left: 8px;
+}
+
+.u--ml-16 {
+	margin-left: 16px;
 }
 
 .u--mt-0 {

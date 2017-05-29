@@ -2418,7 +2418,7 @@ body {
 }
 
 a {
-  color: #6B9AB7;
+  color: #10a4ff;
 }
 
 ul {
@@ -2486,6 +2486,12 @@ input:focus {
   align-items: center;
 }
 
+.u--flexDirectionColumn {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+}
+
 .u--flexJustifyContentSpaceBetween {
   -webkit-box-pack: justify;
   justify-content: space-between;
@@ -2533,8 +2539,16 @@ input:focus {
   margin: 0;
 }
 
+.u--mb-16 {
+  margin-bottom: 16px;
+}
+
 .u--ml-8 {
   margin-left: 8px;
+}
+
+.u--ml-16 {
+  margin-left: 16px;
 }
 
 .u--mt-0 {
@@ -2672,6 +2686,7 @@ p {
 }
 
 h2 {
+  color: #000;
   font-size: 18px;
   font-weight: 500;
 }

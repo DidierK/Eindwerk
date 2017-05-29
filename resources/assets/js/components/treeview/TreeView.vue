@@ -14,11 +14,11 @@
 	}
 
 	.TreeView--user-actions .Treeview__action.isActive {
-		border-left: 2px solid #6B9AB7;
+		border-left: 2px solid #10a4ff;
 	}
 
 	.TreeView--user-actions .Treeview__action.isActive > a {
-		color: #6B9AB7;
+		color: #10a4ff;
 	}
 
 	.TreeView--user-actions,
