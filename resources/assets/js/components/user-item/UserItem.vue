@@ -11,6 +11,13 @@
 	margin-top: 32px;
 }
 
+.MyItem__info {
+	border-top: 1px solid #DDD;
+    padding: 16px;
+    line-height: 20px;
+    height: 20px;
+}
+
 .MyItem__requests > * {
 	float: left	
 }
@@ -24,7 +31,7 @@
 
 .MyItem__request-count {
 	font-size: 16px;
-    margin-left: 8px;
+    margin-right: 8px;
     line-height: 18px;
 }
 

@@ -8,6 +8,19 @@
 		text-decoration: underline;
 	}
 
+	.Link--default:hover {
+		text-decoration: none;
+	}
+
+	.Link--inverse {
+		color: #18B4DB;
+		text-decoration: none;
+	}
+
+	.Link--inverse:hover {
+		text-decoration: underline;
+	}
+
 	.Link--white {
 		color: #FFF;
 	}

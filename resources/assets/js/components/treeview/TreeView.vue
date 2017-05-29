@@ -5,18 +5,9 @@
 		font-size: 14px;
 	}
 
-	.TreeView--user-actions ul > li {
-		cursor: pointer;
-	}
-
 	.TreeView--user-actions .Treeview__title.isActive {
 		// background-color: #F3F5F8;
 	}
-
-	.TreeView--user-actions .Treeview__title:hover {
-		background-color: #F3F5F8;
-	}
-
 
 	.TreeView--user-actions .Treeview__action:hover {
 		background-color: #F3F5F8;
