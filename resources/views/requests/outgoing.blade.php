@@ -8,13 +8,16 @@
 			<span class="TableHeader__title">Naam</span>
 		</div>
 		<div class="u--gr-2">
-			<span class="TableHeader__title">Status</span>
+			<span class="TableHeader__title">Verhuurder</span>
 		</div>
 		<div class="u--gr-2">
 			<span class="TableHeader__title">Start datum</span>
 		</div>
 		<div class="u--gr-2">
 			<span class="TableHeader__title">Eind datum</span>
+		</div>
+		<div class="u--gr-2">
+			<span class="TableHeader__title">Status</span>
 		</div>
 	</div>
 	<div class="RequestsTable__row">
@@ -26,8 +29,10 @@
 					</a>
 				</div>
 				<div class="u--gr-2 RequestDetails__row">
-					<span class="TableHeader__title u--mobileOnly">Status</span>
-					<span>{{ $request->status }}</span>
+					<span class="TableHeader__title u--mobileOnly">Verhuurder</span>
+					<a class="Link u--linkClean" href="{{ url('user/' . $request->user_id) }}">
+						<span>{{ $request->user_name }}</span>
+					</a>
 				</div>
 				@php
 				$lang = array();
@@ -48,6 +53,10 @@
 					<span class="RequestDetails__text">
 						@php echo ucfirst(str_replace($lang['en'], $lang['nl'], strtolower($converted_end_date))); @endphp
 					</span>
+				</div>
+				<div class="u--gr-2 RequestDetails__row">
+					<span class="TableHeader__title u--mobileOnly">Status</span>
+					<span>{{ $request->status }}</span>
 				</div>
 				@if($request->status == 'Afwachten')
 				<v-form action="{{ url('request/' . $request->request_id) }}" method="post">
