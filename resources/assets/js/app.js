@@ -110,6 +110,9 @@ Vue.component('v-select', require('./components/select/Select.vue'));
 // Sidebar
 Vue.component('v-sidebar', require('./components/sidebar/Sidebar.vue'));
 
+// Spinner
+Vue.component('v-spinner', require('./components/spinner/Spinner.vue'));
+
 // Tabs
 Vue.component('v-tabs', require('./components/tabs/Tabs.vue'));
 Vue.component('v-tab', require('./components/tabs/Tab.vue'));
@@ -126,47 +129,49 @@ const app = new Vue({
 		showUserActions: false,
 		showLoading: false,
 		categories: [],
+		items: [],
 		i: 0
 
 	},
 	mounted: function() {
-		// Count how many times it is clicked, only one time get it from db, the rest you simply
-			// get from the categories variable, so if clicked once => do ajax request else just don't execute
-			// this method
-			var that = this;
-			if (this.i < 1) { 
-				this.showLoading = true;
-				axios.get('/api/categories').then((response) => {
-				// Just response.data because we didn't put the results in an array 'results' but simply returned the array
-				that.categories = response.data;
-				console.log(that.categories);		
-				that.i++;
-				that.showLoading = false;
-			});
+		this.getCategories();
+		this.getItems();
 
-			}
-			 //if browser doesn't support input type="date", initialize date picker widget:
-    //on document.ready
-
-    	// CONVERT TO DATEPICKER
     	$('#start_date, #end_date').datepicker({ dateFormat: 'dd-mm-yy', minDate: new Date() });
 
     	
-
-
-},
-methods: {
-	deleteItem: function(id) {
-		axios.delete('/user-item/' + id).then((response) => {
+    },
+    methods: {
+    	deleteItem: function(id) {
+    		axios.delete('/user-item/' + id).then((response) => {
 				// Oke the reload did not work and made sometimes the item not delete
 				// Instead maybe do a popup with please wait or loading icon before reload?
 				// Or load the items with ajax
 				window.location.href= '/profile/my-items';
 			});
-	},
-	getCategories: function() {
+    	},
+    	getCategories: function() {
+    		var self = this;
+			if (this.i < 1) { 
+				this.showLoading = true;
+				axios.get('/api/categories').then((response) => {
+				// Just response.data because we didn't put the results in an array 'results' but simply returned the array
+				self.categories = response.data;		
+				self.i++;
+				self.showLoading = false;
+			});
 
+			}
+    	},
+    	getItems: function(){
+    		var self = this;
+    		this.showLoading = true;
 
-	}
-}
+    		axios.get('/api/items').then((response) => {
+    		this.showLoading = false;
+    		self.items = response.data;	
+    	});
+
+    	}
+    }
 });

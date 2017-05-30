@@ -1,8 +1,11 @@
 <style>
 
+.AddItemModal .Modal__content {
+	min-height: 571px;
+}
 </style>
 <template>
-	<v-modal>
+	<v-modal class="AddItemModal">
 		<div class="Subhead">
 			<h2 clas="Subhead__heading">Voeg een product toe</h2>
 		</div>

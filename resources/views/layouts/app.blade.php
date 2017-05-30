@@ -49,7 +49,9 @@
 
             <!-- Modals-->
             <v-add-item-modal ref="add-item-modal">
-                <v-add-item-form action="{{ url('user-item') }}" method="post">
+                <!-- Position the spinner with a v-spinner-modal or just with the parent modal? -->
+                <v-spinner v-if="showLoading"></v-spinner>
+                <v-add-item-form action="{{ url('user-item') }}" method="post" :data="items" v-else>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" slot="csrf">
                 </v-add-item-form>
             </v-add-item-modal>

@@ -23,7 +23,9 @@ class UserItemController extends Controller
         ->where('user_items.user_id', Auth::id())
         ->get(['user_items.id', 'items.name', 'user_items.price', 'user_items.thumbnail']);
 
-        return view('profile.my-items', ['user_items' => $user_items]);  
+        $item_names = DB::table('items')->get(['name']);
+
+        return view('profile.my-items', ['user_items' => $user_items, 'item_names' => $item_names]);  
     }
 
     /**
