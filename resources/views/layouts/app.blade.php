@@ -47,7 +47,8 @@
             @include('layouts.page')
             @endif
 
-            <!-- Popovers -->
+            <!-- Modals-->
+            <v-add-item-modal ref="add-item-modal"></v-add-item-modal>
             
         </div>
         <!-- Scripts -->

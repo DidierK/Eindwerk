@@ -5,7 +5,7 @@
 	<v-form class="SearchForm">
 		<v-input class="Input Input--text-default u--sizeFull" type="text" placeholder="Zoek in jou spullen"></v-input>
 	</v-form>
-	<v-button class="Button Button--default Button--white Button--add-items u--inlineBlock u--linkClean" href="{{ url('user-item/create') }}">Spullen toevoegen
+	<v-button class="Button Button--default Button--white Button--add-items u--inlineBlock u--linkClean" v-modal:add-item-modal>Spullen toevoegen
 	</v-button>
 </div>
 

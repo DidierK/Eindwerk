@@ -1,8 +1,5 @@
 <style>
-	.Column--main {
-		margin-top: 32px;
-	}
-
+	
 	.Column--user-actions {
 		box-sizing: border-box;
 		color: #000;

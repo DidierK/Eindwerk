@@ -22,6 +22,14 @@ Vue.directive('popover', {
   }
 });
 
+Vue.directive('modal', {
+	inserted: function(el, binding, vnode) {
+  	// This will bind the element with v-popover directive to the popover u mention after the ":"
+  	// This popover will then listen for this element to be clicked
+  	vnode.context.$refs[binding.arg].reference = el;
+  }
+});
+
 // Avatar
 Vue.component('v-avatar', require('./components/avatar/Avatar.vue'));
 
@@ -77,6 +85,10 @@ Vue.component('v-li', require('./components/list/ListItem.vue'));
 
 // Logo
 Vue.component('v-logo', require('./components/logo/Logo.vue'));
+
+// Modal
+Vue.component('v-modal', require('./components/modal/Modal.vue'));
+Vue.component('v-add-item-modal', require('./components/modal/AddItemModal.vue'));
 
 // Nav
 Vue.component('v-nav', require('./components/nav/Nav.vue'));
