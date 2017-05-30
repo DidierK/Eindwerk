@@ -103,7 +103,7 @@ class RequestController extends Controller
          ->withInput();
      } else {
 
-        // Checks if this user already send a request for this user id
+        // Checks if this user already send a request for this user item
         $hasRequest = RequestItem::where('sender_id', Auth::id())->where('user_item_id', $request->user_item_id)->get()->count();
 
          if($hasRequest){
