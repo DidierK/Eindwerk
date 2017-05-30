@@ -26,7 +26,7 @@ class RequestController extends Controller
         ->join('items', 'user_items.item_id', 'items.id')
         ->where('requests.receiver_id', '=', Auth::id())
         ->orderBy('requests.created_at', 'DESC')
-        ->get(["users.name AS user_name", "users.id AS user_id", "users.avatar", "items.name AS item_name", "requests.id AS request_id", "requests.user_item_id", "requests.start_date", "requests.end_date", "requests.status"]);
+        ->get(["users.name AS user_name", "users.id AS user_id", "user_items.thumbnail", "items.name AS item_name", "requests.id AS request_id", "requests.user_item_id", "requests.start_date", "requests.end_date", "requests.status"]);
 
         return view('requests.incoming', ["requests" => $requests]);
     }

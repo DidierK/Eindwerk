@@ -15,7 +15,8 @@
 		position: relative;
 	}
 
-	.RequestsTable__row form {
+	.RequestsTable__row .Request__actions {
+		display: flex;
 		position: absolute;
 		right: 0;
 	}
