@@ -16,6 +16,7 @@
 
 	.Modal .Modal__content {
 		background-color: #FFF;
+		border-radius: 2px;
 		box-shadow: 0 2px 6px 0 rgba(0,0,0,.44);
 		box-sizing: border-box;
 		overflow-y: auto;
