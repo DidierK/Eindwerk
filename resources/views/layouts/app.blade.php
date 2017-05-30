@@ -48,7 +48,11 @@
             @endif
 
             <!-- Modals-->
-            <v-add-item-modal ref="add-item-modal"></v-add-item-modal>
+            <v-add-item-modal ref="add-item-modal">
+                <v-add-item-form action="{{ url('user-item') }}" method="post">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}" slot="csrf">
+                </v-add-item-form>
+            </v-add-item-modal>
             
         </div>
         <!-- Scripts -->
