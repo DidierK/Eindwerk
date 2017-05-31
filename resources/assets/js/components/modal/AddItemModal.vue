@@ -21,7 +21,9 @@
 			}
 		},
 		mounted(){
-			this.$children[0].bindModal(this.reference);
+			if(this.reference !== '') {
+				this.$children[0].bindModal(this.reference);
+			}
 		}
 	}
 </script>

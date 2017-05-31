@@ -61,16 +61,21 @@
 	export default {
 		data: function(){
 			return {
-				showModal: false
+				showModal: false,
+				ref: ''
 			}
 		},
 		methods: {
 			bindModal: function(reference){
-				reference.addEventListener("click", this.doToggle); 
+				this.ref = reference;
+				this.ref.addEventListener("click", this.doToggle); 
 			},
 			doToggle: function(){
 				this.showModal = !this.showModal;
 			}
+		},
+		destroyed: function(){
+			this.ref.removeEventListener("click", this.doToggle); 
 		}
 	}
 </script>
