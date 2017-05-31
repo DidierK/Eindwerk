@@ -11,6 +11,12 @@
 		margin-top: 32px;
 	}
 
+	.UserProfile__details svg {
+		float: left;
+		margin-top: 3px;
+		margin-right: 8px;
+	}
+
 	@media (min-width: 480px){
 		.UserProfile > div:first-child {
 			margin-right: 32px;

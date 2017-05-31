@@ -13,7 +13,7 @@
                     <h2 class="u--alignSelfCenter">{{ $user_item_user->name }} voor €{{  number_format($user_item_user->price,2) }} per dag</h2>
                     
                     <div class="UserDetails">
-                        <a href="#">{{ $user_item_user->user_name }}</a>
+                        <a href="{{ url('/user/' . $user_item_user->user_id) }}">{{ $user_item_user->user_name }}</a>
                         <div class="Header__avatar-container u--floatLeft">
                             <v-avatar class="Avatar Avatar--default" src="{{ $user_item_user->avatar }}"></v-avatar>
                         </div>
