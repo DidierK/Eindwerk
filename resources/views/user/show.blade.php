@@ -32,7 +32,7 @@
         </div>
         <div class="Col-sm-3-4">
             <div class="Subhead">
-                <h2 clas="Subhead__heading">Spullen van {{ $user_details->name }}</h2>
+                <h2 clas="Subhead__heading">Alle spullen</h2>
             </div>
             <ul class="u--pn">
                 <div class="UserProfile Row-sm">
