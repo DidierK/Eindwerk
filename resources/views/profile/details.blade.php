@@ -19,23 +19,23 @@
                 </v-form-item>
                 <div class="Column--left">
                     <v-form-item class="FormItem">
-                       <v-input type="text" value="@if(!empty($user_details->name)) {{ $user_details->name }} @endif" class="Input Input--text-default u--fullWidth" label="Naam" placeholder="Bv. Jan Janssens" name="name"></v-input>
+                       <v-input type="text" value="@if(!empty($user_details->name)){{ $user_details->name }}@endif" class="Input Input--text-default u--fullWidth" label="Naam" placeholder="Bv. Jan Janssens" name="name"></v-input>
                    </v-form-item>
 
                    <v-form-item class="FormItem">
-                       <v-input type="text" value="@if(!empty($user_details->email)) {{ $user_details->email }} @endif" class="Input Input--text-default u--fullWidth" label="Email" placeholder="voorbeeld@email.com" name="email"></v-input>
+                       <v-input type="text" value="@if(!empty($user_details->email)){{ $user_details->email }}@endif" class="Input Input--text-default u--fullWidth" label="Email" placeholder="voorbeeld@email.com" name="email"></v-input>
                    </v-form-item>
 
                    <v-form-item class="FormItem">
-                       <v-input type="text" value="@if(!empty($user_details->tel)) {{ $user_details->tel }} @endif" class="Input Input--text-default" label="Telefoonnummer (Optioneel)" placeholder="Bv. (+32) 123456789" name="tel"></v-input>
+                       <v-input type="text" value="@if(!empty($user_details->tel)){{ $user_details->tel }}@endif" class="Input Input--text-default" label="Telefoonnummer (Optioneel)" placeholder="Bv. (+32) 123456789" name="tel"></v-input>
                    </v-form-item>
 
 
                    <v-form-item class="FormItem">
                    <label class="FormItem__label" for="streetName">Adres</label>
                      <div class="Row">
-                         <v-input id="streetName" type="text" value="@if(!empty($user_details->address)) {{ $user_details->address }} @endif" class="Input Input--text-default u--fullWidth col-3-4 u--mr-16" placeholder="Straat" name="streetName"></v-input>
-                         <v-input type="text" value="@if(!empty($user_details->address)) {{ $user_details->address }} @endif" class="Input Input--text-default u--fullWidth" placeholder="Nr." name="houseNumber"></v-input>
+                         <v-input id="streetName" type="text" value="@if(!empty($user_details->address)){{ $user_details->address }}@endif" class="Input Input--text-default u--fullWidth col-3-4 u--mr-16" placeholder="Straat" name="streetName"></v-input>
+                         <v-input type="text" value="@if(!empty($user_details->address)){{ $user_details->address }}@endif" class="Input Input--text-default u--fullWidth" placeholder="Nr." name="houseNumber"></v-input>
                      </div>
                  </v-form-item> 
 

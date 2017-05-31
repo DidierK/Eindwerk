@@ -105,7 +105,7 @@ class UserController extends Controller
 
         // If errors redirect to edit screen, otherwise return to profile again
         // return redirect(url('user/' . Auth::id() . '/edit'));
-        return redirect(url('me/profile'));
+        return redirect(url('profile/details'));
     }
 
     /**
