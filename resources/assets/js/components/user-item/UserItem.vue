@@ -11,6 +11,12 @@
 		margin-top: 32px;
 	}
 
+	@media (min-width: 480px){
+		.UserProfile > div:first-child {
+			margin-right: 32px;
+		}
+	}
+
 	.RequestsTable__row {
 		position: relative;
 	}

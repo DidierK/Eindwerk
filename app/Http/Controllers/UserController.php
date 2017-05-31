@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\User;
+use App\UserItem;
 
 class UserController extends Controller
 {
@@ -57,8 +58,12 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        echo "Here should come the user data!";
+        $user_details = User::find($id);
 
+        $user_items =  UserItem::where("user_id", $id)
+        ->join('items', 'user_items.item_id', '=', 'items.id')
+        ->get(["items.name", "user_items.thumbnail", "user_items.id"]);
+        return view('user.show', ['user_details' => $user_details, 'user_items' => $user_items]);
     }
 
     /**
