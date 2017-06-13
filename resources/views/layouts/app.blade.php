@@ -39,7 +39,7 @@
         </script>
     </head>
     <body>
-        <div id="app">
+        <div id="app" v-cloak>
             <!-- Ook nog 1 voor login scherm maken -->
             @if (Route::getCurrentRoute()->uri() == '/')
             @include('layouts.page--front')

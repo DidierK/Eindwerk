@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<v-container class="Container" v-cloak>
-    <v-user-item class="UserItem UserItem--details u--flex u--flexWrap">
+    <div class="UserItemDetails">
+    <v-container class="Container u--flex u--flexWrap" v-cloak>
         <div class="Column Column--left">
             <v-img src="{{ asset($user_item_user->thumbnail) }}"></v-img>
         </div>
@@ -73,5 +73,6 @@
             @endif
             
         </div>
-    </v-user-item>
+            </v-container>
+    </div>
     @endsection
