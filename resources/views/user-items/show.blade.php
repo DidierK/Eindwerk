@@ -10,11 +10,11 @@
             <div class="Col-sm-1-2">
                 <h1 class="u--alignSelfCenter">{{ $user_item_user->name }}</h1>
                 <div class="UserItemDetails__user-info">
-                <a class="UserItemDetails__user-name u--linkClean" href="{{ url('/user/' . $user_item_user->user_id) }}">{{ $user_item_user->user_name }}</a>
-                <div class="u--mr-8 u--floatLeft">
-                    <v-avatar class="Avatar Avatar--default" src="{{ $user_item_user->avatar }}&width=36&height=36"></v-avatar>
-                </div>
-                <div class="UserItemDetails__user-score">N/D (nog geen score)</div>
+                    <a class="UserItemDetails__user-name u--linkClean" href="{{ url('/user/' . $user_item_user->user_id) }}">{{ $user_item_user->user_name }}</a>
+                    <div class="u--mr-8 u--floatLeft">
+                        <v-avatar class="Avatar Avatar--default" src="{{ $user_item_user->avatar }}&width=36&height=36"></v-avatar>
+                    </div>
+                    <div class="UserItemDetails__user-score">N/D (nog geen score)</div>
                 </div>
                 <div class="u--cf"></div>
                 <span class="UserItemDetails__price"><em>€{{  number_format($user_item_user->price,2) }}</em> per dag</span>
@@ -23,7 +23,7 @@
                 </div>
                 @if($owned)
                 <div>
-                <p>Je kunt dit item niet huren omdat het van jou is. <a href="{{ url('user-item/' . $user_item_user->id . '/edit')}}">Bewerk je item hier.</a></p>
+                    <p>Je kunt dit item niet huren omdat het van jou is. <a href="{{ url('user-item/' . $user_item_user->id . '/edit')}}">Bewerk je item hier.</a></p>
                 </div>
                 @else
                 @if ($errors->any())
@@ -41,18 +41,20 @@
                     <p>Je verzoek is succesvol verstuurd. Bekijk al jou <a href="{{ url('requests/outgoing')}}"> uitgaande verhuurverzoeken</a>.</p>
                 </div>
                 @endif
-                <v-form class="Form Form--request u--flex u--flexWrap" action="{{ url('request')}}" method="post">
+                <v-form class="RequestForm u--mb-16 u--flex u--flexWrap" action="{{ url('request')}}" method="post">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <!-- Put in value field here the item_id -->
                     <input type="hidden" name="user_id" value="{{ $user_item_user->user_id }}">
                     <input type="hidden" name="user_item_id" value="{{ $user_item_user->id }}">
-                    <v-form-item>
-                        <input class="Input Input--text-default" type="text" name="start" id="start_date" placeholder="Van">
+                    <v-form-item class="FormItem FormItem--text">
+                        <input class="Input Input--text-default u--sizeFull" type="text" name="start" id="start_date" placeholder="Van">
                     </v-form-item>
-                    <v-form-item>
-                        <input class="Input Input--text-default" type="text" name="end" id="end_date" placeholder="Tot">
+                    <v-form-item class="FormItem FormItem--text">
+                        <input class="Input Input--text-default u--sizeFull" type="text" name="end" id="end_date" placeholder="Tot">
                     </v-form-item>
-                    <v-button class="Button Button--default Button--blue u--block">Verzoek versturen</v-button>
+                    <v-form-item class="FormItem FormItem--button">
+                        <v-button class="Button Button--default Button--blue u--block u--sizeFull">Verzoek versturen</v-button>
+                    </v-form-item>
                 </v-form>
                 <h3>Uitgeleend op</h3>
                 <p>Nog niet uitgeleend.</p>

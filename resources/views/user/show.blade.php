@@ -24,9 +24,11 @@
                         c9.588,4.896,16.932,7.854,22.031,8.871l7.648,1.531c0.816,0,2.145-0.307,3.979-0.918c1.836-0.613,3.162-1.326,3.979-2.143
                         l34.883-35.496c7.348-6.527,15.912-9.791,25.705-9.791c6.938,0,12.443,1.223,16.523,3.672h0.611l118.115,69.768
                         C571.098,441.238,576.197,447.968,577.83,456.128z"/>
-
-                    </svg>+32 486 25 79 16</li>
-                    <li class="u--pt-4"><svg aria-hidden="true" class="octicon octicon-location" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M6 0C2.69 0 0 2.5 0 5.5 0 10.02 6 16 6 16s6-5.98 6-10.5C12 2.5 9.31 0 6 0zm0 14.55C4.14 12.52 1 8.44 1 5.5 1 3.02 3.25 1 6 1c1.34 0 2.61.48 3.56 1.36.92.86 1.44 1.97 1.44 3.14 0 2.94-3.14 7.02-5 9.05zM8 5.5c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>Maagdenblokstraat 3, 3320 Hoegaarden</li>
+                    </svg>
+                    <!-- TODO: Make it telephone format automatically -->
+                    {{ $user_details->tel }}
+                    </li>
+                    <li class="u--pt-4"><svg aria-hidden="true" class="octicon octicon-location" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M6 0C2.69 0 0 2.5 0 5.5 0 10.02 6 16 6 16s6-5.98 6-10.5C12 2.5 9.31 0 6 0zm0 14.55C4.14 12.52 1 8.44 1 5.5 1 3.02 3.25 1 6 1c1.34 0 2.61.48 3.56 1.36.92.86 1.44 1.97 1.44 3.14 0 2.94-3.14 7.02-5 9.05zM8 5.5c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>{{ $user_details->street . " " . $user_details->number . ", " . $user_details->locality . " " . $user_details->zip }}</li>
                 </ul>
             </div>
         </div>
@@ -42,7 +44,7 @@
                             <v-card class="Card u--pn">
                                 <v-img class="Image Image--my-items" background="{{ $user_item->thumbnail }}"></v-img>
                                 <div class="MyItem__info u--flex u--flexJustifyContentSpaceBetween">
-                                    <h3 class="MyItem__title">LOL</h3>
+                                    <h3 class="MyItem__title">{{ $user_item->name }}</h3>
                                 </div>
                             </v-card>
                         </v-link>   

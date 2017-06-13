@@ -68,6 +68,7 @@ Vue.component('v-footer', require('./components/footer/Footer.vue'));
 Vue.component('v-form', require('./components/form/Form.vue'));
 Vue.component('v-form-item', require('./components/form/FormItem.vue'));
 Vue.component('v-add-item-form', require('./components/form/AddItemForm.vue'));
+Vue.component('v-request-form', require('./components/form/RequestForm.vue'));
 
 // Header
 Vue.component('v-header', require('./components/header/Header.vue'));

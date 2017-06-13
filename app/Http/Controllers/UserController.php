@@ -91,16 +91,21 @@ class UserController extends Controller
         $user_name = $request->input('name');
         $user_email = $request->input('email');
         $user_tel = $request->input('tel');
-        $user_address = $request->input('address');
+        $user_streetName = $request->input('streetName');
+        $user_houseNumber = $request->input('houseNumber');
+        $user_locality = $request->input('locality');
+        $user_zip = $request->input('zip');
 
         // So what we could do is just check which fields are not empty and ony validate those
-
         $user = User::find($id);
 
         $user->name = $user_name;
         $user->email = $user_email;
         $user->tel = $user_tel;
-        $user->address = $user_address;
+        $user->street = $user_streetName;
+        $user->number = $user_houseNumber;
+        $user->locality =  $user_locality;
+        $user->zip = $user_zip;
         $user->save();
 
         // If errors redirect to edit screen, otherwise return to profile again

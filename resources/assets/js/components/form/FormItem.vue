@@ -1,12 +1,16 @@
 <style>
     .FormItem {
+        box-sizing: border-box;
         margin: 16px 0;
     }
 
-    .FormItem--search {
-        
-        margin: 0;
-        
+    .FormItem > input,
+    .FormItem > button {
+        display: inline-block;
+    }
+
+    .FormItem--search { 
+        margin: 0;       
     }
 
     .FormItem__label {
