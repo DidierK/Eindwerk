@@ -242,8 +242,19 @@ input:focus {
 	.Row-sm {
 		display: flex;
 	}
+
 	.Col-sm-1-2 {
+		box-sizing: border-box;
+		padding: 0 16px;
 		width: 50%;
+	}
+
+	.Col-sm-1-2:nth-child(2n+1){
+		padding-left: 0;
+	}
+
+	.Col-sm-1-2:nth-child(2n+0){
+		padding-right: 0;
 	}
 
 	.Col-sm-1-4 {

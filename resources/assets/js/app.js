@@ -58,6 +58,9 @@ Vue.component('v-column', require('./components/column/Column.vue'));
 // Container
 Vue.component('v-container', require('./components/container/Container.vue'));
 
+// Content
+Vue.component('v-content', require('./components/content/Content.vue'));
+
 // Footer
 Vue.component('v-footer', require('./components/footer/Footer.vue'));
 
@@ -122,6 +125,9 @@ Vue.component('v-treeview', require('./components/treeview/TreeView.vue'));
 
 // User item
 Vue.component('v-user-item', require('./components/user-item/UserItem.vue'));
+
+// User item details
+Vue.component('v-user-item-details', require('./components/user-item-details/UserItemDetails.vue'));
 
 const app = new Vue({
 	el: '#app',
