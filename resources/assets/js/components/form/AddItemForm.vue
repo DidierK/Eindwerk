@@ -2,7 +2,7 @@
 </style>
 <template>
 	<form class="Form Form--item-creation" :action="action" :method="method" enctype="multipart/form-data" v-on:submit.prevent="addItem" v-else>
-		<div class="Errors" v-if="errors.length > 0">
+		<div class="Errors">
 			<p v-for="error in errors">{{ error[0] }}</p>
 		</div>
 		<slot name="csrf"></slot>
@@ -26,8 +26,9 @@
 			<input v-model="formData.description" class="Input Input--textarea-default u--fullWidth" type="textarea" label="Meer informatie" placeholder="Wat moet de huurder weten over jou materiaal?" name="description" />
 		</v-form-item>
 
-		<v-form-item>
-			<input type="submit" class="Button Button--default Button--white" value="Toevoegen" />
+		<v-form-item class="FormItem u--flex u--flexAlignItemsCenter">
+			<input type="submit" class="Button Button--default Button--white u--mr-16" value="Toevoegen" />
+			<v-spinner class="Spinner--add-item-submit" v-if="showSpinner"></v-spinner>
 		</v-form-item>
 	</form>
 </template>
@@ -42,17 +43,21 @@
 					thumbnail: '',
 					description: ''
 				},
-				errors: []
+				errors: [],
+				showSpinner: false
 			}
 		},
 		methods: {
 			addItem: function(){
+				this.showSpinner = true;
 				axios.post('/user-item', this.fillForm()).then((response) => {
 					if(response.data.length === 0 ) {
 						window.location.href = "/profile/my-items";
 					} else {
 						this.errors = response.data;
 					}
+
+					this.showSpinner = false;
 				});
 
 			},
