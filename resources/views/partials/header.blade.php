@@ -67,7 +67,7 @@
                     <v-link class="UserActionsPopover__action u--linkClean u--block" link="{{ url('profile/my-items') }}">Dashboard</v-link>
                 </v-li>
                 <v-li class="UserActionsList__item">
-                    <v-link class="UserActionsPopover__action u--linkClean u--block" link="{{ url('user/' . Auth::id()) }}">Verlenersprofiel</v-link>
+                    <v-link class="UserActionsPopover__action u--linkClean u--block" link="{{ url('user/' . Auth::id()) }}">Profiel</v-link>
                 </v-li>
                 <v-li class="UserActionsList__item">
                     <v-link class="UserActionsPopover__action u--linkClean u--block" link="{{ url('/logout') }}">Afmelden</v-link>
