@@ -61,13 +61,16 @@
             </v-ul>
 
             @if (Auth::check())
-            <v-popover class="Popover Popover--user-actions" placement="bottom" ref="popover--user-actions" v-cloak>
-            <v-ul class="List List--user-actions">
-                <v-li class="List__item">
-                    <v-link class="Link u--linkClean u--block" link="{{ url('profile/my-items') }}">Profiel</v-link>
+            <v-popover class="UserActionsPopover" ref="popover--user-actions" v-cloak>
+            <v-ul class="UserActionsList">
+                <v-li class="UserActionsList__item">
+                    <v-link class="UserActionsPopover__action u--linkClean u--block" link="{{ url('profile/my-items') }}">Dashboard</v-link>
                 </v-li>
-                <v-li class="List__item">
-                    <v-link class="Link u--linkClean u--block" link="{{ url('/logout') }}">Afmelden</v-link>
+                <v-li class="UserActionsList__item">
+                    <v-link class="UserActionsPopover__action u--linkClean u--block" link="{{ url('user/' . Auth::id()) }}">Verlenersprofiel</v-link>
+                </v-li>
+                <v-li class="UserActionsList__item">
+                    <v-link class="UserActionsPopover__action u--linkClean u--block" link="{{ url('/logout') }}">Afmelden</v-link>
                 </v-li>
             </v-ul>
             </v-popover>

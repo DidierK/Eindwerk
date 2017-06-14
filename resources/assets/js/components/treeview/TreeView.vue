@@ -57,7 +57,7 @@
 		<h3 class="Treeview__heading">Menu</h3>
 		<ul>
 			<li class="Treeview__item">
-				<div class="Treeview__title u--posRelative">Profiel</div>
+				<div class="Treeview__title u--posRelative">Dashboard</div>
 				<ul>
 					<li class="Treeview__action"><a class="u--linkClean u--block" href="/profile/my-items">Mijn spullen</a></li>
 					<li class="Treeview__action"><a class="u--linkClean u--block" href="/profile/details">Gegevens</a></li>
