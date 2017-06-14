@@ -76,6 +76,11 @@
 		margin-right: 8px;
 	}
 
+	.PageHeader__title {
+		font-size: 16px;
+		margin-bottom: 1em;
+	}
+
 </style>
 <template>
 	<header>
