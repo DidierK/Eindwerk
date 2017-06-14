@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use Validator;
 use App\User;
 use App\UserItem;
 
@@ -88,29 +89,51 @@ class UserController extends Controller
      */
     public function update(Request $request, $id) {
 
-        $user_name = $request->input('name');
-        $user_email = $request->input('email');
-        $user_tel = $request->input('tel');
-        $user_streetName = $request->input('streetName');
-        $user_houseNumber = $request->input('houseNumber');
-        $user_locality = $request->input('locality');
-        $user_zip = $request->input('zip');
+        $messages = [
+        'name.required' => 'Vul een naam in.',
+        'email.required' => 'Vul een email in.',
+        'email.email' => 'Jou email moet geldig zijn.',
+        'tel.regex' => 'Jou telefoonnummer moet geldig zijn.'
+        ];
+
+        // Note: tel is not required but if filled in make sure it's correct
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'email|required',
+            'tel' => 'regex:/^(\+32)[0-9]{9}$/'
+            ],$messages);
+
+        if ($validator->fails()) {
+            return redirect(url('profile/details'))
+            ->withErrors($validator)
+            ->withInput();
+
+        } else {
+            $user_name = $request->input('name');
+            $user_email = $request->input('email');
+            $user_tel = $request->input('tel');
+            $user_streetName = $request->input('streetName');
+            $user_houseNumber = $request->input('houseNumber');
+            $user_locality = $request->input('locality');
+            $user_zip = $request->input('zip');
 
         // So what we could do is just check which fields are not empty and ony validate those
-        $user = User::find($id);
+            $user = User::find($id);
 
-        $user->name = $user_name;
-        $user->email = $user_email;
-        $user->tel = $user_tel;
-        $user->street = $user_streetName;
-        $user->number = $user_houseNumber;
-        $user->locality =  $user_locality;
-        $user->zip = $user_zip;
-        $user->save();
+            $user->name = $user_name;
+            $user->email = $user_email;
+            $user->tel = $user_tel;
+            $user->street = $user_streetName;
+            $user->number = $user_houseNumber;
+            $user->locality =  $user_locality;
+            $user->zip = $user_zip;
+            $user->save();
 
         // If errors redirect to edit screen, otherwise return to profile again
         // return redirect(url('user/' . Auth::id() . '/edit'));
-        return redirect(url('profile/details'));
+            return redirect(url('profile/details'));
+
+        }   
     }
 
     /**
