@@ -60,7 +60,13 @@
 					<v-footer class="Card__footer Card__footer--user-item u--flex">
 						<div class="Card__user-info">
 							<h3 class="Card__user-name u--noMargin">{{ $item->name }}</h3>
-							<span class="Card__user-address u--colorLight u--textSmall">2800 Mechelen</span>	
+							<span class="Card__user-address u--colorLight u--textSmall">
+								@if(!empty($item->zip) && !empty($item->locality)) 
+								{{ $item->zip . " " . $item->locality }}
+								@else
+								Geen adres
+								@endif
+							</span>
 						</div>
 						<span class="Card__user-item-price u--marginLeft8px u--alignSelfCenter u--textMedium">€ {{ number_format($item->price, 2) }}</span>	
 					</v-footer>
