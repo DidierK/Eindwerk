@@ -179,6 +179,9 @@ const app = new Vue({
     		self.items = response.data;	
     	});
 
+    	},
+    	add: function(){
+    		console.log("LOL");
     	}
     }
 });

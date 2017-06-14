@@ -25,7 +25,7 @@
                   <v-form-item class="FormItem EditProfileAvatar u--mt-0">
                     <v-input type="hidden" label="Profielfoto"></v-input>
                     <v-avatar class="Avatar Avatar--default" src="{{ Auth::user()->avatar }}&width=400&height=400"></v-avatar>
-                    <v-button class="Button Button--default Button--white u--sizeFull u--mt-16 u--textCenter">Profielfoto veranderen</v-button>
+                    <input type="file" class="Button Button--default Button--white u--sizeFull u--mt-16 u--textCenter" v-on:change="add">
                   </v-form-item>
                   <div class="Column--left">
                     <v-form-item class="FormItem">

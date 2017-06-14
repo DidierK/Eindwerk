@@ -91,12 +91,12 @@
 </style>
 <template>
     <!-- TODO: We should put form__item div in the form__item template together with the label because we can't put label next to input because of a syntax error, we should then emit the label from here to the form item, like we did with the labels of the tabs -->
-    <input :id="label" :placeholder="placeholder" :type="type" :value="value" :name="name" v-if="type !== 'textarea'" />
+    <input :id="label" :placeholder="placeholder" :type="type" :value="value" :name="name" :v="v-model" v-if="type !== 'textarea'" />
     <textarea :id="label" :placeholder="placeholder" :type="type" :name="name" v-else></textarea>
 </template>
 <script>
     export default {
-        props: ["label", "placeholder", "type", "value", "name"],
+        props: ["v", "label", "placeholder", "type", "value", "name"],
         mounted() {
             this.$parent.$data.label = this.label;
         }
