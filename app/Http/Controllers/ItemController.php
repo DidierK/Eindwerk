@@ -95,7 +95,7 @@ public function getUserItemsByItem(Request $request, $item_url) {
     ->join('user_items', 'items.id', '=', 'user_items.item_id')
     ->join('users', 'users.id', '=', 'user_items.user_id')
     ->where('items.url', $item_url)
-    ->get();
+    ->get(["users.*", "user_items.*", "user_items.id as user_item_id"]);
 
     return $items;
 } 

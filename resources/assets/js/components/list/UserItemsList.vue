@@ -61,7 +61,7 @@
   <div class="UserItemsList u--floatLeft u--flex u--flexWrap">
   <v-spinner class="UserItemsList__Spinner" v-if="showSpinner"></v-spinner>
   <slot v-for="result in results">
-    <a class="UserItemsListItem u--block u--linkClean" href="#">
+    <a class="UserItemsListItem u--block u--linkClean" :href="'/user-item/' + result.user_item_id">
       <v-card class="Card">
         <v-img class="UserItemsListItem__thumbnail" :background="result.thumbnail"></v-img>
         <v-footer class="UserItemsListItem__footer u--flex">
