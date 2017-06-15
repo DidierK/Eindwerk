@@ -18,7 +18,7 @@ class ItemController extends Controller {
 public function index($item_url) {
 // TODO CHECK ALL DATA WE NEED TO RETURN IN WIREFRAMES
 
-    $item_id = Item::where('url', $item_url)->pluck('id');
+    $item_id = Item::where('url', $item_url)->value('id');
     $item_name = Item::where('url', $item_url)->value('name');
 
     $items_per_user = DB::table('items')
@@ -27,7 +27,12 @@ public function index($item_url) {
     ->where('items.id', $item_id)
     ->get(['users.name', 'users.locality', 'users.zip', 'user_items.thumbnail', 'user_items.id', 'user_items.price']);
 
-    return view('item.show', ["items_per_user" => $items_per_user, "item_name" => $item_name, "item_url" => $item_url]); 
+    return view('item.show', [
+        "items_per_user" => $items_per_user, 
+        "item_name" => $item_name, 
+        "item_url" => $item_url,
+        "item_id" => $item_id
+        ]); 
 }
 
 public function getItems(Request $request) {
@@ -80,5 +85,9 @@ public function sortUserItemInItem(Request $request, $item_url) {
     // Or we could loop the data trough a v-for loop
 
     return $items;
+} 
+
+public function getUserItemsByItem(Request $request) {
+    return "LOL";
 } 
 }

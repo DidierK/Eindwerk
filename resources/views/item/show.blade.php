@@ -51,7 +51,7 @@
 		</v-sidebar>
 
 		<!-- Content -->
-		<v-user-items-list></v-user-items-list>
+		<v-user-items-list item-url="{{ $item_url }}"></v-user-items-list>
 		<div class="u--cf"></div>
 	</v-container>
 </v-content>

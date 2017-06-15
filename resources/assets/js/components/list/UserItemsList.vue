@@ -56,7 +56,7 @@
           <div class="UserItemsListItem__user-info">
             <h3 class="UserItemsListItem__user-name u--noMargin">lol</h3>
             <span class="UserItemsListItem__user-address u--colorLight u--textSmall">
-            3320 Hoegaarden
+              3320 Hoegaarden
             </span>
           </div>
           <span class="UserItemsListItem__user-item-price u--marginLeft8px u--alignSelfCenter u--textMedium">€ 20.00</span> 
@@ -67,8 +67,24 @@
 </template>
 <script>
   export default {
+    props: ["itemUrl"],
+    data: function(){
+      return {
+        showSpinner: false
+      }
+    },
     mounted() {
-
+      this.getUserItemsByItemUrl(this.itemUrl);
+    },
+    methods: {
+      getUserItemsByItemUrl: function(url){
+        console.log(url);
+        
+        axios.get('/api/item/' + url + '/user-items').then((response) => {
+          console.log(response);
+        });
+        
+      }
     }
   }
 </script>
