@@ -190,7 +190,7 @@ const app = new Vue({
     if(this.city) {
       queryString += "city=" + this.city;
     } 
-    axios.get('/api/item/dakkoffer?' + queryString).then((response) => {
+    axios.get('/api/item/dakkoffer/user-items?' + queryString).then((response) => {
       console.log(response);
     });
   }
