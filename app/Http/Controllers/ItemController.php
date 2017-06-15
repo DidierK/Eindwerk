@@ -87,7 +87,16 @@ public function sortUserItemInItem(Request $request, $item_url) {
     return $items;
 } 
 
-public function getUserItemsByItem(Request $request) {
-    return "LOL";
+public function getUserItemsByItem(Request $request, $item_url) {
+    // Query user items that are under this item id and check the cities of the user of te user item
+    // return $request->query("city");
+    // DO A QUERYBUILDER WITH THE QUERY STRING HERE
+    $items = DB::table('items')
+    ->join('user_items', 'items.id', '=', 'user_items.item_id')
+    ->join('users', 'users.id', '=', 'user_items.user_id')
+    ->where('items.url', $item_url)
+    ->get();
+
+    return $items;
 } 
 }

@@ -1,11 +1,13 @@
 <style>
   .UserItemsList {
+    position: relative;
+    min-height: 250px;
     width: 100%;
   }
 
   .UserItemsListItem {
     box-sizing: border-box;
-    margin: 0 4px;
+    padding: 0 4px;
     width: 100%;
   }
 
@@ -28,6 +30,14 @@
     flex-basis: 75%;
   }
 
+  .UserItemsList__Spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+  }
+
   @media screen and (min-width: 440px) {
     .UserItemsListItem {
       width: 50%;
@@ -48,21 +58,24 @@
 
 </style>
 <template>
-  <div class="UserItemsList u--floatLeft">
+  <div class="UserItemsList u--floatLeft u--flex u--flexWrap">
+  <v-spinner class="UserItemsList__Spinner" v-if="showSpinner"></v-spinner>
+  <slot v-for="result in results">
     <a class="UserItemsListItem u--block u--linkClean" href="#">
       <v-card class="Card">
-        <v-img class="UserItemsListItem__thumbnail" background="#"></v-img>
+        <v-img class="UserItemsListItem__thumbnail" :background="result.thumbnail"></v-img>
         <v-footer class="UserItemsListItem__footer u--flex">
           <div class="UserItemsListItem__user-info">
-            <h3 class="UserItemsListItem__user-name u--noMargin">lol</h3>
+            <h3 class="UserItemsListItem__user-name u--noMargin">{{ result.name }}</h3>
             <span class="UserItemsListItem__user-address u--colorLight u--textSmall">
-              3320 Hoegaarden
+              {{ result.zip + " " + result.locality }}
             </span>
           </div>
-          <span class="UserItemsListItem__user-item-price u--marginLeft8px u--alignSelfCenter u--textMedium">€ 20.00</span> 
+          <span class="UserItemsListItem__user-item-price u--marginLeft8px u--alignSelfCenter u--textMedium">€{{ result.price }}.00</span> 
         </v-footer>
       </v-card>
     </a>
+    </slot>
   </div>
 </template>
 <script>
@@ -70,7 +83,8 @@
     props: ["itemUrl"],
     data: function(){
       return {
-        showSpinner: false
+        showSpinner: false,
+        results: []
       }
     },
     mounted() {
@@ -78,12 +92,12 @@
     },
     methods: {
       getUserItemsByItemUrl: function(url){
-        console.log(url);
+        this.showSpinner = true;
         
-        axios.get('/api/item/' + url + '/user-items').then((response) => {
-          console.log(response);
-        });
-        
+        axios.get('/api/item/' + url + '/user-items', url).then((response) => {
+          this.results = response.data;
+          this.showSpinner = false;
+        });    
       }
     }
   }
