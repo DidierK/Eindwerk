@@ -10,61 +10,75 @@ use App\Item;
 use DB;
 
 class ItemController extends Controller {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index($item_url) {
-    	// TODO CHECK ALL DATA WE NEED TO RETURN IN WIREFRAMES
+/**
+* Display a listing of the resource.
+*
+* @return \Illuminate\Http\Response
+*/
+public function index($item_url) {
+// TODO CHECK ALL DATA WE NEED TO RETURN IN WIREFRAMES
 
-    	$item_id = Item::where('url', $item_url)->pluck('id');
-        $item_name = Item::where('url', $item_url)->value('name');
+    $item_id = Item::where('url', $item_url)->pluck('id');
+    $item_name = Item::where('url', $item_url)->value('name');
 
-    	$items_per_user = DB::table('items')
-    	->join('user_items', 'items.id', '=', 'user_items.item_id')
-    	->join('users', 'user_items.user_id', '=', 'users.id')
-    	->where('items.id', $item_id)
-    	->get(['users.name', 'users.locality', 'users.zip', 'user_items.thumbnail', 'user_items.id', 'user_items.price']);
+    $items_per_user = DB::table('items')
+    ->join('user_items', 'items.id', '=', 'user_items.item_id')
+    ->join('users', 'user_items.user_id', '=', 'users.id')
+    ->where('items.id', $item_id)
+    ->get(['users.name', 'users.locality', 'users.zip', 'user_items.thumbnail', 'user_items.id', 'user_items.price']);
 
-        return view('item.show', ["items_per_user" => $items_per_user, "item_name" => $item_name]); 
+    return view('item.show', ["items_per_user" => $items_per_user, "item_name" => $item_name, "item_url" => $item_url]); 
+}
+
+public function getItems(Request $request) {
+
+    $query = DB::table('items');
+
+    $results = array();
+
+// Note: $request->all is an array
+    foreach ($request->all() as $key => $value) {
+        $query->where($key, $value);
     }
 
-    public function getItems(Request $request) {
+    $items = $query->take(5)->get();
 
-        $query = DB::table('items');
+// For each record
+    foreach ($items as $item) {
+$results[] = ['url' => $item->url, 'label' => $item->name]; //you can take custom values as you want
+}
 
-        $results = array();
+return $results;      
+}
 
-        // Note: $request->all is an array
-        foreach ($request->all() as $key => $value) {
-            $query->where($key, $value);
-        }
+public function searchItems(Request $request) {
 
-        $items = $query->get();
+    $item_name = $request->query("item");
 
-        // For each record
-        foreach ($items as $item) {
-        $results[] = ['url' => $item->url, 'label' => $item->name]; //you can take custom values as you want
-    }
+    $items = DB::table('items')
+    ->where('name', $item_name)
+    ->first(['url']);  
 
-        return $results;      
-    }
+    if(count($items) > 0){
+        return redirect(url('/item/' . $items->url));
+    } else {
+        var_dump("Redirect to 404 page here!");
+    }      
+}  
 
-    public function searchItems(Request $request) {
+public function sortUserItemInItem(Request $request, $item_url) {
+    // Query user items that are under this item id and check the cities of the user of te user item
+    // return $request->query("city");
+    $items = DB::table('items')
+    ->join('user_items', 'items.id', '=', 'user_items.item_id')
+    ->join('users', 'users.id', '=', 'user_items.user_id')
+    ->where('items.url', $item_url)
+    ->where('users.locality', 'LIKE', '%' . $request->query("city") . '%')
+    ->get();
 
-        $item_name = $request->query("item");
+    // Now we could return a view with the new data and then replace the old view with the relevant part of the new views
+    // Or we could loop the data trough a v-for loop
 
-        $items = DB::table('items')
-        ->where('name', $item_name)
-        ->first(['url']);  
-
-        if(count($items) > 0){
-            return redirect(url('/item/' . $items->url));
-        } else {
-            var_dump("Redirect to 404 page here!");
-        }
-
-        
-}   
+    return $items;
+} 
 }

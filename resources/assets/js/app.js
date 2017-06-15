@@ -35,9 +35,8 @@ Vue.component('v-avatar', require('./components/avatar/Avatar.vue'));
 
 // Autocomplete, Autocomplete suggestions
 Vue.component('v-autocomplete', require('./components/autocomplete/Autocomplete.vue'));
+Vue.component('v-autocomplete-header', require('./components/autocomplete/AutocompleteHeader.vue'));
 Vue.component('v-autocomplete-main', require('./components/autocomplete/AutocompleteMain.vue'));
-Vue.component('v-autocomplete-suggestions', require('./components/autocomplete/AutocompleteSuggestions.vue'));
-Vue.component('v-autocomplete-suggestions-main', require('./components/autocomplete/AutocompleteSuggestionsMain.vue'));
 
 // Banner
 Vue.component('v-banner', require('./components/banner/Banner.vue'));
@@ -87,6 +86,7 @@ Vue.component('v-link', require('./components/link/Link.vue'));
 // List, List item
 Vue.component('v-ul', require('./components/list/UnorderedList.vue'));
 Vue.component('v-li', require('./components/list/ListItem.vue'));
+Vue.component('v-user-items-list', require('./components/list/UserItemsList.vue'));
 
 // Logo
 Vue.component('v-logo', require('./components/logo/Logo.vue'));
@@ -137,51 +137,62 @@ const app = new Vue({
 		showLoading: false,
 		categories: [],
 		items: [],
-		i: 0
+		i: 0,
+    city: '',
 
-	},
-	mounted: function() {
-		this.getCategories();
-		this.getItems();
+  },
+  mounted: function() {
+    this.getCategories();
+    this.getItems();
 
-    	$('#start_date, #end_date').datepicker({ dateFormat: 'dd-mm-yy', minDate: new Date() });
+    $('#start_date, #end_date').datepicker({ dateFormat: 'dd-mm-yy', minDate: new Date() });
 
-    	
-    },
-    methods: {
-    	deleteItem: function(id) {
-    		axios.delete('/user-item/' + id).then((response) => {
+
+  },
+  methods: {
+   deleteItem: function(id) {
+    axios.delete('/user-item/' + id).then((response) => {
 				// Oke the reload did not work and made sometimes the item not delete
 				// Instead maybe do a popup with please wait or loading icon before reload?
 				// Or load the items with ajax
 				window.location.href= '/profile/my-items';
 			});
-    	},
-    	getCategories: function() {
-    		var self = this;
-			if (this.i < 1) { 
-				this.showLoading = true;
-				axios.get('/api/categories').then((response) => {
+  },
+  getCategories: function() {
+    var self = this;
+    if (this.i < 1) { 
+      this.showLoading = true;
+      axios.get('/api/categories').then((response) => {
 				// Just response.data because we didn't put the results in an array 'results' but simply returned the array
 				self.categories = response.data;		
 				self.i++;
 				self.showLoading = false;
 			});
 
-			}
-    	},
-    	getItems: function(){
-    		var self = this;
-    		this.showLoading = true;
-
-    		axios.get('/api/items').then((response) => {
-    		this.showLoading = false;
-    		self.items = response.data;	
-    	});
-
-    	},
-    	add: function(){
-    		console.log("LOL");
-    	}
     }
+  },
+  getItems: function(){
+    var self = this;
+    this.showLoading = true;
+
+    axios.get('/api/items').then((response) => {
+      this.showLoading = false;
+      self.items = response.data;	
+    });
+
+  },
+  add: function(){
+    console.log("LOL");
+  },
+  sortUserItemsInItem: function(itemName){
+    var queryString = "";
+
+    if(this.city) {
+      queryString += "city=" + this.city;
+    } 
+    axios.get('/api/item/dakkoffer?' + queryString).then((response) => {
+      console.log(response);
+    });
+  }
+}
 });

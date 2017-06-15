@@ -14,7 +14,7 @@
 			}
 		},
 		mounted: function(){
-			// Dees gaat ALLE items all preloaden en deze doorzoeken we dan (misschienn ook niet super goed wel)
+			// Dees gaat ALLE items all preloaden en deze doorzoeken we dan (misschien ook niet super goed wel)
 			var suggestions = [];
 			
 			axios.get("api/items/").then((response) => {
