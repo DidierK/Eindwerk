@@ -93,14 +93,24 @@ class UserController extends Controller
         'name.required' => 'Vul een naam in.',
         'email.required' => 'Vul een email in.',
         'email.email' => 'Jou email moet geldig zijn.',
-        'tel.regex' => 'Jou telefoonnummer moet geldig zijn.'
+        'tel.regex' => 'Voer een geldig telefoonnummer in.',
+        'houseNumber.max' => 'Voor een geldig huisnummer in.',
+        'zip.digits' => 'Voer een geldige postcode in.',
         ];
 
+        $trimmed_inputs = [];
+
+        foreach($request->all() as $i => $item){
+            $trimmed_inputs[$i] = trim($item);
+        }
+
         // Note: tel is not required but if filled in make sure it's correct
-        $validator = Validator::make($request->all(), [
+        $validator = Validator::make($trimmed_inputs, [
             'name' => 'required',
             'email' => 'email|required',
-            'tel' => 'regex:/^(\+32)[0-9]{9}$/'
+            'tel' => 'regex:/^(\+32)[0-9]{9}$/',
+            'houseNumber' => 'numeric|max:3',
+            'zip' => 'numeric|digits:4|',
             ],$messages);
 
         if ($validator->fails()) {
@@ -109,24 +119,17 @@ class UserController extends Controller
             ->withInput();
 
         } else {
-            $user_name = $request->input('name');
-            $user_email = $request->input('email');
-            $user_tel = $request->input('tel');
-            $user_streetName = $request->input('streetName');
-            $user_houseNumber = $request->input('houseNumber');
-            $user_locality = $request->input('locality');
-            $user_zip = $request->input('zip');
 
         // So what we could do is just check which fields are not empty and ony validate those
             $user = User::find($id);
 
-            $user->name = $user_name;
-            $user->email = $user_email;
-            $user->tel = $user_tel;
-            $user->street = $user_streetName;
-            $user->number = $user_houseNumber;
-            $user->locality =  $user_locality;
-            $user->zip = $user_zip;
+            $user->name = $trimmed_inputs['name'];
+            $user->email = $trimmed_inputs['email'];
+            $user->tel = $trimmed_inputs['tel'];
+            $user->street = $trimmed_inputs['streetName'];
+            $user->number = $trimmed_inputs['houseNumber'];
+            $user->locality =  $trimmed_inputs['locality'];
+            $user->zip = $trimmed_inputs['zip'];
             $user->save();
 
         // If errors redirect to edit screen, otherwise return to profile again

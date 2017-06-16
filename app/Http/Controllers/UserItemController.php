@@ -60,8 +60,14 @@ class UserItemController extends Controller
         'thumbnail.required' => 'Kies een afbeelding voor je item.',
         ];
 
+        $trimmed_inputs = [];
+
+        foreach($request->all() as $i => $item){
+            $trimmed_inputs[$i] = trim($item);
+        }
+
         // Note: tel is not required but if filled in make sure it's correct
-        $validator = Validator::make($request->all(), [
+        $validator = Validator::make($trimmed_inputs, [
             'item_name' => 'required',
             'price' => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
             'thumbnail' => 'required'
@@ -71,10 +77,10 @@ class UserItemController extends Controller
             return $validator->messages();
 
         } else {
-            $input_name = $request->input('item_name');
-            $input_price = $request->input('price');
-            $input_image = $request->file('thumbnail');
-            $input_description = $request->input('description');
+            $input_name = $trimmed_inputs['item_name'];
+            $input_price = $trimmed_inputs['price'];
+            $input_image = $input_image = $request->file('thumbnail');
+            $input_description = $trimmed_inputs['description'];
 
         // Get name of image and move ACTUAL image
             $image_name = time()."-".$input_image->getClientOriginalName();
