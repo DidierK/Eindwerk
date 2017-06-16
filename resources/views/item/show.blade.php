@@ -25,21 +25,21 @@
 				<v-li class="List__item">
 					<label class="Control Control--radio u--block u--textSmall" for="newest">
 						Nieuwste
-						<v-input class="Input Input--radio" id="newest" type="radio" name="filter" checked></v-input>
+						<input v-model="query.sortOn" value="newest" class="Input Input--radio" id="newest" type="radio" name="filter" checked>
 						<span></span>
 					</label>
 				</v-li>
 				<v-li class="List__item">
 					<label class="Control Control--radio u--block u--textSmall" for="cheapest">
 						Goedkoopste eerst
-						<v-input class="Input Input--radio" id="cheapest" type="radio" name="filter"></v-input>
+						<input v-model="query.sortOn" value="cheapest" class="Input Input--radio" id="cheapest" type="radio" name="filter">
 						<span></span>
 					</label>
 				</v-li>
 				<v-li class="List__item">
 					<label class="Control Control--radio u--block u--textSmall" for="most-expensive">
 						Duurste eerst
-						<v-input class="Input Input--radio" id="most-expensive" type="radio" name="filter"></v-input>
+						<input v-model="query.sortOn" value="mostExpensive" class="Input Input--radio" id="most-expensive" type="radio" name="filter">
 						<span></span>
 					</label>
 				</v-li>

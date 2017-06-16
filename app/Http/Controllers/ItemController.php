@@ -98,9 +98,23 @@ public function getUserItemsByItem(Request $request, $item_url) {
     ->where('items.url', $item_url);
     
     // Hier gaan we niet foreach loopen omdat we de sortBy niet willen in een where zetten, enkel de city
+
     if($request->query("city")) {
         $query->where("users.locality", "LIKE", "%" . $request->query("city") . "%");
     } 
+
+    switch ($request->query("sortOn")) {
+        case "newest":
+        $query->orderBy('user_items.created_at', 'desc');
+        break;
+        case "cheapest":
+        $query->orderBy('price', 'asc');
+        break;
+        case "mostExpensive":
+        $query->orderBy('price', 'desc');
+        break;
+    }
+
 
     // Nog wa if statements ook nog om te checken welk sortBy het is en dan zo de results sorten   
 

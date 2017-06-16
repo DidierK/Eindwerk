@@ -141,7 +141,7 @@ const app = new Vue({
     city: '',
     query: {
       city: '',
-      checkboxValue: ''
+      sortOn: 'newest'
     },
     showLoadingUserItemSearch: false
 
@@ -153,6 +153,16 @@ const app = new Vue({
     $('#start_date, #end_date').datepicker({ dateFormat: 'dd-mm-yy', minDate: new Date() });
 
 
+  },
+  watch: {
+    'query.sortOn': function(val) {
+      var self = this;
+
+      this.$refs.userItemsList.showSpinner = true;
+      this.sortUserItems(this.$refs.userItemsList.itemUrl, this.getUserItemQueryString(), function(){
+        self.$refs.userItemsList.showSpinner = false;
+      }); 
+    }
   },
   methods: {
    deleteItem: function(id) {
@@ -190,14 +200,15 @@ const app = new Vue({
     console.log("LOL");
   },
   sortUserItemsByCity: function(itemName){
+    console.log(this.query.sortOn);
     // We moeten niet check of query string leeg is omdat we bij leegte van input weer alle items moeten fetchen zoiezo
     // Als er geen query string is wordt de "?" weggelaten automatisch, dus dat is handig
-      var self = this
-      this.showLoadingUserItemSearch = true;
+    var self = this
+    this.showLoadingUserItemSearch = true;
 
-      this.sortUserItems(itemName, this.getUserItemQueryString(), function(){
-        self.showLoadingUserItemSearch = false;
-      }); 
+    this.sortUserItems(itemName, this.getUserItemQueryString(), function(){
+      self.showLoadingUserItemSearch = false;
+    }); 
   },
   sortUserItemsByCheckbox: function(itemName){
     console.log(this.$refs);
