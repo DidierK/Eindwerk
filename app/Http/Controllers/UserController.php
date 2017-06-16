@@ -94,7 +94,8 @@ class UserController extends Controller
         'email.required' => 'Vul een email in.',
         'email.email' => 'Jou email moet geldig zijn.',
         'tel.regex' => 'Voer een geldig telefoonnummer in.',
-        'houseNumber.max' => 'Voor een geldig huisnummer in.',
+        'houseNumber.integer' => 'Voer een geldig huisnummer in.',
+        'houseNumber.max' => 'Het ingevoerde huisnummer is te groot.',
         'zip.digits' => 'Voer een geldige postcode in.',
         ];
 
@@ -109,8 +110,8 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'email|required',
             'tel' => 'regex:/^(\+32)[0-9]{9}$/',
-            'houseNumber' => 'numeric|max:3',
-            'zip' => 'numeric|digits:4|',
+            'houseNumber' => 'integer|max:2000',
+            'zip' => 'integer|digits:4',
             ],$messages);
 
         if ($validator->fails()) {
