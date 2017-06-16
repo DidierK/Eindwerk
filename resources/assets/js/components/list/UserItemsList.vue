@@ -59,22 +59,25 @@
 </style>
 <template>
   <div class="UserItemsList u--floatLeft u--flex u--flexWrap">
-  <v-spinner class="UserItemsList__Spinner" v-if="showSpinner"></v-spinner>
-  <slot v-for="result in results" v-else>
-    <a class="UserItemsListItem u--block u--linkClean" :href="'/user-item/' + result.user_item_id">
-      <v-card class="Card">
-        <v-img class="UserItemsListItem__thumbnail" :background="result.thumbnail"></v-img>
-        <v-footer class="UserItemsListItem__footer u--flex">
-          <div class="UserItemsListItem__user-info">
-            <h3 class="UserItemsListItem__user-name u--noMargin">{{ result.name }}</h3>
-            <span class="UserItemsListItem__user-address u--colorLight u--textSmall">
-              {{ result.zip + " " + result.locality }}
-            </span>
-          </div>
-          <span class="UserItemsListItem__user-item-price u--marginLeft8px u--alignSelfCenter u--textMedium">€{{ result.price }}</span> 
-        </v-footer>
-      </v-card>
-    </a>
+    <p v-if="results.length === 0 && !showSpinner">
+      Er zijn spijtig genoeg geen resultaten gevonden.
+    </p>
+    <v-spinner class="UserItemsList__Spinner" v-if="showSpinner"></v-spinner>
+    <slot v-for="result in results" v-else>
+      <a class="UserItemsListItem u--block u--linkClean" :href="'/user-item/' + result.user_item_id">
+        <v-card class="Card">
+          <v-img class="UserItemsListItem__thumbnail" :background="result.thumbnail"></v-img>
+          <v-footer class="UserItemsListItem__footer u--flex">
+            <div class="UserItemsListItem__user-info">
+              <h3 class="UserItemsListItem__user-name u--noMargin">{{ result.name }}</h3>
+              <span class="UserItemsListItem__user-address u--colorLight u--textSmall">
+                {{ result.zip + " " + result.locality }}
+              </span>
+            </div>
+            <span class="UserItemsListItem__user-item-price u--marginLeft8px u--alignSelfCenter u--textMedium">€{{ result.price }}</span> 
+          </v-footer>
+        </v-card>
+      </a>
     </slot>
   </div>
 </template>

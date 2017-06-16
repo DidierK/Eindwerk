@@ -200,7 +200,6 @@ const app = new Vue({
     console.log("LOL");
   },
   sortUserItemsByCity: function(itemName){
-    console.log(this.query.sortOn);
     // We moeten niet check of query string leeg is omdat we bij leegte van input weer alle items moeten fetchen zoiezo
     // Als er geen query string is wordt de "?" weggelaten automatisch, dus dat is handig
     var self = this
@@ -209,9 +208,6 @@ const app = new Vue({
     this.sortUserItems(itemName, this.getUserItemQueryString(), function(){
       self.showLoadingUserItemSearch = false;
     }); 
-  },
-  sortUserItemsByCheckbox: function(itemName){
-    console.log(this.$refs);
   },
   getUserItemQueryString: function(){
    var str = [];
