@@ -139,6 +139,11 @@ const app = new Vue({
 		items: [],
 		i: 0,
     city: '',
+    query: {
+      city: '',
+      checkboxValue: ''
+    },
+    showLoadingUserItemSearch: false
 
   },
   mounted: function() {
@@ -184,15 +189,36 @@ const app = new Vue({
   add: function(){
     console.log("LOL");
   },
-  sortUserItemsInItem: function(itemName){
-    var queryString = "";
+  sortUserItemsByCity: function(itemName){
+    // We moeten niet check of query string leeg is omdat we bij leegte van input weer alle items moeten fetchen zoiezo
+    // Als er geen query string is wordt de "?" weggelaten automatisch, dus dat is handig
+      var self = this
+      this.showLoadingUserItemSearch = true;
 
-    if(this.city) {
-      queryString += "city=" + this.city;
-    } 
-    axios.get('/api/item/dakkoffer/user-items?' + queryString).then((response) => {
-      console.log(response);
-    });
-  }
+      this.sortUserItems(itemName, this.getUserItemQueryString(), function(){
+        self.showLoadingUserItemSearch = false;
+      }); 
+  },
+  sortUserItemsByCheckbox: function(itemName){
+    console.log(this.$refs);
+  },
+  getUserItemQueryString: function(){
+   var str = [];
+
+   $.each( this.query, function( key, value ) {
+    if(value){
+     str.push(key + "=" + value);
+   }
+ });
+   return str.join("&");
+ },
+ sortUserItems: function(itemName, queryString, callback){
+  var self = this;
+
+  axios.get('/api/item/' + itemName + '/user-items?' + queryString).then((response) => {
+    this.$refs.userItemsList.results = response.data;
+    callback();
+  });
+}
 }
 });

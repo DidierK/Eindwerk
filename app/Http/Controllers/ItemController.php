@@ -100,7 +100,9 @@ public function getUserItemsByItem(Request $request, $item_url) {
     // Hier gaan we niet foreach loopen omdat we de sortBy niet willen in een where zetten, enkel de city
     if($request->query("city")) {
         $query->where("users.locality", "LIKE", "%" . $request->query("city") . "%");
-    }    
+    } 
+
+    // Nog wa if statements ook nog om te checken welk sortBy het is en dan zo de results sorten   
 
     $items = $query->get(["users.*", "user_items.*", "user_items.id as user_item_id"]);
 
