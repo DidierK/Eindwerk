@@ -10,12 +10,19 @@
 		color: #fff;
 		margin-bottom: .5em;
 	}
+
+	.Errors ul {
+		padding: 0;
+	}
+
 </style>
 <template>
 	<form class="Form Form--item-creation" :action="action" :method="method" enctype="multipart/form-data" v-on:submit.prevent="addItem" v-else>
 		<div class="Errors" v-if="showErrors">
 			<h3>Sommige velden zijn incorrect</h3>
-			<p v-for="error in errors">{{ error[0] }}</p>
+			<ul>
+				<li v-for="error in errors"><p>{{ error[0] }}</p></li>
+			</ul>
 		</div>
 		<slot name="csrf"></slot>
 		<v-form-item class="FormItem">
