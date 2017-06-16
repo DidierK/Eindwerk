@@ -56,13 +56,14 @@ class UserItemController extends Controller
         $messages = [
         'item_name.required' => 'Kies een item naam.',
         'price.required' => 'Geef een prijs voor je item.',
+        'price.regex' => 'Geef een geldige prijs in. (Maximum 2 cijfers na de komma)',
         'thumbnail.required' => 'Kies een afbeelding voor je item.',
         ];
 
         // Note: tel is not required but if filled in make sure it's correct
         $validator = Validator::make($request->all(), [
             'item_name' => 'required',
-            'price' => 'required',
+            'price' => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
             'thumbnail' => 'required'
             ],$messages);
 

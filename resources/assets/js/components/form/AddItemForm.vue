@@ -67,9 +67,12 @@
 			},
 			fillForm: function() {
       			// We use the formData global object because only this way we can also transport the image object
+      			// We also convert comma to dot to also be able to validate the dot
+      			var convertedPrice = this.formData.price.replace(/,/g, '.').replace(/\s/g, '');
+
       			var form = new FormData();
       			form.append('item_name', this.formData.itemName);
-      			form.append('price', this.formData.price);
+      			form.append('price', convertedPrice);
       			form.append('thumbnail', this.formData.thumbnail);
       			form.append('description', this.formData.description);
       			return form;
