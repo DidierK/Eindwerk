@@ -71,7 +71,7 @@
               {{ result.zip + " " + result.locality }}
             </span>
           </div>
-          <span class="UserItemsListItem__user-item-price u--marginLeft8px u--alignSelfCenter u--textMedium">€{{ result.price }}.00</span> 
+          <span class="UserItemsListItem__user-item-price u--marginLeft8px u--alignSelfCenter u--textMedium">€{{ result.price }}</span> 
         </v-footer>
       </v-card>
     </a>
