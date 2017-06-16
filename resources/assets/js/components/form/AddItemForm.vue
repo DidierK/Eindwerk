@@ -3,6 +3,7 @@
 		background-color: #ea4031;
 		border-radius: 5px;
 		color: #fff;
+		margin-bottom: 16px;
 		padding: 16px;
 	}
 
@@ -13,6 +14,23 @@
 
 	.Errors ul {
 		padding: 0;
+	}
+
+	.Alert-success {
+		color: #fff;
+		background-color: #66b452;
+		border-radius: 5px;
+		margin-bottom: 16px;
+		padding: 16px;
+	}
+
+	.Alert-success h3 {
+		color: #fff;
+		margin-bottom: .5em;
+	}
+
+	.Alert-success a {
+		color: #fff;
 	}
 
 </style>
