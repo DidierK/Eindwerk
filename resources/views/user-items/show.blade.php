@@ -14,7 +14,7 @@
                     <div class="u--mr-8 u--floatLeft">
                         <v-avatar class="Avatar Avatar--default" src="{{ $user_item_user->avatar }}&width=36&height=36"></v-avatar>
                     </div>
-                    <div class="UserItemDetails__user-score">N/D (nog geen score)</div>
+                    <div class="UserItemDetails__user-rating">N/D (nog geen reviews)</div>
                 </div>
                 <div class="u--cf"></div>
                 <span class="UserItemDetails__price"><em>€{{  number_format($user_item_user->price,2) }}</em> per dag</span>

@@ -17,7 +17,7 @@
 		font-weight: 500;
 	}
 
-	.UserItemDetails__user-score {
+	.UserItemDetails__user-rating {
 		color: #B7B7B7;
 		font-size: 12px;
 	}

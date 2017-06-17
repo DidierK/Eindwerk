@@ -11,6 +11,15 @@
 		margin-top: 32px;
 	}
 
+	.UserProfile__user-rating {
+		color: #B7B7B7;
+		font-size: 14px;
+	}
+
+	.UserProfile__details {
+		border-top: 1px solid #DDD;
+	}
+
 	.UserProfile__details svg {
 		float: left;
 		margin-top: 3px;
