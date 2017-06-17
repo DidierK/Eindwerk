@@ -44,24 +44,36 @@
 		</div>
 		<slot name="csrf"></slot>
 		<v-form-item class="FormItem">
-			<select v-model="formData.itemName" name="item_names" class="input--full-width">
+			<label class="FormItem__label">
+			<p>Kies een item</p>
+			<select v-model="formData.itemName" name="item_names" class="Input Input--select-default">
 				<option disabled value="">Selecteer een item</option>
 				<v-option v-for="itemName in data">{{ itemName.label }}</v-option>
 			</select>
+			</label>
 			<p class="u--textSmall u--mt-8">Staat uw item er nog niet tussen? <a href="#">Laat het ons weten en doe een suggestie!</a></p>
 		</v-form-item>
 
 
 		<v-form-item class="FormItem">
-			<input v-model="formData.price" class="Input Input--text-default Input--price" type="text" placeholder="50.00" name="price"><span>€</span>
+		<label class="FormItem__label">
+		<p>Prijs per dag</p>
+			<input v-model="formData.price" class="Input Input--text-default Input--price" type="text" placeholder="Bv. 50,00" name="price"><span>€</span>
+			</label>
 		</v-form-item>
 
 		<v-form-item class="FormItem">
+		<label class="FormItem__label">
+		<p>Een foto van jou item</p>
 			<input v-on:change="getThumbnail" class="Input u--fullWidth" type="file" name="thumbnail" accept="image/*" />
+			</label>
 		</v-form-item>
 
 		<v-form-item class="FormItem">
-			<input v-model="formData.description" class="Input Input--textarea-default u--fullWidth" type="textarea" label="Meer informatie" placeholder="Wat moet de huurder weten over jou materiaal?" name="description" />
+			<label class="FormItem__label">
+			<p>Meer informatie</p>
+			<textarea v-model="formData.description" class="Input Input--textarea-default u--fullWidth" type="textarea" placeholder="Wat moet de huurder weten over jou materiaal?" name="description"></textarea>
+			</label>
 		</v-form-item>
 
 		<v-form-item class="FormItem u--flex u--flexAlignItemsCenter">

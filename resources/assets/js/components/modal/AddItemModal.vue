@@ -2,6 +2,7 @@
 
 .AddItemModal .Modal__content {
 	min-height: 571px;
+	max-height: 571px;
 }
 </style>
 <template>

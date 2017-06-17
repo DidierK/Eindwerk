@@ -45,6 +45,7 @@
         position: relative;
     }
 
+    .Input--select-default,
     .Input--text-default,
     .Input--textarea-default {
         background-color: #fafbfc;

@@ -20,6 +20,10 @@
         font-weight: 500;
         padding-bottom: .4em;
     }
+
+    .FormItem__label p {
+        margin-bottom: .5em;
+    }
 </style>
 <template>
     <p>
