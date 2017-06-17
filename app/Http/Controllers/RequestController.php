@@ -46,7 +46,7 @@ class RequestController extends Controller
     public function acceptRequest($id) {
 
         $request = RequestItem::find($id);
-        $request->status = "Geaccepteerd";
+        $request->status = "Bevestigd";
         $request->save();
 
         return back();

@@ -64,25 +64,35 @@
 	}
 
 	.Button--danger {
-		border: 1px solid #6f2323;
+		border: 1px solid #900000;
 		border-radius: 5px;
 		color: #FFF;
 		text-shadow: 0 -1px 1px #fff3f3;
 		background: #cc2835;
-		background: linear-gradient(to bottom, #cc2835 0%,#bb2531 100%);
+		background: linear-gradient(to bottom, #ff515f 0%,#d63e4a 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), inset 0 1px 0 rgb(204, 39, 52);
+	}
+
+	.Button--danger:hover {
+		background: linear-gradient(to bottom, #D63E4A 0%,#900000 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+		text-shadow: none;
 	}
 
 	.Button--success {
 		border: 1px solid #537b41;
 		border-radius: 5px;
 		color: #FFF;
-		text-shadow: 0 -1px 1px #fff3f3;
+		text-shadow: 0 -1px 1px #66b452;
 		background: #66b452;
-		background: linear-gradient(to bottom, #66b452 0%,#537b41 100%);
+		background: linear-gradient(to bottom, #7DDE65 0%,#66B452 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), inset 0 1px 0 #537b41;
+	}
+
+	.Button--success:hover {
+		background: linear-gradient(to bottom, #66B452 0%,#537B41 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+		text-shadow: none;
 	}
 
 	.Button--s {

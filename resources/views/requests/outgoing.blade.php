@@ -71,15 +71,15 @@
 								</svg></v-button>
 			</v-form>
 			@else
-			<v-form action="#" method="post">
+			<v-form action="#" method="post" class="u--mr-8">
 				<input type="hidden" name="_method" value="post">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
-				<v-button class="Button Button--small Button--grey u--linkClean">Betalen</v-button>
+				<v-button class="Button Button--s Button--success u--linkClean">Betalen</v-button>
 			</v-form>
 			<v-form action="{{ url('request/' . $request->request_id) }}" method="post">
 				<input type="hidden" name="_method" value="DELETE">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
-				<v-button class="Button Button--small Button--wrn u--linkClean">Afbreken</v-button>
+				<v-button class="Button Button--s Button--danger u--linkClean">&#10005;</v-button>
 			</v-form>
 			@endif
 		</div>	
