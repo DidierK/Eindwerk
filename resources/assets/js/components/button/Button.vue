@@ -1,7 +1,9 @@
 <style>
 
-	.Button {
-
+	.Button, 
+	button, 
+	input[type=submit] {
+		cursor: pointer;
 	}
 
 	.Button--notification {
@@ -58,9 +60,15 @@
 		color: #6D6E70;
 		text-shadow: 0 -1px 1px #FFFFFF;
 		background: #fefefe;
-		background: linear-gradient(to bottom, #fefefe 0%,#ededed 100%);
+		background: linear-gradient(to bottom, #FEFEFE 0%,#EDEDED 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+	}
+
+	.Button--white:hover {
+		background: linear-gradient(to bottom, #EDEDED 0%,#EDEDED 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+		text-shadow: none;
 	}
 
 	.Button--danger {
