@@ -64,15 +64,15 @@
 		</div>
 		@if($request->status == 'Afwachten')
 		<div class="Request__actions">
-		<v-form action="{{ url('request/' . $request->request_id . '/accept') }}" method="post">
+		<v-form action="{{ url('request/' . $request->request_id . '/accept') }}" method="post" class="u--mr-8">
 			<input type="hidden" name="_method" value="PUT">
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
-			<v-button class="Button Button--small Button--grey u--linkClean">&#10003;</v-button>
+			<v-button class="Button Button--success Button--s u--linkClean">&#10003;</v-button>
 		</v-form>
 		<v-form action="{{ url('request/' . $request->request_id) }}" method="post">
 			<input type="hidden" name="_method" value="DELETE">
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
-			<v-button class="Button Button--small Button--wrn u--linkClean">&#10005;</v-button>
+			<v-button class="Button Button--danger Button--s u--linkClean">&#10005;</v-button>
 		</v-form>
 		</div>
 		@endif
