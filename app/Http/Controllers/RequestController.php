@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Mail;
 use Auth;
 use Validator;
 use App\Request as RequestItem;
+use App\User;
+use App\UserItem;
 
 class RequestController extends Controller
 {
@@ -80,7 +82,7 @@ class RequestController extends Controller
         // Dateformat should be AFTER we get it from the DB
         // We could easily query the receiver_id through eloquent with user_item_id, however that would be unnecessary
         // because we can pass the receiver_id with the form
-        
+
 
         // Check if the user_item_id send, matches a user_item_id in combination with the current user's id
         // If so, then current user already send a request for this user_item(_id)
@@ -99,22 +101,22 @@ class RequestController extends Controller
 
         // Normal validation
         if ($validator->fails()) {
-    
-         return redirect('user-item/' . $request->user_item_id)
-         ->withErrors($validator)
-         ->withInput();
-     } else {
+
+           return redirect('user-item/' . $request->user_item_id)
+           ->withErrors($validator)
+           ->withInput();
+       } else {
 
         // Checks if this user already send a request for this user item
         $hasRequest = RequestItem::where('sender_id', Auth::id())->where('user_item_id', $request->user_item_id)->get()->count();
 
-         if($hasRequest){
+        if($hasRequest){
 
-             $validator->getMessageBag()->add('duplicate', 'Je hebt hiervoor al een verzoek verstuurd.');
-             return back()->withErrors($validator)->withInput();
+           $validator->getMessageBag()->add('duplicate', 'Je hebt hiervoor al een verzoek verstuurd.');
+           return back()->withErrors($validator)->withInput();
              // If that passes, create new request and redirect with success message
-         } else {
-            RequestItem::create([
+       } else {
+        RequestItem::create([
             'sender_id' => Auth::id(),
             'receiver_id' => $request->user_id, // TODO: Verander dit naar echte img
             'user_item_id' => $request->user_item_id,
@@ -124,17 +126,21 @@ class RequestController extends Controller
 
         $request->session()->flash('alert-success', 'Jouw verzoek is succesvol verstuurd!');
 
-        // TODO: dynamische namen maken en dynamisch afzender van mail enzu...
-        Mail::to('wout.borghgraef@gmail.com')->send(new requestIncoming());
+        $item_name = UserItem::join('items', 'user_items.item_id', '=', 'items.id')
+                            ->where("user_items.id", $request->user_item_id)
+                            ->pluck("items.name");
 
+        $item_name = $item_name[0];
+
+        Mail::to(User::find($request->user_id)->value('email'))->send(new requestIncoming(User::find(Auth::id()), $item_name));
 
         return redirect(url('/user-item/' . $request->user_item_id));
 
-         }
-
-        
-
     }
+
+
+
+}
 
 
 
