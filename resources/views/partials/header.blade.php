@@ -7,7 +7,7 @@
     <!-- Header search -->
     @if (Route::getCurrentRoute()->uri() != '/')
     <v-search class="Search Search--header u--notMobile u--marginRightAuto u--posRelative">
-        <v-form autocomplete="off">
+        <v-form action="{{ url('items/search') }}" autocomplete="off">
             <v-autocomplete-header></v-autocomplete-header>
             <v-button class="Search__button Search__button--header">
                 <svg height="18px" version="1.1" viewBox="0 0 18 18" width="18px" x="0px" y="0px" class="Icon Icon--search">
