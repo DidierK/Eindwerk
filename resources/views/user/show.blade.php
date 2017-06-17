@@ -9,7 +9,11 @@
             <span class="UserProfile__user-rating">N/D (nog geen reviews)</span>
             <div class="UserProfile__details u--mt-16 u--pt-16">
                 <ul class="u--pn">
-                    <li class="u--pt-4"><svg aria-hidden="true" class="octicon octicon-mail" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M0 4v8c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1zm13 0L7 9 1 4h12zM1 5.5l4 3-4 3v-6zM2 12l3.5-3L7 10.5 8.5 9l3.5 3H2zm11-.5l-4-3 4-3v6z"></path></svg><a href="mailto:{{ $user_details->email }}.com">{{ $user_details->email }}</a></li>
+                    @if(!empty($user_details->email))
+                    <li class="u--pt-4"><svg aria-hidden="true" class="octicon octicon-mail" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M0 4v8c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1zm13 0L7 9 1 4h12zM1 5.5l4 3-4 3v-6zM2 12l3.5-3L7 10.5 8.5 9l3.5 3H2zm11-.5l-4-3 4-3v6z"></path></svg><a href="mailto:{{ $user_details->email }}.com">{{$user_details->email}}</a>
+                    </li>
+                    @endif
+                    @if(!empty($user_details->tel))
                     <li class="u--pt-4"><svg x="0px" y="0px" viewBox="0 0 578.106 578.106" width="16" height="16">
                         <path style="fill:#010002;" d="M577.83,456.128c1.225,9.385-1.635,17.545-8.568,24.48l-81.396,80.781
                         c-3.672,4.08-8.465,7.551-14.381,10.404c-5.916,2.857-11.729,4.693-17.439,5.508c-0.408,0-1.635,0.105-3.676,0.309
@@ -27,9 +31,13 @@
                         C571.098,441.238,576.197,447.968,577.83,456.128z"/>
                     </svg>
                     <!-- TODO: Make it telephone format automatically -->
-                    {{ $user_details->tel }}
+                    {{$user_details->tel}}
                 </li>
-                <li class="u--pt-4"><svg aria-hidden="true" class="octicon octicon-location" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M6 0C2.69 0 0 2.5 0 5.5 0 10.02 6 16 6 16s6-5.98 6-10.5C12 2.5 9.31 0 6 0zm0 14.55C4.14 12.52 1 8.44 1 5.5 1 3.02 3.25 1 6 1c1.34 0 2.61.48 3.56 1.36.92.86 1.44 1.97 1.44 3.14 0 2.94-3.14 7.02-5 9.05zM8 5.5c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>{{ $user_details->street . " " . $user_details->number . ", " . $user_details->zip . " " . $user_details->locality }}</li>
+                @endif
+                @if(!empty($user_details->street) && !empty($user_details->number) && !empty($user_details->zip) && !empty($user_details->locality)  )
+                <li class="u--pt-4"><svg aria-hidden="true" class="octicon octicon-location" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M6 0C2.69 0 0 2.5 0 5.5 0 10.02 6 16 6 16s6-5.98 6-10.5C12 2.5 9.31 0 6 0zm0 14.55C4.14 12.52 1 8.44 1 5.5 1 3.02 3.25 1 6 1c1.34 0 2.61.48 3.56 1.36.92.86 1.44 1.97 1.44 3.14 0 2.94-3.14 7.02-5 9.05zM8 5.5c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>{{ $user_details->street . " " . $user_details->number . ", " . $user_details->zip . " " . $user_details->locality }}
+                </li>
+                @endif
             </ul>
         </div>
     </div>
