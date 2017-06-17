@@ -65,9 +65,12 @@
              <div class="Subhead Subhead--spacious">
               <h2 clas="Subhead__heading">Account instellingen</h2>
             </div>
-            <v-form class="Form Form--settings" action="{{ url('user/' . Auth::id()) }}" method="post">
-             <p>Verwijder uw account</p><v-button class="Button Button--default Button--white">Account verwijderen</v-button>
-           </v-form>
+            <p>Indien u geen items meer wilt lenen of verlenen kan u uw account hier verwijderen.</p>
+            <v-form class="Form Form--settings u--mt-8" action="{{ url('user/' . Auth::id()) }}" method="post">
+              <input type="hidden" name="_method" value="DELETE">
+              <input type="hidden" name="_token" value="{{ csrf_token() }}">
+              <v-button class="Button Button--default Button--danger">Account verwijderen</v-button>
+            </v-form>
 
-         </div>  
-         @endsection
+          </div>  
+          @endsection

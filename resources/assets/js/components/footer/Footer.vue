@@ -5,10 +5,10 @@
 
 .Footer--main {
 	background-color: #10a4ff;
-
 	z-index: 1;
 	display: flex;
     flex-direction: column;
+    margin-top: 160px;
 }
 
 .copyright{

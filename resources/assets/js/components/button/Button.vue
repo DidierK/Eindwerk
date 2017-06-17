@@ -75,9 +75,9 @@
 		border: 1px solid #900000;
 		border-radius: 5px;
 		color: #FFF;
-		text-shadow: 0 -1px 1px #fff3f3;
-		background: #cc2835;
-		background: linear-gradient(to bottom, #ff515f 0%,#d63e4a 100%);
+		text-shadow: 0 -1px 1px #FF515F;
+		background: #CC2835;
+		background: linear-gradient(to bottom, #FF515F 0%,#D63E4A 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 	}
 
@@ -88,11 +88,11 @@
 	}
 
 	.Button--success {
-		border: 1px solid #537b41;
+		border: 1px solid #537B41;
 		border-radius: 5px;
 		color: #FFF;
-		text-shadow: 0 -1px 1px #66b452;
-		background: #66b452;
+		text-shadow: 0 -1px 1px #66B452;
+		background: #66B452;
 		background: linear-gradient(to bottom, #7DDE65 0%,#66B452 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 	}
