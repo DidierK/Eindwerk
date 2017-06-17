@@ -1,35 +1,34 @@
 <style>
-.Footer--logged-out {
-	margin-top: 80px;
-}
+    .Footer--logged-out {
+     margin-top: 80px;
+ }
 
-.Footer--main {
-	background-color: #10a4ff;
-	z-index: 1;
-	display: flex;
-    flex-direction: column;
-    margin-top: 160px;
-}
+ .Footer--main {
+     background-color: #10a4ff;
+     z-index: 1;
+     display: flex;
+     flex-direction: column;
+     margin-top: 160px;
+ }
 
-.copyright{
+ .copyright {
     color: #FFF;
     margin: 30px auto;
     text-align:center;
 }
 
-.facebook{
+.facebook {
     display:block;
     margin: 0 auto;
     width: 12px;
     height: 24px;
-
     text-align:center;
     margin-top: 30px;
 }
 
-.facebook a{
-display:block;
-width: 12px;
+.facebook a {
+    display:block;
+    width: 12px;
     height: 24px;
     background: url(/images/fb-logo.png);
     background-repeat:no-repeat;

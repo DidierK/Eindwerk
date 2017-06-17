@@ -51,7 +51,7 @@
 				<v-option v-for="itemName in data">{{ itemName.label }}</v-option>
 			</select>
 			</label>
-			<p class="u--textSmall u--mt-8">Staat uw item er nog niet tussen? <a href="#">Laat het ons weten en doe een suggestie!</a></p>
+			<p class="u--textSmall u--mt-8">Staat uw item er nog niet tussen? <a href="/contact">Laat het ons weten en doe een suggestie!</a></p>
 		</v-form-item>
 
 

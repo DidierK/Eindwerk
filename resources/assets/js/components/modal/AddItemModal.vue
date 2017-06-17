@@ -1,9 +1,15 @@
 <style>
+	.AddItemModal .Modal__content {
+		min-height: 320px;
+		max-height: 320px;
+	}	
 
-.AddItemModal .Modal__content {
-	min-height: 571px;
-	max-height: 571px;
-}
+	@media (min-height: 571px){
+		.AddItemModal .Modal__content {
+			min-height: 571px;
+			max-height: 571px;
+		}		
+	}
 </style>
 <template>
 	<v-modal class="AddItemModal">
