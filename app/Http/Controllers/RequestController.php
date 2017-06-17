@@ -124,6 +124,7 @@ class RequestController extends Controller
 
         $request->session()->flash('alert-success', 'Jouw verzoek is succesvol verstuurd!');
 
+        // TODO: dynamische namen maken en dynamisch afzender van mail enzu...
         Mail::to('wout.borghgraef@gmail.com')->send(new requestIncoming());
 
 
