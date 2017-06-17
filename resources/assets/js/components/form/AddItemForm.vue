@@ -57,7 +57,7 @@
 		</v-form-item>
 
 		<v-form-item class="FormItem">
-			<input v-on:change="getThumbnail" class="Input u--fullWidth" type="file" name="thumbnail" />
+			<input v-on:change="getThumbnail" class="Input u--fullWidth" type="file" name="thumbnail" accept="image/*" />
 		</v-form-item>
 
 		<v-form-item class="FormItem">
