@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\requestIncoming;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Auth;
 use Validator;
 use App\Request as RequestItem;
@@ -121,6 +123,8 @@ class RequestController extends Controller
             ]);
 
         $request->session()->flash('alert-success', 'Jouw verzoek is succesvol verstuurd!');
+
+        Mail::to('wout.borghgraef@gmail.com')->send(new requestIncoming());
 
 
         return redirect(url('/user-item/' . $request->user_item_id));

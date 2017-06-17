@@ -20,7 +20,7 @@ class UserController extends Controller
     }
 
     public function details() {
-        $user_details = User::find(Auth::id())->first();
+        $user_details = User::find(Auth::id());
 
         return view('profile.details', ['user_details' => $user_details]);
     }
