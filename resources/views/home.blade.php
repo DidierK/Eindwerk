@@ -40,7 +40,7 @@
 						<img src="{{ url('images/notified.svg')}}" />
 					</div>
 					<h4>Wordt op de hoogte gebracht</h4>
-					<p>Wanneer de huurder van het product jou verzoek accepteerd, wordt je hiervan op de hoogte gebracht.</p>
+					<p>Wanneer de huurder van het product jouw verzoek accepteerd, wordt je hiervan op de hoogte gebracht.</p>
 				</v-li>
 				<v-li>
 					<div class="ImageContainer">
