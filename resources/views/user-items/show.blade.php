@@ -23,7 +23,7 @@
                 </div>
                 @if($owned)
                 <div>
-                    <p>Je kunt dit item niet huren omdat het van jou is. <a href="{{ url('user-item/' . $user_item_user->id . '/edit')}}">Bewerk je item hier.</a></p>
+                    <p>Je kunt dit item niet huren omdat het van jou is. <a href="{{ url('user-item/' . $user_item_user->id . '/edit')}}" v-on:click.prevent v-modal:edit-item-modal>Bewerk je item.</a></p>
                 </div>
                 @else
                 @if ($errors->any())
@@ -71,4 +71,11 @@
         </v-user-item-details>
     </v-container>
 </v-content>
+<v-edit-item-modal ref="edit-item-modal">
+    <!-- Position the spinner with a v-spinner-modal or just with the parent modal? -->
+    <v-spinner class="Spinner--add-item-modal" v-if="showLoading"></v-spinner>
+    <v-edit-item-form method="post" :data="items" item-name="{{ $user_item_user->name }}" price="{{ number_format($user_item_user->price,2) }}" description="{{ $user_item_user->description }}" item-id="{{ $user_item_user->id }}" v-else>
+        <input type="hidden" name="_token" value="{{ csrf_token() }}" slot="csrf">
+    </v-edit-item-form>
+</v-edit-item-modal> 
 @endsection

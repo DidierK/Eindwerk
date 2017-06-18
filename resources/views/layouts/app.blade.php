@@ -55,8 +55,7 @@
                 <v-add-item-form action="{{ url('user-item') }}" method="post" :data="items" v-else>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" slot="csrf">
                 </v-add-item-form>
-            </v-add-item-modal>
-            
+            </v-add-item-modal>   
         </div>
         <!-- Scripts -->
         <script src="/js/app.js"></script>

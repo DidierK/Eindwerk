@@ -79,7 +79,7 @@ class UserItemController extends Controller
         } else {
             $input_name = $trimmed_inputs['item_name'];
             $input_price = $trimmed_inputs['price'];
-            $input_image = $input_image = $request->file('thumbnail');
+            $input_image = $request->file('thumbnail');
             $input_description = $trimmed_inputs['description'];
 
         // Get name of image and move ACTUAL image
@@ -146,6 +146,68 @@ class UserItemController extends Controller
      */
     public function update(Request $request, $id) {
         //
+    }
+
+    public function updateUserItem(Request $request, $id) {
+        // TODO: Make all optional fields in table nullable (for example description)
+        // TODO: Make a form validation method and input all our fields in it
+        // TODO get category id if category input is not empty, otherwise obviously leave null
+
+        $messages = [
+        'item_name.required' => 'Kies een item naam.',
+        'price.required' => 'Geef een prijs voor je item.',
+        'price.regex' => 'Geef een geldige prijs in. (Maximum 2 cijfers na de komma)',
+        'thumbnail.required' => 'Kies een afbeelding voor je item.',
+        ];
+
+        $trimmed_inputs = [];
+
+        foreach($request->all() as $i => $item){
+            $trimmed_inputs[$i] = trim($item);
+        }
+
+        // Note: tel is not required but if filled in make sure it's correct
+        $validator = Validator::make($trimmed_inputs, [
+            'item_name' => 'required',
+            'price' => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
+            'thumbnail' => 'required'
+            ],$messages);
+
+        if ($validator->fails()) {
+            return $validator->messages();
+
+        } else {
+            $input_name = $trimmed_inputs['item_name'];
+            $input_price = $trimmed_inputs['price'];
+            $input_image = $request->file('thumbnail');
+            $input_description = $trimmed_inputs['description'];
+
+        // Get name of image and move ACTUAL image
+            $image_name = time()."-".$input_image->getClientOriginalName();
+            $input_image->move('uploads/user-items', $image_name);
+            // De image_path misgien zonder asset() doen maar dan die asset() WEL doen waar we de dingen genereren?
+            // Kwestie van flexibel te zijn en dat item thumbnails zowel lokaal als live goed weergeven indien ze zo verplaatst
+            // worden.
+            $image_path = asset('uploads/user-items') . '/' . $image_name;
+
+        // Get item name id by name
+            $item_id = Item::where('name', $input_name)->pluck('id')->first();
+
+            $user_item = UserItem::find($id);
+
+            $user_item->price = $input_price;
+            $user_item->thumbnail = $image_path;
+            $user_item->description = $input_description;
+            $user_item->item_id = $item_id;
+            
+            $user_item->save();
+
+        // Redirect to page where personal items are
+        // return redirect(url('profile/my-items'));
+
+            return $validator->messages();
+
+        }
     }
 
     /**

@@ -2654,6 +2654,10 @@ input:focus {
 }
 
 /* GRID */
+.Col-sm-1-2 {
+  width: 100%;
+}
+
 @media (min-width: 480px) {
   .Row-sm {
     display: -webkit-box;

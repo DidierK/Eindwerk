@@ -30,8 +30,11 @@ Route::get('auth/{provider}/callback', 'Auth\LoginController@callback');
 
 // User item resource
 Route::resource('user-item', 'UserItemController', ['except' => [
-	'index',
+	'index', 'update'
 	]]);
+
+// User item PUT route substitution
+Route::post('user-item/{user_item}', 'UserItemController@updateUserItem');
 
 // User resource
 Route::resource('user', 'UserController', ['except' => [
@@ -48,6 +51,9 @@ Route::get('item/{item_name}', 'ItemController@index');
 
 // Search item
 Route::get('/items/search', 'ItemController@searchItems');
+
+// Contact
+Route::get('contact', 'ContactController@index');
 
 // API
 Route::group(['prefix' => 'api/'], function() {

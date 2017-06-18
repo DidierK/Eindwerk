@@ -67,6 +67,7 @@ Vue.component('v-footer', require('./components/footer/Footer.vue'));
 Vue.component('v-form', require('./components/form/Form.vue'));
 Vue.component('v-form-item', require('./components/form/FormItem.vue'));
 Vue.component('v-add-item-form', require('./components/form/AddItemForm.vue'));
+Vue.component('v-edit-item-form', require('./components/form/EditItemForm.vue'));
 Vue.component('v-request-form', require('./components/form/RequestForm.vue'));
 
 // Header
@@ -94,6 +95,7 @@ Vue.component('v-logo', require('./components/logo/Logo.vue'));
 // Modal
 Vue.component('v-modal', require('./components/modal/Modal.vue'));
 Vue.component('v-add-item-modal', require('./components/modal/AddItemModal.vue'));
+Vue.component('v-edit-item-modal', require('./components/modal/EditItemModal.vue'));
 
 // Nav
 Vue.component('v-nav', require('./components/nav/Nav.vue'));

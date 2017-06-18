@@ -21,7 +21,19 @@
 		box-sizing: border-box;
 	}
 
-	
+	.ContactForm {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.ContactForm input[type=text],
+	.ContactForm textarea {
+		width: 100%;
+	}
+
+	.ContactForm textarea {
+		min-height: 160px;
+	}
 
 	
 	@media (min-width: 480px){
