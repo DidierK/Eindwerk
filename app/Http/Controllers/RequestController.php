@@ -132,7 +132,7 @@ class RequestController extends Controller
 
         $item_name = $item_name[0];
 
-        Mail::to(User::find($request->user_id)->value('email'))->send(new requestIncoming(User::find(Auth::id()), $item_name));
+        Mail::to(User::where('id', $request->user_id)->value('email'))->send(new requestIncoming(User::find(Auth::id()), $item_name));
 
         return redirect(url('/user-item/' . $request->user_item_id));
 
