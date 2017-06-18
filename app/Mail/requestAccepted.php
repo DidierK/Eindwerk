@@ -2,27 +2,23 @@
 
 namespace App\Mail;
 
-use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class requestIncoming extends Mailable {
+class requestAccepted extends Mailable {
     use Queueable, SerializesModels;
 
-    public $user; 
-    public $item_name;
-
+    public $receiver_name;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(User $user, $item_name) {
-        $this->user = $user;
-        $this->item_name = $item_name;
+    public function __construct($receiver_name) {
+        $this->receiver_name = $receiver_name;
     }
 
     /**
@@ -31,7 +27,7 @@ class requestIncoming extends Mailable {
      * @return $this
      */
     public function build() {
-        return $this->subject('Inkomend verzoek')
-        ->view('emails.requests.incoming', ["user" => $this->user, "item" => $this->item_name]);
+        return $this->subject('Verzoek geaccepteerd')
+        ->view('emails.requests.accepted',["receiver_name" => $this->receiver_name]);
     }
 }

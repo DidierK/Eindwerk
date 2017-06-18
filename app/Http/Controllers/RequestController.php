@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\requestIncoming;
+use App\Mail\requestAccepted;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Auth;
@@ -53,6 +54,20 @@ class RequestController extends Controller
         $request->status = "Bevestigd";
         $request->save();
 
+        $sender_email = RequestItem::join('users', 'requests.sender_id', '=', 'users.id')
+        ->where('requests.id', $id)
+        ->pluck('users.email');
+
+        $sender_email = $sender_email[0];
+
+        $receiver_name = RequestItem::join('users', 'requests.receiver_id', '=', 'users.id')
+        ->where('requests.id', $id)
+        ->pluck('users.name');
+
+        $receiver_name = $receiver_name[0];
+
+        Mail::to($sender_email)->send(new requestAccepted($receiver_name));
+
         return back();
     }
 
@@ -102,20 +117,20 @@ class RequestController extends Controller
         // Normal validation
         if ($validator->fails()) {
 
-           return redirect('user-item/' . $request->user_item_id)
-           ->withErrors($validator)
-           ->withInput();
-       } else {
+         return redirect('user-item/' . $request->user_item_id)
+         ->withErrors($validator)
+         ->withInput();
+     } else {
 
         // Checks if this user already send a request for this user item
         $hasRequest = RequestItem::where('sender_id', Auth::id())->where('user_item_id', $request->user_item_id)->get()->count();
 
         if($hasRequest){
 
-           $validator->getMessageBag()->add('duplicate', 'Je hebt hiervoor al een verzoek verstuurd.');
-           return back()->withErrors($validator)->withInput();
+         $validator->getMessageBag()->add('duplicate', 'Je hebt hiervoor al een verzoek verstuurd.');
+         return back()->withErrors($validator)->withInput();
              // If that passes, create new request and redirect with success message
-       } else {
+     } else {
         RequestItem::create([
             'sender_id' => Auth::id(),
             'receiver_id' => $request->user_id, // TODO: Verander dit naar echte img
@@ -127,8 +142,8 @@ class RequestController extends Controller
         $request->session()->flash('alert-success', 'Jouw verzoek is succesvol verstuurd!');
 
         $item_name = UserItem::join('items', 'user_items.item_id', '=', 'items.id')
-                            ->where("user_items.id", $request->user_item_id)
-                            ->pluck("items.name");
+        ->where("user_items.id", $request->user_item_id)
+        ->pluck("items.name");
 
         $item_name = $item_name[0];
 
