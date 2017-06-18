@@ -20,8 +20,8 @@
 			<span class="TableHeader__title">Status</span>
 		</div>
 	</div>
+	@foreach($requests as $request)
 	<div class="RequestsTable__row">
-		@foreach($requests as $request)
 		<div class="u--gr-2 u--flex u--flexAlignItemsCenter">
 			<v-img class="UserItemImage Image Image--round Image--my-items" background="{{ url($request->thumbnail) }}"></v-img>
 			<a class="Link u--linkClean u--ml-16" href="{{ url('user-item/' . $request->user_item_id) }}">
@@ -76,8 +76,8 @@
 		</v-form>
 		</div>
 		@endif
-		@endforeach
 	</div>
+	@endforeach
 </div>
 @else
 <p>Je hebt geen inkomende transactieverzoeken voorlopig.</p>
