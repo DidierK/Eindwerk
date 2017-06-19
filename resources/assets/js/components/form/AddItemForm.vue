@@ -1,14 +1,14 @@
 <style>
 	.Errors {
-		background-color: #ea4031;
+		background-color: #EA4031;
 		border-radius: 5px;
-		color: #fff;
+		color: #FFF;
 		margin-bottom: 16px;
 		padding: 16px;
 	}
 
 	.Errors h3 {
-		color: #fff;
+		color: #FFF;
 		margin-bottom: .5em;
 	}
 
@@ -17,20 +17,20 @@
 	}
 
 	.Alert-success {
-		color: #fff;
-		background-color: #66b452;
+		color: #FFF;
+		background-color: #66B452;
 		border-radius: 5px;
 		margin-bottom: 16px;
 		padding: 16px;
 	}
 
 	.Alert-success h3 {
-		color: #fff;
+		color: #FFF;
 		margin-bottom: .5em;
 	}
 
 	.Alert-success a {
-		color: #fff;
+		color: #FFF;
 	}
 
 </style>

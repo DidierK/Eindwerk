@@ -1,9 +1,9 @@
 <style>
 
 	.CompleteProfile {
-		border: 1px solid #ff6a6a;
+		background-color: #EA4031;
 		border-radius: 2px;
-		color: #ff6a6a;
+		color: #FFF;
 		margin-bottom: 16px;
 		padding: 16px;
 	}

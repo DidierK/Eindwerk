@@ -3,7 +3,7 @@
 @section('auth_content')
 @if(!$completeProfile)
 <div class="CompleteProfile">
-	<p>Vul je verhuurdersprofiel aan voordat je items kan verhuren.</p>
+	<p>Vul je verhuurdersprofiel (adres) aan voordat je items kan verhuren.</p>
 </div>
 @endif
 

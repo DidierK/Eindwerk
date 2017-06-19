@@ -120,7 +120,15 @@ class UserController extends Controller
             ->withInput();
 
         } else {
+            if(empty($trimmed_inputs['streetName']) || empty($trimmed_inputs['houseNumber']) || empty($trimmed_inputs['locality']) || empty($trimmed_inputs['zip']) ) {
+                if(UserItem::where('user_id','=', Auth::id())->count() > 0){
+                    $validator->getMessageBag()->add('duplicate', 'Wanneer je items verhuurt kan je je adres niet leeghouden.');
+                    UserItem::where('user_id','=', Auth::id())->count();
+                    return back()->withErrors($validator)->withInput();
 
+                }
+                
+            }      
         // So what we could do is just check which fields are not empty and ony validate those
             $user = User::find($id);
 
