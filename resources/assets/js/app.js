@@ -145,7 +145,8 @@ const app = new Vue({
       city: '',
       sortOn: 'newest'
     },
-    showLoadingUserItemSearch: false
+    showLoadingUserItemSearch: false,
+    showMobileNav: false
 
   },
   mounted: function() {
@@ -188,7 +189,7 @@ const app = new Vue({
 
     }
   },
-  getItems: function(){
+  getItems: function() {
     var self = this;
     this.showLoading = true;
 
@@ -201,7 +202,7 @@ const app = new Vue({
   add: function(){
     console.log("LOL");
   },
-  sortUserItemsByCity: function(itemName){
+  sortUserItemsByCity: function(itemName) {
     // We moeten niet check of query string leeg is omdat we bij leegte van input weer alle items moeten fetchen zoiezo
     // Als er geen query string is wordt de "?" weggelaten automatisch, dus dat is handig
     var self = this
@@ -211,7 +212,7 @@ const app = new Vue({
       self.showLoadingUserItemSearch = false;
     }); 
   },
-  getUserItemQueryString: function(){
+  getUserItemQueryString: function() {
    var str = [];
 
    $.each( this.query, function( key, value ) {
@@ -221,13 +222,16 @@ const app = new Vue({
  });
    return str.join("&");
  },
- sortUserItems: function(itemName, queryString, callback){
+ sortUserItems: function(itemName, queryString, callback) {
   var self = this;
 
   axios.get('/api/item/' + itemName + '/user-items?' + queryString).then((response) => {
     this.$refs.userItemsList.results = response.data;
     callback();
   });
+},
+toggleMobileNav: function() {
+  this.showMobileNav = !this.showMobileNav;
 }
 }
 });

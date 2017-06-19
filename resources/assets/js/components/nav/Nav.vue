@@ -16,6 +16,36 @@
 		margin-left: 10px;
 	}
 
+	.MobileNavMenu {
+		background-color: #10A4FF;
+		position: absolute;
+		top: 0;
+		text-align: center;
+		width: 100%;
+	}
+
+	.MobileNavMenu__header {
+		height: 52px;
+		min-height: 52px;
+	}
+
+	.MobileNavMenu__search .Search__button {
+		top: 52px;
+		right: 16px;
+	}
+
+	.MobileNavMenu li > a {
+		border-bottom: 1px solid #DDD;
+		display: block;
+		font-size: 18px;
+		padding: 32px;
+		text-decoration: none;
+	}
+
+	.MobileNavMenu li > a:hover {
+		background-color: #5DABFB;
+	}
+
 </style>
 <template>
 	<nav>

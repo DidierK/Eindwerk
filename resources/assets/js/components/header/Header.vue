@@ -10,8 +10,9 @@
 	}
 
 	.Header--main {
-		background-color: #10a4ff;
-		min-height: 52px;
+		background-color: #10A4FF;
+		min-height: 52px; 
+		height: 52px;
 		top: 0;	
 		z-index: 1;
 	}
