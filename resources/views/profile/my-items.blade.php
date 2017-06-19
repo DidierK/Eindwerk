@@ -8,9 +8,7 @@
 @endif
 
 <div class="Subhead u--flex u--flexJustifyContentSpaceBetween u--flexWrap u--flexAlignItemsCenter u--pb-16">
-	<v-form class="SearchForm">
-		<v-input class="Input Input--text-default u--sizeFull" type="text" placeholder="Zoek in jou spullen"></v-input>
-	</v-form>
+	<h2 clas="Subhead__heading">Mijn spullen</h2>
 	<v-button class="Button Button--default Button--white Button--add-items u--inlineBlock u--linkClean" v-modal:add-item-modal @if(!$completeProfile) disabled @endif>Spullen toevoegen
 	</v-button>
 </div>

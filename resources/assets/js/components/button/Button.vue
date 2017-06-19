@@ -108,6 +108,7 @@
 	}
 
 	.Button--s {
+		line-height: 16px;
 		padding: 4px 8px;
 	}
 

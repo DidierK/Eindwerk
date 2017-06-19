@@ -71,11 +71,7 @@
 								</svg></v-button>
 			</v-form>
 			@else
-			<v-form action="#" method="post" class="u--mr-8">
-				<input type="hidden" name="_method" value="post">
-				<input type="hidden" name="_token" value="{{ csrf_token() }}">
-				<v-button class="Button Button--s Button--success u--linkClean">Betalen</v-button>
-			</v-form>
+			<a href="#" class="Button Button--s Button--success u--linkClean u--mr-8">Betalen</a>
 			<v-form action="{{ url('request/' . $request->request_id) }}" method="post">
 				<input type="hidden" name="_method" value="DELETE">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
