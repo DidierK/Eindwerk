@@ -48,8 +48,8 @@
 			</v-container>
 			<v-footer class="Footer Footer--logged-out u--textCenter" v-cloak>
 				<v-ul class="List List--inline">
+					<li class="List__item"><v-link href="#" class="Link Link--black">Home</v-link></li>
 					<li class="List__item"><v-link href="#" class="Link Link--black">Gebruikersvoorwaarden</v-link></li>
-					<li class="List__item"><v-link href="#" class="Link Link--black">Over TravelShare</v-link></li>
 					<li class="List__item"><v-link href="#" class="Link Link--black">Contacteer ons</v-link></li>
 				</v-ul>
 			</v-footer>
