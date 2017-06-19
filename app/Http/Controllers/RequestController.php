@@ -173,7 +173,7 @@ class RequestController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        //
+        return view('requests.show');
     }
 
     /**
