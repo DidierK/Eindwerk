@@ -1,5 +1,9 @@
 <style>
 
+	.Button:disabled {
+		opacity: .5;
+	}
+
 	.Button, 
 	button, 
 	input[type=submit] {

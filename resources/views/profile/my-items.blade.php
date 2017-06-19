@@ -1,11 +1,17 @@
 @extends('layouts.auth_area')
 
 @section('auth_content')
+@if(!$completeProfile)
+<div class="CompleteProfile">
+	<p>Vul je verhuurdersprofiel aan voordat je items kan verhuren.</p>
+</div>
+@endif
+
 <div class="Subhead u--flex u--flexJustifyContentSpaceBetween u--flexWrap u--flexAlignItemsCenter u--pb-16">
 	<v-form class="SearchForm">
 		<v-input class="Input Input--text-default u--sizeFull" type="text" placeholder="Zoek in jou spullen"></v-input>
 	</v-form>
-	<v-button class="Button Button--default Button--white Button--add-items u--inlineBlock u--linkClean" v-modal:add-item-modal>Spullen toevoegen
+	<v-button class="Button Button--default Button--white Button--add-items u--inlineBlock u--linkClean" v-modal:add-item-modal @if(!$completeProfile) disabled @endif>Spullen toevoegen
 	</v-button>
 </div>
 

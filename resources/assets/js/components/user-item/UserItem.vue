@@ -1,4 +1,13 @@
 <style>
+
+	.CompleteProfile {
+		border: 1px solid #ff6a6a;
+		border-radius: 2px;
+		color: #ff6a6a;
+		margin-bottom: 16px;
+		padding: 16px;
+	}
+
 	.UserItem > .Column {
 		width: 100%;
 	}

@@ -26,7 +26,27 @@ class UserItemController extends Controller
 
         $item_names = DB::table('items')->get(['name']);
 
-        return view('profile.my-items', ['user_items' => $user_items, 'item_names' => $item_names]);  
+        $completeProfile;
+
+        if($this->completeProfile()){
+            $completeProfile = true;
+        } else {
+            $completeProfile = false;
+        }
+
+        return view('profile.my-items', ['user_items' => $user_items, 'item_names' => $item_names, 'completeProfile' => $completeProfile]);  
+
+        
+    }
+
+    public function completeProfile() {
+        $user = User::find(Auth::id());
+
+        if(!$user->street || !$user->number || !$user->locality || !$user->zip) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     /**
