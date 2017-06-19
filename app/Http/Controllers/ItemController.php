@@ -67,7 +67,7 @@ public function searchItems(Request $request) {
     if(count($items) > 0){
         return redirect(url('/item/' . $items->url));
     } else {
-        var_dump("Redirect to 404 page here!");
+         return view('item.search');
     }      
 }  
 
