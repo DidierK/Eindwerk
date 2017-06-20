@@ -3,6 +3,19 @@
 	.AuthUserMenu {
 		background-color: #404849;
 		padding-bottom: 32px;
+		position: fixed;
+		width: 100%;
+		z-index: 1;
+	}
+
+	.AuthUserMenu.isClosed {
+		height: 55px;
+		padding-bottom: 0;
+		overflow: hidden;
+	}
+
+	.AuthUserMenu.isOpened {
+		height: 100%;
 	}
 
 	.AuthUserMenu ul {
@@ -17,6 +30,7 @@
 
 	.AuthUserMenu__heading {
 		border-bottom: 1px solid #4B5F62;
+		cursor: pointer;
 	}
 
 	.AuthUserMenu__heading,
@@ -63,7 +77,6 @@
 		.AuthUserMenu {
 			float: left;
 			height: 100%;
-			position: fixed;
 			width: 272px;
 		}
 	}
@@ -76,8 +89,8 @@
 	}
 </style>
 <template>
-	<div class="AuthUserMenu">
-		<h3 class="AuthUserMenu__heading">Menu</h3>
+	<div id="aum" class="AuthUserMenu isClosed">
+		<h3 class="AuthUserMenu__heading" v-on:click="toggleAuthUserMenu">Menu</h3>
 		<ul>
 			<li class="AuthUserMenu__item">
 				<div class="AuthUserMenu__title u--posRelative">Dashboard</div>
@@ -114,8 +127,29 @@
         	jQuery($this).parents('.AuthUserMenu__action').addClass('isActive');
         	jQuery($this).parents('.AuthUserMenu__action').parents('ul').siblings('.AuthUserMenu_title').addClass('isActive');
         }
+
+        if($(window).width() > 768){
+        	$("#aum").addClass('isOpened').removeClass('isClosed');
+        }
+
+        window.addEventListener("resize", function(event) {
+        	if($(window).width() > 768){
+        		$("#aum").addClass('isOpened').removeClass('isClosed');
+        	} else {
+        		$("#aum").addClass('isClosed').removeClass('isOpened');
+        	}
+        });
     })
 			
+		},
+		methods: {
+			toggleAuthUserMenu: function(e) {
+				if($("#aum").hasClass('isClosed')) {
+					$("#aum").addClass('isOpened').removeClass('isClosed');
+				} else {
+					$("#aum").addClass('isClosed').removeClass('isOpened');
+				}
+			}
 		}
 	}
 

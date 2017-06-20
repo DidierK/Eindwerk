@@ -51,7 +51,7 @@
 		top: 0;
 		text-align: center;
 		width: 100%;
-		z-index: 1;
+		z-index: 2;
 	}
 
 	.MobileNavMenu .HamburgerIcon {
