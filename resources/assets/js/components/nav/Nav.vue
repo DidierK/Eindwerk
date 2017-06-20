@@ -23,6 +23,14 @@
 		transition: .15s ease-out;
 	}
 
+	.Header--bg-transparent .GlobalNav__item > * {
+		color: #FFF;
+	}
+
+	.Header--bg-transparent .GlobalNav__item:first-child button::after {
+		border-top-color: #FFF;
+	}
+
 	.GlobalNav__item:first-child button::after {
 		content: '';
 		display: inline-block;
