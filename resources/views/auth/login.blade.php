@@ -36,7 +36,7 @@
 			<!-- Content -->
 			<v-container class="Container Container--logged-out" v-cloak>
 				<p>Omdat wij de betrouwbaarheid en veiligheid van onze website willen garanderen laten we enkel toe aan te melden via Facebook. Persoonlijke gegevens kunnen in de instellingen van je profiel worden aangepast.</p>
-				<p>Voor meer info kan u terecht op <v-link class="Link Link--default" href="#">onze gebruikersvoorwaarden</v-link>.</p>
+				<p>Voor meer info kan u terecht op <v-link class="Link Link--default" href="{{ url('/disclaimer') }}">onze gebruikersvoorwaarden</v-link>.</p>
 				<div class="u--textCenter">
 					<v-button href="{{ url('auth/facebook') }}" class="Button Button Button--borderless Button--blue Button--default Button--login-fb Button--center u--linkClean u--inlineBlock">
 						Doorgaan met Facebook
@@ -48,9 +48,9 @@
 			</v-container>
 			<v-footer class="Footer Footer--logged-out u--textCenter" v-cloak>
 				<v-ul class="List List--inline">
-					<li class="List__item"><v-link href="#" class="Link Link--black">Home</v-link></li>
-					<li class="List__item"><v-link href="#" class="Link Link--black">Gebruikersvoorwaarden</v-link></li>
-					<li class="List__item"><v-link href="#" class="Link Link--black">Contacteer ons</v-link></li>
+					<li class="List__item"><v-link href="{{ url('/') }}" class="Link Link--black">Home</v-link></li>
+					<li class="List__item"><v-link href="{{ url('/disclaimer') }}" class="Link Link--black">Gebruikersvoorwaarden</v-link></li>
+					<li class="List__item"><v-link href="{{ url('/contact') }}" class="Link Link--black">Contacteer ons</v-link></li>
 				</v-ul>
 			</v-footer>
 		</div>

@@ -55,6 +55,11 @@ Route::get('/items/search', 'ItemController@searchItems');
 // Contact
 Route::get('contact', 'ContactController@index');
 
+// Contact
+Route::get('disclaimer', function(){
+	return view("disclaimer.index");
+});
+
 // API
 Route::group(['prefix' => 'api/'], function() {
 	Route::get('/items', 'ItemController@getItems');
