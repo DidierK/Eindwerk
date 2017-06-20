@@ -47,7 +47,7 @@
 
 	.MobileNavMenu {
 		background-color: #10A4FF;
-		position: absolute;
+		position: fixed;
 		top: 0;
 		text-align: center;
 		width: 100%;
