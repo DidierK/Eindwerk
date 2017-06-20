@@ -1,85 +1,107 @@
 <style>
-	.TreeView .Treeview__heading {
-		background-color: #F3F5F8;
-		color: #484848;
-		font-size: 14px;
+
+	.AuthUserMenu {
+		background-color: #404849;
+		padding-bottom: 32px;
 	}
 
-	.TreeView--user-actions .Treeview__title.isActive {
-		// background-color: #F3F5F8;
-	}
-
-	.TreeView--user-actions .Treeview__action:hover {
-		background-color: #F3F5F8;
-	}
-
-	.TreeView--user-actions .Treeview__action.isActive {
-		border-left: 2px solid #10a4ff;
-	}
-
-	.TreeView--user-actions .Treeview__action.isActive > a {
-		color: #10a4ff;
-	}
-
-	.TreeView--user-actions,
-	.TreeView--user-actions ul {
+	.AuthUserMenu ul {
 		padding: 0;
 	}
 
-	.TreeView--user-actions .Treeview__title,
-	.TreeView--user-actions .Treeview__action > a {
-		border-top: 1px solid #DDD;
+	.AuthUserMenu__heading,
+	.AuthUserMenu__title,
+	.AuthUserMenu__action > a {
+		color: #FFF;
 	}
 
-
-	.TreeView--user-actions h3,
-	.TreeView--user-actions .Treeview__title {
-		padding: 8px 16px;
+	.AuthUserMenu__heading {
+		border-bottom: 1px solid #4B5F62;
 	}
 
-	.TreeView--user-actions .Treeview__action > a {
-		padding: 8px 32px;
+	.AuthUserMenu__heading,
+	.AuthUserMenu__title,
+	.AuthUserMenu__action > a {
+		padding: 16px 32px;
 	}
 
-	.TreeView--user-actions,
-	.TreeView--user-actions a {
-		color: #000;
+	.AuthUserMenu__title {
+		padding-bottom: 4px;
 	}
+
+	.AuthUserMenu__action > a {
+		color: #F2F2F2;
+		padding: 4px 32px;
+	}
+
+	.AuthUserMenu__action > a:hover {
+		background-color: rgba(255,255,255,.1);
+		color: #33CBFF;
+	}
+	
+	.AuthUserMenu__action.isActive > a {
+		color: #33CBFF;
+	}
+
+	.AuthUserMenu__title,
+	.AuthUserMenu__heading {
+		font-size: 14px;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+
+	.AuthUserMenu__item {
+		margin-top: 16px;
+	}
+
+	@media (min-width: 768px){
+		.AuthContent {
+			margin-left: 272px;
+			padding: 0 16px;
+		}
+
+		.AuthUserMenu {
+			float: left;
+			height: 100%;
+			position: fixed;
+			width: 272px;
+		}
+	}
+
 	@media (max-width: 768px){
-		.TreeView--user-actions li {
+
+		.AuthUserMenu li {
 			text-align: center;
 		}
 	}
 </style>
 <template>
-<v-card class="Card Card--treeview">
-	<div class="TreeView TreeView--user-actions">
-		<h3 class="Treeview__heading">Menu</h3>
+	<div class="AuthUserMenu">
+		<h3 class="AuthUserMenu__heading">Menu</h3>
 		<ul>
-			<li class="Treeview__item">
-				<div class="Treeview__title u--posRelative">Dashboard</div>
+			<li class="AuthUserMenu__item">
+				<div class="AuthUserMenu__title u--posRelative">Dashboard</div>
 				<ul>
-					<li class="Treeview__action"><a class="u--linkClean u--block" href="/profile/my-items">Mijn spullen</a></li>
-					<li class="Treeview__action"><a class="u--linkClean u--block" href="/profile/details">Gegevens</a></li>
+					<li class="AuthUserMenu__action"><a class="u--linkClean u--block" href="/profile/my-items">Mijn spullen</a></li>
+					<li class="AuthUserMenu__action"><a class="u--linkClean u--block" href="/profile/details">Gegevens</a></li>
 				</ul>
 			</li>
-			<li class="Treeview__item">
-				<div class="Treeview__title u--posRelative">Transacties</div>
+			<li class="AuthUserMenu__item">
+				<div class="AuthUserMenu__title u--posRelative">Transacties</div>
 				<ul>
-					<li class="Treeview__action"><a class="u--linkClean u--block" href="/transactions/ongoing">Lopend</a></li>
-					<li class="Treeview__action"><a class="u--linkClean u--block" href="/transactions/history">Geschiedenis</a></li>
+					<li class="AuthUserMenu__action"><a class="u--linkClean u--block" href="/transactions/ongoing">Lopend</a></li>
+					<li class="AuthUserMenu__action"><a class="u--linkClean u--block" href="/transactions/history">Geschiedenis</a></li>
 				</ul>
 			</li>
-			<li class="Treeview__item">
-				<div class="Treeview__title u--posRelative">Verzoeken</div>
+			<li class="AuthUserMenu__item">
+				<div class="AuthUserMenu__title u--posRelative">Verzoeken</div>
 				<ul>
-					<li class="Treeview__action"><a class="u--linkClean u--block" href="/requests/incoming">Inkomend</a></li>
-					<li class="Treeview__action"><a class="u--linkClean u--block" href="/requests/outgoing">Uitgaand</a></li>
+					<li class="AuthUserMenu__action"><a class="u--linkClean u--block" href="/requests/incoming">Inkomend</a></li>
+					<li class="AuthUserMenu__action"><a class="u--linkClean u--block" href="/requests/outgoing">Uitgaand</a></li>
 				</ul>
 			</li>
 		</ul>
 	</div>
-</v-card>
 </template>
 <script>
 	export default {
@@ -89,8 +111,8 @@
 				var $this = $(this);
         // if the current path is like this link, make it active
         if($this.attr('href').indexOf(current) !== -1){
-        	jQuery($this).parents('.Treeview__action').addClass('isActive');
-        	jQuery($this).parents('.Treeview__action').parents('ul').siblings('.Treeview__title').addClass('isActive');
+        	jQuery($this).parents('.AuthUserMenu__action').addClass('isActive');
+        	jQuery($this).parents('.AuthUserMenu__action').parents('ul').siblings('.AuthUserMenu_title').addClass('isActive');
         }
     })
 			
