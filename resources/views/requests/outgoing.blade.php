@@ -1,6 +1,10 @@
 @extends('layouts.auth_area')
 
 @section('auth_content')
+<div class="Subhead u--mb-32">
+	<h2 class="Subhead__heading">Uitgaande verzoeken</h2>
+	<span></span>
+</div>
 @if (count($requests) > 0)
 <div class="RequestsTable">
 	<div class="RequestsTable__header u--flex u--notMobile">

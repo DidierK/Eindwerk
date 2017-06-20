@@ -1,14 +1,11 @@
 @extends('layouts.auth_area')
 
 @section('auth_content')
-<v-header class="Header Header--page">
-	<v-container class="Container u--flex u--flexJustifyContentSpaceBetween u--flexWrap u--flexAlignItemsCenter" v-cloak>
-		<h3 class="Header__title u--noMargin">Uitgaande Verzoeken</h3>
-	</v-container>
-</v-header>
-<v-container class="Container" v-cloak>
-	<v-card class="Card">
-	<p><p>Je hebt nog geen transacties gedaan.</p>
-	</v-card>
+<v-container class="Container">
+<div class="Subhead u--mb-32">
+	<h2 class="Subhead__heading">Lopende transacties</h2>
+	<span></span>
+</div>
+	<p>Je hebt nog geen transacties gedaan.</p>
 </v-container>
 @endsection

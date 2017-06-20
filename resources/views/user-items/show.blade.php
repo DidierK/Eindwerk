@@ -3,12 +3,17 @@
 @section('content')
 <v-content>
     <v-container class="Container">
+        <div class="Subhead">
+            <h2 class="Subhead__heading">{{ $user_item_user->name }}</h2>
+            <span></span>
+        </div>
+
         <v-user-item-details class="UserItemDetails u--flex u--flexWrap">
             <div class="Col-sm-1-2">
                 <v-img class="UserItemDetails__thumbnail" src="{{ asset($user_item_user->thumbnail) }}"></v-img>
             </div>
             <div class="Col-sm-1-2">
-                <h1 class="u--alignSelfCenter">{{ $user_item_user->name }}</h1>
+                <h2 class="u--alignSelfCenter">Specificaties</h2>
                 <div class="UserItemDetails__user-info">
                     <a class="UserItemDetails__user-name u--linkClean" href="{{ url('/user/' . $user_item_user->user_id) }}">{{ $user_item_user->user_name }}</a>
                     <div class="u--mr-8 u--floatLeft">

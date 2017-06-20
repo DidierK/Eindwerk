@@ -45,6 +45,14 @@
 		}
 	}
 
+	.RequestsTable {
+		border: 1px solid #DDD;
+		border-radius: 2px;
+		background-color: #FFF;
+		min-height: 250px;
+		height: 250px;
+	}
+
 	.RequestsTable__row {
 		position: relative;
 	}
@@ -52,7 +60,7 @@
 	.RequestsTable__row .Request__actions {
 		display: flex;
 		position: absolute;
-		right: 0;
+		right: 32px;
 	}
 
 	@media (max-width: 768px){
@@ -68,16 +76,26 @@
 		.RequestsTable__row {
 			display: flex;
 			align-items: center;
+			padding: 16px 32px !important;
 		}	
+	}
+
+	.RequestsTable__header {
+		background-color: #f3f5f8;
+		padding: 32px;
 	}
 
 	.RequestsTable__header, 
 	.RequestsTable__row {
+
 		border-bottom: 1px solid #DDD;
 	}
 
 	.RequestsTable .TableHeader__title {
-		font-weight: 500;
+		color: #404849;
+		font-size: 12px;
+		font-weight: 700;
+		text-transform: uppercase;
 	}
 
 	.RequestsTable .UserItemImage {

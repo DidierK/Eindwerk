@@ -3,7 +3,8 @@
 @section('auth_content')
 <div>
   <div class="Subhead">
-    <h2 clas="Subhead__heading">Algemene informatie</h2>
+    <h2 class="Subhead__heading">Algemene informatie</h2>
+    <span></span>
   </div>
   @if ($errors->any())
   <div class="Errors">
@@ -63,7 +64,8 @@
                </div>
              </v-form>
              <div class="Subhead Subhead--spacious">
-              <h2 clas="Subhead__heading">Account instellingen</h2>
+              <h2 class="Subhead__heading">Account instellingen</h2>
+              <span></span>
             </div>
             <p>Indien u geen items meer wilt lenen of verlenen kan u uw account hier verwijderen.</p>
             <v-form class="Form Form--settings u--mt-8" action="{{ url('user/' . Auth::id()) }}" method="post">

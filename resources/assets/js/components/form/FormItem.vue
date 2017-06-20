@@ -1,7 +1,7 @@
 <style>
     .FormItem {
         box-sizing: border-box;
-        margin: 16px 0;
+        margin: 16px 0 24px;
     }
 
     .FormItem > input,
@@ -22,7 +22,11 @@
     }
 
     .FormItem__label p {
+        color: #404e61;
+        font-weight: 600;
+        font-size: 14px;
         margin-bottom: .5em;
+        text-transform: uppercase;
     }
 </style>
 <template>

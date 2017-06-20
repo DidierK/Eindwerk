@@ -1,6 +1,10 @@
 @extends('layouts.auth_area')
 
 @section('auth_content')
+<div class="Subhead u--mb-32">
+	<h2 class="Subhead__heading">Inkomende verzoeken</h2>
+	<span></span>
+</div>
 @if (count($requests) > 0)
 <div class="RequestsTable">
 	<div class="RequestsTable__header u--flex u--notMobile">
@@ -64,16 +68,16 @@
 		</div>
 		@if($request->status == 'Afwachten')
 		<div class="Request__actions">
-		<v-form action="{{ url('request/' . $request->request_id . '/accept') }}" method="post" class="u--mr-8">
-			<input type="hidden" name="_method" value="PUT">
-			<input type="hidden" name="_token" value="{{ csrf_token() }}">
-			<v-button class="Button Button--success Button--s u--linkClean">&#10003;</v-button>
-		</v-form>
-		<v-form action="{{ url('request/' . $request->request_id) }}" method="post">
-			<input type="hidden" name="_method" value="DELETE">
-			<input type="hidden" name="_token" value="{{ csrf_token() }}">
-			<v-button class="Button Button--danger Button--s u--linkClean">&#10005;</v-button>
-		</v-form>
+			<v-form action="{{ url('request/' . $request->request_id . '/accept') }}" method="post" class="u--mr-8">
+				<input type="hidden" name="_method" value="PUT">
+				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+				<v-button class="Button Button--success Button--s u--linkClean">&#10003;</v-button>
+			</v-form>
+			<v-form action="{{ url('request/' . $request->request_id) }}" method="post">
+				<input type="hidden" name="_method" value="DELETE">
+				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+				<v-button class="Button Button--danger Button--s u--linkClean">&#10005;</v-button>
+			</v-form>
 		</div>
 		@endif
 	</div>

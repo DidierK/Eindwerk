@@ -4,9 +4,12 @@
 <!-- Content -->
 <v-content>
 	<v-container class="Container" v-cloak>
-		<v-header class="PageHeader">
-			<h1 class="PageHeader__title">Aanbod voor {{ $item_name }}</h1>
-		</v-header>
+	
+		<div class="Subhead">
+			<h2 class="Subhead__heading">Aanbod voor {{ $item_name }}</h2>
+			<span></span>
+		</div>
+
 
 		<!-- Sidebar -->
 		<v-sidebar class="Sidebar Sidebar--left u--floatRight u--sizeFull">

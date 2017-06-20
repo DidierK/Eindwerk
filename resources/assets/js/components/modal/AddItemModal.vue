@@ -13,8 +13,8 @@
 </style>
 <template>
 	<v-modal class="AddItemModal">
-		<div class="Subhead">
-			<h2 class="Subhead__heading">Voeg een product toe</h2>
+		<div class="Subhead u--mb-32">
+			<h2 class="Subhead__heading">ITEM TOEVOEGEN</h2>
 			<span></span>
 		</div>
 		<slot></slot>
