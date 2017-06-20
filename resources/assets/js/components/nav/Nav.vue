@@ -3,19 +3,6 @@
 		height: 52px;
 	}
 
-	.Nav--main > ul > li:first-child button::after {
-		content: '';
-		display: inline-block;
-		width: 0;
-		height: 0;
-		border: transparent solid 6px;
-		border-top-width: 6px;
-		border-bottom-width: 0;
-		border-top-color: white;
-		transition: all .25s;
-		margin-left: 10px;
-	}
-
 	.GlobalNav__item {
 		padding: 0 16px;
 	}
@@ -34,6 +21,20 @@
 		font-weight: 600;
 		text-transform: uppercase;
 		transition: .15s ease-out;
+	}
+
+	.GlobalNav__item:first-child button::after {
+		content: '';
+		display: inline-block;
+		width: 0;
+		height: 0;
+		border: transparent solid 6px;
+		border-radius: 2px;
+		border-top-width: 6px;
+		border-bottom-width: 0;
+		border-top-color: #404849;
+		transition: all .25s;
+		margin-left: 10px;
 	}
 
 	.MobileNavMenu {

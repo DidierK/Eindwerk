@@ -1,10 +1,4 @@
 <style>
-	.Header {
-		border: 0;
-		border-radius: 0;
-		margin-bottom: 0;
-	}
-
 	.MainHeader {
 		background-color: #FFF;
 		border-bottom: 1px solid #DDD;
@@ -19,6 +13,12 @@
 	.MainHeader.u--posFixed ~ .main {
 		top: 70px;
 		margin-bottom: 70px;
+	}
+
+	.Header {
+		border: 0;
+		border-radius: 0;
+		margin-bottom: 0;
 	}
 
 	.Header--logged-out {
