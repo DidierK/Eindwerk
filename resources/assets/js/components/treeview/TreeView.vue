@@ -83,6 +83,10 @@
 
 	@media (max-width: 768px){
 
+		.AuthUserMenu ~ .Content {
+			padding-top: 87px;
+		}
+
 		.AuthUserMenu li {
 			text-align: center;
 		}
