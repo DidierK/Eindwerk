@@ -1,13 +1,13 @@
 <style>
 
 	.Button--primary {
-		border: 0;
-		border-radius: 2px;
-		padding: 12px 16px;
 		background-color: #40484f;
 		color: #FFF;
+		border: 0;
+		border-radius: 2px;
 		font-size: 12px;
 		font-weight: 600;
+		padding: 12px 16px;
 		text-transform: uppercase;
 		transition: .3s;
 	}
@@ -44,11 +44,6 @@
 		font-size: 14px;
 		font-weight: 500;
 		padding: 12px 16px;
-	}
-
-	.Button--default:hover {
-		background-color: #22A8CA;
-
 	}
 
 	.Button--small {
@@ -92,19 +87,20 @@
 	}
 
 	.Button--danger {
-		border: 1px solid #900000;
-		border-radius: 5px;
+		background: #FF515F;
 		color: #FFF;
-		text-shadow: 0 -1px 1px #FF515F;
-		background: #CC2835;
-		background: linear-gradient(to bottom, #FF515F 0%,#D63E4A 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+		border: 0;
+		border-radius: 2px;
+		font-size: 12px;
+		font-weight: 600;
+		padding: 12px 16px;
+		text-transform: uppercase;
+		transition: .3s;
 	}
 
 	.Button--danger:hover {
-		background: linear-gradient(to bottom, #D63E4A 0%,#900000 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-		text-shadow: none;
+		    background: #b71421;
+		color: #FF515F;
 	}
 
 	.Button--success {

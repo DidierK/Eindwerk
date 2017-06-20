@@ -71,7 +71,7 @@
             <v-form class="Form Form--settings u--mt-8" action="{{ url('user/' . Auth::id()) }}" method="post">
               <input type="hidden" name="_method" value="DELETE">
               <input type="hidden" name="_token" value="{{ csrf_token() }}">
-              <v-button class="Button Button--default Button--danger">Account verwijderen</v-button>
+              <v-button class="Button Button--danger">Account verwijderen</v-button>
             </v-form>
 
           </div>  

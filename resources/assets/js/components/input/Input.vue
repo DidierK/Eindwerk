@@ -48,7 +48,7 @@
     .Input--select-default,
     .Input--text-default,
     .Input--textarea-default {
-        background-color: #fafbfc;
+        background-color: #FFF;
         border: 1px solid #DDD;
         border-radius: 1px;
         box-shadow: inset 0 1px 2px rgba(27,31,35,0.075);
