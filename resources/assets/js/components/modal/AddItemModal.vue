@@ -14,7 +14,8 @@
 <template>
 	<v-modal class="AddItemModal">
 		<div class="Subhead">
-			<h2 clas="Subhead__heading">Voeg een product toe</h2>
+			<h2 class="Subhead__heading">Voeg een product toe</h2>
+			<span></span>
 		</div>
 		<slot></slot>
 	</v-modal>
