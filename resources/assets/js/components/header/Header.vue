@@ -5,6 +5,22 @@
 		margin-bottom: 0;
 	}
 
+	.MainHeader {
+		background-color: #FFF;
+		border-bottom: 1px solid #DDD;
+		box-sizing: border-box;
+		min-height: 70px; 
+		padding: 0 32px;
+		height: 70px;
+		top: 0;	
+		z-index: 1;
+	}
+
+	.MainHeader.u--posFixed ~ .main {
+		top: 70px;
+		margin-bottom: 70px;
+	}
+
 	.Header--logged-out {
 		text-align: center;
 	}
@@ -30,10 +46,6 @@
 		flex-basis: 480px;
 	}
 
-	.Header--main.u--posFixed ~ .main {
-		top: 52px;
-		margin-bottom: 52px;
-	}
 
 	.Header--main button,
 	.Header--main a {
@@ -44,6 +56,7 @@
 
 	.Header--bg-transparent {
 		background-color: transparent;
+		border: 0;
 	}
 
 	.Header--page {

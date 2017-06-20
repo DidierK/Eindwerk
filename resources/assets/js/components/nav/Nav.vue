@@ -16,6 +16,26 @@
 		margin-left: 10px;
 	}
 
+	.GlobalNav__item {
+		padding: 0 16px;
+	}
+
+	.GlobalNav__item:hover > * {
+		color: #33CBFF;
+	}
+
+	.GlobalNav__item:last-child {
+		padding-right: 0;
+	}
+
+	.GlobalNav__item > * {
+		color: #404849;
+		font-size: 12px;
+		font-weight: 600;
+		text-transform: uppercase;
+		transition: .15s ease-out;
+	}
+
 	.MobileNavMenu {
 		background-color: #10A4FF;
 		position: absolute;

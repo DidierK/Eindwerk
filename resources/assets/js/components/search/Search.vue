@@ -1,4 +1,21 @@
 <style>
+    .MainHeaderSearch input {
+        height: 42px;
+        border-bottom: 1px solid #DDD;
+        border-radius: 0;
+    }
+
+    .MainHeaderSearch__button {
+        background-color: transparent;
+        border: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        line-height: 0;
+        width: 42px;
+        height: 42px;
+    }
+
     .Search__field {
         border-radius: 2px;
         box-sizing: border-box;
@@ -58,21 +75,6 @@
 
     .Search--header {
         width: 320px;
-    }
-
-    .Search__button--header {
-        background-color: #C5DFE6;
-        border-top-right-radius: 2px;
-        border-bottom-right-radius: 2px;
-        width: 32px;
-    }
-
-    .Search__button--header,
-    .Search__button--sub-nav {
-        position: absolute;
-        top: 0;
-        right: 0;
-        line-height: 0;
     }
 
     .Search__field--header,

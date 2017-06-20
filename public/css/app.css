@@ -2413,7 +2413,7 @@ html, body {
 }
 
 body {
-  background-color: #FFF;
+  background-color: #F9FaFa;
   margin: 0;
 }
 
@@ -2744,7 +2744,7 @@ input:focus {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 1.6;
 }
@@ -2752,7 +2752,13 @@ body {
 input,
 textarea,
 button {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+p {
+  color: #404849;
 }
 
 h1,
@@ -2763,13 +2769,11 @@ p {
 }
 
 h2 {
-  color: #000;
   font-size: 18px;
   font-weight: 500;
 }
 
 h3 {
-  color: #000;
   font-size: 16px;
   font-weight: 500;
 }

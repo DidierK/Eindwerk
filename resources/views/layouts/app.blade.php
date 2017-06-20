@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" href="{{ URL::asset('images/favicon.png') }}" />
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">

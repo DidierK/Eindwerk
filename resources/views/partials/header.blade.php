@@ -1,15 +1,15 @@
 <!-- Main header -->
-<v-header class="Header Header--main @if(Route::getCurrentRoute()->uri() == '/'){{'Header--bg-transparent'}}@else {{ 'u--posFixed' }} @endif u--flex u--flexAlignItemsCenter u--flexJustifyContentSpaceBetween u--sizeFull" v-cloak>
+<v-header class="MainHeader @if(Route::getCurrentRoute()->uri() == '/'){{'Header--bg-transparent'}}@else {{ 'u--posFixed' }} @endif u--flex u--flexAlignItemsCenter u--flexJustifyContentSpaceBetween u--sizeFull" v-cloak>
 
     <!-- Logo -->
-    <v-logo class="Logo Logo--header-main u--block"></v-logo>
+    <v-logo class="Logo Logo--header-main u--block u--mr-16"></v-logo>
 
     <!-- Header search -->
     @if (Route::getCurrentRoute()->uri() != '/')
-    <v-search class="Search Search--header u--notMobile u--marginRightAuto u--posRelative">
+    <v-search class="MainHeaderSearch Search--header u--notMobile u--marginRightAuto u--posRelative">
         <v-form action="{{ url('items/search') }}" autocomplete="off">
             <v-autocomplete-header></v-autocomplete-header>
-            <v-button class="Search__button Search__button--header">
+            <v-button class="MainHeaderSearch__button">
                 <svg height="18px" version="1.1" viewBox="0 0 18 18" width="18px" x="0px" y="0px" class="Icon Icon--search">
                     <path clip-rule="evenodd" d="M16.707,15.293l-1.414,1.414l-4.825-4.825C9.487,12.58,8.295,13,7,13c-3.313,0-6-2.687-6-6s2.687-6,6-6s6,2.687,6,6c0,1.295-0.42,2.487-1.118,3.468L16.707,15.293z M7,3C4.791,3,3,4.791,3,7s1.791,4,4,4s4-1.791,4-4S9.209,3,7,3z" fill-rule="evenodd">        
                     </path>
@@ -31,19 +31,19 @@
 
     <!-- Desktop nav --> 
     <div class="u--notMobile">
-        <v-nav class="Nav Nav--main" v-cloak>
-            <v-ul class="List u--flex">
-                <v-li class="List__item u--flex u--flexAlignItemsCenter u--paddingRight16px u--paddingLeft16px">
+        <v-nav class="GlobalNav" v-cloak>
+            <v-ul class="u--flex u--pn">
+                <v-li class="GlobalNav__item u--flex u--flexAlignItemsCenter">
                     <v-button class="Button Button--borderless Button--transparent" link="{{ url('categories')}}" v-popover:popover--categories v-on:click="getCategories">Categorieën</v-button>
                 </v-li>
                 @if (Auth::check())
-                <v-li class="List__item List__item--user u--flex u--flexAlignItemsCenter u--paddingRight16px u--paddingLeft16px u--posRelative">
+                <v-li class="GlobalNav__item u--flex u--flexAlignItemsCenter u--posRelative">
                     <v-button class="Button Button--borderless Button--no-padding Button--transparent" v-popover:popover--user-actions>
                         <v-avatar class="Avatar Avatar--default" src="{{ Auth::user()->avatar }}&width=32&height=32"></v-avatar>
                     </v-button>
                 </v-li>
                 @else
-                <v-li class="List__item u--flex u--flexAlignItemsCenter u--paddingRight16px u--paddingLeft16px"><v-link class="Link u--linkClean" link="{{ url('/login') }}">Aanmelden</v-link></v-li>
+                <v-li class="GlobalNav__item u--flex u--flexAlignItemsCenter"><v-link class="Link u--linkClean" link="{{ url('/login') }}">Aanmelden</v-link></v-li>
                 @endif
             </v-ul>
 
