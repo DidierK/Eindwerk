@@ -43,7 +43,8 @@
     </div>
     <div class="Col-sm-3-4">
         <div class="Subhead">
-            <h2 clas="Subhead__heading">Alle spullen</h2>
+            <h2 class="Subhead__heading">Alle spullen</h2>
+            <span></span>
         </div>
         <ul class="u--pn">
             <div class="UserProfile Row-sm">

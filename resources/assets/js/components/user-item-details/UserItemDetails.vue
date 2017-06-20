@@ -4,6 +4,11 @@
 		margin-bottom: 1em;
 	}
 
+	.UserItemDetails h2 {
+		text-transform: uppercase;
+    	font-weight: 600;
+	}
+
 	.UserItemDetails__price em {
 		font-size: 24px;
 		font-style: normal;

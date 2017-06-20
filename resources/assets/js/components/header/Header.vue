@@ -4,10 +4,16 @@
 		border-bottom: 1px solid #DDD;
 		box-sizing: border-box;
 		min-height: 70px; 
-		padding: 0 32px;
+		padding: 0 16px;
 		height: 70px;
 		top: 0;	
 		z-index: 1;
+	}
+
+	.HamburgerIcon {
+		padding: 0;
+		width: 18px;
+		height: 18px;
 	}
 
 	.MainHeader.u--posFixed ~ .main {
@@ -105,6 +111,12 @@
 	.PageHeader__title {
 		font-size: 16px;
 		margin-bottom: 1em;
+	}
+
+	@media screen and (min-width: 768px) {
+		.MainHeader {
+			padding: 0 32px;
+		}
 	}
 
 </style>

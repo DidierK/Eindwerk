@@ -13,7 +13,6 @@
                 <v-img class="UserItemDetails__thumbnail" src="{{ asset($user_item_user->thumbnail) }}"></v-img>
             </div>
             <div class="Col-sm-1-2">
-                <h2 class="u--alignSelfCenter">Specificaties</h2>
                 <div class="UserItemDetails__user-info">
                     <a class="UserItemDetails__user-name u--linkClean" href="{{ url('/user/' . $user_item_user->user_id) }}">{{ $user_item_user->user_name }}</a>
                     <div class="u--mr-8 u--floatLeft">

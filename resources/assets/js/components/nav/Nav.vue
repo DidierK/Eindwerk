@@ -51,15 +51,27 @@
 		top: 0;
 		text-align: center;
 		width: 100%;
+		z-index: 1;
+	}
+
+	.MobileNavMenu .HamburgerIcon {
+		position: relative;
+		top: -3px;
 	}
 
 	.MobileNavMenu__header {
-		height: 52px;
-		min-height: 52px;
+		height: 70px;
+		min-height: 70px;
+		padding: 0 16px;
+	}
+
+	.MobileNavMenu a {
+		color: #FFF;
 	}
 
 	.MobileNavMenu__search .Search__button {
-		top: 52px;
+		position: absolute;
+		top: 70px;
 		right: 16px;
 	}
 
@@ -72,7 +84,7 @@
 	}
 
 	.MobileNavMenu li > a:hover {
-		background-color: #5DABFB;
+		background-color: rgba(255,255,255,.1);
 	}
 
 </style>

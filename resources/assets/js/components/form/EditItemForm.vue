@@ -45,8 +45,8 @@
 		</v-form-item>
 
 		<v-form-item class="FormItem u--flex u--flexAlignItemsCenter">
-			<input type="submit" class="Button Button--default Button--white u--mr-16" value="Bewerken" />
-			<v-spinner class="Spinner--add-item-submit" v-if="showSpinner"></v-spinner>
+			<input type="submit" class="Button Button--primary" value="Bewerken" />
+			<v-spinner class="Spinner--add-item-submit u--ml-16" v-if="showSpinner"></v-spinner>
 		</v-form-item>
 	</form>
 </template>
