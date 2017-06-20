@@ -34,8 +34,20 @@
 	}
 
 	.Subhead {
-		border-bottom: 1px solid #DDD;
 		margin-bottom: 16px;
+	}
+
+	.Subhead span {
+		background-color: #33cbff;
+		display: block;
+		width: 80px;
+		height: 4px;
+	}
+
+	.Subhead__heading {
+		font-size: 21px;
+		font-weight: 600;
+		text-transform: uppercase;
 	}
 
 	.Subhead--spacious {

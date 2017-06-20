@@ -1,5 +1,21 @@
 <style>
 
+	.Button--primary {
+		border: 0;
+		border-radius: 2px;
+		padding: 12px 16px;
+		background-color: #40484f;
+		color: #FFF;
+		font-size: 12px;
+		font-weight: 600;
+		text-transform: uppercase;
+		transition: .3s;
+	}
+
+	.Button--primary:hover {
+		color: #33CBDD;
+	}
+
 	.Button:disabled {
 		opacity: .5;
 	}

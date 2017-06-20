@@ -1,11 +1,15 @@
 <style>
 
 	.CompleteProfile {
-		background-color: #EA4031;
+		background-color: #F76255;
 		border-radius: 2px;
 		color: #FFF;
 		margin-bottom: 16px;
 		padding: 16px;
+	}
+
+	.CompleteProfile p {
+		color: #FFF;
 	}
 
 	.UserItem > .Column {
