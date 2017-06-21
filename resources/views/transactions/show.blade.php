@@ -72,9 +72,11 @@
 			<div class="Col-md-1-2">
 				<h3 class="h3 u--mt-0">VERSTUUR EEN BERICHT</h3>
 				<p>Stuur een bericht naar de (ver)huurder om de ophaling/afhaling te regelen.</p>
-				<form>
+				<!-- Check if we have to add the owner id or the renter id here -->
+				<form action="{{ url('transaction/' . $user_id . '/sendMail') }}" method="post">
+				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<p class="FormItem u--mb-16">
-						<textarea class="Input Input--textarea-default u--sizeFull" placeholder="Stuur een bericht naar de verhuurder..."></textarea>
+						<textarea class="Input Input--textarea-default u--sizeFull" placeholder="Stuur een bericht naar de verhuurder..." name="message"></textarea>
 					</p>
 					<button class="Button Button--primary u--floatRight">Verzenden</button>
 				</form>

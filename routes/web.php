@@ -54,6 +54,7 @@ Route::get('/items/search', 'ItemController@searchItems');
 
 // Contact
 Route::get('contact', 'ContactController@index');
+Route::post('contact', 'ContactController@sendMail');
 
 // Contact
 Route::get('disclaimer', function(){
@@ -88,6 +89,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('transaction', 'TransactionController');
 	Route::get('transactions/ongoing', 'TransactionController@showOnGoingTransactions');
 	Route::get('transactions/history', 'TransactionController@showTransactionsHistory');
+	Route::post('transaction/{user_id}/sendMail', 'TransactionController@sendMail');
 
 
 });

@@ -1,13 +1,13 @@
- <v-footer class="Footer Footer--main u--flex u--flexJustifyContentSpaceBetween u--posRelative" v-cloak>
+ <v-footer class="Footer Footer--main u--posRelative">
+ 	<v-container class="Container u--flex u--flexJustifyContentSpaceBetween">
+ 		<div>
+ 			<div class="copyright">Copyright © 2017 TravelShare All Rights Reserved</div>
+ 		</div>
 
-    <div class="facebook"><a target="blank" href="https://www.facebook.com/TravelShareMechelen/"></a></div>
-     <div class="copyright">Copyright © 2017 <br> TravelShare All Rights Reserved</div>
-     <!--
- 	<v-ul class="List--footer-nav u--flex">
- 		<v-li v-cloak><a href="#" class="u--linkClean">Gebruikersvoorwaarden</a></v-li>
- 		<v-li v-cloak><a href="#" class="u--linkClean">Home</a></v-li>
- 		<v-li v-cloak><a href="#" class="u--linkClean">About</a></v-li>
- 		<v-li v-cloak><a href="#" class="u--linkClean">Contact</a></v-li>
- 	</v-ul>
- 	-->
+ 		<v-ul class="List--footer-nav u--flex u--flexWrap">
+ 			<v-li><a href="{{ url('disclaimer') }}" class="u--linkClean">Gebruikersvoorwaarden</a></v-li>
+ 			<v-li><a href="{{ url('/') }}" class="u--linkClean">Home</a></v-li>
+ 			<v-li><a href="{{ url('contact') }}" class="u--linkClean">Contact</a></v-li>
+ 		</v-ul>
+ 	</v-container>
  </v-footer>

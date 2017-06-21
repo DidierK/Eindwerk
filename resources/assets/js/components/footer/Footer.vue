@@ -6,15 +6,12 @@
  .Footer--main {
      background-color: #10a4ff;
      z-index: 1;
-     display: flex;
-     flex-direction: column;
      margin-top: 160px;
+     padding: 16px;
  }
 
  .copyright {
     color: #FFF;
-    margin: 30px auto;
-    text-align:center;
 }
 
 .facebook {

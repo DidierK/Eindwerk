@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\transactionMessage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\Transaction;
+use App\User;
 use Auth;
 use DateTime;
 
@@ -60,6 +63,12 @@ class TransactionController extends Controller {
         
     }
 
+    public function sendMail(Request $request, $id) {
+        Mail::to(User::find($id)->email)->send(new transactionMessage($request->message));
+
+        return back();
+    }
+
     public function showTransactionsHistory() {
 
         return view('transactions.history');
@@ -112,16 +121,26 @@ class TransactionController extends Controller {
         $total_price = $transaction->price * $total_days;
 
         $owned = false;
+        $user_id = '';
 
         if(count(Transaction::find($id)->where('owner_id', Auth::id())->get()) > 0) {
             $owned = true;
+
+            $user_id = Transaction::where('transactions.id', $id)
+            ->join("users", "transactions.renter_id", "users.id")
+            ->first(['users.id'])->id;
+        } else {
+            $user_id = Transaction::where('transactions.id', $id)
+            ->join("users", "transactions.owner_id", "users.id")
+            ->first(['users.id'])->id;
         }
 
         return view("transactions.show", [
             "transaction" => $transaction,
             "total_days" => $total_days,
             "total_price" => $total_price,
-            "owned" => $owned
+            "owned" => $owned,
+            "user_id" => $user_id
             ]
             );
     }

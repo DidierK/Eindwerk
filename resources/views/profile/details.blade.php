@@ -26,7 +26,6 @@
                   <v-form-item class="FormItem EditProfileAvatar u--mt-0">
                     <v-input type="hidden" label="Profielfoto"></v-input>
                     <v-avatar class="Avatar Avatar--default" src="{{ Auth::user()->avatar }}&width=400&height=400"></v-avatar>
-                    <input type="file" class="u--sizeFull u--mt-16 u--textCenter" v-on:change="add">
                   </v-form-item>
                   <div class="Column--left">
                     <v-form-item class="FormItem">
@@ -38,7 +37,7 @@
                    </v-form-item>
 
                    <v-form-item class="FormItem">
-                     <v-input type="text" value="@if(!empty($user_details->tel)){{$user_details->tel}}@endif" class="Input Input--text-default" label="Telefoonnummer (Optioneel)" placeholder="Bv. (+32) 123456789" name="tel"></v-input>
+                     <v-input type="text" value="@if(!empty($user_details->tel)){{$user_details->tel}}@endif" class="Input Input--text-default" label="Telefoonnummer (Optioneel)" placeholder="Bv. +32 123 456 789" name="tel"></v-input>
                    </v-form-item>
 
 
