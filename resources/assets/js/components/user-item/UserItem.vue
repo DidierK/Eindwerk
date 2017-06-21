@@ -1,5 +1,67 @@
 <style>
 
+	.TransactionSummary {
+		background-color: #FFF;
+		border: 1px solid #DDD;
+		border-radius: 2px;
+	}
+
+	.TransactionSummary__heading,
+	.TransactionSummary__content {
+		padding: 16px;
+	}
+
+	.TransactionSummary__heading {
+		background-color: #F3F5F8;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.TransactionSummary__item-thumbnail {
+		border-radius: 2px;
+		width: 42px;
+		height: 42px;
+	}
+
+	.TransactionSummary__item-name {
+		font-size: 14px;
+		margin: 0;
+		text-transform: uppercase;
+	}
+
+	.TransactionSummary__small-title {
+		color: #B7B7B7;
+		display: block;
+	}
+
+	@media (max-width: 768px) {
+		.TransactionSummary__date-container {
+			margin-top: 8px;
+		}
+	}
+
+	.TransactionSummary__price-container,
+	.TransactionSummary__day-amount-container,
+	.TransactionSummary__total-container {
+		display: flex;
+		justify-content: space-between;
+		padding: 8px 0;
+	}
+
+	.TransactionSummary__content .TransactionSummary__small-title {
+		color: #404849;
+		margin: 0;
+	}
+
+	.TransactionSummary__total-container {
+		border-top: 1px solid #40484f;
+	}
+
+	.TransactionSummary__total-container .TransactionSummary__small-title,
+	.TransactionSummary__total-price {
+		font-weight: 700;
+	}
+
 	.CompleteProfile {
 		background-color: #F76255;
 		border-radius: 2px;
@@ -85,7 +147,7 @@
 	}
 
 	.RequestsTable__header {
-		background-color: #f3f5f8;
+		background-color: #F3F5F8;
 		padding: 32px;
 	}
 

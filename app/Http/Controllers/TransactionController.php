@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Transaction;
 use Auth;
+use DateTime;
 
 class TransactionController extends Controller {
     /**
@@ -19,7 +20,7 @@ class TransactionController extends Controller {
 
     public function showOnGoingTransactions() {
         // Calculate total days and total price here
-        
+
         $transactions_owned = Transaction::join('users', 'transactions.owner_id', '=', 'users.id')->get();
 
         $transactions_rented = Transaction::join('users', 'transactions.renter_id', '=', 'users.id')
@@ -32,7 +33,7 @@ class TransactionController extends Controller {
             'transactions.status',
             'users.name as user_name',
             'items.name  as item_name'
-              ]);
+            ]);
         
 
         return view('transactions.ongoing', ['transactions_rented' => $transactions_rented]);
@@ -70,7 +71,32 @@ class TransactionController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        var_dump("LOL");
+        $transaction = Transaction::find($id)
+        ->join("users", "transactions.owner_id", "users.id")
+        ->join("user_items", "transactions.user_item_id", "user_items.id")
+        ->join("items", "user_items.item_id", "items.id")
+        ->first([
+            "transactions.start_date",
+            "transactions.end_date",
+            "users.name as user_name",
+            "user_items.price",
+            "user_items.thumbnail",
+            "items.name as item_name",
+            ]);
+
+        $start_date = new DateTime($transaction->start_date);
+        $end_date = new DateTime($transaction->end_date);
+
+        $total_days = $start_date->diff($end_date)->format("%a");
+
+        $total_price = $transaction->price * $total_days;
+
+        return view("transactions.show", [
+            "transaction" => $transaction,
+            "total_days" => $total_days,
+            "total_price" => $total_price
+            ]
+            );
     }
 
     /**
