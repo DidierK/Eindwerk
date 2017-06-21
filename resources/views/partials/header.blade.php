@@ -2,7 +2,15 @@
 <v-header class="MainHeader @if(Route::getCurrentRoute()->uri() == '/'){{'Header--bg-transparent'}}@else {{ 'u--posFixed' }} @endif u--flex u--flexAlignItemsCenter u--flexJustifyContentSpaceBetween u--sizeFull" v-cloak>
 
     <!-- Logo -->
-    <v-logo class="Logo Logo--header-main u--block u--mr-16"></v-logo>
+    @if(Route::getCurrentRoute()->uri() == '/')
+    <a href="/">
+        <img src="/images/logo-white.png" />
+    </a>
+    @else
+    <a href="/" class="u--mr-8">
+        <img src="/images/logo-default.png" />
+    </a>
+    @endif
 
     <!-- Header search -->
     @if (Route::getCurrentRoute()->uri() != '/')
