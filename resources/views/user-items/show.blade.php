@@ -60,8 +60,22 @@
                         <v-button class="Button Button--primary u--block u--sizeFull">Verzoek versturen</v-button>
                     </v-form-item>
                 </v-form>
-                <h3>Uitgeleend op</h3>
+                <h3>Uitgeleend van</h3>
+                @if(count($unavailable_dates) > 0)
+                @foreach($unavailable_dates as $unavailable_date)
+                @php
+                $lang = array();
+                $lang['en'] = ['january','februari','march','april','may','june','july','august','september','october','november','december'];
+                $lang['nl'] = ['januari','februari','maart','april','mei','juni','juli','augustus','september','oktober','november','december'];
+
+                $converted_start_date = date('d F Y',strtotime($unavailable_date->start_date));
+                $converted_end_date = date('d F Y',strtotime($unavailable_date->end_date));
+                @endphp
+                <p>@php echo ucfirst(str_replace($lang['en'], $lang['nl'], strtolower($converted_start_date))); @endphp tot @php echo ucfirst(str_replace($lang['en'], $lang['nl'], strtolower($converted_start_date))); @endphp</p>
+                @endforeach
+                @else
                 <p>Nog niet uitgeleend.</p>
+                @endif
                 @endif
                 <div class="Subhead Subhead--spacious">
                     <h2 clas="Subhead__heading">Meer informatie</h2>

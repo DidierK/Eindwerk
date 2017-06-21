@@ -7,6 +7,7 @@ use Auth;
 use Validator;
 use App\Category;
 use App\Item;
+use App\Transaction;
 use App\UserItem;
 use App\User;
 use DB;
@@ -144,7 +145,14 @@ class UserItemController extends Controller
 
         $owned = $this->owned($id);
 
-        return view('user-items.show', ['user_item_user' => $user_item_user, 'owned' => $owned]);
+        $unavailable_dates = Transaction::where('user_item_id', $id)->get(['start_date', 'end_date']);
+
+        return view('user-items.show', [
+            'user_item_user' => $user_item_user,
+            'owned' => $owned,
+            'unavailable_dates' => $unavailable_dates
+             ]
+             );
     }
 
     /**
