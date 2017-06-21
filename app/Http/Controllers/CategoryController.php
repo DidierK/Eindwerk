@@ -25,6 +25,7 @@ class CategoryController extends Controller {
         $items = DB::table('category_item')
         ->join('items', 'category_item.item_id', '=', 'items.id')
         ->where('category_item.category_id', $category_id)
+        ->orderBy('items.name', 'asc')
         ->get(['items.name', 'items.url']);
 
         // var_dump($items);
