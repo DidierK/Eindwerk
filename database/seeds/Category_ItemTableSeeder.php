@@ -15,44 +15,100 @@ class Category_ItemTableSeeder extends Seeder {
 
     	// Define which item belongs to which here (category/item names MUST exist)
     	$cat_items = [
-    	"Transport" => [
-    	"Dakkoffer",
-        "Tent (strand)",
-        "Tent (kamperen)"
-    	],
 
-    	"Wintersport" => [
-    	"Dakkoffer" 
-    	]
+        "Sport" => [
+        'Sneeuwlaarzen',
+    
+        ],
 
-    	];
+        "Avontuur" => [
+        'Sneeuwlaarzen',
+
+        ],
+
+        "Transport" => [
+        'Dakkoffer',
+    
+        ],
+
+        "Entertainment" => [
+        'Roeispanen',
+   
+        ],
+
+        "Baby" => [
+        'Draagdoek',
+     
+        ],
+
+        "Dieren" => [
+        'Bench',
+        ],
+
+        "Informatie" => [
+        'Wandel GPS',
+     
+        ],
+
+        "Electro" => [
+        'Bluetooth speaker',
+       
+        ],
+
+        "Voeding" => [
+        'Drinkbus',
+   
+        ],
+
+        "Veiligheid" => [
+        'Klim broekje',
+        'Skihelm',
+      
+        ],
+
+        "Kampeergerief" => [
+        'Drinkbus',
+    
+        ],
+
+        "Bagage" => [
+        'Reiskoffer',
+
+        ],
+
+        "Overnachting" => [
+        'Tent (kamperen)',
+   
+        ]
+
+        ];
 
         // TODO: Wrap this in a method?
 
     	// Step 1: Loop all categories in array
-    	foreach ($cat_items as $key => $value) {
+        foreach ($cat_items as $key => $value) {
 
     		// Step 2: Get category ID
-    		$category = DB::table('categories')->where('name', $key)->first(['id']);
-    		$cat_id = $category->id;
+          $category = DB::table('categories')->where('name', $key)->value('id');
+          $cat_id = $category;
 
     		// Step 3: Loop through all values in category
-    		foreach($value as $v) {
+          foreach($value as $v) {
 
     			// Step 4: Get item ID
-    			$item = DB::table('items')->where('name', $v)->first(['id']);
-    			$item_id = $item->id;
+             $item = DB::table('items')->where('name', $v)->value('id');
+             $item_id = $item;
 
     			// Step 5: For each item insert this category ID and its item ID
-    			DB::table('category_item')->insert([
-    				[
-    				'category_id' => $cat_id,
-    				'item_id' => $item_id
-    				]
-    				]);
-    		}
+             DB::table('category_item')->insert([
+                [
+                'category_id' => $cat_id,
+                'item_id' => $item_id
+                ]
+                ]);
+         }
     			// Step 6: Iterate for next category
-    	}
+     }
 
-    }
+ }
 }

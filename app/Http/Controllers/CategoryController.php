@@ -47,7 +47,7 @@ class CategoryController extends Controller {
         }
 
         // If no query string the query will remain the same
-        $categories = $query->get();
+        $categories = $query->orderBy('name', 'asc')->get();
 
         // For each record
         foreach ($categories as $category) {

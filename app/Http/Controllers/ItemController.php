@@ -46,7 +46,7 @@ public function getItems(Request $request) {
         $query->where($key, $value);
     }
 
-    $items = $query->take(5)->get();
+    $items = $query->get();
 
 // For each record
     foreach ($items as $item) {

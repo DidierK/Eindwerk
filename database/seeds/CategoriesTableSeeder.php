@@ -14,26 +14,30 @@ class CategoriesTableSeeder extends Seeder
     	DB::table('categories')->delete();
 
         $categories = [
-        [
-        "name" => "Transport",
-        ],
-        [
-        "name" => "Wintersport",
-        ],
-        [
-        "name" => "Avontuur",
-        ]
+        "Sport",  
+        "Avontuur",
+        "Transport",
+        "Entertainment",
+        "Baby",
+        "Dieren",
+        "Informatie",
+        "Electro",
+        "Voeding",
+        "Veiligheid",
+        "Kampeergerief",
+        "Bagage",
+        "Overnachting",
         ];
 
-        foreach ($categories as $key => $value) {
-            $value["url"] = $this->convertNameToUrl($value["name"]);    
+        foreach ($categories as $value) {
+            $url = $this->convertNameToUrl($value);    
 
             DB::table('categories')->insert([
-                    [
-                    'name' => $value['name'],
-                    'url' => $value['url']
-                    ]
-                    ]);           
+                [
+                'name' => $value,
+                'url' => $url
+                ]
+                ]);           
         }
 
     }

@@ -14,26 +14,88 @@ class ItemsTableSeeder extends Seeder
         DB::table('items')->delete();
 
         $items = [
-        [
-        "name" => "Dakkoffer",
-        ],
-        [
-        "name" => "Tent (strand)",
-        ],
-        [
-        "name" => "Tent (kamperen)",
-        ]
+        'Avontuur',
+        'Baby bed',
+        'Bagage zak',
+        'Bench',
+        'Bestek',
+        'Bluetooth speaker',
+        'Boek',
+        'Boeken',
+        'Buggy',
+        'Camping car',
+        'Caravan',
+        'Dakkoffer',
+        'Draagbaar zonnepaneel',
+        'Draagdoek',
+        'Draagrugzak',
+        'Drinkbus',
+        'Externe batterij (zonne energie)',
+        'Externe batterij',
+        'Fiets GPS',
+        'Fiets',
+        'Fietsenrek (auto)',
+        'Gamel',
+        'Gas vuurt',
+        'GPS',
+        'Gri gri (klimmen)',
+        'Gri gri',
+        'Kampeerbank',
+        'Kampeerstoel',
+        'Kano',
+        'Klim broekje',
+        'Klim koord',
+        'Koelbox',
+        'Koplamp',
+        'Kubb',
+        'Magnesiumstick',
+        'Mini BBQ',
+        'Musketon',
+        'Opblaasmatje',
+        'Papfles',
+        'Petanque',
+        'Reis spelletjes',
+        'Reisgidsen',
+        'Reiskoffer',
+        'Roeispanen',
+        'Rubber boot',
+        'Shelter (zijl)',
+        'Skibril',
+        'Skies',
+        'Skihelm',
+        'Slaapmatje',
+        'Sneeuwketting',
+        'Sneeuwkettingen',
+        'Sneeuwlaarzen',
+        'Snorkel',
+        'Snowboard',
+        'Stratenplan',
+        'Surfboard',
+        'Tent (kamperen)',
+        'Tent (strand)',
+        'Trekkersrugzak',
+        'Veldbed',
+        'Vislijn',
+        'Voeding',
+        'Volleyball net',
+        'Wandel GPS',
+        'Wandelstokken',
+        'Zaklamp',
+        'Zakmes',
+        'Zeker acht (klimmen)',
+        'Zwembad speeltjes',
+        'Zwemvliezen',
         ];
 
-        foreach ($items as $key => $value) {
-            $value["url"] = $this->convertNameToUrl($value["name"]);    
+        foreach ($items as $value) {
+            $url = $this->convertNameToUrl($value);    
 
             DB::table('items')->insert([
-                    [
-                    'name' => $value['name'],
-                    'url' => $value['url']
-                    ]
-                    ]);           
+                [
+                'name' => $value,
+                'url' => $url
+                ]
+                ]);           
         }
     }
 
