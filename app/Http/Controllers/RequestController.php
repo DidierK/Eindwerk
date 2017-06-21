@@ -74,7 +74,8 @@ class RequestController extends Controller
 
     public function hireItem($id) {
     
-        // 4) REDIRECT TO TRANSACTION DETAIL PAGE WITH FLASH MESSAGE
+        // TODO: REDIRECT TO TRANSACTION DETAIL PAGE WITH FLASH MESSAGE
+        // TODO: UPDATE 'UITGELEEND OP' 
         $request = RequestItem::find($id);
 
         $transaction_id = Transaction::create([

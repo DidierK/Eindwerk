@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Transaction;
+use Auth;
 
 class TransactionController extends Controller {
     /**
@@ -14,11 +16,30 @@ class TransactionController extends Controller {
         //
     }
 
+
     public function showOnGoingTransactions() {
-        return view('transactions.ongoing');
+        // Calculate total days and total price here
+        
+        $transactions_owned = Transaction::join('users', 'transactions.owner_id', '=', 'users.id')->get();
+
+        $transactions_rented = Transaction::join('users', 'transactions.renter_id', '=', 'users.id')
+        ->join('user_items', 'transactions.user_item_id', '=', 'user_items.id')
+        ->join('items', 'user_items.item_id', '=', 'items.id')
+        ->get([
+            'transactions.start_date',
+            'transactions.end_date',
+            'transactions.status',
+            'users.name',
+            'items.name'
+              ]);
+        
+
+        return view('transactions.ongoing', ['transactions_rented' => $transactions_rented]);
+        
     }
 
     public function showTransactionsHistory() {
+
         return view('transactions.history');
     }
 
