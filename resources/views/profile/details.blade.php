@@ -26,7 +26,7 @@
                   <v-form-item class="FormItem EditProfileAvatar u--mt-0">
                     <v-input type="hidden" label="Profielfoto"></v-input>
                     <v-avatar class="Avatar Avatar--default" src="{{ Auth::user()->avatar }}&width=400&height=400"></v-avatar>
-                    <input type="file" class="Button Button--default Button--white u--sizeFull u--mt-16 u--textCenter" v-on:change="add">
+                    <input type="file" class="u--sizeFull u--mt-16 u--textCenter" v-on:change="add">
                   </v-form-item>
                   <div class="Column--left">
                     <v-form-item class="FormItem">
@@ -59,7 +59,7 @@
                   </v-form-item> 
 
                   <v-form-item class="FormItem">
-                   <v-input type="submit" class="Button Button--default Button--white" value="Opslaan"></v-input>
+                   <v-input type="submit" class="Button Button--primary" value="Opslaan"></v-input>
                  </v-form-item>
                </div>
              </v-form>
