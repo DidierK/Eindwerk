@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Mail;
 use Auth;
 use Validator;
 use App\Request as RequestItem;
+use App\Transaction;
 use App\User;
 use App\UserItem;
 
@@ -69,6 +70,25 @@ class RequestController extends Controller
         Mail::to($sender_email)->send(new requestAccepted($receiver_name));
 
         return back();
+    }
+
+    public function hireItem($id) {
+    
+        // 4) REDIRECT TO TRANSACTION DETAIL PAGE WITH FLASH MESSAGE
+        $request = RequestItem::find($id);
+
+        $transaction_id = Transaction::create([
+            'renter_id'     => $request->sender_id,
+            'owner_id'    => $request->receiver_id,
+            'user_item_id' => $request->user_item_id,
+            'start_date' => $request->start_date,
+            'end_date' => $request->end_date,
+            'status' => $request->status,
+            ])->id;
+
+        $request->delete();
+
+        return redirect(url('transaction/' . $transaction_id));
     }
 
     /**

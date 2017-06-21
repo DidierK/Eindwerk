@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TransactionController extends Controller
-{
+class TransactionController extends Controller {
     /**
      * Display a listing of the resource.
      *
@@ -28,8 +27,7 @@ class TransactionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
     }
 
@@ -39,8 +37,7 @@ class TransactionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         //
     }
 
@@ -50,9 +47,8 @@ class TransactionController extends Controller
      * @param  \App\Transaction  $transaction
      * @return \Illuminate\Http\Response
      */
-    public function show(Transaction $transaction)
-    {
-        //
+    public function show($id) {
+        var_dump("LOL");
     }
 
     /**
@@ -61,8 +57,7 @@ class TransactionController extends Controller
      * @param  \App\Transaction  $transaction
      * @return \Illuminate\Http\Response
      */
-    public function edit(Transaction $transaction)
-    {
+    public function edit($id) {
         //
     }
 
@@ -73,8 +68,7 @@ class TransactionController extends Controller
      * @param  \App\Transaction  $transaction
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Transaction $transaction)
-    {
+    public function update(Request $request, Transaction $transaction) {
         //
     }
 
@@ -84,8 +78,7 @@ class TransactionController extends Controller
      * @param  \App\Transaction  $transaction
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Transaction $transaction)
-    {
+    public function destroy(Transaction $transaction) {
         //
     }
 }

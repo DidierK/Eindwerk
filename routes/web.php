@@ -71,9 +71,6 @@ Route::group(['prefix' => 'api/'], function() {
 Route::group(['middleware' => 'auth'], function () {
 	// STILL HAVE TO FIND HOW TO IMPLEMENT INTENDED REDIRECT
 
-	// Requests
-	Route::resource('request', 'RequestController');
-
 // TODO PUT AUTH ROUTES INTO ONLY AUTHORIZED ROUTES GROUP
 
 // Profile
@@ -81,11 +78,14 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('profile/details', 'UserController@details');
 
 // Requests
+	Route::resource('request', 'RequestController');
 	Route::get('requests/incoming', 'RequestController@showIncomingRequests');
 	Route::get('requests/outgoing', 'RequestController@showOutgoingRequests');
 	Route::put('request/{id}/accept', 'RequestController@acceptRequest');
+	Route::post('request/{id}/hire', 'RequestController@hireItem');
 
 // Transactions
+	Route::resource('transaction', 'TransactionController');
 	Route::get('transactions/ongoing', 'TransactionController@showOnGoingTransactions');
 	Route::get('transactions/history', 'TransactionController@showTransactionsHistory');
 
