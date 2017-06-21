@@ -7,10 +7,13 @@
 		<span></span>
 	</div>
 	<h3 class="h3">Gehuurde items</h3>
+	@if (count($transactions_rented) > 0)
 	@foreach ($transactions_rented as $transaction)
-	<p>LOL</p>
+	<a href="{{ url('transaction/' . $transaction->id) }}">LOL</a>
 	@endforeach
+	@else
 	<p>Je bent op dit moment geen items aan het huren.</p>
+	@endif
 	<h3 class="h3">Verhuurde items</h3>
 	<p>Je bent op dit moment geen items aan het verhuren.</p>
 </v-container>

@@ -26,11 +26,12 @@ class TransactionController extends Controller {
         ->join('user_items', 'transactions.user_item_id', '=', 'user_items.id')
         ->join('items', 'user_items.item_id', '=', 'items.id')
         ->get([
+            'transactions.id',
             'transactions.start_date',
             'transactions.end_date',
             'transactions.status',
-            'users.name',
-            'items.name'
+            'users.name as user_name',
+            'items.name  as item_name'
               ]);
         
 
