@@ -7,6 +7,7 @@ use App\Mail\requestAccepted;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Auth;
+use DateTime;
 use Validator;
 use App\Request as RequestItem;
 use App\Transaction;
@@ -138,36 +139,36 @@ class RequestController extends Controller
         // Normal validation
         if ($validator->fails()) {
 
-           return redirect('user-item/' . $request->user_item_id)
-           ->withErrors($validator)
-           ->withInput();
-       } else {
+         return redirect('user-item/' . $request->user_item_id)
+         ->withErrors($validator)
+         ->withInput();
+     } else {
 
         // Checks if this user already send a request for this user item
         $hasRequest = RequestItem::where('sender_id', Auth::id())->where('user_item_id', $request->user_item_id)->get()->count();
 
         if($hasRequest){
 
-           $validator->getMessageBag()->add('duplicate', 'Je hebt hiervoor al een verzoek verstuurd.');
-           return back()->withErrors($validator)->withInput();
+         $validator->getMessageBag()->add('duplicate', 'Je hebt hiervoor al een verzoek verstuurd.');
+         return back()->withErrors($validator)->withInput();
              // If that passes, create new request and redirect with success message
-       } else {
+     } else {
         $unavailable_dates = Transaction::where('user_item_id', $request->user_item_id)->get(['start_date', 'end_date']);
 
         $dateIsUnavailable = false;
 
         foreach($unavailable_dates as $unavailable_date) {
-            if($request->start <= $unavailable_date->end_date && $request->end >= $unavailable_date->start_date ) {
+            if(new DateTime($request->start) <= new DateTime($unavailable_date->end_date) && new DateTime($unavailable_date->start_date) <= new DateTime($request->end) ) {
                 $dateIsUnavailable = true;
             }
         }
 
         if($dateIsUnavailable){
 
-           $validator->getMessageBag()->add('duplicate', 'Deze periode is niet beschikbaar.');
-           return back()->withErrors($validator)->withInput();
+         $validator->getMessageBag()->add('duplicate', 'Deze periode is niet beschikbaar.');
+         return back()->withErrors($validator)->withInput();
              // If that passes, create new request and redirect with success message
-       } else {
+     } else {
         RequestItem::create([
             'sender_id' => Auth::id(),
             'receiver_id' => $request->user_id, // TODO: Verander dit naar echte img
