@@ -6,7 +6,14 @@
 
 	.UserItemDetails h2 {
 		text-transform: uppercase;
-    	font-weight: 600;
+		font-weight: 600;
+	}
+
+	.UserItemDetails h3 {
+		color: #B7B7B7;
+		font-size: 14px;
+		font-weight: 600;
+		text-transform: uppercase;
 	}
 
 	.UserItemDetails__price em {

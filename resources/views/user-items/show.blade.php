@@ -57,7 +57,7 @@
                         <input class="Input Input--text-default u--sizeFull" type="text" name="end" id="end_date" placeholder="Tot">
                     </v-form-item>
                     <v-form-item class="FormItem FormItem--button">
-                        <v-button class="Button Button--default Button--blue u--block u--sizeFull">Verzoek versturen</v-button>
+                        <v-button class="Button Button--primary u--block u--sizeFull">Verzoek versturen</v-button>
                     </v-form-item>
                 </v-form>
                 <h3>Uitgeleend op</h3>
