@@ -68,28 +68,35 @@
             <v-popover class="UserActionsPopover" ref="popover--user-actions" v-cloak>
                 <v-ul class="UserActionsList">
                     <v-li class="UserActionsList__item">
-                        <v-link class="UserActionsPopover__action u--linkClean u--block" link="{{ url('profile/my-items') }}">Dashboard</v-link>
+                        <v-link class="UserActionsPopover__action u--linkClean u--block" link="{{ url('profile/my-items') }}">Dashboard
+                        </v-link>
                     </v-li>
                     <v-li class="UserActionsList__item">
-                        <v-link class="UserActionsPopover__action u--linkClean u--block" link="{{ url('user/' . Auth::id()) }}">Profiel</v-link>
+                        <v-link class="UserActionsPopover__action u--linkClean u--block" link="{{ url('user/' . Auth::id()) }}">Profiel
+                        </v-link>
                     </v-li>
                     <v-li class="UserActionsList__item">
-                        <v-link class="UserActionsPopover__action u--linkClean u--block" link="{{ url('/logout') }}">Afmelden</v-link>
-                    </v-li>
-                </v-ul>
-            </v-popover>
-            @endif
-            <!-- Either in Vue instance or in own component we should load in the mounted method all categories and populate this dropdown -->
-            <v-popover class="Popover Popover--categories" placement="bottom" ref="popover--categories" v-cloak>
-                <v-ul class="List List--user-actions">
-                    <v-li v-if="showLoading">Loading...</v-li>
-                    <v-li v-for="category in categories">
-                        <a class="u--linkClean u--block" :href="'/category/' + category.url + ''" >@{{ category.name }}</a>
-                    </v-li>
-                </v-ul>
-            </v-popover>
-        </v-nav>
-    </div>
+                       <v-link class="UserActionsPopover__action u--linkClean u--block" link="{{ url('/profile/details') }}">Instellingen
+                       </v-link> 
+                   </v-li>
+                   <v-li class="UserActionsList__item">
+                    <v-link class="UserActionsPopover__action u--linkClean u--block" link="{{ url('/logout') }}">Afmelden
+                    </v-link>
+                </v-li>
+            </v-ul>
+        </v-popover>
+        @endif
+        <!-- Either in Vue instance or in own component we should load in the mounted method all categories and populate this dropdown -->
+        <v-popover class="Popover Popover--categories" placement="bottom" ref="popover--categories" v-cloak>
+            <v-ul class="List List--user-actions">
+                <v-li v-if="showLoading">Loading...</v-li>
+                <v-li v-for="category in categories">
+                    <a class="u--linkClean u--block" :href="'/category/' + category.url + ''" >@{{ category.name }}</a>
+                </v-li>
+            </v-ul>
+        </v-popover>
+    </v-nav>
+</div>
 </v-header>
 <div class="MobileNavMenu u--mobileOnly" v-if="showMobileNav">
     <div class="MobileNavMenu__header u--flex u--flexJustifyContentSpaceBetween u--flexAlignItemsCenter">
@@ -119,17 +126,20 @@
     @if (Auth::check())
     <ul class="u--pn">
         <li>
-         <a href="{{ url('/profile/my-items') }}">Dashboard</a> 
-     </li>
-     <li>
-         <a href="{{ url('/user/' . Auth::id()) }}">Profiel</a> 
-     </li>
-     <li>
-         <a href="{{ url('/logout') }}">Afmelden</a> 
-     </li>
- </ul>
- @else
- <ul class="u--pn">
+           <a href="{{ url('/profile/my-items') }}">Dashboard</a> 
+       </li>
+       <li>
+           <a href="{{ url('/user/' . Auth::id()) }}">Profiel</a> 
+       </li>
+       <li>
+           <a href="{{ url('/profile/details') }}">Instellingen</a> 
+       </li>
+       <li>
+           <a href="{{ url('/logout') }}">Afmelden</a> 
+       </li>
+   </ul>
+   @else
+   <ul class="u--pn">
     <li>
         <a href="{{ url('/login') }}">Aanmelden</a> 
     </li>
