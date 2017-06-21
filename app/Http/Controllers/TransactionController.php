@@ -111,10 +111,17 @@ class TransactionController extends Controller {
 
         $total_price = $transaction->price * $total_days;
 
+        $owned = false;
+
+        if(count(Transaction::find($id)->where('owner_id', Auth::id())->get()) > 0) {
+            $owned = true;
+        }
+
         return view("transactions.show", [
             "transaction" => $transaction,
             "total_days" => $total_days,
-            "total_price" => $total_price
+            "total_price" => $total_price,
+            "owned" => $owned
             ]
             );
     }
