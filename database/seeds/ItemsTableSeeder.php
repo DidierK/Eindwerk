@@ -14,7 +14,6 @@ class ItemsTableSeeder extends Seeder
         DB::table('items')->delete();
 
         $items = [
-        'Avontuur',
         'Baby bed',
         'Bagage zak',
         'Bench',
@@ -36,7 +35,7 @@ class ItemsTableSeeder extends Seeder
         'Fiets',
         'Fietsenrek (auto)',
         'Gamel',
-        'Gas vuurt',
+        'Gasvuur',
         'GPS',
         'Gri gri (klimmen)',
         'Gri gri',
@@ -52,6 +51,7 @@ class ItemsTableSeeder extends Seeder
         'Mini BBQ',
         'Musketon',
         'Opblaasmatje',
+        'Opblaasmatras',
         'Papfles',
         'Petanque',
         'Reis spelletjes',

@@ -18,27 +18,83 @@ class Category_ItemTableSeeder extends Seeder {
 
         "Sport" => [
         'Sneeuwlaarzen',
-    
+        'Kano',
+        'Wandel GPS',
+        'Snowboard',
+        'Klim broekje',
+        'Roeispanen',
+        'Vislijn',
+        'Wandelstokken',
+        'Fiets',
+        'Snorkel',
+        'Petanque',
+        'Skihelm',
+        'Zeker acht (klimmen)',
+        'Fiets GPS',
+        'Surfboard',
+        'Musketon',
+        'Skies',
+        'Skibril',
+        'Klim koord',
+        'Gri gri (klimmen)',
+        'Trekkersrugzak',
+        'Kubb',
+        'Zwemvliezen',
+        'Volleyball net',
         ],
 
         "Avontuur" => [
         'Sneeuwlaarzen',
-
+        'Kano',
+        'Wandel GPS',
+        'Tent (kamperen)',
+        'Klim broekje',
+        'Snorkel',
+        'Koplamp',
+        'Zeker acht (klimmen)',
+        'Fiets GPS',
+        'Musketon',
+        'Rubber boot',
+        'Wandel GPS',
+        'Shelter (zijl)',
+        'Klim koord',
+        'Gri gri',
+        'Trekkersrugzak',
         ],
 
         "Transport" => [
         'Dakkoffer',
-    
+        'Wandel GPS',
+        'GPS',
+        'Fiets',
+        'Sneeuwketting',
+        'Fiets GPS',
+        'Buggy',
+        'Fietsenrek (auto)',
+        'Stratenplan',
         ],
 
         "Entertainment" => [
         'Roeispanen',
-   
+        'Vislijn',
+        'Snorkel',
+        'Petanque',
+        'Reis spelletjes',
+        'Surfboard',
+        'Rubber boot',
+        'Boek',
+        'Kubb',
+        'Zwemvliezen',
+        'Zwembad speeltjes',
         ],
 
         "Baby" => [
         'Draagdoek',
-     
+        'Baby bed',
+        'Buggy',
+        'Papfles',
+        'Draagrugzak',
+        'Tent (strand)'
         ],
 
         "Dieren" => [
@@ -47,38 +103,82 @@ class Category_ItemTableSeeder extends Seeder {
 
         "Informatie" => [
         'Wandel GPS',
-     
+        'Fiets GPS',
+        'GPS',
+        'Boeken',
+        'Stratenplan',
+        'Reisgidsen',
         ],
 
         "Electro" => [
         'Bluetooth speaker',
-       
+        'Zaklamp',
+        'Koplamp',
+        'Externe batterij',
+        'Externe batterij (zonne energie)',
+        'Draagbaar zonnepaneel',
         ],
 
         "Voeding" => [
         'Drinkbus',
-   
+        'Mini BBQ',
+        'Gamel',
+        'Bestek',
+        'Koelbox',
+        'Papfles',
+        'Gasvuur',
         ],
 
         "Veiligheid" => [
         'Klim broekje',
         'Skihelm',
-      
+        'Zeker acht (klimmen)',
+        'Sneeuwkettingen',
+        'Musketon',
+        'Skibril',
+        'Klim koord',
+        'Gri gri (klimmen)',
         ],
 
         "Kampeergerief" => [
         'Drinkbus',
-    
+        'Tent (kamperen)',
+        'Kampeerbank',
+        'Koplamp',
+        'Opblaasmatje',
+        'Gasvuur',
+        'Mini BBQ',
+        'Gamel',
+        'Magnesiumstick',
+        'Veldbed',
+        'Bestek',
+        'Koelbox',
+        'Camping car',
+        'Kampeerstoel',
+        'Shelter (zijl)',
+        'Caravan',
+        'Slaapmatje',
+        'Trekkersrugzak',
+        'Zaklamp',
+        'Zakmes',
+        'Opblaasmatras',
         ],
 
         "Bagage" => [
         'Reiskoffer',
-
+        'Bagage zak',
         ],
 
         "Overnachting" => [
         'Tent (kamperen)',
-   
+        'Camping car',
+        'Caravan',
+        'Slaapmatje',
+        'Opblaasmatras',
+        'Koplamp',
+        'Zaklamp',
+        'Baby bed',
+        'Veldbed',
         ]
 
         ];
