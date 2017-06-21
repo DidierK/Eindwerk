@@ -28,7 +28,7 @@
         right: 133px;
     }
 
-    .Popover--categories ul > li,
+    .Popover--categories ul > li > a,
     .UserActionsPopover__action  {
         border-bottom: 1px solid #DDD;
         padding: 8px 16px;
