@@ -17,7 +17,7 @@
 		<p>Bij beschadiging van het item zal worden gekeken hoe groot de schade bedraagt. Indien de schade zodanig groot is dat het item onherstelbaar is zullen alle kosten worden doorgerekend aan de huurder. Indien het item wel kan hersteld worden rekenen we enkel de herstellingskosten door aan de huurder.
 		</p>
 
-		<h3 class="h3">Verlies of Diefstal</h3>
+		<h3 class="h3">Verlies of diefstal</h3>
 		<p>In dit geval zullen de kosten voor een vervangend product worden doorgerekend aan de huurder. Deze kosten hangen af van de oorspronkelijke staat van het item.
 		</p>
 		<h3 class="h3">Schade melden</h3>
