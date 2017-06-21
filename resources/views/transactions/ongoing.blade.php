@@ -64,8 +64,8 @@
 				<a class="Button Button--primary u--linkClean" href="{{ url('transaction/' . $transaction->id )}}">Bekijken</a>
 			</div>
 		</div>
+		@endforeach
 	</div>
-	@endforeach
 	@else
 	<p>Je bent op dit moment geen items aan het huren.</p>
 	@endif
@@ -128,8 +128,8 @@
 				<a class="Button Button--primary u--linkClean" href="{{ url('transaction/' . $transaction->id )}}">Bekijken</a>
 			</div>
 		</div>
+		@endforeach
 	</div>
-	@endforeach
 	@else
 	<p>Je bent op dit moment geen items aan het huren.</p>
 	@endif

@@ -116,7 +116,6 @@
 		border-radius: 2px;
 		background-color: #FFF;
 		min-height: 250px;
-		height: 250px;
 	}
 
 	.RequestsTable__row {

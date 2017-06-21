@@ -71,7 +71,7 @@
                 $converted_start_date = date('d F Y',strtotime($unavailable_date->start_date));
                 $converted_end_date = date('d F Y',strtotime($unavailable_date->end_date));
                 @endphp
-                <p>@php echo ucfirst(str_replace($lang['en'], $lang['nl'], strtolower($converted_start_date))); @endphp tot @php echo ucfirst(str_replace($lang['en'], $lang['nl'], strtolower($converted_start_date))); @endphp</p>
+                <p>@php echo ucfirst(str_replace($lang['en'], $lang['nl'], strtolower($converted_start_date))); @endphp tot @php echo ucfirst(str_replace($lang['en'], $lang['nl'], strtolower($converted_end_date))); @endphp</p>
                 @endforeach
                 @else
                 <p>Nog niet uitgeleend.</p>

@@ -91,7 +91,7 @@ class TransactionController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        $transaction = Transaction::find($id)
+        $transaction = Transaction::where('transactions.id', $id)
         ->join("users", "transactions.owner_id", "users.id")
         ->join("user_items", "transactions.user_item_id", "user_items.id")
         ->join("items", "user_items.item_id", "items.id")
