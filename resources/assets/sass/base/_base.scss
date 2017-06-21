@@ -131,7 +131,7 @@ input:focus {
 }
 
 .u--mb-16 {
-	margin-bottom: 16px;
+	margin-bottom: 16px !important;
 }
 
 .u--mb-32 {
@@ -168,6 +168,10 @@ input:focus {
 
 .u--mr-32 {
 	margin-right: 32px;
+}
+
+.u--mt-0 {
+	margin-top: 0;
 }
 
 .u--mt-16 {
@@ -282,6 +286,22 @@ input:focus {
 
 	.Row-md {
 		display: flex;
+	}
+
+	.Col-md-1-2 {
+		width: 50%;
+	}
+
+	.Col-md-1-2 {
+		padding: 16px;
+	}
+
+	.Col-md-1-2:nth-child(2n+1){
+		padding-left: 0;
+	}
+
+	.Col-md-1-2:nth-child(2n+0){
+		padding-right: 0;
 	}
 
 	.Col-md-1-4 {

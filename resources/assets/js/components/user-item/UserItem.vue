@@ -12,6 +12,10 @@
 		color: #FFF;
 	}
 
+	.Remark p {
+		font-style: italic;
+	}
+
 	.UserItem > .Column {
 		width: 100%;
 	}
