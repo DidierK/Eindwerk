@@ -63,7 +63,7 @@
 			@if($request->status == 'Afwachten')
 			<span>{{ $request->status }}</span>
 			@else
-			<span>Wachten op betaling</span>
+			<span>Wachten op huurder</span>
 			@endif
 		</div>
 		@if($request->status == 'Afwachten')
