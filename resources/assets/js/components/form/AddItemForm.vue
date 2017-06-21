@@ -8,8 +8,12 @@
 	}
 
 	.Errors h3 {
-		color: #FFF;
+		color: #FFF !important;
 		margin-bottom: .5em;
+	}
+
+	.Errors p {
+		color: #FFF !important;
 	}
 
 	.Errors ul {
@@ -25,8 +29,12 @@
 	}
 
 	.Alert-success h3 {
-		color: #FFF;
+		color: #FFF !important;
 		margin-bottom: .5em;
+	}
+
+	.Alert-success p {
+		color: #FFF !important;
 	}
 
 	.Alert-success a {

@@ -142,6 +142,10 @@
 			display: flex;
 			align-items: center;
 			padding: 16px 32px !important;
+		}
+
+		.Disclaimer {
+			width: 50%;
 		}	
 	}
 
