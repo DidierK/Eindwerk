@@ -5,7 +5,7 @@
 	@include('partials.header')
 	<v-container class="Container">
 		<div class="u--textCenter">
-			<h1 class="Hero__heading">Huren op maat van jouw bestemming</h1>
+			<h1 class="Hero__heading">The cheapest way to discover the world</h1>
 			<h2 class="Hero__subheading">Ga zorgeloos op reis met onze grote aanbieding aan reismateriaal.</h2>
 		</div>
 		<v-search class="Search Search--main">
@@ -43,7 +43,7 @@
 				<div class="ImageContainer" style="margin-bottom: 81px">
 				<img src="{{ url('images/mail.svg')}}" />
 				</div>
-				<h4>Wordt op de hoogte gebracht</h4>
+				<h4>Blijf op de hoogte</h4>
 				<p>Wanneer de huurder van het product jouw verzoek accepteerd, wordt je hiervan op de hoogte gebracht.</p>
 			</v-li>
 			<v-li>
