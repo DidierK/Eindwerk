@@ -99,6 +99,14 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+
+        'price' => [
+            'required' => 'Geef een prijs aan.',
+        ],
+
+        'thumbnail' => [
+            'required' => 'Upload een foto van je materiaal.',
+        ],
     ],
 
     /*
