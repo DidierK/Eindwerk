@@ -10,7 +10,7 @@
 
         <v-user-item-details class="UserItemDetails u--flex u--flexWrap">
             <div class="Col-sm-1-2">
-                <v-img class="UserItemDetails__thumbnail" src="{{ asset($user_item_user->thumbnail) }}"></v-img>
+                <v-img class="UserItemDetails__thumbnail" src="{{ asset('uploads/user-items/' . $user_item_user->thumbnail) }}"></v-img>
             </div>
             <div class="Col-sm-1-2">
                 <div class="UserItemDetails__user-info">

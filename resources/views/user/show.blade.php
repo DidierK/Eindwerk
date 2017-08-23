@@ -52,7 +52,7 @@
                 <li class="Col-sm-1-2 Col-md-1-3">
                     <v-link class="Link u--linkClean" link="{{ url('user-item/' . $user_item->id)}}">
                         <v-card class="Card u--pn">
-                            <v-img class="Image Image--my-items" background="{{ $user_item->thumbnail }}"></v-img>
+                            <v-img class="Image Image--my-items" background="{{ asset('uploads/user-items/' . $user_item->thumbnail) }}"></v-img>
                             <div class="MyItem__info u--flex u--flexJustifyContentSpaceBetween">
                                 <h3 class="MyItem__title">{{ $user_item->name }}</h3>
                             </div>
