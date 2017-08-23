@@ -60,8 +60,8 @@ class UserItemController extends Controller
         // Zet deze list btw in ALFABETISCHE volgorde
         // Ook maak van deze input een "search input" zoals bij legum.
         $item_names = Item::orderBy('name', 'asc')->pluck('name');
-        $vacation_names = DB::table('vacations')->orderBy('name', 'asc')->pluck('name');
-        return view('user-items.create', ['item_names' => $item_names, 'vacation_names' => $vacation_names]);
+        $vacations = DB::table('vacations')->orderBy('name', 'asc')->get(['id', 'name']);
+        return view('user-items.create', ['item_names' => $item_names, 'vacations' => $vacations]);
     }
 
     /**
@@ -71,63 +71,40 @@ class UserItemController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        // TODO: Make all optional fields in table nullable (for example description)
-        // TODO: Make a form validation method and input all our fields in it
-        // TODO get category id if category input is not empty, otherwise obviously leave null
 
-        $messages = [
-        'item_name.required' => 'Kies een item naam.',
-        'price.required' => 'Geef een prijs voor je item.',
-        'price.regex' => 'Geef een geldige prijs in. (Maximum 2 cijfers na de komma)',
-        'thumbnail.required' => 'Kies een afbeelding voor je item.',
-        ];
-
-        $trimmed_inputs = [];
-
-        foreach($request->all() as $i => $item){
-            $trimmed_inputs[$i] = trim($item);
-        }
-
-        // Note: tel is not required but if filled in make sure it's correct
-        $validator = Validator::make($trimmed_inputs, [
+        // Automatically redirects back to view with the errors
+        $this->validate($request, [
             'item_name' => 'required',
-            'price' => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
+            'price' => 'required',
             'thumbnail' => 'required'
-            ],$messages);
-
-        if ($validator->fails()) {
-            return $validator->messages();
-
-        } else {
-            $input_name = $trimmed_inputs['item_name'];
-            $input_price = $trimmed_inputs['price'];
-            $input_image = $request->file('thumbnail');
-            $input_description = $trimmed_inputs['description'];
-
-        // Get name of image and move ACTUAL image
-            $image_name = time()."-".$input_image->getClientOriginalName();
-            $input_image->move('uploads/user-items', $image_name);
-            $image_path = asset('uploads/user-items') . '/' . $image_name;
-
-        // Get item name id by name
-            $item_id = Item::where('name', $input_name)->pluck('id')->first();
-
-            UserItem::create([
-                'description' => $input_description,
-            'thumbnail' => $image_path, // TODO: Verander dit naar echte img
-            'price' => $input_price,
-            'item_id' => $item_id, 
-            'user_id' => Auth::user()->id
             ]);
 
-        // Redirect to page where personal items are
-        // return redirect(url('profile/my-items'));
+        // If it validates
+        $user_item = UserItem::create([
+            "description" => $request->description,
+            "thumbnail" => $this->uploadImage($request->file('thumbnail'), 'uploads/user-items'),
+            "price" => $request->price,
+            "item_id" => Item::where('name', $request->item_name)->value('id'),
+            "user_id" => Auth::id()
+            ]);
 
-            return $validator->messages();
+        // Store all vacations related to this user item
+        foreach($request->vacations as $vacation_id)
+        {
+            $user_item_vacation = ["user_item_id" => $user_item->id, "vacation_id" => $vacation_id];
 
+            DB::table('user_item_vacation')->insert([$user_item_vacation]);
         }
-        
 
+        return redirect(url('profile/my-items'));
+    }
+
+    private function uploadImage($image, $path) 
+    {
+        $image_name = time() . "-" . preg_replace('/\s+/', '-', $image->getClientOriginalName());
+        $image->move($path, $image_name);
+
+        return $image_name;
     }
 
     /**
@@ -152,8 +129,8 @@ class UserItemController extends Controller
             'user_item_user' => $user_item_user,
             'owned' => $owned,
             'unavailable_dates' => $unavailable_dates
-             ]
-             );
+            ]
+            );
     }
 
     /**
