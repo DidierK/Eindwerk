@@ -51,7 +51,7 @@
 					<img src="{{ url('images/transport.svg')}}" />
 				</div>
 				<h4>Betaal &amp; Ontvang</h4>
-				<p>Betaal de huur van het product veilig en snel via onze website. Het product zal worden geleverd op de eerste dag van het huurcontract.</p>
+				<p>Betaal de huur van het product veilig en snel via onze website. Ga dan het product afhalen bij de verhuurder.</p>
 			</v-li>
 		</v-ul>
 	</v-container>
