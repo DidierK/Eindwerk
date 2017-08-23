@@ -14,20 +14,20 @@
             <v-form-item class="FormItem">
                 <label class="FormItem__label">
                     <p>Wat wil je verhuren?</p>     
-                </label>
-                <select label="Wat wil je verhuren?" name="item_names" class="input--full-width">
+                <select label="Wat wil je verhuren?" name="item_names" class="Input Input--text-default u--sizeHalf">
                     @foreach ($item_names as $item_name)
                     <option>{{ $item_name }}</option>
                     @endforeach
                 </select>
-                <p class="u--textSmall u--mt-8">Staat uw item er nog niet tussen? <a href="#">Laat het ons weten en doe een suggestie!</a></p>
+                </label>
+                <p class="u--textSmall u--mt-8">Staat je materiaal er nog niet tussen? <a href="/contact">Laat het ons weten en doe een suggestie!</a></p>
             </v-form-item>
 
             <v-form-item class="FormItem">
                 <label class="FormItem__label">
                     <p>Prijs/dag</p>
-                </label>
                 <input class="Input Input--text-default Input--price" type="text" placeholder="50.00" name="price" /><span>€</span>
+                </label>
             </v-form-item>
 
             <v-form-item class="FormItem">
@@ -36,22 +36,25 @@
 
             <v-form-item class="FormItem">
                 <label class="FormItem__label">
-                    <p>Meer informatie</p>
+                    <p>Meer informatie (optioneel)</p>
+                <textarea class="Input Input--textarea-default u--sizeHalf" placeholder="Vertel hier iets meer over je materiaal..."></textarea>
                 </label>
-                <textarea class="Input Input--text-default"></textarea>
             </v-form-item>
 
             <v-form-item class="FormItem">
                 <label class="FormItem__label">
-                    <p>Voor welke vakanties is dit materiaal geschikt?</p>
+                    <p>Voor welke vakanties is dit materiaal geschikt? (optioneel)</p>
                 </label>
-                <input type="checkbox" name="chk_group" value="value1" />Value 1<br />
-                <input type="checkbox" name="chk_group" value="value2" />Value 2<br />
-                <input type="checkbox" name="chk_group" value="value3" />Value 3<br />
+                <div class="u--mb-8">
+                @foreach ($vacation_names as $vacation_name)
+                <input type="checkbox" name="vacations"> {{ $vacation_name }}<br />
+                @endforeach
+                </div>
+                <p>Indien je hier niets aanduid zal het materiaal beschouwd worden als geschikt voor "Alle vakanties".</p>
             </v-form-item>
 
             <v-form-item>
-                <v-input type="submit" class="Button Button--default Button--blue u--sizeFull" value="Toevoegen"></v-input>
+                <v-input type="submit" class="Button Button--primary" value="Toevoegen"></v-input>
             </v-form-item>
         </v-form>
     </v-container>

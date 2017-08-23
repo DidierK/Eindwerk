@@ -130,6 +130,10 @@ input:focus {
 	margin: 0;
 }
 
+.u--mb-8 {
+	margin-bottom: 8px !important;
+}
+
 .u--mb-16 {
 	margin-bottom: 16px !important;
 }
@@ -232,6 +236,10 @@ input:focus {
 
 .u--sizeFull {
 	width: 100%;
+}
+
+.u--sizeHalf {
+	width: 50%;
 }
 
 .u--textCenter {
