@@ -15,9 +15,17 @@ class VacationsTableSeeder extends Seeder
     	DB::table('vacations')->delete();
 
         $vacations = [
-        "Zonvakantie",
-        "Kampeervakantie",
-        "Wintervakantie"
+        "Zon",
+        "Kampeer",
+        "Ski",
+        "Fiets",
+        "Wandel",
+        "Strand",
+        "Boot",
+        "Bungalow",
+        "Backpack",
+        "Stad",
+        "Andere"
         ];
 
         foreach ($vacations as $value) {  
