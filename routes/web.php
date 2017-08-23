@@ -90,6 +90,4 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('transactions/ongoing', 'TransactionController@showOnGoingTransactions');
 	Route::get('transactions/history', 'TransactionController@showTransactionsHistory');
 	Route::post('transaction/{user_id}/sendMail', 'TransactionController@sendMail');
-
-
 });

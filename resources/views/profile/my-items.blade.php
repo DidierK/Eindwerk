@@ -12,8 +12,8 @@
 		<h2 class="Subhead__heading">Mijn spullen</h2>
 		<span></span>
 	</div>
-	<v-button class="Button Button--primary u--inlineBlock u--linkClean" v-modal:add-item-modal @if(!$completeProfile) disabled @endif>Spullen toevoegen
-	</v-button>
+	<a class="Button Button--primary u--inlineBlock u--linkClean" href="{{ url('user-item/create') }}" @if(!$completeProfile) disabled @endif>Spullen toevoegen
+	</a>
 </div>
 
 
