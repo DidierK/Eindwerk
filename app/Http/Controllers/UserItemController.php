@@ -125,10 +125,15 @@ class UserItemController extends Controller
 
         $unavailable_dates = Transaction::where('user_item_id', $id)->get(['start_date', 'end_date']);
 
+        $suitable_vacations = DB::table('user_item_vacation')
+                                ->join('vacations', 'user_item_vacation.vacation_id', '=', 'vacations.id')
+                                ->get(['vacations.name']);
+
         return view('user-items.show', [
             'user_item_user' => $user_item_user,
             'owned' => $owned,
-            'unavailable_dates' => $unavailable_dates
+            'unavailable_dates' => $unavailable_dates,
+            'suitable_vacations' => $suitable_vacations,
             ]
             );
     }

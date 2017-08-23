@@ -1,4 +1,8 @@
 <style>
+  .ItemList{
+    list-style: disc;
+  }
+
   .List__item--nav {
     display: inline-block;
     margin-left: 32px;

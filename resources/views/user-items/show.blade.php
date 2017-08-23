@@ -80,10 +80,25 @@
                 <div class="Subhead Subhead--spacious">
                     <h2 clas="Subhead__heading">Meer informatie</h2>
                 </div>
+               
                 @if($user_item_user->description)
                 <p>{{ $user_item_user->description }}</p>
                 @else
                 <p>Geen beschrijving beschikbaar.</p>
+                @endif
+
+                <div class="Subhead Subhead--spacious">
+                    <h2 clas="Subhead__heading">Geschikt voor</h2>
+                </div>
+
+                @if(count($suitable_vacations) > 0)
+                <ul class="ItemList">
+                @foreach($suitable_vacations as $vacation)
+                <li>{{ $vacation->name }}</li>
+                @endforeach
+                </ul>
+                @else 
+                <p>Alle vakanties</p>
                 @endif
             </div>
         </v-user-item-details>
