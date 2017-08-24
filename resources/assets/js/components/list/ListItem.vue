@@ -3,6 +3,10 @@
     list-style: disc;
   }
 
+  ol > li {
+    color: #404849;
+  }
+
   .List__item--nav {
     display: inline-block;
     margin-left: 32px;
