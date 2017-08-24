@@ -1,4 +1,31 @@
 <style>
+	.Checkmark__success {
+		background-color: #66B452;
+		border-radius: 100%;
+		color: #fff;
+		display: inline-block;
+		line-height: 1.25;
+		margin-bottom: 16px;
+		margin-right: 8px;
+		padding: 8px;
+		text-align: center;
+		width: 16px;
+		height: 16px;
+	}
+
+	.Cross__danger {
+		background-color: #EA4031;
+		border-radius: 100%;
+		color: #fff;
+		display: inline-block;
+		line-height: 1.25;
+		margin-bottom: 16px;
+		margin-right: 8px;
+		padding: 8px;
+		text-align: center;
+		width: 16px;
+		height: 16px;
+	}
 
 	.TransactionSummary {
 		background-color: #FFF;

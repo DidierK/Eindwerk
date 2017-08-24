@@ -106,13 +106,9 @@
                 </div>
                 
                 @if($user_item_user->insured)
-                <div class="Alert Alert-success">
-                    <p>Dit item is verzekerd.</p>
-                </div>
+                <span class="Checkmark__success">✓</span><span>Dit item is verzekerd.</span>
                 @else
-                <div class="Errors">
-                    <p>Dit item is niet verzekerd.</p>
-                </div>
+                <span class="Cross__danger">&#9932;</span><span>Dit item is niet verzekerd.</span>
                 @endif
 
                
