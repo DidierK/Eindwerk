@@ -66,7 +66,7 @@
     <slot v-for="result in results" v-else>
       <a class="UserItemsListItem u--block u--linkClean" :href="'/user-item/' + result.user_item_id">
         <v-card class="Card">
-          <v-img class="UserItemsListItem__thumbnail" :background="result.thumbnail"></v-img>
+          <v-img class="UserItemsListItem__thumbnail" :background="'/uploads/user-items/' + result.thumbnail"></v-img>
           <v-footer class="UserItemsListItem__footer u--flex">
             <div class="UserItemsListItem__user-info">
               <h3 class="UserItemsListItem__user-name u--noMargin">{{ result.name }}</h3>
