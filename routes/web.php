@@ -36,6 +36,9 @@ Route::resource('user-item', 'UserItemController', ['except' => [
 // User item PUT route substitution
 Route::post('user-item/{user_item}', 'UserItemController@updateUserItem');
 
+// User item PUT route substitution
+Route::post('user-item/{user_item_id}/insure', 'UserItemController@insureUserItem');
+
 // User resource
 Route::resource('user', 'UserController', ['except' => [
 	'index'

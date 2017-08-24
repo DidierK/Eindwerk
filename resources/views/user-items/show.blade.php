@@ -80,7 +80,7 @@
                 <div class="Subhead Subhead--spacious">
                     <h2 clas="Subhead__heading">Meer informatie</h2>
                 </div>
-               
+
                 @if($user_item_user->description)
                 <p>{{ $user_item_user->description }}</p>
                 @else
@@ -93,13 +93,26 @@
 
                 @if(count($suitable_vacations) > 0)
                 <ul class="ItemList">
-                @foreach($suitable_vacations as $vacation)
-                <li>{{ $vacation->name }}</li>
-                @endforeach
+                    @foreach($suitable_vacations as $vacation)
+                    <li>{{ $vacation->name }}</li>
+                    @endforeach
                 </ul>
                 @else 
                 <p>Alle vakanties</p>
                 @endif
+
+                <div class="Subhead Subhead--spacious">
+                    <h2 clas="Subhead__heading">Verzekering</h2>
+                </div>
+
+                <div class="Errors">
+                    <p>Dit item is niet verzekerd.</p>
+                </div>
+                <form action="{{ url('user-item/' . $user_item_user->id . '/insure') }}" method="POST">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <button class="Button Button--primary">Verzeker item</button>
+                </form>
+                <p class="u--textSmall u--mt-16">Lees <a href="{{ url('disclaimer') }}">hier</a> hoe de verzekering werkt.</p>
             </div>
         </v-user-item-details>
     </v-container>

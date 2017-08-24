@@ -248,4 +248,9 @@ class UserItemController extends Controller
             return false;
         }
     }
+
+    public function insureUserItem($user_item_id) {
+        // Put a flag that this item is insured
+        var_dump("This item is insured!");
+    }
 }
