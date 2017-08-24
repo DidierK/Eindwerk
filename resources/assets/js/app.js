@@ -143,7 +143,8 @@ const app = new Vue({
     city: '',
     query: {
       city: '',
-      sortOn: 'newest'
+      sortOn: 'newest',
+      vacations: []
     },
     showLoadingUserItemSearch: false,
     showMobileNav: false
@@ -232,6 +233,39 @@ const app = new Vue({
 },
 toggleMobileNav: function() {
   this.showMobileNav = !this.showMobileNav;
+},
+submitForm: function(itemUrl) {
+
+  str = [];
+
+  if(this.query.city) {
+    str.push('city=' + this.query.city);
+  }
+
+  if(this.query.sortOn) {
+    str.push('sortOn=' + this.query.sortOn);
+  }
+
+  if(typeof this.query.vacations != "undefined" && this.query.vacations != null && this.query.vacations.length > 0) {
+
+    var vacations = [];
+
+    $.each(this.query.vacations, function(key, value){
+      vacations.push(value);
+    });
+
+    str.push('vacations=' + vacations.join(","));
+  }
+
+  qs = str.join('&');
+
+  var self = this;
+
+  axios.get('/api/item/' + itemUrl + '/user-items?' + qs).then((response) => {
+    this.$refs.userItemsList.results = response.data;
+  });
+
 }
+
 }
 });

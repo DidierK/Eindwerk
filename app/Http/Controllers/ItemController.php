@@ -27,11 +27,14 @@ public function index($item_url) {
     ->where('items.id', $item_id)
     ->get(['users.name', 'users.locality', 'users.zip', 'user_items.thumbnail', 'user_items.id', 'user_items.price']);
 
+    $vacations = DB::table('vacations')->get();
+
     return view('item.show', [
         "items_per_user" => $items_per_user, 
         "item_name" => $item_name, 
         "item_url" => $item_url,
-        "item_id" => $item_id
+        "item_id" => $item_id,
+        "vacations" => $vacations
         ]); 
 }
 
@@ -67,8 +70,8 @@ public function searchItems(Request $request) {
     if(count($items) > 0){
         return redirect(url('/item/' . $items->url));
     } else {
-         return view('item.search');
-    }      
+       return view('item.search');
+   }      
 }  
 
 public function sortUserItemInItem(Request $request, $item_url) {
@@ -103,6 +106,8 @@ public function getUserItemsByItem(Request $request, $item_url) {
         $query->where("users.locality", "LIKE", "%" . $request->query("city") . "%");
     } 
 
+    
+
     switch ($request->query("sortOn")) {
         case "newest":
         $query->orderBy('user_items.created_at', 'desc');
@@ -115,10 +120,31 @@ public function getUserItemsByItem(Request $request, $item_url) {
         break;
     }
 
-
-    // Nog wa if statements ook nog om te checken welk sortBy het is en dan zo de results sorten   
-
     $items = $query->get(["users.*", "user_items.*", "user_items.id as user_item_id"]);
+
+    if(!empty($request->query("vacations"))) {
+        $filtered_items = [];
+
+        foreach($items as $item){
+
+            $q = DB::table('user_item_vacation');
+
+            $vacations = explode(",", $request->query("vacations"));
+  
+            $q->whereIn("user_item_vacation.vacation_id", $vacations);
+
+            
+
+            $result = $q->get();
+
+            if(count($result) > 0) {
+                $filtered_items[] = $item;
+            }
+        }
+
+        return $filtered_items;
+    }
+
 
     return $items;
 } 
