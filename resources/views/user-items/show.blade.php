@@ -21,7 +21,7 @@
                     <div class="UserItemDetails__user-rating">N/D (nog geen reviews)</div>
                 </div>
                 <div class="u--cf"></div>
-                <span class="UserItemDetails__price"><em>€{{  number_format($user_item_user->price,2) }}</em> per dag</span>
+                <span class="UserItemDetails__price"><em>€{{  number_format($user_item_user->price,2) }}</em> (extra dag: €{{ $user_item_user->price / 100 * 10}} )</span>
                 <div class="Subhead Subhead--spacious">
                     <h2 clas="Subhead__heading">Huur dit item</h2>  
                 </div>
