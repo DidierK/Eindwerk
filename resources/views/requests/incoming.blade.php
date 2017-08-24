@@ -27,7 +27,7 @@
 	@foreach($requests as $request)
 	<div class="RequestsTable__row">
 		<div class="u--gr-2 u--flex u--flexAlignItemsCenter">
-			<v-img class="UserItemImage Image Image--round Image--my-items" background="{{ url($request->thumbnail) }}"></v-img>
+			<v-img class="UserItemImage Image Image--round Image--my-items" background="{{ url('/uploads/user-items/' . $request->thumbnail) }}"></v-img>
 			<a class="Link u--linkClean u--ml-16" href="{{ url('user-item/' . $request->user_item_id) }}">
 				<span>{{ $request->item_name }}</span>
 			</a>

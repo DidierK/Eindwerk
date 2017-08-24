@@ -12,7 +12,7 @@
 				<div class="TransactionSummary">
 					<div class="TransactionSummary__heading">
 						<div class="Col-md-1-2">
-							<img class="TransactionSummary__item-thumbnail u--floatLeft u--mr-16" src="{{ $transaction->thumbnail }}">
+							<img class="TransactionSummary__item-thumbnail u--floatLeft u--mr-16" src="{{ url('/uploads/user-items/' . $transaction->thumbnail) }}">
 							<h4 class="TransactionSummary__item-name">{{ $transaction->item_name }}</h4>
 							<span class="TransactionSummary__user-name">{{ $transaction->user_name }}</span>
 						</div>
