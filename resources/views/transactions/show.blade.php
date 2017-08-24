@@ -31,12 +31,12 @@
 					</div>
 					<div class="TransactionSummary__content">
 						<div class="TransactionSummary__price-container">
-							<h5 class="TransactionSummary__small-title">Prijs</h5>
+							<h5 class="TransactionSummary__small-title">Dagprijs</h5>
 							<span>€{{ $transaction->price }}</span>
 						</div>
 						<div class="TransactionSummary__day-amount-container">
-							<h5 class="TransactionSummary__small-title">Aantal dagen</h5>
-							<span>{{ $total_days }} dag(en)</span>
+							<h5 class="TransactionSummary__small-title">PRIJS EXTRA DAGEN ({{ $days_extra }} dagen)</h5>
+							<span>€{{ $extra_price }}</span>
 						</div>
 						<div class="TransactionSummary__total-container u--mt-16">
 							<h5 class="TransactionSummary__small-title">Totaal</h5>

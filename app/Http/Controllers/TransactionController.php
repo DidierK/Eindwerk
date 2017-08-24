@@ -116,9 +116,10 @@ class TransactionController extends Controller {
         $start_date = new DateTime($transaction->start_date);
         $end_date = new DateTime($transaction->end_date);
 
-        $total_days = $start_date->diff($end_date)->format("%a");
-
-        $total_price = $transaction->price * $total_days;
+        $day_price = $transaction->price;
+        $days_extra = ($start_date->diff($end_date)->format("%a")) - 1;
+        $extra_price = $transaction->price / 100 * 10 * $days_extra;
+        $total_price = $day_price + $extra_price;
 
         $owned = false;
         $user_id = '';
@@ -137,7 +138,8 @@ class TransactionController extends Controller {
 
         return view("transactions.show", [
             "transaction" => $transaction,
-            "total_days" => $total_days,
+            "days_extra" => $days_extra,
+            "extra_price" => $extra_price,
             "total_price" => $total_price,
             "owned" => $owned,
             "user_id" => $user_id
