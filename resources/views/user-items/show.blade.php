@@ -104,14 +104,34 @@
                 <div class="Subhead Subhead--spacious">
                     <h2 clas="Subhead__heading">Verzekering</h2>
                 </div>
-
+                
+                @if($user_item_user->insured)
+                <div class="Alert Alert-success">
+                    <p>Dit item is verzekerd.</p>
+                </div>
+                @else
                 <div class="Errors">
                     <p>Dit item is niet verzekerd.</p>
                 </div>
+                @endif
+
+               
+                @if($owned)
+
+                @if($user_item_user->insured)
+                <form action="{{ url('user-item/' . $user_item_user->id . '/insure') }}" method="POST">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <button class="Button Button--danger">Verwijder verzekering</button>
+                </form>
+                @else
                 <form action="{{ url('user-item/' . $user_item_user->id . '/insure') }}" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <button class="Button Button--primary">Verzeker item</button>
                 </form>
+                @endif
+
+                @endif
+
                 <p class="u--textSmall u--mt-16">Lees <a href="{{ url('disclaimer') }}">hier</a> hoe de verzekering werkt.</p>
             </div>
         </v-user-item-details>

@@ -249,8 +249,14 @@ class UserItemController extends Controller
         }
     }
 
-    public function insureUserItem($user_item_id) {
-        // Put a flag that this item is insured
-        var_dump("This item is insured!");
+    public function insureUserItem($user_item_id) 
+    {
+        $user_item = UserItem::find($user_item_id);
+
+        // Make insured variable of user_item opposite of current value
+        $user_item->insured = ($user_item->insured) ? false : true;
+        $user_item->save();
+
+        return back();
     }
 }
