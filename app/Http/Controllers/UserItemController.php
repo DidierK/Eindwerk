@@ -231,7 +231,7 @@ class UserItemController extends Controller
         // TODO: DELETE ACTUAL IMAGE IN UPLOAD FOLDER (SO GET THE IMAGE NAME AND DELETE THAT ONE)
         // ANDERS GAAT ONZE SERVER BINNEN DE KORSTE KEREN NATUURLIJK VOL STAAN
         UserItem::find($id)->delete();
-        return back();
+        return redirect(url('profile/my-items'));
     }
 
     public function owned($id){

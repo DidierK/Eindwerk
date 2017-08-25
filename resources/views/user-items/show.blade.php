@@ -27,7 +27,13 @@
                 </div>
                 @if($owned)
                 <div>
-                    <p>Je kunt dit item niet huren omdat het van jou is. <a href="{{ url('user-item/' . $user_item_user->id . '/edit')}}" v-on:click.prevent v-modal:edit-item-modal>Bewerk je item.</a></p>
+                    <p class="u--mb-16">Je kan dit item niet huren omdat het van jou is.</p>
+                    <button v-on:click.prevent v-modal:edit-item-modal class="Button Button--primary">Bewerk item</button>
+                    <form action="{{ url('user-item/' . $user_item_user->id) }}" method="post" class="u--inline">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <button class="Button Button--danger">Verwijder item</button>
+                    </form>
                 </div>
                 @else
                 @if ($errors->any())
@@ -111,7 +117,7 @@
                 <span class="Cross__danger">&#9932;</span><span>Dit item is niet verzekerd.</span>
                 @endif
 
-               
+
                 @if($owned)
 
                 @if($user_item_user->insured)

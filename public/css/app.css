@@ -2525,6 +2525,10 @@ input:focus {
   }
 }
 
+.u--inline {
+  display: inline;
+}
+
 .u--inlineBlock {
   display: inline-block;
 }
