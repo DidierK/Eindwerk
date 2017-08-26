@@ -17,6 +17,10 @@
   </div>
   @endif
 
+  @if(Session::has('flash_message'))
+<div class="Alert Alert-success"><p>{!! session('flash_message') !!}</p></div>
+@endif
+
   <v-form class="Form Form--settings" action="{{ url('user/' . Auth::id()) }}" method="post">
    <input type="hidden" name="_method" value="PUT">
    <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -37,7 +41,7 @@
                    </v-form-item>
 
                    <v-form-item class="FormItem">
-                     <v-input type="text" value="@if(!empty($user_details->tel)){{$user_details->tel}}@endif" class="Input Input--text-default" label="Telefoonnummer (Optioneel)" placeholder="Bv. +32 123 456 789" name="tel"></v-input>
+                     <span class="u--mr-8">+32</span><v-input type="text" value="@if(!empty($user_details->tel)){{$user_details->tel}}@endif" class="Input Input--text-default" label="Telefoonnummer (Optioneel)" placeholder="Bv. (+32) 123 456 789" name="tel"></v-input>
                    </v-form-item>
 
 

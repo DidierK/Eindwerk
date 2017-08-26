@@ -109,7 +109,7 @@ class UserController extends Controller
         $validator = Validator::make($trimmed_inputs, [
             'name' => 'required',
             'email' => 'email|required',
-            'tel' => 'regex:/^(\+32)[0-9]{9}$/',
+            'tel' => 'regex:/^\d{9}$/',
             'houseNumber' => 'integer|max:2000',
             'zip' => 'integer|digits:4',
             ],$messages);
@@ -143,6 +143,9 @@ class UserController extends Controller
 
         // If errors redirect to edit screen, otherwise return to profile again
         // return redirect(url('user/' . Auth::id() . '/edit'));
+
+            \Session::flash('flash_message','Uw details zijn opgeslagen!');
+
             return redirect(url('profile/details'));
 
         }   
