@@ -31,7 +31,7 @@
                         C571.098,441.238,576.197,447.968,577.83,456.128z"/>
                     </svg>
                     <!-- TODO: Make it telephone format automatically -->
-                    {{$user_details->tel}}
+                    {{ '+32' . $user_details->tel}}
                 </li>
                 @endif
                 @if(!empty($user_details->street) && !empty($user_details->number) && !empty($user_details->zip) && !empty($user_details->locality)  )
