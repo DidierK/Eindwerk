@@ -58,6 +58,8 @@ Route::get('/items/search', 'ItemController@searchItems');
 // Contact
 Route::get('contact', 'ContactController@index');
 Route::post('contact', 'ContactController@sendMail');
+Route::get('report', 'ContactController@showReportForm');
+Route::post('report', 'ContactController@sendReportForm');
 
 // Contact
 Route::get('disclaimer', function(){

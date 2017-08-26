@@ -107,6 +107,14 @@ return [
         'thumbnail' => [
             'required' => 'Upload een foto van je materiaal.',
         ],
+
+        'email' => [
+            'required' => 'Geef een email op.',
+        ],
+
+        'description' => [
+            'required' => 'Geef een beschrijving op.',
+        ],
     ],
 
     /*

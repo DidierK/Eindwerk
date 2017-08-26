@@ -7,7 +7,7 @@
 			<h2 class="Subhead__heading">Contacteer ons</h2>
 			<span></span>
 		</div>
-		<p>Geef een probleem aan of doe een suggestie voor een item dat jij graag op onze website zou willen verhuren.</p>
+		<p>Contacteer ons of doe een suggestie voor een item dat jij graag op onze website zou willen verhuren.</p>
 		<form action="{{ url('contact/sendMail') }}" class="ContactForm">
 			<div class="Col-sm-1-2">
 				<v-form-item class="FormItem">
