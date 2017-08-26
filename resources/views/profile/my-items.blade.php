@@ -7,6 +7,10 @@
 </div>
 @endif
 
+@if(Session::has('flash_message'))
+<div class="Alert Alert-success"><p>{!! session('flash_message') !!}</p></div>
+@endif
+
 <div class="Subhead u--flex u--flexJustifyContentSpaceBetween u--flexWrap u--flexAlignItemsCenter u--pb-16">
 	<div>
 		<h2 class="Subhead__heading">Mijn spullen</h2>

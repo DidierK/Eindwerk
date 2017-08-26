@@ -89,12 +89,18 @@ class UserItemController extends Controller
             ]);
 
         // Store all vacations related to this user item
-        foreach($request->vacations as $vacation_id)
+        if(count($request->vacations) > 0)
         {
-            $user_item_vacation = ["user_item_id" => $user_item->id, "vacation_id" => $vacation_id];
+            foreach($request->vacations as $vacation_id)
+            {
+                $user_item_vacation = ["user_item_id" => $user_item->id, "vacation_id" => $vacation_id];
 
-            DB::table('user_item_vacation')->insert([$user_item_vacation]);
+                DB::table('user_item_vacation')->insert([$user_item_vacation]);
+            }
         }
+
+        //PUT HERE AFTER YOU SAVE
+        \Session::flash('flash_message','Item is aangemaakt!');
 
         return redirect(url('profile/my-items'));
     }
@@ -126,8 +132,8 @@ class UserItemController extends Controller
         $unavailable_dates = Transaction::where('user_item_id', $id)->get(['start_date', 'end_date']);
 
         $suitable_vacations = DB::table('user_item_vacation')
-                                ->join('vacations', 'user_item_vacation.vacation_id', '=', 'vacations.id')
-                                ->get(['vacations.name']);
+        ->join('vacations', 'user_item_vacation.vacation_id', '=', 'vacations.id')
+        ->get(['vacations.name']);
 
         return view('user-items.show', [
             'user_item_user' => $user_item_user,
