@@ -120,7 +120,7 @@ public function getUserItemsByItem(Request $request, $item_url) {
         break;
     }
 
-    $items = $query->get(["users.*", "user_items.*", "user_items.id as user_item_id"]);
+    $items = $query->get(["users.*", "user_items.*", "user_items.id as user_item_id", "items.name AS item_name"]);
 
     if(!empty($request->query("vacations"))) {
         // TODO: IN SOME WAY FIND HOW WEN CAN ONLY SEARCH FOR ITEMS WHO ARE ASSOCIATED WITH ALL THE VACATION ID'S

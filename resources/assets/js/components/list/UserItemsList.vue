@@ -69,7 +69,10 @@
           <v-img class="UserItemsListItem__thumbnail" :background="'/uploads/user-items/' + result.thumbnail"></v-img>
           <v-footer class="UserItemsListItem__footer u--flex">
             <div class="UserItemsListItem__user-info">
-              <h3 class="UserItemsListItem__user-name u--noMargin">{{ result.name }}</h3>
+              <h3 class="UserItemsListItem__user-name u--noMargin">
+                <span v-if="result.title">{{ result.title }}</span>
+                <span v-else>{{ result.item_name }}</span>
+              </h3>
               <span class="UserItemsListItem__user-address u--colorLight u--textSmall">
                 {{ result.zip + " " + result.locality }}
               </span>
