@@ -23,6 +23,7 @@ class UserItemController extends Controller
         $user_items = DB::table('user_items')
         ->join('items', 'user_items.item_id', '=', 'items.id')
         ->where('user_items.user_id', Auth::id())
+        ->orderBy('user_items.created_at', 'desc')
         ->get(['user_items.id', 'items.name', 'user_items.price', 'user_items.thumbnail']);
 
         $item_names = DB::table('items')->get(['name']);
