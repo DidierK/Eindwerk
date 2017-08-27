@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddInsuredFlagToUserItemsTable extends Migration
+class AddTitleToUserItems extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddInsuredFlagToUserItemsTable extends Migration
     public function up()
     {
         Schema::table('user_items', function (Blueprint $table) {
-           $table->boolean('insured')->default(false);
+           $table->string('title')->nullable();
        });
     }
 
@@ -26,7 +26,7 @@ class AddInsuredFlagToUserItemsTable extends Migration
     public function down()
     {
         Schema::table('user_items', function($table) {
-            $table->dropColumn('insured');
+            $table->dropColumn('title');
         });
     }
 }

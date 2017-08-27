@@ -30,7 +30,15 @@
                         @endforeach
                     </select>
                 </label>
-                <p class="u--textSmall u--mt-8">Staat je materiaal er nog niet tussen? <a href="/contact">Laat het ons weten en doe een suggestie!</a></p>
+                <p class="u--textSmall u--mt-8">Staat je item er nog niet tussen? <a href="/contact">Laat het ons weten en doe een suggestie!</a></p>
+            </v-form-item>
+
+            <v-form-item class="FormItem u--sizeHalf">
+                <label class="FormItem__label">
+                    <p>Titel (Optioneel*)</p>     
+                     <input class="Input Input--text-default u--sizeHalf" type="text" placeholder="Tent voor 3 personen" name="title" />
+                </label>
+                <p class="u--textSmall u--mt-8">*Geef een titel aan je item om beter gevonden te worden door de zoekfunctie.</p>
             </v-form-item>
 
             <v-form-item class="FormItem u--sizeHalf">

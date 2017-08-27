@@ -81,6 +81,7 @@ class UserItemController extends Controller
 
         // If it validates
         $user_item = UserItem::create([
+            "title" => $request->title,
             "description" => $request->description,
             "thumbnail" => $this->uploadImage($request->file('thumbnail'), 'uploads/user-items'),
             "price" => $request->price,
