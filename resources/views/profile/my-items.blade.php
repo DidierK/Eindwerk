@@ -32,7 +32,7 @@
 			<v-card class="Card u--pn">
 				<v-img class="Image Image--my-items" background="{{ asset('uploads/user-items/' . $item->thumbnail) }}"></v-img>
 				<div class="MyItem__info u--flex u--flexJustifyContentSpaceBetween">
-					<h3 class="MyItem__title">{{ $item->name }}</h3>
+					<h3 class="MyItem__title">{{ ($item->title) ? $item->title : $item->name }}</h3>
 					<div class="MyItem__actions u--flex">
 						<div class="MyItem__requests">
 							<a href="{{ url('requests/incoming') }}" class="MyItem__request-count Link Link--inverse u--flex">

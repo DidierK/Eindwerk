@@ -4,7 +4,7 @@
 <v-content>
     <v-container class="Container">
         <div class="Subhead">
-            <h2 class="Subhead__heading">{{ $user_item_user->name }}</h2>
+            <h2 class="Subhead__heading">{{ ($user_item_user->title) ? $user_item_user->title : $user_item_user->name }}</h2>
             <span></span>
         </div>
 
