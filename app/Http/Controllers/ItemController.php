@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use Auth;
 use App\Category;
 use App\Item;
+use App\UserItem;
 use DB;
 
 class ItemController extends Controller {
@@ -70,8 +71,12 @@ public function searchItems(Request $request) {
     if(count($items) > 0){
         return redirect(url('/item/' . $items->url));
     } else {
-       return view('item.search');
-   }      
+        // Return results based on title
+        $user_items = UserItem::join("users", "user_items.user_id", "=", "users.id")
+        ->where("user_items.title", "LIKE", "%" . $request->query("item") . "%")
+        ->get(["users.*", "user_items.*", "user_items.id AS user_item_id" ]);
+        return view('item.search', ["searchTerm" => $item_name, "user_items" => $user_items]);
+    }      
 }  
 
 public function sortUserItemInItem(Request $request, $item_url) {
@@ -132,7 +137,7 @@ public function getUserItemsByItem(Request $request, $item_url) {
             $q = DB::table('user_item_vacation');
 
             $vacations = explode(",", $request->query("vacations"));
-  
+
             $q->whereIn("user_item_vacation.vacation_id", $vacations);
 
             
