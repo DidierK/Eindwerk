@@ -16,7 +16,7 @@
 		<h2 class="Subhead__heading">Mijn spullen</h2>
 		<span></span>
 	</div>
-	<a class="Button Button--primary u--inlineBlock u--linkClean" href="{{ url('user-item/create') }}" @if(!$completeProfile) disabled @endif>Spullen toevoegen
+	<a class="Button Button--primary u--inlineBlock u--linkClean" href="{{ url('user-item/create') }}" @if(!$completeProfile) style="pointer-events: none" @endif>Spullen toevoegen
 	</a>
 </div>
 

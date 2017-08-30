@@ -147,16 +147,34 @@ const app = new Vue({
       vacations: []
     },
     showLoadingUserItemSearch: false,
-    showMobileNav: false
-
+    showMobileNav: false,
   },
   mounted: function() {
     this.getCategories();
     this.getItems();
 
-    $('#start_date, #end_date').datepicker({ dateFormat: 'dd-mm-yy', minDate: new Date() });
+    $('#start_date, #end_date').datepicker({ 
+      dateFormat: 'dd-mm-yy', 
+      minDate: new Date(),
+      onSelect: function(dateText, inst) { 
+        var sd = $("#start_date").datepicker("getDate");
+        var ed = $("#end_date").datepicker("getDate");
+        if(sd && ed){
+          if(ed > sd){
+            var itemPrice = parseInt($("#itemPrice").html().replace('€', ''));
+            var days = (ed - sd) / 1000 / 60 / 60 / 24;
+            var extraDays = days - 1;
+            var percentage = 0.1;
+            var totalPrice = itemPrice + (itemPrice * percentage * extraDays);
 
-
+            $("#totalPrice").html("De totale prijs zal " + "<b style='color: #33cbff;'>€" + totalPrice + "</b>" + " zijn.");
+          }
+          else {
+            $("#totalPrice").html("De totale prijs zal <b>€0</b> bedragen");
+          }
+        }
+      }
+    });
   },
   watch: {
     'query.sortOn': function(val) {
@@ -166,7 +184,7 @@ const app = new Vue({
       this.sortUserItems(this.$refs.userItemsList.itemUrl, this.getUserItemQueryString(), function(){
         self.$refs.userItemsList.showSpinner = false;
       }); 
-    }
+    },
   },
   methods: {
    deleteItem: function(id) {

@@ -43,9 +43,10 @@
 
             <v-form-item class="FormItem u--sizeHalf">
                 <label class="FormItem__label">
-                    <p>Prijs/dag</p>
+                    <p>Prijs</p>
                     <input class="Input Input--text-default Input--price" type="text" placeholder="50.00" name="price" /><span>€</span>
                 </label>
+                <p class="u--textSmall u--mt-8">Per dag extra zal er 10% van deze prijs genomen worden.</p>
             </v-form-item>
 
             <v-form-item class="FormItem u--sizeHalf">

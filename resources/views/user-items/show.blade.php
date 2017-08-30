@@ -21,7 +21,7 @@
                     <div class="UserItemDetails__user-rating">N/D (nog geen reviews)</div>
                 </div>
                 <div class="u--cf"></div>
-                <span class="UserItemDetails__price"><em>€{{  number_format($user_item_user->price,2) }}</em> (extra dag: €{{ $user_item_user->price / 100 * 10}} )</span>
+                <span class="UserItemDetails__price"><em id="itemPrice">€{{  number_format($user_item_user->price,2) }}</em> (extra dag: €{{ $user_item_user->price / 100 * 10}} )</span>
                 <div class="Subhead Subhead--spacious">
                     <h2 clas="Subhead__heading">Huur dit item</h2>  
                 </div>
@@ -65,6 +65,7 @@
                     <v-form-item class="FormItem FormItem--button">
                         <v-button class="Button Button--primary u--block u--sizeFull">Verzoek versturen</v-button>
                     </v-form-item>
+                    <p id="totalPrice" class="u--mt-8"></p>
                 </v-form>
                 <h3>Uitgeleend van</h3>
                 @if(count($unavailable_dates) > 0)
