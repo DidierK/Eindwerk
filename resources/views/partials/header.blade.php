@@ -76,10 +76,10 @@
                         </v-link>
                     </v-li>
                     <v-li class="UserActionsList__item">
-                       <v-link class="UserActionsPopover__action u--linkClean u--block" link="{{ url('/profile/details') }}">Instellingen
-                       </v-link> 
-                   </v-li>
-                   <v-li class="UserActionsList__item">
+                     <v-link class="UserActionsPopover__action u--linkClean u--block" link="{{ url('/profile/details') }}">Instellingen
+                     </v-link> 
+                 </v-li>
+                 <v-li class="UserActionsList__item">
                     <v-link class="UserActionsPopover__action u--linkClean u--block" link="{{ url('/logout') }}">Afmelden
                     </v-link>
                 </v-li>
@@ -126,20 +126,23 @@
     @if (Auth::check())
     <ul class="u--pn">
         <li>
-           <a href="{{ url('/profile/my-items') }}">Dashboard</a> 
-       </li>
-       <li>
-           <a href="{{ url('/user/' . Auth::id()) }}">Profiel</a> 
-       </li>
-       <li>
-           <a href="{{ url('/profile/details') }}">Instellingen</a> 
-       </li>
-       <li>
-           <a href="{{ url('/logout') }}">Afmelden</a> 
-       </li>
-   </ul>
-   @else
-   <ul class="u--pn">
+         <a href="{{ url('/profile/my-items') }}">Dashboard</a> 
+     </li>
+     <li>
+         <a href="{{ url('/user/' . Auth::id()) }}">Profiel</a> 
+     </li>
+     <li>
+         <a href="{{ url('/profile/details') }}">Instellingen</a> 
+     </li>
+     <li>
+         <a href="{{ url('/categories') }}">Categorieën</a> 
+     </li>
+     <li>
+         <a href="{{ url('/logout') }}">Afmelden</a> 
+     </li>
+ </ul>
+ @else
+ <ul class="u--pn">
     <li>
         <a href="{{ url('/login') }}">Aanmelden</a> 
     </li>
