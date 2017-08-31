@@ -165,7 +165,7 @@ const app = new Vue({
             var days = (ed - sd) / 1000 / 60 / 60 / 24;
             var extraDays = days - 1;
             var percentage = 0.1;
-            var totalPrice = itemPrice + (itemPrice * percentage * extraDays);
+            var totalPrice = (itemPrice + (itemPrice * percentage * extraDays)).toFixed(2);
 
             $("#totalPrice").html("De totale prijs zal " + "<b style='color: #33cbff;'>€" + totalPrice + "</b>" + " zijn.");
           }

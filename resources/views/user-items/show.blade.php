@@ -95,20 +95,6 @@
                 @endif
 
                 <div class="Subhead Subhead--spacious">
-                    <h2 clas="Subhead__heading">Geschikt voor</h2>
-                </div>
-
-                @if(count($suitable_vacations) > 0)
-                <ul class="ItemList">
-                    @foreach($suitable_vacations as $vacation)
-                    <li>{{ $vacation->name }}</li>
-                    @endforeach
-                </ul>
-                @else 
-                <p>Alle vakanties</p>
-                @endif
-
-                <div class="Subhead Subhead--spacious">
                     <h2 clas="Subhead__heading">Verzekering</h2>
                 </div>
                 
